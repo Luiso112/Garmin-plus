@@ -890,9 +890,59 @@
             </div>
           </section>
 
+          <!-- FACTORES DE IMPACTO REALES (GARMIN CONNECT) -->
+          <section class="garmin-card p-4 space-y-2.5">
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300">Factores de Impacto en tu Energía</h3>
+              <span class="text-[10px] text-cyan-400 font-semibold">Garmin Connect</span>
+            </div>
+            
+            <div class="space-y-1.5 text-xs">
+              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Sueño Nocturno</span>
+                  <span class="text-[10px] text-slate-400">8h 16m reparador</span>
+                </div>
+                <span class="text-emerald-400 font-black text-sm">+62 ↑</span>
+              </div>
+
+              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Estrés bajo (Descanso matutino)</span>
+                  <span class="text-[10px] text-slate-400">30 min relajación</span>
+                </div>
+                <span class="text-emerald-400 font-black text-sm">+2 ↑</span>
+              </div>
+
+              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Casteil Caminar (Senderismo)</span>
+                  <span class="text-[10px] text-slate-400">2h 30m · Desnivel montaña</span>
+                </div>
+                <span class="text-amber-400 font-black text-sm">-18 ↓</span>
+              </div>
+
+              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Codalet Caminar (Senderismo)</span>
+                  <span class="text-[10px] text-slate-400">3h 09m · Marcha prolongada</span>
+                </div>
+                <span class="text-amber-400 font-black text-sm">-13 ↓</span>
+              </div>
+
+              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Estrés bajo (Pausa vespertina)</span>
+                  <span class="text-[10px] text-slate-400">49 min recuperación</span>
+                </div>
+                <span class="text-emerald-400 font-black text-sm">+2 ↑</span>
+              </div>
+            </div>
+          </section>
+
           <section class="garmin-card p-4 text-xs text-slate-300 leading-relaxed border-l-4 border-l-cyan-400">
-            <h4 class="font-bold text-white mb-1">💡 Análisis de Carga</h4>
-            Tu descanso registrado por el sensor óptico Elevate™ del Garmin Fénix 7 ha recargado 78 puntos de energía gracias a una excelente recuperación nocturna y baja frecuencia cardíaca. El Fénix 7 continúa computando tu gasto energético continuo.
+            <h4 class="font-bold text-white mb-1">💡 Análisis Clínico de la Carga</h4>
+            Comenzaste la jornada con una recarga masiva durante el sueño de <b>+62 puntos</b> (8h 16m). La doble sesión de caminata y senderismo (Casteil -18 y Codalet -13) drenó tu energía de manera controlada sin generar estrés cardiovascular dañino, respaldada por momentos de recuperación de estrés bajo (+2 y +2).
           </section>
         `;
         chartCallback = () => {
