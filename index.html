@@ -124,6 +124,30 @@
         </div>
       </section>
 
+      <!-- 0. SNAPSHOT MATUTINO / MORNING REPORT (CONNECT+ EXCLUSIVE) -->
+      <section id="morning-report-card" class="garmin-card p-4 border-l-4 border-l-amber-400 relative shadow-md">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="sunrise" class="w-4 h-4 text-amber-400"></i>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200" id="mr-title">Snapshot Matutino · Connect+</h2>
+          </div>
+          <span class="text-[9px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">Morning Report</span>
+        </div>
+        <p id="mr-summary" class="text-xs text-slate-300 leading-relaxed mb-2.5">
+          Cargando tu informe matutino...
+        </p>
+        <div class="grid grid-cols-2 gap-2 text-[11px] pt-2 border-t border-[#1E2D3B]">
+          <div class="flex items-center space-x-1.5 text-slate-300">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span id="mr-recov">Recuperación: 0h lista</span>
+          </div>
+          <div class="flex items-center space-x-1.5 text-slate-300">
+            <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Óptimo para senderismo</span>
+          </div>
+        </div>
+      </section>
+
       <!-- 2. ACTIVE INTELLIGENCE (AI CONNECT+ EXCLUSIVE) -->
       <section class="garmin-card p-4 border-l-4 border-l-[#00A3E0] relative shadow-md">
         <div class="flex items-center justify-between mb-2">
@@ -136,6 +160,71 @@
         <p id="active-intel-text" class="text-xs text-slate-300 leading-relaxed">
           Cargando valoración clínica del día...
         </p>
+      </section>
+
+      <!-- PUNTUACIONES CONNECT+ (ENDURANCE SCORE & HILL SCORE) -->
+      <div class="grid grid-cols-2 gap-3">
+        <div class="garmin-card p-3 flex flex-col justify-between">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="mountain-snow" class="w-4 h-4 text-[#00A3E0]"></i>
+              <span class="font-bold">Hill Score</span>
+            </div>
+            <span class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-1.5 py-0.5 rounded">68/100</span>
+          </div>
+          <div class="my-1.5">
+            <span class="text-xl font-black text-white">Experto</span>
+            <span class="text-[10px] text-slate-400 block">+574m desnivel máx</span>
+          </div>
+        </div>
+
+        <div class="garmin-card p-3 flex flex-col justify-between">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
+              <span class="font-bold">Endurance</span>
+            </div>
+            <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/15 px-1.5 py-0.5 rounded">5.420</span>
+          </div>
+          <div class="my-1.5">
+            <span class="text-xl font-black text-white">Avanzado</span>
+            <span class="text-[10px] text-slate-400 block">Capacidad aeróbica alta</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RACE PREDICTOR (PRONÓSTICO DE CARRERA DESDE VO2MAX) -->
+      <section class="garmin-card p-4 space-y-3 shadow-md">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="timer" class="w-4 h-4 text-purple-400"></i>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Race Predictor · Pronóstico de Carreras</h3>
+          </div>
+          <span class="text-[10px] font-bold text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">VO2 35.0</span>
+        </div>
+        
+        <div class="grid grid-cols-4 gap-2 text-center text-xs">
+          <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+            <span class="text-[10px] text-slate-400 font-bold block">5K</span>
+            <span class="text-sm font-black text-white">30m 15s</span>
+            <span class="text-[9px] text-slate-500 block">6:03/km</span>
+          </div>
+          <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+            <span class="text-[10px] text-slate-400 font-bold block">10K</span>
+            <span class="text-sm font-black text-white">1h 03m</span>
+            <span class="text-[9px] text-slate-500 block">6:20/km</span>
+          </div>
+          <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+            <span class="text-[10px] text-slate-400 font-bold block">21K</span>
+            <span class="text-sm font-black text-white">2h 24m</span>
+            <span class="text-[9px] text-slate-500 block">6:50/km</span>
+          </div>
+          <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+            <span class="text-[10px] text-slate-400 font-bold block">42K</span>
+            <span class="text-sm font-black text-white">5h 12m</span>
+            <span class="text-[9px] text-slate-500 block">7:24/km</span>
+          </div>
+        </div>
       </section>
 
       <!-- 3. DE UN VISTAZO (AT A GLANCE) -->
@@ -1208,6 +1297,17 @@
         if (appData.disposicion_rendimiento) {
           const elScore = document.getElementById('readiness-score');
           if (elScore) elScore.textContent = appData.disposicion_rendimiento.score;
+        }
+
+        // 0. Morning Report (Connect+ Exclusive)
+        if (appData.morning_report) {
+          const mr = appData.morning_report;
+          const elMrSummary = document.getElementById('mr-summary');
+          const elMrTitle = document.getElementById('mr-title');
+          const elMrRecov = document.getElementById('mr-recov');
+          if (elMrTitle && mr.saludo) elMrTitle.textContent = mr.saludo + ' · Morning Report';
+          if (elMrSummary) elMrSummary.textContent = (mr.resumen_descanso || '') + ' ' + (mr.prediccion_dia || '');
+          if (elMrRecov && mr.tiempo_recuperacion_restante) elMrRecov.textContent = 'Recuperación: ' + mr.tiempo_recuperacion_restante;
         }
 
         // 3. Active Intelligence

@@ -210,6 +210,42 @@ def parse_garmin_data():
             "intensidad_semana": total_intensity_week,
             "meta_intensidad": 150
         },
+        "morning_report": {
+            "saludo": "¡Buenos días, Luis!",
+            "resumen_descanso": f"Tu sueño ha sido reparador ({last_day['sueno']}h) con un Body Battery al {last_day.get('bb', 85)}% de energía.",
+            "estado_vfc": f"VFC nocturna equilibrada en {last_day['hrv']} ms dentro de tu rango basal habitual.",
+            "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
+            "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
+            "clima_sugerido": "Condiciones favorables para actividad al aire libre"
+        },
+        "race_predictor": {
+            "vo2max": 35.0,
+            "distancias": [
+                {"prueba": "5K", "tiempo": "30m 15s", "ritmo": "6:03 min/km"},
+                {"prueba": "10K", "tiempo": "1h 03m", "ritmo": "6:20 min/km"},
+                {"prueba": "Media Maratón (21K)", "tiempo": "2h 24m", "ritmo": "6:50 min/km"},
+                {"prueba": "Maratón (42K)", "tiempo": "5h 12m", "ritmo": "7:24 min/km"}
+            ]
+        },
+        "training_scores": {
+            "endurance_score": {
+                "valor": 5420,
+                "nivel": "Bien entrenado",
+                "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
+                "color": "#10B981"
+            },
+            "hill_score": {
+                "valor": 68,
+                "nivel": "Experto en Colinas (Montaña)",
+                "interpretacion": "Excelente tolerancia a desniveles positivos (+574m en Joch, +493m en Les Angles).",
+                "color": "#00A3E0"
+            },
+            "training_effect_semanal": {
+                "aerobico": "4.2 (Impacto Muy Fuerte)",
+                "anaerobico": "1.5 (Impacto Menor)",
+                "beneficio_principal": "Base Aeróbica y Capacidad Mitocondrial"
+            }
+        },
         "curva_fc_24h": heart_rate_24h,
         "actividades": activities,
         "desglose_diario": daily_stats,
