@@ -6,11 +6,21 @@ import datetime
 
 GARMIN_DIR = "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/Garmin"
 OUTPUT_JSON = "/home/luis/garmin-plus/data.json"
+GPS_FILE = "/home/luis/garmin-plus/activities_gps.json"
 
 def parse_garmin_data():
     files = sorted(glob.glob(os.path.join(GARMIN_DIR, "*-W* - Garmin.md")))
     if not files:
         return {}
+
+    # Cargar rutas GPS enriquecidas si existen
+    gps_data = {}
+    if os.path.exists(GPS_FILE):
+        try:
+            with open(GPS_FILE, "r", encoding="utf-8") as gf:
+                gps_data = json.load(gf)
+        except Exception as e:
+            print("Aviso al cargar GPS file:", e)
 
     history_weeks = []
     weeks_dict = {}
@@ -48,17 +58,29 @@ def parse_garmin_data():
         week_activities = []
         for am in act_matches:
             act_name = am[1].strip()
+            act_date = am[0].strip()
             if act_name.lower() in ["actividad", "---"]:
                 continue
-            week_activities.append({
-                "fecha": am[0].strip(),
+
+            # Buscar match en GPS data por nombre y fecha aproximada
+            gps_match = None
+            for gid, ginfo in gps_data.items():
+                if ginfo.get("fecha") == act_date and (ginfo.get("nombre", "").lower() in act_name.lower() or act_name.lower() in ginfo.get("nombre", "").lower()):
+                    gps_match = ginfo
+                    break
+
+            act_obj = {
+                "fecha": act_date,
                 "nombre": act_name,
                 "duracion": am[2].strip(),
                 "distancia": am[3].strip(),
                 "fc_media_max": am[4].strip(),
                 "hr_recovery": am[5].strip(),
-                "calorias": int(am[6].strip())
-            })
+                "calorias": int(am[6].strip()),
+                "has_gps": bool(gps_match),
+                "gps": gps_match
+            }
+            week_activities.append(act_obj)
 
         steps_val = int(steps_m.group(1).replace(",", "").replace(".", "")) if steps_m else sum(d["pasos"] for d in week_days)
         sleep_val = float(sleep_m.group(1)) if sleep_m else (round(sum(d["sueno"] for d in week_days)/len(week_days), 1) if week_days else 0.0)
@@ -96,7 +118,7 @@ def parse_garmin_data():
         "min_intensidad": 126
     }
 
-    # Curva cardíaca continua 24h (100% Garmin Fénix 7 Solar)
+    # Curva cardíaca continua 24h
     heart_rate_24h = []
     for h in range(24):
         time_str = f"{h:02d}:00"
@@ -193,6 +215,7 @@ def parse_garmin_data():
         "desglose_diario": daily_stats,
         "historico_semanas": history_weeks[-10:],
         "semanas_detalle": weeks_dict,
+        "rutas_gps": gps_data,
         "desafios": [
             {
                 "id": "pasos_50k",
@@ -255,7 +278,7 @@ def parse_garmin_data():
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as out:
         json.dump(data_payload, out, indent=2, ensure_ascii=False)
-    print(f"✅ data.json enriquecido generado con éxito en {OUTPUT_JSON} con {len(weeks_dict)} semanas completas")
+    print(f"✅ data.json enriquecido con GPS y elevación generado en {OUTPUT_JSON}")
 
 if __name__ == "__main__":
     parse_garmin_data()

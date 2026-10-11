@@ -14,6 +14,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Leaflet Maps CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     body {
@@ -621,6 +624,7 @@
     let stepsChartInstance = null;
     let rhrHrvChartInstance = null;
     let detailChartInstance = null;
+    let leafletMapInstance = null;
 
     const tabs = ['home', 'challenges', 'calendar', 'stats', 'more', 'detail'];
 
@@ -915,18 +919,34 @@
             </p>
           </section>
         `;
-      } else if (metricKey === 'activity') {
+      } else if (metricKey === 'activity' || metricKey.startsWith('act_')) {
         title = "Detalle de Actividad";
-        const act = (appData.actividades && appData.actividades.length > 0) ? appData.actividades[appData.actividades.length - 1] : {};
+        
+        let act = null;
+        if (metricKey.startsWith('act_')) {
+          const actIdx = parseInt(metricKey.replace('act_', ''));
+          act = (appData.actividades || [])[actIdx];
+        } else {
+          act = (appData.actividades && appData.actividades.length > 0) ? appData.actividades[appData.actividades.length - 1] : {};
+        }
+
+        if (!act) act = {};
+
         const isHike = act.nombre && (act.nombre.toLowerCase().includes('caminar') || act.nombre.toLowerCase().includes('senderismo'));
+        const gps = act.gps || null;
+        const hasGps = Boolean(gps && gps.polyline && gps.polyline.length > 0);
+
         html = `
+          <!-- TARJETA PRINCIPAL DE LA ACTIVIDAD -->
           <section class="garmin-card p-4 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 · ${isHike ? 'Senderismo' : 'Deporte'}</span>
-              <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">${act.calorias || 577} kcal</span>
+              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 Solar · ${isHike ? 'Senderismo' : 'Deporte'}</span>
+              <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">${act.calorias || 577} kcal</span>
             </div>
-            <h3 class="text-2xl font-black text-white">${act.nombre || 'Ruta'}</h3>
-            <p class="text-xs text-slate-400">Fecha: <b class="text-white">${act.fecha}</b> · Duración: <b class="text-white">${act.duracion}</b> ${act.distancia !== '-' ? '· Distancia: <b class="text-white">' + act.distancia + '</b>' : ''}</p>
+            <div>
+              <h3 class="text-2xl font-black text-white">${act.nombre || 'Ruta'}</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Fecha: <b class="text-white">${act.fecha}</b> · Duración: <b class="text-white">${act.duracion}</b> ${act.distancia !== '-' ? '· Distancia: <b class="text-white">' + act.distancia + '</b>' : ''}</p>
+            </div>
             
             <div class="grid grid-cols-2 gap-2 pt-2 border-t border-[#1E2D3B] text-xs">
               <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
@@ -940,23 +960,165 @@
             </div>
           </section>
 
+          ${hasGps ? `
+            <!-- MAPA GPS REAL DE LA RUTA (LEAFLET OSM) -->
+            <section class="garmin-card p-4 space-y-2 shadow-lg">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-white">Mapa de la Ruta (GPS Fénix 7)</h4>
+                </div>
+                <span class="text-[10px] font-bold text-[#00A3E0] bg-[#00A3E0]/10 px-2 py-0.5 rounded-full border border-[#00A3E0]/20">${gps.distancia_km} km trazados</span>
+              </div>
+              
+              <div id="routeMap" class="w-full h-56 rounded-xl overflow-hidden border border-[#1E2D3B]"></div>
+
+              <div class="flex items-center justify-between text-[10px] text-slate-400 px-1 pt-1">
+                <span>🟢 Salida: <b>${gps.start_coords[0].toFixed(3)}, ${gps.start_coords[1].toFixed(3)}</b></span>
+                <span>🔴 Llegada: <b>${gps.end_coords[0].toFixed(3)}, ${gps.end_coords[1].toFixed(3)}</b></span>
+              </div>
+            </section>
+
+            <!-- PERFIL ALTIMÉTRICO Y DESNIVEL DE MONTAÑA -->
+            <section class="garmin-card p-4 space-y-3 shadow-lg">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="mountain" class="w-4 h-4 text-amber-400"></i>
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-white">Perfil Altimétrico & Desnivel</h4>
+                </div>
+                <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">+${gps.desnivel_positivo}m / -${gps.desnivel_negativo}m</span>
+              </div>
+
+              <!-- Gráfica de elevación -->
+              <div class="h-40 w-full">
+                <canvas id="elevationChart"></canvas>
+              </div>
+
+              <!-- Estadísticas de altitud y ritmo -->
+              <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1">
+                <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+                  <span class="text-slate-400 text-[10px] block">Altitud Máx</span>
+                  <span class="text-white font-bold text-sm">${gps.altitud_max} m</span>
+                </div>
+                <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+                  <span class="text-slate-400 text-[10px] block">Altitud Mín</span>
+                  <span class="text-white font-bold text-sm">${gps.altitud_min} m</span>
+                </div>
+                <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+                  <span class="text-slate-400 text-[10px] block">Desnivel +</span>
+                  <span class="text-emerald-400 font-bold text-sm">+${gps.desnivel_positivo} m</span>
+                </div>
+              </div>
+            </section>
+          ` : `
+            <section class="garmin-card p-4 text-xs text-slate-400 text-center italic">
+              Esta sesión no contiene trazado GPS en exterior (entrenamiento en interior o sin señal satelital activa).
+            </section>
+          `}
+
+          <!-- LISTA DE OTRAS RUTAS DE LA SEMANA (CLICABLES) -->
           <section class="garmin-card p-4 space-y-2">
             <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Rutas de Montaña Registradas Esta Semana</h4>
             <div class="space-y-1.5 text-xs">
-              ${(appData.actividades || []).map(a => `
-                <div class="flex items-center justify-between bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
-                  <span class="font-semibold text-slate-200">${a.nombre} (${a.distancia})</span>
-                  <span class="text-emerald-400 font-bold">${a.calorias} kcal</span>
+              ${(appData.actividades || []).map((a, idx) => `
+                <div onclick="openDetail('act_${idx}')" class="flex items-center justify-between bg-[#111A22] p-2.5 rounded-lg border border-[#1E2D3B] hover:border-[#2D4155] cursor-pointer transition-colors">
+                  <div class="flex items-center space-x-2">
+                    <i data-lucide="${a.has_gps ? 'mountain' : 'dumbbell'}" class="w-3.5 h-3.5 ${a.has_gps ? 'text-emerald-400' : 'text-slate-400'}"></i>
+                    <span class="font-bold text-slate-200">${a.nombre}</span>
+                    <span class="text-[10px] text-slate-400">(${a.distancia !== '-' ? a.distancia : a.duracion})</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="text-emerald-400 font-bold">${a.calorias} kcal</span>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                  </div>
                 </div>
               `).join('')}
             </div>
           </section>
 
-          <section class="garmin-card p-4 text-xs text-slate-300 leading-relaxed border-l-4 border-l-emerald-400">
+          <!-- VALORACIÓN FISIOLÓGICA -->
+          <section class="garmin-card p-4 text-xs text-slate-300 leading-relaxed border-l-4 border-l-emerald-400 shadow-md">
             <h4 class="font-bold text-white mb-1">🫀 Valoración Fisiológica (Recuperación Vagal)</h4>
             Tus recuperaciones cardíacas tras ascensos y desniveles han mantenido caídas de entre <b>-58 y -96 ppm</b> en 60 segundos, lo que evidencia una excelente tolerancia a la fatiga y gran tono parasimpático.
           </section>
         `;
+
+        if (hasGps) {
+          chartCallback = () => {
+            // 1. Inicializar mapa Leaflet
+            const mapContainer = document.getElementById('routeMap');
+            if (mapContainer && window.L) {
+              if (leafletMapInstance) {
+                leafletMapInstance.remove();
+                leafletMapInstance = null;
+              }
+
+              const pts = gps.polyline;
+              const startPt = pts[0] || [42.53, 2.39];
+              const map = L.map('routeMap', { zoomControl: false }).setView(startPt, 13);
+              leafletMapInstance = map;
+
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+              }).addTo(map);
+
+              // Trazar línea de ruta
+              const polyline = L.polyline(pts, {
+                color: '#10B981',
+                weight: 4,
+                opacity: 0.9,
+                smoothFactor: 1
+              }).addTo(map);
+
+              // Marcador Inicio y Fin
+              L.circleMarker(pts[0], { radius: 6, color: '#10B981', fillColor: '#34D399', fillOpacity: 1 }).addTo(map);
+              L.circleMarker(pts[pts.length - 1], { radius: 6, color: '#EF4444', fillColor: '#F87171', fillOpacity: 1 }).addTo(map);
+
+              map.fitBounds(polyline.getBounds(), { padding: [15, 15] });
+            }
+
+            // 2. Gráfica de perfil de elevación Chart.js
+            const elevCanvas = document.getElementById('elevationChart');
+            if (elevCanvas && gps.elevation_profile && gps.elevation_profile.length > 0) {
+              const ctxElev = elevCanvas.getContext('2d');
+              const elevPoints = gps.elevation_profile;
+              const labels = elevPoints.map((_, i) => `${Math.round((i / (elevPoints.length - 1)) * gps.distancia_km * 10) / 10}k`);
+
+              new Chart(ctxElev, {
+                type: 'line',
+                data: {
+                  labels: labels,
+                  datasets: [{
+                    label: 'Altitud (m)',
+                    data: elevPoints,
+                    borderColor: '#F59E0B',
+                    borderWidth: 2,
+                    tension: 0.25,
+                    pointRadius: 0,
+                    fill: {
+                      target: 'origin',
+                      above: 'rgba(245, 158, 11, 0.15)'
+                    }
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: { legend: { display: false } },
+                  scales: {
+                    x: { grid: { color: '#16202A' }, ticks: { color: '#94A3B8', font: { size: 9 }, maxTicksLimit: 6 } },
+                    y: {
+                      grid: { color: '#1E2D3B' },
+                      ticks: { color: '#F59E0B', font: { size: 9 } },
+                      min: Math.floor(gps.altitud_min * 0.95),
+                      max: Math.ceil(gps.altitud_max * 1.05)
+                    }
+                  }
+                }
+              });
+            }
+          };
+        }
       }
 
       document.getElementById('header-title').textContent = title;
@@ -1367,30 +1529,38 @@
         if (activities.length === 0) {
           actContainer.innerHTML = '<p class="text-xs text-slate-400 italic p-3 text-center">No hubo actividades deportivas registradas en esta semana.</p>';
         } else {
-          activities.slice().reverse().forEach(act => {
-          const isHike = act.nombre.toLowerCase().includes('caminar') || act.nombre.toLowerCase().includes('senderismo');
-          const icon = isHike ? 'mountain' : (act.nombre.toLowerCase().includes('ciclismo') ? 'bike' : 'dumbbell');
-          const color = isHike ? '#10B981' : (act.nombre.toLowerCase().includes('ciclismo') ? '#00A3E0' : '#A855F7');
+          activities.slice().reverse().forEach((act, actIdx) => {
+            const isHike = act.nombre.toLowerCase().includes('caminar') || act.nombre.toLowerCase().includes('senderismo');
+            const icon = isHike ? 'mountain' : (act.nombre.toLowerCase().includes('ciclismo') ? 'bike' : 'dumbbell');
+            const color = isHike ? '#10B981' : (act.nombre.toLowerCase().includes('ciclismo') ? '#00A3E0' : '#A855F7');
 
-          const actEl = document.createElement('div');
-          actEl.className = 'flex items-center justify-between bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] text-xs hover:border-[#2D4155] cursor-pointer transition-colors';
-          actEl.innerHTML = `
-            <div class="flex items-center space-x-2.5">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800" style="color: ${color}">
-                <i data-lucide="${icon}" class="w-4 h-4"></i>
+            // Buscar índice global en appData.actividades
+            const globalIdx = (appData.actividades || []).findIndex(a => a.nombre === act.nombre && a.fecha === act.fecha);
+            const clickParam = globalIdx >= 0 ? `act_${globalIdx}` : 'activity';
+
+            const actEl = document.createElement('div');
+            actEl.onclick = () => openDetail(clickParam);
+            actEl.className = 'flex items-center justify-between bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] hover:border-[#2D4155] cursor-pointer transition-colors';
+            actEl.innerHTML = `
+              <div class="flex items-center space-x-2.5">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800" style="color: ${color}">
+                  <i data-lucide="${icon}" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="flex items-center space-x-1.5">
+                    <span class="font-bold text-white block">${act.nombre}</span>
+                    ${act.has_gps ? '<span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.2 rounded border border-emerald-500/20">GPS</span>' : ''}
+                  </div>
+                  <span class="text-[10px] text-slate-400">${act.fecha} · ${act.duracion} ${act.distancia !== '-' ? '· ' + act.distancia : ''}</span>
+                </div>
               </div>
-              <div>
-                <span class="font-bold text-white block">${act.nombre}</span>
-                <span class="text-[10px] text-slate-400">${act.fecha} · ${act.duracion} ${act.distancia !== '-' ? '· ' + act.distancia : ''}</span>
+              <div class="text-right">
+                <span class="font-bold text-emerald-400 block">${act.calorias} kcal</span>
+                <span class="text-[10px] text-slate-400">${act.hr_recovery}</span>
               </div>
-            </div>
-            <div class="text-right">
-              <span class="font-bold text-emerald-400 block">${act.calorias} kcal</span>
-              <span class="text-[10px] text-slate-400">${act.hr_recovery}</span>
-            </div>
-          `;
-          actContainer.appendChild(actEl);
-        });
+            `;
+            actContainer.appendChild(actEl);
+          });
         }
       }
 
