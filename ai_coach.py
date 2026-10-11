@@ -46,8 +46,22 @@ def load_key(var="OPENROUTER_API_KEY"):
     return os.getenv(var)
 
 
+def call_agy(prompt):
+    """Motor 1: CLI agy (Antigravity → Gemini plan Pro de Luis, coste cero)."""
+    import subprocess
+    agy = os.path.expanduser("~/.local/bin/agy")
+    if not os.path.exists(agy):
+        raise RuntimeError("sin CLI agy")
+    r = subprocess.run([agy, "-p", prompt], capture_output=True, text=True,
+                       timeout=420, cwd="/tmp")
+    if r.returncode != 0:
+        raise RuntimeError(f"agy rc={r.returncode}")
+    txt = r.stdout.strip()
+    return txt, "agy → Gemini Pro (plan)"
+
+
 def call_gemini(prompt):
-    """Motor primario: API Gemini (plan Pro de Luis) — coste cero. stdlib puro."""
+    """Motor 2 (opcional): API Gemini directa — solo si GEMINI_API_KEY es válida."""
     key = load_key("GEMINI_API_KEY")
     if not key:
         raise RuntimeError("sin GEMINI_API_KEY")
@@ -136,13 +150,14 @@ def call_llm(ctx):
         "Sé directo, cero relleno, cero advertencias médicas genéricas.\n\n"
         + json.dumps(ctx, ensure_ascii=False)
     )
-    # Motor 1: Gemini con el plan Pro de Luis (coste cero, orden directa).
-    try:
-        txt, model = call_gemini(prompt)
-        if _usable(txt):
-            return txt, model
-    except Exception:
-        pass
+    # Motor 1: agy → Gemini plan Pro de Luis (coste cero, orden directa).
+    for motor in (call_agy, call_gemini):
+        try:
+            txt, model = motor(prompt)
+            if _usable(txt):
+                return txt, model
+        except Exception:
+            continue
     # Motor 2 (red): OpenRouter gratuito/barato — requiere OPENROUTER_API_KEY.
     key = load_key()
     if not key:
