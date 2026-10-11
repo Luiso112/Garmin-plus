@@ -947,9 +947,17 @@
         `;
         chartCallback = () => {
           const ctx = document.getElementById('detailChart').getContext('2d');
-          const hours = ['00h','04h','08h','12h','16h','20h','24h'];
-          const vals = [32, 65, 88, 76, 68, 55, 82];
-          renderDetailLineChart(ctx, hours, vals, '#06B6D4', 'Body Battery');
+          const bbPts = (appData.body_battery && appData.body_battery.curva_puntos) || [];
+          let hours = [];
+          let vals = [];
+          if (bbPts && bbPts.length > 0) {
+            hours = bbPts.map(p => p.hora);
+            vals = bbPts.map(p => p.valor);
+          } else {
+            hours = ['00:00', '07:24', '08:15', '15:00', '22:27'];
+            vals = [33, 90, 94, 57, 41];
+          }
+          renderDetailLineChart(ctx, hours, vals, '#06B6D4', 'Body Battery (Nivel de Energía)');
         };
 
       } else if (metricKey === 'sleep') {

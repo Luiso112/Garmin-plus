@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-11 22:28:36",
+  "ultima_actualizacion": "2026-10-11 22:34:31",
   "semana_actual": "2026-W41",
   "dispositivos": {
     "fenix_7": {
@@ -31,13 +31,39 @@
   },
   "active_intelligence": "Semana extraordinaria de volumen aeróbico con 84.440 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.3h) ha mantenido tu VFC en 50 ms.",
   "body_battery": {
-    "actual": 42,
+    "actual": 41,
     "cargado": 65,
-    "drenado": 56,
+    "drenado": 57,
     "max": 94,
     "min": 33,
     "descanso_nocturno": "Recuperación (+65 pts)",
-    "momento_pico": "Pico del día (94 pts)"
+    "momento_pico": "Pico del día (94 pts)",
+    "curva_puntos": [
+      {
+        "hora": "00:00",
+        "valor": 33
+      },
+      {
+        "hora": "07:24",
+        "valor": 90
+      },
+      {
+        "hora": "08:15",
+        "valor": 94
+      },
+      {
+        "hora": "15:00",
+        "valor": 57
+      },
+      {
+        "hora": "15:06",
+        "valor": 57
+      },
+      {
+        "hora": "22:27",
+        "valor": 41
+      }
+    ]
   },
   "metricas_clave": {
     "rhr": 48,

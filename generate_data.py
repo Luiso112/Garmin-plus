@@ -184,6 +184,10 @@ def parse_garmin_data():
                 pts = item.get("bodyBatteryValuesArray", [])
                 curr = pts[-1][1] if pts else 42
                 vals_only = [p[1] for p in pts] if pts else [42]
+                curva = []
+                for p in pts:
+                    t_str = datetime.datetime.fromtimestamp(p[0]/1000).strftime("%H:%M")
+                    curva.append({"hora": t_str, "valor": p[1]})
                 real_bb = {
                     "actual": curr,
                     "cargado": ch,
@@ -191,7 +195,15 @@ def parse_garmin_data():
                     "max": max(vals_only),
                     "min": min(vals_only),
                     "descanso_nocturno": f"Recuperación (+{ch} pts)",
-                    "momento_pico": f"Pico del día ({max(vals_only)} pts)"
+                    "momento_pico": f"Pico del día ({max(vals_only)} pts)",
+                    "curva_puntos": curva if curva else [
+                        {"hora": "00:00", "valor": 33},
+                        {"hora": "07:24", "valor": 90},
+                        {"hora": "08:15", "valor": 94},
+                        {"hora": "14:36", "valor": 58},
+                        {"hora": "15:00", "valor": 57},
+                        {"hora": "22:03", "valor": 42}
+                    ]
                 }
     except Exception as e:
         print("Aviso al consultar Body Battery en vivo:", e)
