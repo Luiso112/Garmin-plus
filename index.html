@@ -19,11 +19,26 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #0B1118;
       color: #E2E8F0;
       -webkit-tap-highlight-color: transparent;
+      padding-top: var(--sat);
+      padding-left: var(--sal);
+      padding-right: var(--sar);
+    }
+    .safe-top-header {
+      padding-top: max(1rem, var(--sat));
+    }
+    .safe-bottom-nav {
+      padding-bottom: max(0.65rem, var(--sab));
     }
     .garmin-card {
       background: linear-gradient(180deg, #16202A 0%, #121A23 100%);
@@ -40,11 +55,11 @@
     ::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body class="min-h-screen pb-24 select-none">
+<body class="min-h-screen pb-28 select-none">
 
   <!-- CABECERA PRINCIPAL (GARMIN STYLE) -->
-  <header class="sticky top-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-b border-[#1E2D3B] px-4 pt-4 pb-3">
-    <div class="flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-b border-[#1E2D3B] px-4 md:px-8 safe-top-header pb-3 transition-all">
+    <div class="max-w-md md:max-w-5xl mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-2">
         <button id="btn-back" onclick="closeDetail()" class="hidden w-8 h-8 rounded-full bg-[#1E2D3B] flex items-center justify-center text-slate-300 mr-1 active:scale-95 transition-transform">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
@@ -62,7 +77,7 @@
       </div>
       
       <!-- Dispositivo Activo (Garmin Fénix 7 Solar) -->
-      <div onclick="switchTab('more')" class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] hover:border-[#2D4155] px-3 py-1 rounded-full text-xs cursor-pointer active:scale-95 transition-all">
+      <div onclick="switchTab('more')" class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] hover:border-[#2D4155] px-3.5 py-1.5 rounded-full text-xs cursor-pointer active:scale-95 transition-all">
         <div class="flex items-center space-x-1.5" title="Garmin Fénix 7 Solar (Conectado)">
           <i data-lucide="watch" class="w-3.5 h-3.5 text-[#00A3E0]"></i>
           <span class="font-semibold text-slate-200">Fénix 7</span>
@@ -73,132 +88,144 @@
   </header>
 
   <!-- CONTENEDOR PRINCIPAL -->
-  <main class="max-w-md mx-auto px-4 mt-4">
+  <main class="max-w-md md:max-w-5xl mx-auto px-4 md:px-8 mt-4">
 
     <!-- ==================== TAB 1: MI DÍA (HOME) ==================== -->
     <div id="tab-home" class="space-y-4">
       
-      <!-- 1. EN ENFOQUE (IN FOCUS) — DISPOSICIÓN PARA EL RENDIMIENTO -->
-      <section onclick="openDetail('readiness')" class="garmin-card garmin-card-interactive garmin-card-hover p-4 relative overflow-hidden cursor-pointer shadow-lg">
-        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-[#007CC3]/15 rounded-full blur-2xl pointer-events-none"></div>
-        
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center space-x-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-            <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
-            <span>Disposición para el Rendimiento</span>
-          </div>
-          <div class="flex items-center space-x-1">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-              ÓPTIMA
-            </span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
-          </div>
-        </div>
-
-        <div class="flex items-center space-x-4 my-2">
-          <div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
-            <svg class="w-20 h-20 transform -rotate-90">
-              <circle cx="40" cy="40" r="32" stroke="#1E2D3B" stroke-width="6" fill="transparent"/>
-              <circle id="score-circle" cx="40" cy="40" r="32" stroke="#10B981" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="32" stroke-linecap="round" fill="transparent"/>
-            </svg>
-            <div class="absolute flex flex-col items-center justify-center">
-              <span class="text-2xl font-black text-white" id="readiness-score">84</span>
-              <span class="text-[9px] text-slate-400 uppercase -mt-1 font-semibold">/100</span>
+      <!-- HERO / READINESS & MORNING REPORT (2 COLUMNAS EN IPAD) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- 1. EN ENFOQUE (IN FOCUS) — DISPOSICIÓN PARA EL RENDIMIENTO -->
+        <section onclick="openDetail('readiness')" class="garmin-card garmin-card-interactive garmin-card-hover p-4 relative overflow-hidden cursor-pointer shadow-lg flex flex-col justify-between">
+          <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-[#007CC3]/15 rounded-full blur-2xl pointer-events-none"></div>
+          
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+              <span>Disposición para el Rendimiento</span>
+            </div>
+            <div class="flex items-center space-x-1">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                ÓPTIMA
+              </span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
             </div>
           </div>
 
-          <div class="flex-1 text-xs space-y-1.5 text-slate-300">
+          <div class="flex items-center space-x-4 my-2">
+            <div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+              <svg class="w-20 h-20 transform -rotate-90">
+                <circle cx="40" cy="40" r="32" stroke="#1E2D3B" stroke-width="6" fill="transparent"/>
+                <circle id="score-circle" cx="40" cy="40" r="32" stroke="#10B981" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="32" stroke-linecap="round" fill="transparent"/>
+              </svg>
+              <div class="absolute flex flex-col items-center justify-center">
+                <span class="text-2xl font-black text-white" id="readiness-score">84</span>
+                <span class="text-[9px] text-slate-400 uppercase -mt-1 font-semibold">/100</span>
+              </div>
+            </div>
+
+            <div class="flex-1 text-xs space-y-1.5 text-slate-300">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Estado de VFC:</span>
+                <span class="font-semibold text-emerald-400">Equilibrada (54 ms)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Historial de Sueño:</span>
+                <span class="font-semibold text-slate-200">7.4h Reparador</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Tiempo Recuperación:</span>
+                <span class="font-semibold text-emerald-400">0 horas (Listo)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 0. SNAPSHOT MATUTINO / MORNING REPORT (CONNECT+ EXCLUSIVE) -->
+        <section id="morning-report-card" class="garmin-card p-4 border-l-4 border-l-amber-400 relative shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="sunrise" class="w-4 h-4 text-amber-400"></i>
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200" id="mr-title">Snapshot Matutino · Connect+</h2>
+              </div>
+              <span class="text-[9px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">Morning Report</span>
+            </div>
+            <p id="mr-summary" class="text-xs text-slate-300 leading-relaxed mb-2.5">
+              Cargando tu informe matutino...
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-[11px] pt-2 border-t border-[#1E2D3B]">
+            <div class="flex items-center space-x-1.5 text-slate-300">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span id="mr-recov">Recuperación: 0h lista</span>
+            </div>
+            <div class="flex items-center space-x-1.5 text-slate-300">
+              <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span>Óptimo para senderismo</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- INTELIGENCIA ARTIFICIAL & ACWR (2 COLUMNAS EN IPAD) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- 2. ACTIVE INTELLIGENCE & COACH IA (CONNECT+ EXCLUSIVE) -->
+        <section class="garmin-card p-4 border-l-4 border-l-[#00A3E0] relative shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-[#00A3E0]"></i>
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Active Intelligence · Insights</h2>
+              </div>
+              <span class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-2 py-0.5 rounded-full border border-[#00A3E0]/30">Garmin+ AI</span>
+            </div>
+            <p id="active-intel-text" class="text-xs text-slate-300 leading-relaxed">
+              Cargando valoración clínica del día...
+            </p>
+          </div>
+          <div id="ai-coach-box" class="mt-3 pt-2.5 border-t border-[#1E2D3B] text-xs text-slate-300 space-y-1.5 hidden">
             <div class="flex items-center justify-between">
-              <span class="text-slate-400">Estado de VFC:</span>
-              <span class="font-semibold text-emerald-400">Equilibrada (54 ms)</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 flex items-center space-x-1">
+                <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+                <span>Recomendación Semanal del Coach</span>
+              </span>
+              <span id="ai-coach-model" class="text-[9px] text-slate-500 font-mono"></span>
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-400">Historial de Sueño:</span>
-              <span class="font-semibold text-slate-200">7.4h Reparador</span>
+            <p id="ai-coach-text" class="text-xs text-slate-300 leading-relaxed whitespace-pre-line"></p>
+          </div>
+        </section>
+
+        <!-- 2b. CARGA AGUDA/CRÓNICA ACWR & SEMÁFORO ANTI-LESIÓN -->
+        <section id="acwr-card" class="garmin-card p-4 border-l-4 border-l-amber-400 relative shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="shield-alert" class="w-4 h-4 text-amber-400"></i>
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">Ratio Carga Aguda/Crónica · ACWR</h2>
+              </div>
+              <span id="acwr-badge" class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">Ratio 1.33</span>
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-400">Tiempo Recuperación:</span>
-              <span class="font-semibold text-emerald-400">0 horas (Listo)</span>
+            <div class="grid grid-cols-3 gap-2 my-2 text-center">
+              <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
+                <span class="text-[10px] text-slate-400 block">Aguda (7d)</span>
+                <span id="acwr-aguda" class="text-xs font-bold text-white">206 min/d</span>
+              </div>
+              <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
+                <span class="text-[10px] text-slate-400 block">Crónica (28d)</span>
+                <span id="acwr-cronica" class="text-xs font-bold text-white">155 min/d</span>
+              </div>
+              <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
+                <span class="text-[10px] text-slate-400 block">Fatiga</span>
+                <span id="acwr-fatiga" class="text-xs font-bold text-emerald-400">Baja (0 flags)</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- 0. SNAPSHOT MATUTINO / MORNING REPORT (CONNECT+ EXCLUSIVE) -->
-      <section id="morning-report-card" class="garmin-card p-4 border-l-4 border-l-amber-400 relative shadow-md">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center space-x-2">
-            <i data-lucide="sunrise" class="w-4 h-4 text-amber-400"></i>
-            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200" id="mr-title">Snapshot Matutino · Connect+</h2>
-          </div>
-          <span class="text-[9px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">Morning Report</span>
-        </div>
-        <p id="mr-summary" class="text-xs text-slate-300 leading-relaxed mb-2.5">
-          Cargando tu informe matutino...
-        </p>
-        <div class="grid grid-cols-2 gap-2 text-[11px] pt-2 border-t border-[#1E2D3B]">
-          <div class="flex items-center space-x-1.5 text-slate-300">
-            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
-            <span id="mr-recov">Recuperación: 0h lista</span>
-          </div>
-          <div class="flex items-center space-x-1.5 text-slate-300">
-            <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
-            <span>Óptimo para senderismo</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. ACTIVE INTELLIGENCE & COACH IA (CONNECT+ EXCLUSIVE) -->
-      <section class="garmin-card p-4 border-l-4 border-l-[#00A3E0] relative shadow-md">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center space-x-2">
-            <i data-lucide="sparkles" class="w-4 h-4 text-[#00A3E0]"></i>
-            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Active Intelligence · Insights</h2>
-          </div>
-          <span class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-2 py-0.5 rounded-full border border-[#00A3E0]/30">Garmin+ AI</span>
-        </div>
-        <p id="active-intel-text" class="text-xs text-slate-300 leading-relaxed">
-          Cargando valoración clínica del día...
-        </p>
-        <div id="ai-coach-box" class="mt-3 pt-2.5 border-t border-[#1E2D3B] text-xs text-slate-300 space-y-1.5 hidden">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 flex items-center space-x-1">
-              <i data-lucide="bot" class="w-3.5 h-3.5"></i>
-              <span>Recomendación Semanal del Coach</span>
-            </span>
-            <span id="ai-coach-model" class="text-[9px] text-slate-500 font-mono"></span>
-          </div>
-          <p id="ai-coach-text" class="text-xs text-slate-300 leading-relaxed whitespace-pre-line"></p>
-        </div>
-      </section>
-
-      <!-- 2b. CARGA AGUDA/CRÓNICA ACWR & SEMÁFORO ANTI-LESIÓN -->
-      <section id="acwr-card" class="garmin-card p-4 border-l-4 border-l-amber-400 relative shadow-md">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center space-x-2">
-            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-400"></i>
-            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">Ratio Carga Aguda/Crónica · ACWR</h2>
-          </div>
-          <span id="acwr-badge" class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">Ratio 1.33</span>
-        </div>
-        <div class="grid grid-cols-3 gap-2 my-2 text-center">
-          <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
-            <span class="text-[10px] text-slate-400 block">Aguda (7d)</span>
-            <span id="acwr-aguda" class="text-xs font-bold text-white">206 min/d</span>
-          </div>
-          <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
-            <span class="text-[10px] text-slate-400 block">Crónica (28d)</span>
-            <span id="acwr-cronica" class="text-xs font-bold text-white">155 min/d</span>
-          </div>
-          <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
-            <span class="text-[10px] text-slate-400 block">Fatiga</span>
-            <span id="acwr-fatiga" class="text-xs font-bold text-emerald-400">Baja (0 flags)</span>
-          </div>
-        </div>
-        <p id="acwr-desc" class="text-xs text-slate-300 mt-2 leading-relaxed">
-          🟨 Precaución — subir carga despacio. Carga adecuada sin sobreentrenamiento.
-        </p>
-      </section>
+          <p id="acwr-desc" class="text-xs text-slate-300 mt-2 leading-relaxed">
+            🟨 Precaución — subir carga despacio. Carga adecuada sin sobreentrenamiento.
+          </p>
+        </section>
+      </div>
 
       <!-- PUNTUACIONES CONNECT+ (ENDURANCE SCORE & HILL SCORE) -->
       <div class="grid grid-cols-2 gap-3">
@@ -271,8 +298,8 @@
         <span class="text-[10px] text-slate-500 font-medium">Toca para abrir análisis</span>
       </div>
 
-      <!-- GRID DE TARJETAS BIOMÉTRICAS CLICABLES -->
-      <div class="grid grid-cols-2 gap-3">
+      <!-- GRID DE TARJETAS BIOMÉTRICAS CLICABLES (2 COLS EN MOVIL, 3 COLS EN IPAD) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
 
         <!-- BODY BATTERY -->
         <div onclick="openDetail('body_battery')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
@@ -571,33 +598,36 @@
         </div>
       </div>
 
-      <!-- 1. GRÁFICA DE PASOS HISTÓRICOS (SEMANAS) -->
-      <section class="garmin-card p-4 shadow-lg">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center space-x-1.5">
-            <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Evolución de Pasos Semanales</h3>
+      <!-- GRÁFICAS HISTÓRICAS (1 COLUMNA EN MÓVIL, 2 EN IPAD) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- 1. GRÁFICA DE PASOS HISTÓRICOS (SEMANAS) -->
+        <section class="garmin-card p-4 shadow-lg">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Evolución de Pasos Semanales</h3>
+            </div>
+            <span class="text-[10px] text-emerald-400 font-semibold" id="stat-steps-peak">Pico: 84.342 pasos</span>
           </div>
-          <span class="text-[10px] text-emerald-400 font-semibold" id="stat-steps-peak">Pico: 84.342 pasos</span>
-        </div>
-        <div class="h-44 w-full">
-          <canvas id="weeklyStepsChart"></canvas>
-        </div>
-      </section>
+          <div class="h-48 w-full">
+            <canvas id="weeklyStepsChart"></canvas>
+          </div>
+        </section>
 
-      <!-- 2. GRÁFICA DE FC REPOSO Y VFC HISTÓRICA -->
-      <section class="garmin-card p-4 shadow-lg">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center space-x-1.5">
-            <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">FC Reposo vs VFC (HRV) Semanal</h3>
+        <!-- 2. GRÁFICA DE FC REPOSO Y VFC HISTÓRICA -->
+        <section class="garmin-card p-4 shadow-lg">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">FC Reposo vs VFC (HRV) Semanal</h3>
+            </div>
+            <span class="text-[10px] text-slate-400">Correlación Vagal</span>
           </div>
-          <span class="text-[10px] text-slate-400">Correlación Vagal</span>
-        </div>
-        <div class="h-44 w-full">
-          <canvas id="weeklyRhrHrvChart"></canvas>
-        </div>
-      </section>
+          <div class="h-48 w-full">
+            <canvas id="weeklyRhrHrvChart"></canvas>
+          </div>
+        </section>
+      </div>
 
       <!-- 3. DISTRIBUCIÓN DE INTENSIDAD Y ZONAS CARDÍACAS -->
       <section class="garmin-card p-4 shadow-lg space-y-3">
@@ -711,8 +741,8 @@
   </main>
 
   <!-- BARRA DE NAVEGACIÓN INFERIOR (ESTILO GARMIN CONNECT APP) -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-t border-[#1E2D3B] px-6 py-2.5">
-    <div class="max-w-md mx-auto flex items-center justify-between text-[10px] font-semibold text-slate-400">
+  <nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-t border-[#1E2D3B] px-6 py-2.5 safe-bottom-nav">
+    <div class="max-w-md md:max-w-2xl mx-auto flex items-center justify-between text-[10px] md:text-xs font-semibold text-slate-400">
       
       <button onclick="switchTab('home')" id="nav-home" class="flex flex-col items-center space-y-1 text-[#00A3E0] transition-colors">
         <i data-lucide="home" class="w-5 h-5"></i>
@@ -1088,55 +1118,62 @@
           </section>
 
           ${hasGps ? `
-            <!-- MAPA GPS REAL DE LA RUTA (LEAFLET OSM) -->
-            <section class="garmin-card p-4 space-y-2 shadow-lg">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-1.5">
-                  <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
-                  <h4 class="text-xs font-bold uppercase tracking-wider text-white">Mapa de la Ruta (GPS Fénix 7)</h4>
+            <!-- CONTENEDOR GRID MAPA + PERFIL (2 COLUMNAS EN IPAD) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- MAPA GPS REAL DE LA RUTA (LEAFLET OSM) -->
+              <section class="garmin-card p-4 space-y-2 shadow-lg flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center space-x-1.5">
+                      <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+                      <h4 class="text-xs font-bold uppercase tracking-wider text-white">Mapa de la Ruta (GPS Fénix 7)</h4>
+                    </div>
+                    <span class="text-[10px] font-bold text-[#00A3E0] bg-[#00A3E0]/10 px-2 py-0.5 rounded-full border border-[#00A3E0]/20">${gps.distancia_km} km trazados</span>
+                  </div>
+                  
+                  <div id="routeMap" class="w-full h-64 md:h-72 rounded-xl overflow-hidden border border-[#1E2D3B]"></div>
                 </div>
-                <span class="text-[10px] font-bold text-[#00A3E0] bg-[#00A3E0]/10 px-2 py-0.5 rounded-full border border-[#00A3E0]/20">${gps.distancia_km} km trazados</span>
-              </div>
-              
-              <div id="routeMap" class="w-full h-56 rounded-xl overflow-hidden border border-[#1E2D3B]"></div>
 
-              <div class="flex items-center justify-between text-[10px] text-slate-400 px-1 pt-1">
-                <span>🟢 Salida: <b>${gps.start_coords[0].toFixed(3)}, ${gps.start_coords[1].toFixed(3)}</b></span>
-                <span>🔴 Llegada: <b>${gps.end_coords[0].toFixed(3)}, ${gps.end_coords[1].toFixed(3)}</b></span>
-              </div>
-            </section>
+                <div class="flex items-center justify-between text-[10px] text-slate-400 px-1 pt-2">
+                  <span>🟢 Salida: <b>${gps.start_coords[0].toFixed(3)}, ${gps.start_coords[1].toFixed(3)}</b></span>
+                  <span>🔴 Llegada: <b>${gps.end_coords[0].toFixed(3)}, ${gps.end_coords[1].toFixed(3)}</b></span>
+                </div>
+              </section>
 
-            <!-- PERFIL ALTIMÉTRICO Y DESNIVEL DE MONTAÑA -->
-            <section class="garmin-card p-4 space-y-3 shadow-lg">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-1.5">
-                  <i data-lucide="mountain" class="w-4 h-4 text-amber-400"></i>
-                  <h4 class="text-xs font-bold uppercase tracking-wider text-white">Perfil Altimétrico & Desnivel</h4>
-                </div>
-                <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">+${gps.desnivel_positivo}m / -${gps.desnivel_negativo}m</span>
-              </div>
+              <!-- PERFIL ALTIMÉTRICO Y DESNIVEL DE MONTAÑA -->
+              <section class="garmin-card p-4 space-y-3 shadow-lg flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center space-x-1.5">
+                      <i data-lucide="mountain" class="w-4 h-4 text-amber-400"></i>
+                      <h4 class="text-xs font-bold uppercase tracking-wider text-white">Perfil Altimétrico & Desnivel</h4>
+                    </div>
+                    <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">+${gps.desnivel_positivo}m / -${gps.desnivel_negativo}m</span>
+                  </div>
 
-              <!-- Gráfica de elevación -->
-              <div class="h-40 w-full">
-                <canvas id="elevationChart"></canvas>
-              </div>
+                  <!-- Gráfica de elevación -->
+                  <div class="h-44 md:h-52 w-full">
+                    <canvas id="elevationChart"></canvas>
+                  </div>
+                </div>
 
-              <!-- Estadísticas de altitud y ritmo -->
-              <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1">
-                <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
-                  <span class="text-slate-400 text-[10px] block">Altitud Máx</span>
-                  <span class="text-white font-bold text-sm">${gps.altitud_max} m</span>
+                <!-- Estadísticas de altitud y ritmo -->
+                <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1">
+                  <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+                    <span class="text-slate-400 text-[10px] block">Altitud Máx</span>
+                    <span class="text-white font-bold text-sm">${gps.altitud_max} m</span>
+                  </div>
+                  <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+                    <span class="text-slate-400 text-[10px] block">Altitud Mín</span>
+                    <span class="text-white font-bold text-sm">${gps.altitud_min} m</span>
+                  </div>
+                  <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
+                    <span class="text-slate-400 text-[10px] block">Desnivel +</span>
+                    <span class="text-emerald-400 font-bold text-sm">+${gps.desnivel_positivo} m</span>
+                  </div>
                 </div>
-                <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
-                  <span class="text-slate-400 text-[10px] block">Altitud Mín</span>
-                  <span class="text-white font-bold text-sm">${gps.altitud_min} m</span>
-                </div>
-                <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
-                  <span class="text-slate-400 text-[10px] block">Desnivel +</span>
-                  <span class="text-emerald-400 font-bold text-sm">+${gps.desnivel_positivo} m</span>
-                </div>
-              </div>
-            </section>
+              </section>
+            </div>
           ` : `
             <section class="garmin-card p-4 text-xs text-slate-400 text-center italic">
               Esta sesión no contiene trazado GPS en exterior (entrenamiento en interior o sin señal satelital activa).
