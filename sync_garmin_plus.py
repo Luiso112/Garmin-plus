@@ -48,7 +48,7 @@ def run_sync():
 
     # 2. Regenerar data.json en el repositorio garmin-plus
     try:
-        log("2/3 Procesando motor de fusión y generando data.json...")
+        log("2/4 Procesando motor de fusión y generando data.json...")
         res_data = subprocess.run(
             ["/usr/bin/python3", GENERATE_DATA_SCRIPT],
             capture_output=True,
@@ -63,6 +63,24 @@ def run_sync():
     except Exception as e:
         log(f"Error generando data.json: {e}")
         return
+
+    # 2b. Calcular y escribir métricas de carga aguda/crónica (ACWR)
+    try:
+        log("3/4 Calculando ratio ACWR anti-lesión (stamina_ratio)...")
+        stamina_script = os.path.join(GARMIN_PLUS_DIR, "stamina_ratio.py")
+        if os.path.exists(stamina_script):
+            res_acwr = subprocess.run(
+                ["/usr/bin/python3", stamina_script, "--write"],
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+            if res_acwr.returncode == 0:
+                log("✓ Carga aguda/crónica (ACWR) calculada y guardada.")
+            else:
+                log(f"Aviso en stamina_ratio: {res_acwr.stderr.strip()[:200]}")
+    except Exception as e:
+        log(f"Error calculando ACWR: {e}")
 
     # 3. Comprobar si hay cambios y hacer git push a GitHub Pages
     try:

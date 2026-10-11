@@ -148,7 +148,7 @@
         </div>
       </section>
 
-      <!-- 2. ACTIVE INTELLIGENCE (AI CONNECT+ EXCLUSIVE) -->
+      <!-- 2. ACTIVE INTELLIGENCE & COACH IA (CONNECT+ EXCLUSIVE) -->
       <section class="garmin-card p-4 border-l-4 border-l-[#00A3E0] relative shadow-md">
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center space-x-2">
@@ -159,6 +159,44 @@
         </div>
         <p id="active-intel-text" class="text-xs text-slate-300 leading-relaxed">
           Cargando valoración clínica del día...
+        </p>
+        <div id="ai-coach-box" class="mt-3 pt-2.5 border-t border-[#1E2D3B] text-xs text-slate-300 space-y-1.5 hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 flex items-center space-x-1">
+              <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+              <span>Recomendación Semanal del Coach</span>
+            </span>
+            <span id="ai-coach-model" class="text-[9px] text-slate-500 font-mono"></span>
+          </div>
+          <p id="ai-coach-text" class="text-xs text-slate-300 leading-relaxed whitespace-pre-line"></p>
+        </div>
+      </section>
+
+      <!-- 2b. CARGA AGUDA/CRÓNICA ACWR & SEMÁFORO ANTI-LESIÓN -->
+      <section id="acwr-card" class="garmin-card p-4 border-l-4 border-l-amber-400 relative shadow-md">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-400"></i>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">Ratio Carga Aguda/Crónica · ACWR</h2>
+          </div>
+          <span id="acwr-badge" class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">Ratio 1.33</span>
+        </div>
+        <div class="grid grid-cols-3 gap-2 my-2 text-center">
+          <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
+            <span class="text-[10px] text-slate-400 block">Aguda (7d)</span>
+            <span id="acwr-aguda" class="text-xs font-bold text-white">206 min/d</span>
+          </div>
+          <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
+            <span class="text-[10px] text-slate-400 block">Crónica (28d)</span>
+            <span id="acwr-cronica" class="text-xs font-bold text-white">155 min/d</span>
+          </div>
+          <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B]">
+            <span class="text-[10px] text-slate-400 block">Fatiga</span>
+            <span id="acwr-fatiga" class="text-xs font-bold text-emerald-400">Baja (0 flags)</span>
+          </div>
+        </div>
+        <p id="acwr-desc" class="text-xs text-slate-300 mt-2 leading-relaxed">
+          🟨 Precaución — subir carga despacio. Carga adecuada sin sobreentrenamiento.
         </p>
       </section>
 
@@ -1310,10 +1348,39 @@
           if (elMrRecov && mr.tiempo_recuperacion_restante) elMrRecov.textContent = 'Recuperación: ' + mr.tiempo_recuperacion_restante;
         }
 
-        // 3. Active Intelligence
+        // 3. Active Intelligence & AI Coach
         if (appData.active_intelligence) {
           const elIntel = document.getElementById('active-intel-text');
           if (elIntel) elIntel.textContent = appData.active_intelligence;
+        }
+        if (appData.ai_coach_insights) {
+          const coachBox = document.getElementById('ai-coach-box');
+          const coachText = document.getElementById('ai-coach-text');
+          const coachModel = document.getElementById('ai-coach-model');
+          if (coachBox && coachText) {
+            coachText.textContent = appData.ai_coach_insights.texto || '';
+            if (coachModel) coachModel.textContent = appData.ai_coach_insights.modelo || 'AI Coach';
+            coachBox.classList.remove('hidden');
+          }
+        }
+
+        // 3b. Carga Aguda/Crónica (ACWR)
+        if (appData.acwr) {
+          const a = appData.acwr;
+          const elBadge = document.getElementById('acwr-badge');
+          const elAguda = document.getElementById('acwr-aguda');
+          const elCronica = document.getElementById('acwr-cronica');
+          const elFatiga = document.getElementById('acwr-fatiga');
+          const elDesc = document.getElementById('acwr-desc');
+
+          if (elBadge) elBadge.textContent = 'Ratio ' + a.ratio_acwr;
+          if (elAguda) elAguda.textContent = Math.round(a.carga_aguda_min_dia) + ' min/d';
+          if (elCronica) elCronica.textContent = Math.round(a.carga_cronica_min_dia) + ' min/d';
+          if (elFatiga && a.fatiga) {
+            elFatiga.textContent = a.fatiga.nivel + (a.fatiga.motivos ? ' (' + a.fatiga.motivos.length + ' avisos)' : '');
+            elFatiga.className = 'text-xs font-bold ' + (a.fatiga.nivel === 'ALTA' ? 'text-rose-400' : (a.fatiga.nivel === 'MEDIA' ? 'text-amber-400' : 'text-emerald-400'));
+          }
+          if (elDesc) elDesc.textContent = (a.emoji || '🟩') + ' ' + (a.semaforo || '') + '. ' + ((a.fatiga && a.fatiga.mensaje) || '');
         }
 
         // 4. Métricas clave

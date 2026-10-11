@@ -1,0 +1,5 @@
+__pycache__/
+sync.log
+ai_coach.log
+*.tmp
+.DS_Store
