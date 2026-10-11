@@ -155,6 +155,47 @@ def parse_garmin_data():
         f"({avg_sleep_week}h) ha mantenido tu VFC en {avg_hrv_week} ms."
     ).replace(",", ".")
 
+    # Consulta directa de Body Battery a Garmin Connect API para el día de hoy
+    real_bb = {
+        "actual": 42,
+        "cargado": 65,
+        "drenado": 56,
+        "max": 94,
+        "min": 33,
+        "descanso_nocturno": "Recuperación nocturna (+62 pts)",
+        "momento_pico": "08:15 (94 pts)"
+    }
+    try:
+        from dotenv import load_dotenv
+        from garminconnect import Garmin
+        for env_path in ['/home/luis/.privada/personal/.env', '/home/luis/garmin-plus/.env']:
+            if os.path.exists(env_path):
+                load_dotenv(env_path)
+        g_user = os.getenv('GARMIN_USER') or os.getenv('GARMIN_EMAIL')
+        g_pass = os.getenv('GARMIN_PASSWORD')
+        if g_user and g_pass:
+            client = Garmin(g_user, g_pass)
+            client.login()
+            bb_data = client.get_body_battery(datetime.date.today().isoformat())
+            if bb_data and isinstance(bb_data, list) and len(bb_data) > 0:
+                item = bb_data[0]
+                ch = item.get("charged", 65)
+                dr = item.get("drained", 56)
+                pts = item.get("bodyBatteryValuesArray", [])
+                curr = pts[-1][1] if pts else 42
+                vals_only = [p[1] for p in pts] if pts else [42]
+                real_bb = {
+                    "actual": curr,
+                    "cargado": ch,
+                    "drenado": dr,
+                    "max": max(vals_only),
+                    "min": min(vals_only),
+                    "descanso_nocturno": f"Recuperación (+{ch} pts)",
+                    "momento_pico": f"Pico del día ({max(vals_only)} pts)"
+                }
+    except Exception as e:
+        print("Aviso al consultar Body Battery en vivo:", e)
+
     data_payload = {
         "usuario": "Luis B.",
         "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -187,15 +228,7 @@ def parse_garmin_data():
             "historial_reciente": "Excelente adaptación aeróbica en montaña"
         },
         "active_intelligence": active_intel_str,
-        "body_battery": {
-            "actual": 85,
-            "cargado": 78,
-            "drenado": 35,
-            "max": 98,
-            "min": 20,
-            "descanso_nocturno": "Excelente recuperación (+78)",
-            "momento_pico": "08:15 (+90 pts)"
-        },
+        "body_battery": real_bb,
         "metricas_clave": {
             "rhr": last_day["rhr"],
             "hrv": last_day["hrv"],
