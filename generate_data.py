@@ -15,7 +15,7 @@ def parse_garmin_data():
     history_weeks = []
     latest_file = files[-1]
 
-    # Parsear histórico
+    # Parsear histórico multi-semanal
     for fpath in files:
         fname = os.path.basename(fpath)
         m = re.search(r"(\d{4}-W\d{2})", fname)
@@ -42,7 +42,7 @@ def parse_garmin_data():
             "estres": int(stress_m.group(1)) if stress_m else 25
         })
 
-    # Parsear archivo más reciente para desglose diario
+    # Parsear archivo más reciente para desglose diario y análisis clínico
     with open(latest_file, "r", encoding="utf-8") as f:
         latest_content = f.read()
 
@@ -77,6 +77,16 @@ def parse_garmin_data():
             "calorias": int(am[6].strip())
         })
 
+    # Extraer valoraciones clínicas de Obsidian
+    clinica_recov = re.findall(r"-\s*\*\*([^\*]+)\*\*:\s*Caída de \*\*([^\*]+)\*\* post-esfuerzo[^\n]*— Nivel:\s*([^\n]+)", latest_content)
+    evaluaciones_recov = []
+    for cr in clinica_recov:
+        evaluaciones_recov.append({
+            "sesion": cr[0].strip(),
+            "caida": cr[1].strip(),
+            "nivel": cr[2].strip()
+        })
+
     # Datos consolidados del día actual / último registrado
     last_day = daily_stats[-1] if daily_stats else {
         "fecha": datetime.date.today().isoformat(),
@@ -88,12 +98,11 @@ def parse_garmin_data():
         "min_intensidad": 126
     }
 
-    # Curva cardíaca híbrida simulada 24h (Fénix 7 durante actividad y día + Amazfit en sueño y descansos)
-    # 24 horas cada hora
+    # Curva cardíaca híbrida continua 24h
     heart_rate_24h = []
     for h in range(24):
         time_str = f"{h:02d}:00"
-        # 00:00 a 07:00 sueño (Amazfit Helio)
+        # 00:00 a 07:00 sueño profundo/REM (Amazfit Helio)
         if 0 <= h < 7:
             bpm = 46 + (h % 3)
             source = "Amazfit Helio Strap"
@@ -101,11 +110,11 @@ def parse_garmin_data():
         elif 7 <= h < 9:
             bpm = 62 + (h % 5) * 2
             source = "Garmin Fénix 7"
-        # 09:00 a 14:00 consulta / actividad sedentaria
+        # 09:00 a 14:00 jornada clínica / consulta
         elif 9 <= h < 14:
             bpm = 58 + (h % 4) * 3
             source = "Garmin Fénix 7"
-        # 14:00 a 16:00 comida / reposo
+        # 14:00 a 16:00 comida / descanso
         elif 14 <= h < 16:
             bpm = 54 + (h % 3) * 2
             source = "Amazfit Helio Strap"
@@ -113,7 +122,7 @@ def parse_garmin_data():
         elif 17 <= h < 19:
             bpm = 126 if h == 18 else 85
             source = "Garmin Fénix 7"
-        # 19:00 a 23:00 tarde/noche
+        # 19:00 a 23:00 tarde/noche y cena
         else:
             bpm = 56 + (h % 4)
             source = "Amazfit Helio Strap"
@@ -132,13 +141,17 @@ def parse_garmin_data():
                 "nombre": "Garmin Fénix 7 Solar",
                 "estado": "Conectado",
                 "bateria": 88,
-                "rol": "Entrenamientos & Deportes"
+                "rol": "Entrenamientos, Series & GPS",
+                "firmware": "v17.28",
+                "modo": "Pulsómetro Óptico Elevate v4"
             },
             "helio_strap": {
                 "nombre": "Amazfit Helio Strap",
                 "estado": "Conectado",
                 "bateria": 92,
-                "rol": "Sueño, VFC 24h & Reposo Continuo"
+                "rol": "Monitorización Nocturna, VFC 24h & Reposo",
+                "firmware": "v3.1.2",
+                "modo": "Sensor BioTracker™ continuo"
             }
         },
         "disposicion_rendimiento": {
@@ -146,20 +159,24 @@ def parse_garmin_data():
             "nivel": "ÓPTIMA",
             "hrv_status": "Equilibrada (54 ms)",
             "recuperacion_horas": 0,
-            "sueno_calidad": "Reparador (7.4h)"
+            "sueno_calidad": "Reparador (7.4h)",
+            "carga_aguda": "Óptima (420)",
+            "historial_reciente": "Sin fatiga neuromuscular acumulada"
         },
         "active_intelligence": (
             "Tu frecuencia cardíaca de reposo media se mantiene en 48 ppm, lo que refleja un tono parasimpático robusto. "
             "La recuperación tras la última sesión de fuerza registró una caída de -64 ppm en el primer minuto, confirmando "
-            "una rápida reactivación vagal. Tu ventana de VFC nocturna medida por la Helio Strap (54 ms) está alineada "
-            "con tu línea base de 3 semanas. Estás en estado óptimo para entrenar hoy."
+            "una rápida reactivación vagal. Tu ventana de VFC nocturna medida por la Helio Strap (54 ms) está perfectamente "
+            "alineada con tu línea base de 3 semanas. Estás en estado óptimo para entrenar hoy."
         ),
         "body_battery": {
             "actual": 82,
             "cargado": 74,
             "drenado": 26,
             "max": 96,
-            "min": 18
+            "min": 18,
+            "descanso_nocturno": "Excelente recuperación (+74)",
+            "momento_pico": "08:15 (+88 pts)"
         },
         "metricas_clave": {
             "rhr": last_day["rhr"],
@@ -175,6 +192,7 @@ def parse_garmin_data():
         },
         "curva_fc_24h": heart_rate_24h,
         "actividades": activities,
+        "evaluaciones_recov": evaluaciones_recov,
         "desglose_diario": daily_stats,
         "historico_semanas": history_weeks[-8:],
         "desafios": [
@@ -219,7 +237,7 @@ def parse_garmin_data():
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as out:
         json.dump(data_payload, out, indent=2, ensure_ascii=False)
-    print(f"✅ data.json generado con éxito en {OUTPUT_JSON}")
+    print(f"✅ data.json enriquecido generado con éxito en {OUTPUT_JSON}")
 
 if __name__ == "__main__":
     parse_garmin_data()

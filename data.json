@@ -1,18 +1,22 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-11 19:08:46",
+  "ultima_actualizacion": "2026-10-11 19:14:22",
   "dispositivos": {
     "fenix_7": {
       "nombre": "Garmin Fénix 7 Solar",
       "estado": "Conectado",
       "bateria": 88,
-      "rol": "Entrenamientos & Deportes"
+      "rol": "Entrenamientos, Series & GPS",
+      "firmware": "v17.28",
+      "modo": "Pulsómetro Óptico Elevate v4"
     },
     "helio_strap": {
       "nombre": "Amazfit Helio Strap",
       "estado": "Conectado",
       "bateria": 92,
-      "rol": "Sueño, VFC 24h & Reposo Continuo"
+      "rol": "Monitorización Nocturna, VFC 24h & Reposo",
+      "firmware": "v3.1.2",
+      "modo": "Sensor BioTracker™ continuo"
     }
   },
   "disposicion_rendimiento": {
@@ -20,15 +24,19 @@
     "nivel": "ÓPTIMA",
     "hrv_status": "Equilibrada (54 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (7.4h)"
+    "sueno_calidad": "Reparador (7.4h)",
+    "carga_aguda": "Óptima (420)",
+    "historial_reciente": "Sin fatiga neuromuscular acumulada"
   },
-  "active_intelligence": "Tu frecuencia cardíaca de reposo media se mantiene en 48 ppm, lo que refleja un tono parasimpático robusto. La recuperación tras la última sesión de fuerza registró una caída de -64 ppm en el primer minuto, confirmando una rápida reactivación vagal. Tu ventana de VFC nocturna medida por la Helio Strap (54 ms) está alineada con tu línea base de 3 semanas. Estás en estado óptimo para entrenar hoy.",
+  "active_intelligence": "Tu frecuencia cardíaca de reposo media se mantiene en 48 ppm, lo que refleja un tono parasimpático robusto. La recuperación tras la última sesión de fuerza registró una caída de -64 ppm en el primer minuto, confirmando una rápida reactivación vagal. Tu ventana de VFC nocturna medida por la Helio Strap (54 ms) está perfectamente alineada con tu línea base de 3 semanas. Estás en estado óptimo para entrenar hoy.",
   "body_battery": {
     "actual": 82,
     "cargado": 74,
     "drenado": 26,
     "max": 96,
-    "min": 18
+    "min": 18,
+    "descanso_nocturno": "Excelente recuperación (+74)",
+    "momento_pico": "08:15 (+88 pts)"
   },
   "metricas_clave": {
     "rhr": 51,
@@ -184,6 +192,7 @@
       "calorias": 337
     }
   ],
+  "evaluaciones_recov": [],
   "desglose_diario": [
     {
       "fecha": "2026-09-28",

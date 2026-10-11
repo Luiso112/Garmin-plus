@@ -31,6 +31,9 @@
       transform: scale(0.975);
       transition: transform 0.1s ease;
     }
+    .garmin-card-hover:hover {
+      border-color: #2D4155;
+    }
     ::-webkit-scrollbar { display: none; }
   </style>
 </head>
@@ -40,23 +43,23 @@
   <header class="sticky top-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-b border-[#1E2D3B] px-4 pt-4 pb-3">
     <div class="flex items-center justify-between">
       <div class="flex items-center space-x-2">
-        <button id="btn-back" onclick="closeDetail()" class="hidden w-8 h-8 rounded-full bg-[#1E2D3B] flex items-center justify-center text-slate-300 mr-1">
+        <button id="btn-back" onclick="closeDetail()" class="hidden w-8 h-8 rounded-full bg-[#1E2D3B] flex items-center justify-center text-slate-300 mr-1 active:scale-95 transition-transform">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </button>
-        <div id="header-logo" class="w-8 h-8 rounded-full bg-[#007CC3] flex items-center justify-center font-bold text-white text-xs tracking-wider shadow-lg shadow-[#007CC3]/20">
+        <div id="header-logo" class="w-8 h-8 rounded-full bg-[#007CC3] flex items-center justify-center font-bold text-white text-xs tracking-wider shadow-lg shadow-[#007CC3]/25">
           G+
         </div>
         <div>
           <h1 id="header-title" class="text-xs font-bold tracking-wider text-slate-400 uppercase">Connect+ Híbrido</h1>
-          <div class="flex items-center space-x-1">
+          <div class="flex items-center space-x-1.5">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span class="text-sm font-semibold text-white">Luis B.</span>
           </div>
         </div>
       </div>
       
-      <!-- Batería y Estado de Dispositivos -->
-      <div class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] px-2.5 py-1 rounded-full text-xs">
+      <!-- Batería y Estado de Dispositivos (Clicables para ver hardware) -->
+      <div onclick="switchTab('more')" class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] hover:border-[#2D4155] px-2.5 py-1 rounded-full text-xs cursor-pointer active:scale-95 transition-all">
         <div class="flex items-center space-x-1" title="Garmin Fénix 7 Solar">
           <i data-lucide="watch" class="w-3.5 h-3.5 text-[#00A3E0]"></i>
           <span class="font-medium text-slate-300" id="bat-f7">88%</span>
@@ -70,15 +73,15 @@
     </div>
   </header>
 
-  <!-- CONTENEDOR DE PESTAÑAS (SPA) -->
+  <!-- CONTENEDOR PRINCIPAL -->
   <main class="max-w-md mx-auto px-4 mt-4">
 
     <!-- ==================== TAB 1: MI DÍA (HOME) ==================== -->
     <div id="tab-home" class="space-y-4">
       
-      <!-- 1. SECCIÓN: EN ENFOQUE (IN FOCUS) — DISPOSICIÓN PARA EL RENDIMIENTO -->
-      <section onclick="openDetail('readiness')" class="garmin-card garmin-card-interactive p-4 relative overflow-hidden cursor-pointer">
-        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-[#007CC3]/10 rounded-full blur-2xl pointer-events-none"></div>
+      <!-- 1. EN ENFOQUE (IN FOCUS) — DISPOSICIÓN PARA EL RENDIMIENTO -->
+      <section onclick="openDetail('readiness')" class="garmin-card garmin-card-interactive garmin-card-hover p-4 relative overflow-hidden cursor-pointer shadow-lg">
+        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-[#007CC3]/15 rounded-full blur-2xl pointer-events-none"></div>
         
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center space-x-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
@@ -115,18 +118,21 @@
               <span class="font-semibold text-slate-200">7.4h Reparador</span>
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-slate-400">Tiempo de Recuperación:</span>
+              <span class="text-slate-400">Tiempo Recuperación:</span>
               <span class="font-semibold text-emerald-400">0 horas (Listo)</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 2. ACTIVE INTELLIGENCE -->
-      <section class="garmin-card p-4 border-l-4 border-l-[#00A3E0] relative">
-        <div class="flex items-center space-x-2 mb-2">
-          <i data-lucide="sparkles" class="w-4 h-4 text-[#00A3E0]"></i>
-          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Active Intelligence · Insights</h2>
+      <!-- 2. ACTIVE INTELLIGENCE (AI CONNECT+ EXCLUSIVE) -->
+      <section class="garmin-card p-4 border-l-4 border-l-[#00A3E0] relative shadow-md">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-[#00A3E0]"></i>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Active Intelligence · Insights</h2>
+          </div>
+          <span class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-2 py-0.5 rounded-full border border-[#00A3E0]/30">Garmin+ AI</span>
         </div>
         <p id="active-intel-text" class="text-xs text-slate-300 leading-relaxed">
           Cargando valoración clínica del día...
@@ -136,14 +142,14 @@
       <!-- 3. DE UN VISTAZO (AT A GLANCE) -->
       <div class="flex items-center justify-between pt-1">
         <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">De un Vistazo (At a Glance)</h2>
-        <span class="text-[10px] text-slate-500 font-medium">Toca para ver detalle</span>
+        <span class="text-[10px] text-slate-500 font-medium">Toca para abrir análisis</span>
       </div>
 
       <!-- GRID DE TARJETAS BIOMÉTRICAS CLICABLES -->
       <div class="grid grid-cols-2 gap-3">
 
         <!-- BODY BATTERY -->
-        <div onclick="openDetail('body_battery')" class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between cursor-pointer">
+        <div onclick="openDetail('body_battery')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center space-x-1.5">
               <i data-lucide="battery-charging" class="w-4 h-4 text-cyan-400"></i>
@@ -162,7 +168,7 @@
         </div>
 
         <!-- SUEÑO -->
-        <div onclick="openDetail('sleep')" class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between cursor-pointer">
+        <div onclick="openDetail('sleep')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center space-x-1.5">
               <i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
@@ -179,12 +185,12 @@
           </div>
           <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
             <span>Helio Strap</span>
-            <span class="text-emerald-400 font-medium">Fases REM/Prof.</span>
+            <span class="text-emerald-400 font-medium">REM + Prof.</span>
           </div>
         </div>
 
         <!-- FC REPOSO -->
-        <div onclick="openDetail('rhr')" class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between cursor-pointer">
+        <div onclick="openDetail('rhr')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center space-x-1.5">
               <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
@@ -203,7 +209,7 @@
         </div>
 
         <!-- VFC (HRV) -->
-        <div onclick="openDetail('hrv')" class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between cursor-pointer">
+        <div onclick="openDetail('hrv')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center space-x-1.5">
               <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
@@ -222,7 +228,7 @@
         </div>
 
         <!-- PASOS -->
-        <div onclick="openDetail('steps')" class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between cursor-pointer">
+        <div onclick="openDetail('steps')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center space-x-1.5">
               <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
@@ -240,7 +246,7 @@
         </div>
 
         <!-- MINUTOS DE INTENSIDAD -->
-        <div onclick="openDetail('intensity')" class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between cursor-pointer">
+        <div onclick="openDetail('intensity')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center space-x-1.5">
               <i data-lucide="flame" class="w-4 h-4 text-amber-500"></i>
@@ -259,7 +265,7 @@
       </div>
 
       <!-- 4. GRÁFICA CONTINUA HÍBRIDA (24H) -->
-      <section class="garmin-card p-4">
+      <section class="garmin-card p-4 shadow-lg">
         <div class="flex items-center justify-between mb-3">
           <div>
             <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Frecuencia Cardíaca Continua (24h)</h2>
@@ -283,11 +289,14 @@
         </div>
       </section>
 
-      <!-- 5. ÚLTIMA ACTIVIDAD -->
-      <section class="garmin-card p-4">
+      <!-- 5. ÚLTIMA ACTIVIDAD DEPORTIVA (CLICABLE) -->
+      <section onclick="openDetail('activity')" class="garmin-card garmin-card-interactive garmin-card-hover p-4 cursor-pointer shadow-lg">
         <div class="flex items-center justify-between mb-2">
           <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Actividad Reciente</h2>
-          <span class="text-[10px] text-slate-400" id="act-date">Última sesión</span>
+          <div class="flex items-center space-x-1 text-[10px] text-slate-400">
+            <span id="act-date">Última sesión</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+          </div>
         </div>
         <div class="flex items-center space-x-3 bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B]">
           <div class="w-10 h-10 rounded-full bg-[#007CC3]/20 border border-[#007CC3]/40 flex items-center justify-center text-[#00A3E0]">
@@ -316,7 +325,7 @@
     <!-- ==================== TAB: VISTA DE DETALLE DEDICADA (DRILL-DOWN) ==================== -->
     <div id="tab-detail" class="hidden space-y-4">
       <div id="detail-content">
-        <!-- Generado dinámicamente según la métrica pulsada -->
+        <!-- Renderizado dinámico -->
       </div>
     </div>
 
@@ -372,7 +381,7 @@
         <!-- Generado dinámicamente -->
       </section>
 
-      <!-- Resumen de Entrenamientos Registrados en el Calendario -->
+      <!-- Resumen de Entrenamientos en Calendario -->
       <section class="garmin-card p-4">
         <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Entrenamientos en Calendario</h3>
         <div class="space-y-2">
@@ -409,7 +418,7 @@
       </div>
 
       <!-- GRÁFICA DE PASOS HISTÓRICOS -->
-      <section class="garmin-card p-4">
+      <section class="garmin-card p-4 shadow-lg">
         <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Evolución de Pasos Semanales</h3>
         <div class="h-44 w-full">
           <canvas id="weeklyStepsChart"></canvas>
@@ -417,7 +426,7 @@
       </section>
 
       <!-- GRÁFICA DE FC REPOSO Y VFC HISTÓRICA -->
-      <section class="garmin-card p-4">
+      <section class="garmin-card p-4 shadow-lg">
         <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">FC Reposo vs VFC (HRV) Semanal</h3>
         <div class="h-44 w-full">
           <canvas id="weeklyRhrHrvChart"></canvas>
@@ -465,8 +474,8 @@
       </section>
 
       <section class="garmin-card p-4 text-xs text-slate-400 space-y-2">
-        <h3 class="font-bold text-white uppercase text-[11px]">Información de la App</h3>
-        <p>Versión: <b>Connect+ 2026.1 (Hybrid Engine)</b></p>
+        <h3 class="font-bold text-white uppercase text-[11px]">Información de la Plataforma</h3>
+        <p>Versión: <b>Connect+ 2026.1 (Hybrid Precision Engine)</b></p>
         <p>Usuario: <b>Luis B. (@Luiso112)</b></p>
         <p>Despliegue: <b>GitHub Pages + Antigravity</b></p>
       </section>
@@ -645,12 +654,12 @@
                 <span class="text-indigo-400 font-bold text-sm">1h 25m</span>
               </div>
               <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
-                <span class="text-slate-400 text-[10px] block">REM</span>
                 <span class="text-purple-400 font-bold text-sm">2h 05m</span>
+                <span class="text-slate-400 text-[10px] block">REM</span>
               </div>
               <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
-                <span class="text-slate-400 text-[10px] block">Ligero</span>
                 <span class="text-cyan-400 font-bold text-sm">4h 10m</span>
+                <span class="text-slate-400 text-[10px] block">Ligero</span>
               </div>
             </div>
           </section>
@@ -807,6 +816,35 @@
             <p class="text-xs text-slate-300 leading-relaxed">
               Tu sistema neuromuscular y autonómico están totalmente recuperados. La VFC nocturna (54 ms) y tu rápida desaceleración cardíaca en el último entreno (-82 ppm) indican que puedes tolerar hoy una sesión exigente sin riesgo de sobrecarga.
             </p>
+          </section>
+        `;
+      } else if (metricKey === 'activity') {
+        title = "Detalle de Actividad";
+        const act = (appData.actividades && appData.actividades[0]) ? appData.actividades[0] : {};
+        html = `
+          <section class="garmin-card p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase font-bold text-slate-400">Dispositivo: Garmin Fénix 7 Solar</span>
+              <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">${act.calorias || 394} kcal</span>
+            </div>
+            <h3 class="text-2xl font-black text-white">${act.nombre || 'Ciclismo en sala'}</h3>
+            <p class="text-xs text-slate-400">Fecha: <b class="text-white">${act.fecha || '2026-09-29'}</b> · Duración: <b class="text-white">${act.duracion || '50m 46s'}</b></p>
+            
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-[#1E2D3B] text-xs">
+              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
+                <span class="text-slate-400 text-[10px] block">FC Media / Máxima</span>
+                <span class="text-rose-400 font-bold text-sm">${act.fc_media_max || '126 (Máx 198)'} ppm</span>
+              </div>
+              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
+                <span class="text-slate-400 text-[10px] block">Caída 1 min (HR Recovery)</span>
+                <span class="text-emerald-400 font-bold text-sm">${act.hr_recovery || '-82 ppm (Top)'}</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="garmin-card p-4 text-xs text-slate-300 leading-relaxed border-l-4 border-l-emerald-400">
+            <h4 class="font-bold text-white mb-1">🫀 Valoración Fisiológica ([[Frecuencia Cardíaca de Recuperación (HR Recovery)]])</h4>
+            Una caída de más de 45 ppm en el primer minuto tras cesar el ejercicio es criterio clínico de excelente reserva autonómica y fuerte reactivación parasimpática.
           </section>
         `;
       }
