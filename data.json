@@ -1,22 +1,22 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-11 19:23:53",
+  "ultima_actualizacion": "2026-10-11 19:37:20",
   "dispositivos": {
     "fenix_7": {
       "nombre": "Garmin Fénix 7 Solar",
-      "estado": "Conectado",
+      "estado": "Conectado · Activo Principal",
       "bateria": 88,
-      "rol": "Senderismo, GPS & Pulsómetro",
+      "rol": "Monitorización 24h, Sueño, VFC, GPS & Pulsómetro",
       "firmware": "v17.28",
-      "modo": "Pulsómetro Óptico Elevate v4"
+      "modo": "Pulsómetro Óptico Elevate™ v4 Continuo"
     },
     "helio_strap": {
       "nombre": "Amazfit Helio Strap",
-      "estado": "Conectado",
-      "bateria": 92,
-      "rol": "Monitorización Nocturna, VFC 24h & Reposo",
-      "firmware": "v3.1.2",
-      "modo": "Sensor BioTracker™ continuo"
+      "estado": "No vinculada (Opcional futuro)",
+      "bateria": null,
+      "rol": "Sin emparejar (Modo 100% Garmin Fénix 7)",
+      "firmware": "-",
+      "modo": "Desactivada"
     }
   },
   "disposicion_rendimiento": {
@@ -56,122 +56,122 @@
     {
       "hora": "00:00",
       "bpm": 46,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "01:00",
       "bpm": 47,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "02:00",
       "bpm": 48,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "03:00",
       "bpm": 46,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "04:00",
       "bpm": 47,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "05:00",
       "bpm": 48,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "06:00",
       "bpm": 46,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "07:00",
       "bpm": 66,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "08:00",
       "bpm": 68,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "09:00",
       "bpm": 61,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "10:00",
       "bpm": 64,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "11:00",
       "bpm": 67,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "12:00",
       "bpm": 58,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "13:00",
       "bpm": 61,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "14:00",
       "bpm": 58,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "15:00",
       "bpm": 54,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "16:00",
       "bpm": 56,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "17:00",
       "bpm": 85,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "18:00",
       "bpm": 126,
-      "source": "Garmin Fénix 7"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "19:00",
       "bpm": 59,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "20:00",
       "bpm": 56,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "21:00",
       "bpm": 57,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "22:00",
       "bpm": 58,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     },
     {
       "hora": "23:00",
       "bpm": 59,
-      "source": "Amazfit Helio Strap"
+      "source": "Garmin Fénix 7 Solar"
     }
   ],
   "actividades": [

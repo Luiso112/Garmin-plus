@@ -98,39 +98,33 @@ def parse_garmin_data():
         "min_intensidad": 126
     }
 
-    # Curva cardíaca híbrida continua 24h
+    # Curva cardíaca continua 24h (100% Garmin Fénix 7 Solar - Sensor Elevate v4)
     heart_rate_24h = []
     for h in range(24):
         time_str = f"{h:02d}:00"
-        # 00:00 a 07:00 sueño profundo/REM (Amazfit Helio)
+        # 00:00 a 07:00 sueño profundo/REM (Garmin Fénix 7)
         if 0 <= h < 7:
             bpm = 46 + (h % 3)
-            source = "Amazfit Helio Strap"
         # 07:00 a 08:30 despertar y desayuno
         elif 7 <= h < 9:
             bpm = 62 + (h % 5) * 2
-            source = "Garmin Fénix 7"
         # 09:00 a 14:00 jornada clínica / consulta
         elif 9 <= h < 14:
             bpm = 58 + (h % 4) * 3
-            source = "Garmin Fénix 7"
         # 14:00 a 16:00 comida / descanso
         elif 14 <= h < 16:
             bpm = 54 + (h % 3) * 2
-            source = "Amazfit Helio Strap"
-        # 17:00 a 19:00 entrenamiento (Fénix 7)
+        # 17:00 a 19:00 entrenamiento / caminata
         elif 17 <= h < 19:
             bpm = 126 if h == 18 else 85
-            source = "Garmin Fénix 7"
         # 19:00 a 23:00 tarde/noche y cena
         else:
             bpm = 56 + (h % 4)
-            source = "Amazfit Helio Strap"
 
         heart_rate_24h.append({
             "hora": time_str,
             "bpm": bpm,
-            "source": source
+            "source": "Garmin Fénix 7 Solar"
         })
 
     # Calcular métricas dinámicas
@@ -166,19 +160,19 @@ def parse_garmin_data():
         "dispositivos": {
             "fenix_7": {
                 "nombre": "Garmin Fénix 7 Solar",
-                "estado": "Conectado",
+                "estado": "Conectado · Activo Principal",
                 "bateria": 88,
-                "rol": "Senderismo, GPS & Pulsómetro",
+                "rol": "Monitorización 24h, Sueño, VFC, GPS & Pulsómetro",
                 "firmware": "v17.28",
-                "modo": "Pulsómetro Óptico Elevate v4"
+                "modo": "Pulsómetro Óptico Elevate™ v4 Continuo"
             },
             "helio_strap": {
                 "nombre": "Amazfit Helio Strap",
-                "estado": "Conectado",
-                "bateria": 92,
-                "rol": "Monitorización Nocturna, VFC 24h & Reposo",
-                "firmware": "v3.1.2",
-                "modo": "Sensor BioTracker™ continuo"
+                "estado": "No vinculada (Opcional futuro)",
+                "bateria": None,
+                "rol": "Sin emparejar (Modo 100% Garmin Fénix 7)",
+                "firmware": "-",
+                "modo": "Desactivada"
             }
         },
         "disposicion_rendimiento": {

@@ -58,16 +58,12 @@
         </div>
       </div>
       
-      <!-- Batería y Estado de Dispositivos (Clicables para ver hardware) -->
-      <div onclick="switchTab('more')" class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] hover:border-[#2D4155] px-2.5 py-1 rounded-full text-xs cursor-pointer active:scale-95 transition-all">
-        <div class="flex items-center space-x-1" title="Garmin Fénix 7 Solar">
+      <!-- Dispositivo Activo (Garmin Fénix 7 Solar) -->
+      <div onclick="switchTab('more')" class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] hover:border-[#2D4155] px-3 py-1 rounded-full text-xs cursor-pointer active:scale-95 transition-all">
+        <div class="flex items-center space-x-1.5" title="Garmin Fénix 7 Solar (Conectado)">
           <i data-lucide="watch" class="w-3.5 h-3.5 text-[#00A3E0]"></i>
-          <span class="font-medium text-slate-300" id="bat-f7">88%</span>
-        </div>
-        <span class="text-slate-600">|</span>
-        <div class="flex items-center space-x-1" title="Amazfit Helio Strap">
-          <i data-lucide="activity" class="w-3.5 h-3.5 text-purple-400"></i>
-          <span class="font-medium text-slate-300" id="bat-helio">92%</span>
+          <span class="font-semibold text-slate-200">Fénix 7</span>
+          <span class="font-medium text-emerald-400" id="bat-f7">88%</span>
         </div>
       </div>
     </div>
@@ -272,11 +268,7 @@
             <div class="flex items-center space-x-3 text-[10px] text-slate-400 mt-1">
               <span class="flex items-center space-x-1">
                 <span class="w-2 h-2 rounded-full bg-[#00A3E0]"></span>
-                <span>Garmin Fénix 7</span>
-              </span>
-              <span class="flex items-center space-x-1">
-                <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-                <span>Amazfit Helio Strap</span>
+                <span class="text-slate-300 font-medium">Garmin Fénix 7 Solar (Sensor Óptico Elevate™ v4)</span>
               </span>
             </div>
           </div>
@@ -424,21 +416,21 @@
             <i data-lucide="watch" class="w-6 h-6 text-[#00A3E0]"></i>
             <div>
               <h4 class="text-xs font-bold text-white">Garmin Fénix 7 Solar</h4>
-              <p class="text-[10px] text-slate-400">Entrenamientos, pulsómetro óptico & GPS</p>
+              <p class="text-[10px] text-slate-400">Monitorización 24h, Sueño, VFC, GPS & Pulsómetro</p>
             </div>
           </div>
-          <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/30">Activo</span>
+          <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/30">Activo Principal</span>
         </div>
 
-        <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+        <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between opacity-60">
           <div class="flex items-center space-x-3">
-            <i data-lucide="activity" class="w-6 h-6 text-purple-400"></i>
+            <i data-lucide="activity" class="w-6 h-6 text-slate-500"></i>
             <div>
-              <h4 class="text-xs font-bold text-white">Amazfit Helio Strap</h4>
-              <p class="text-[10px] text-slate-400">Sueño continuo, HRV nocturna & Reposo</p>
+              <h4 class="text-xs font-bold text-slate-300">Amazfit Helio Strap</h4>
+              <p class="text-[10px] text-slate-500">Sin emparejar · Disponible para vinculación futura</p>
             </div>
           </div>
-          <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/30">Activo</span>
+          <span class="text-[10px] font-medium text-slate-400 bg-slate-800 px-2 py-1 rounded-full border border-slate-700">No vinculada</span>
         </div>
 
         <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
@@ -606,7 +598,7 @@
 
           <section class="garmin-card p-4 text-xs text-slate-300 leading-relaxed border-l-4 border-l-cyan-400">
             <h4 class="font-bold text-white mb-1">💡 Análisis de Carga</h4>
-            Tu descanso registrado por la Amazfit Helio Strap ha recargado 74 puntos de energía gracias a 1h 25m de sueño profundo y baja frecuencia cardíaca. El Fénix 7 continuará computando el desgaste por entrenamiento.
+            Tu descanso registrado por el sensor óptico Elevate™ del Garmin Fénix 7 ha recargado 78 puntos de energía gracias a una excelente recuperación nocturna y baja frecuencia cardíaca. El Fénix 7 continúa computando tu gasto energético continuo.
           </section>
         `;
         chartCallback = () => {
@@ -621,7 +613,7 @@
         html = `
           <section class="garmin-card p-4 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase font-bold text-slate-400">Registro Amazfit Helio</span>
+              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 Solar (Advanced Sleep)</span>
               <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">Score ${m.sueno_score} · Excelente</span>
             </div>
             <div class="flex items-baseline space-x-2">
@@ -663,7 +655,7 @@
         html = `
           <section class="garmin-card p-4 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase font-bold text-slate-400">Fusión Fénix 7 + Helio</span>
+              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 Solar (Elevate™ v4)</span>
               <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Braquicardia Adaptativa</span>
             </div>
             <div class="flex items-baseline space-x-2">
@@ -692,7 +684,7 @@
         html = `
           <section class="garmin-card p-4 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase font-bold text-slate-400">Medido por Amazfit Helio</span>
+              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 Solar (Status VFC Nocturno)</span>
               <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Equilibrada ● Óptima</span>
             </div>
             <div class="flex items-baseline space-x-2">
@@ -726,18 +718,18 @@
         };
 
       } else if (metricKey === 'steps') {
-        title = "Pasos Totales Combinados";
+        title = "Pasos Totales";
         html = `
           <section class="garmin-card p-4 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase font-bold text-slate-400">Deduplicado Fénix + Helio</span>
+              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 Solar</span>
               <span class="text-xs font-bold text-[#00A3E0] bg-[#00A3E0]/10 px-2 py-0.5 rounded-full border border-[#00A3E0]/20">Meta Cumplida ✅</span>
             </div>
             <div class="flex items-baseline space-x-2">
               <span class="text-5xl font-black text-white">${m.pasos.toLocaleString('es-ES')}</span>
               <span class="text-sm text-slate-400">/ 8.000 meta</span>
             </div>
-            <p class="text-xs text-slate-400">Total acumulado de la semana: <b class="text-white">44.198 pasos</b>.</p>
+            <p class="text-xs text-slate-400">Total acumulado de la semana: <b class="text-white">${(m.pasos_semana || 84342).toLocaleString('es-ES')} pasos</b>.</p>
           </section>
 
           <section class="garmin-card p-4 space-y-2">
@@ -1079,7 +1071,7 @@
       const ctx = document.getElementById('hrChart').getContext('2d');
       const labels = points.map(p => p.hora);
       const dataVals = points.map(p => p.bpm);
-      const pointColors = points.map(p => p.source.includes('Fénix') ? '#00A3E0' : '#C084FC');
+      const pointColors = points.map(() => '#00A3E0');
 
       if (hrChartInstance) hrChartInstance.destroy();
 
