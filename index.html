@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Garmin Connect+</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0B1118">
+  <link rel="manifest" href="manifest.json">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0B1118;
+      color: #E2E8F0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .garmin-card {
+      background: linear-gradient(180deg, #16202A 0%, #121A23 100%);
+      border: 1px solid #1E2D3B;
+      border-radius: 16px;
+    }
+    .garmin-card-interactive:active {
+      transform: scale(0.985);
+      transition: transform 0.1s ease;
+    }
+    .garmin-blue { color: #00A3E0; }
+    .bg-garmin-blue { background-color: #007CC3; }
+    .garmin-cyan { color: #00D2D3; }
+    .garmin-green { color: #10B981; }
+    .garmin-amber { color: #F59E0B; }
+    .garmin-purple { color: #A855F7; }
+    /* Barra de desplazamiento oculta */
+    ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="min-h-screen pb-24 select-none">
+
+  <!-- CABECERA PRINCIPAL (GARMIN STYLE) -->
+  <header class="sticky top-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-b border-[#1E2D3B] px-4 pt-4 pb-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 rounded-full bg-[#007CC3] flex items-center justify-center font-bold text-white text-xs tracking-wider">
+          G+
+        </div>
+        <div>
+          <h1 class="text-xs font-bold tracking-wider text-slate-400 uppercase">Connect+ Híbrido</h1>
+          <div class="flex items-center space-x-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-sm font-semibold text-white">Luis B.</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Batería y Estado de Dispositivos -->
+      <div class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] px-2.5 py-1 rounded-full text-xs">
+        <div class="flex items-center space-x-1" title="Garmin Fénix 7 Solar">
+          <i data-lucide="watch" class="w-3.5 h-3.5 text-[#00A3E0]"></i>
+          <span class="font-medium text-slate-300" id="bat-f7">88%</span>
+        </div>
+        <span class="text-slate-600">|</span>
+        <div class="flex items-center space-x-1" title="Amazfit Helio Strap">
+          <i data-lucide="activity" class="w-3.5 h-3.5 text-purple-400"></i>
+          <span class="font-medium text-slate-300" id="bat-helio">92%</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="max-w-md mx-auto px-4 mt-4 space-y-4">
+
+    <!-- 1. SECCIÓN: EN ENFOQUE (IN FOCUS) — DISPOSICIÓN PARA EL RENDIMIENTO -->
+    <section class="garmin-card p-4 relative overflow-hidden">
+      <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-[#007CC3]/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center space-x-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+          <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+          <span>Disposición para el Rendimiento</span>
+        </div>
+        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          ÓPTIMA
+        </span>
+      </div>
+
+      <div class="flex items-center space-x-4 my-2">
+        <div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+          <svg class="w-20 h-20 transform -rotate-90">
+            <circle cx="40" cy="40" r="32" stroke="#1E2D3B" stroke-width="6" fill="transparent"/>
+            <circle id="score-circle" cx="40" cy="40" r="32" stroke="#10B981" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="32" stroke-linecap="round" fill="transparent"/>
+          </svg>
+          <div class="absolute flex flex-col items-center justify-center">
+            <span class="text-2xl font-black text-white" id="readiness-score">84</span>
+            <span class="text-[9px] text-slate-400 uppercase -mt-1 font-semibold">/100</span>
+          </div>
+        </div>
+
+        <div class="flex-1 text-xs space-y-1.5 text-slate-300">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400">Estado de VFC:</span>
+            <span class="font-semibold text-emerald-400">Equilibrada (54 ms)</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400">Historial de Sueño:</span>
+            <span class="font-semibold text-slate-200">7.4h Reparador</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400">Tiempo de Recuperación:</span>
+            <span class="font-semibold text-emerald-400">0 horas (Listo)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ACTIVE INTELLIGENCE (GARMIN CONNECT+ EXCLUSIVE CLONE) -->
+    <section class="garmin-card p-4 border-l-4 border-l-[#00A3E0] relative">
+      <div class="flex items-center space-x-2 mb-2">
+        <i data-lucide="sparkles" class="w-4 h-4 text-[#00A3E0]"></i>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Active Intelligence · Insights</h2>
+      </div>
+      <p id="active-intel-text" class="text-xs text-slate-300 leading-relaxed">
+        Cargando valoración clínica del día...
+      </p>
+    </section>
+
+    <!-- 3. SECCIÓN: DE UN VISTAZO (AT A GLANCE) -->
+    <div class="flex items-center justify-between pt-1">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">De un Vistazo (At a Glance)</h2>
+      <span class="text-[10px] text-[#00A3E0] font-medium cursor-pointer">Editar</span>
+    </div>
+
+    <!-- GRID DE TARJETAS BIOMÉTRICAS -->
+    <div class="grid grid-cols-2 gap-3">
+
+      <!-- BODY BATTERY -->
+      <div class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="battery-charging" class="w-4 h-4 text-cyan-400"></i>
+            <span class="font-semibold">Body Battery</span>
+          </div>
+        </div>
+        <div class="my-2 flex items-baseline space-x-1">
+          <span class="text-3xl font-black text-white" id="bb-val">82</span>
+          <span class="text-xs text-slate-400">/100</span>
+        </div>
+        <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+          <span>Drenado: <b class="text-amber-400">-26</b></span>
+          <span>Cargado: <b class="text-emerald-400">+74</b></span>
+        </div>
+      </div>
+
+      <!-- SUEÑO & SCORE -->
+      <div class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
+            <span class="font-semibold">Sueño</span>
+          </div>
+          <span class="text-[10px] text-indigo-400 font-bold" id="sleep-score">Score 88</span>
+        </div>
+        <div class="my-2 flex items-baseline space-x-1">
+          <span class="text-3xl font-black text-white" id="sleep-hours">7.4</span>
+          <span class="text-xs text-slate-400">horas</span>
+        </div>
+        <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+          <span>Helio Strap</span>
+          <span class="text-emerald-400 font-medium">Fase REM + Prof.</span>
+        </div>
+      </div>
+
+      <!-- FRECUENCIA CARDÍACA EN REPOSO (RHR) -->
+      <div class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
+            <span class="font-semibold">FC de Reposo</span>
+          </div>
+        </div>
+        <div class="my-2 flex items-baseline space-x-1">
+          <span class="text-3xl font-black text-white" id="rhr-val">48</span>
+          <span class="text-xs text-slate-400">ppm</span>
+        </div>
+        <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+          <span>Media 7 días</span>
+          <span class="text-emerald-400 font-medium">47 ppm 🟢</span>
+        </div>
+      </div>
+
+      <!-- ESTADO DE VFC (HRV) -->
+      <div class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
+            <span class="font-semibold">VFC (HRV)</span>
+          </div>
+        </div>
+        <div class="my-2 flex items-baseline space-x-1">
+          <span class="text-3xl font-black text-white" id="hrv-val">54</span>
+          <span class="text-xs text-slate-400">ms</span>
+        </div>
+        <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+          <span>Línea base</span>
+          <span class="text-emerald-400 font-medium">50-60 ms</span>
+        </div>
+      </div>
+
+      <!-- PASOS COMBINADOS -->
+      <div class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
+            <span class="font-semibold">Pasos Totales</span>
+          </div>
+        </div>
+        <div class="my-2 flex items-baseline space-x-1">
+          <span class="text-2xl font-black text-white" id="steps-val">8,724</span>
+          <span class="text-xs text-slate-400">/ 8k</span>
+        </div>
+        <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+          <div class="bg-[#00A3E0] h-full rounded-full" style="width: 100%"></div>
+        </div>
+      </div>
+
+      <!-- MINUTOS DE INTENSIDAD -->
+      <div class="garmin-card garmin-card-interactive p-3.5 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="flame" class="w-4 h-4 text-amber-500"></i>
+            <span class="font-semibold">Intensidad</span>
+          </div>
+        </div>
+        <div class="my-2 flex items-baseline space-x-1">
+          <span class="text-2xl font-black text-white" id="intensity-val">164</span>
+          <span class="text-xs text-slate-400">/ 150m</span>
+        </div>
+        <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+          <div class="bg-amber-500 h-full rounded-full" style="width: 100%"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4. GRÁFICA CONTINUA HÍBRIDA (FÉNIX 7 + AMAZFIT HELIO STRAP) -->
+    <section class="garmin-card p-4">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Frecuencia Cardíaca Continua (24h)</h2>
+          <div class="flex items-center space-x-3 text-[10px] text-slate-400 mt-1">
+            <span class="flex items-center space-x-1">
+              <span class="w-2 h-2 rounded-full bg-[#00A3E0]"></span>
+              <span>Garmin Fénix 7</span>
+            </span>
+            <span class="flex items-center space-x-1">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              <span>Amazfit Helio Strap</span>
+            </span>
+          </div>
+        </div>
+        <span class="text-xs font-bold text-rose-400 bg-rose-500/10 px-2 py-1 rounded-md border border-rose-500/20">
+          48-126 ppm
+        </span>
+      </div>
+
+      <div class="h-44 w-full">
+        <canvas id="hrChart"></canvas>
+      </div>
+    </section>
+
+    <!-- 5. ÚLTIMA ACTIVIDAD DEPORTIVA (FÉNIX 7) -->
+    <section class="garmin-card p-4">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Actividad Reciente</h2>
+        <span class="text-[10px] text-slate-400" id="act-date">Última sesión</span>
+      </div>
+
+      <div class="flex items-center space-x-3 bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B]">
+        <div class="w-10 h-10 rounded-full bg-[#007CC3]/20 border border-[#007CC3]/40 flex items-center justify-center text-[#00A3E0]">
+          <i data-lucide="bike" class="w-5 h-5"></i>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-white" id="act-title">Ciclismo en sala</h3>
+            <span class="text-xs font-semibold text-emerald-400" id="act-calories">394 kcal</span>
+          </div>
+          <div class="flex items-center space-x-2 text-xs text-slate-400 mt-0.5">
+            <span id="act-duration">50m 46s</span>
+            <span>•</span>
+            <span id="act-hr">FC Med 126 (Máx 198)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2 text-[11px] text-slate-400 flex items-center justify-between px-1">
+        <span>Recuperación Cardíaca (HR Recovery):</span>
+        <span class="font-bold text-emerald-400" id="act-recovery">-82 ppm en 1 min (🔥 Top)</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR (ESTILO GARMIN CONNECT APP) -->
+  <nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-t border-[#1E2D3B] px-6 py-2.5">
+    <div class="max-w-md mx-auto flex items-center justify-between text-[10px] font-semibold text-slate-400">
+      
+      <button class="flex flex-col items-center space-y-1 text-[#00A3E0]">
+        <i data-lucide="home" class="w-5 h-5"></i>
+        <span>Mi Día</span>
+      </button>
+
+      <button class="flex flex-col items-center space-y-1 hover:text-slate-200">
+        <i data-lucide="trending-up" class="w-5 h-5"></i>
+        <span>Desafíos</span>
+      </button>
+
+      <button class="flex flex-col items-center space-y-1 hover:text-slate-200">
+        <i data-lucide="calendar" class="w-5 h-5"></i>
+        <span>Calendario</span>
+      </button>
+
+      <button class="flex flex-col items-center space-y-1 hover:text-slate-200">
+        <i data-lucide="pie-chart" class="w-5 h-5"></i>
+        <span>Estadísticas</span>
+      </button>
+
+      <button class="flex flex-col items-center space-y-1 hover:text-slate-200">
+        <i data-lucide="more-horizontal" class="w-5 h-5"></i>
+        <span>Más</span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- SCRIPT DE CARGA Y RENDERIZADO -->
+  <script>
+    lucide.createIcons();
+
+    let chartInstance = null;
+
+    async function loadData() {
+      try {
+        const res = await fetch('data.json?t=' + new Date().getTime());
+        const data = await res.json();
+
+        // 1. Dispositivos y cabecera
+        if (data.dispositivos) {
+          document.getElementById('bat-f7').textContent = data.dispositivos.fenix_7.bateria + '%';
+          document.getElementById('bat-helio').textContent = data.dispositivos.helio_strap.bateria + '%';
+        }
+
+        // 2. Disposición para el rendimiento
+        if (data.disposicion_rendimiento) {
+          document.getElementById('readiness-score').textContent = data.disposicion_rendimiento.score;
+        }
+
+        // 3. Active Intelligence
+        if (data.active_intelligence) {
+          document.getElementById('active-intel-text').textContent = data.active_intelligence;
+        }
+
+        // 4. Métricas clave
+        if (data.metricas_clave) {
+          const m = data.metricas_clave;
+          document.getElementById('rhr-val').textContent = m.rhr;
+          document.getElementById('hrv-val').textContent = m.hrv;
+          document.getElementById('sleep-hours').textContent = m.sueno_horas;
+          document.getElementById('sleep-score').textContent = 'Score ' + (m.sueno_score || 88);
+          document.getElementById('steps-val').textContent = m.pasos.toLocaleString('es-ES');
+          document.getElementById('intensity-val').textContent = m.min_intensidad;
+        }
+
+        // 5. Body Battery
+        if (data.body_battery) {
+          document.getElementById('bb-val').textContent = data.body_battery.actual;
+        }
+
+        // 6. Actividad reciente
+        if (data.actividades && data.actividades.length > 0) {
+          const act = data.actividades[0];
+          document.getElementById('act-title').textContent = act.nombre;
+          document.getElementById('act-date').textContent = act.fecha;
+          document.getElementById('act-calories').textContent = act.calorias + ' kcal';
+          document.getElementById('act-duration').textContent = act.duracion;
+          document.getElementById('act-hr').textContent = act.fc_media_max;
+          document.getElementById('act-recovery').textContent = act.hr_recovery;
+        }
+
+        // 7. Renderizar gráfica continua 24h
+        if (data.curva_fc_24h) {
+          renderHRChart(data.curva_fc_24h);
+        }
+
+      } catch (err) {
+        console.error("Error cargando data.json:", err);
+      }
+    }
+
+    function renderHRChart(points) {
+      const ctx = document.getElementById('hrChart').getContext('2d');
+      const labels = points.map(p => p.hora);
+      const dataVals = points.map(p => p.bpm);
+
+      // Colores de punto dinámicos según dispositivo de procedencia
+      const pointColors = points.map(p => p.source.includes('Fénix') ? '#00A3E0' : '#C084FC');
+
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Frecuencia Cardíaca',
+            data: dataVals,
+            borderColor: '#E2E8F0',
+            borderWidth: 2,
+            tension: 0.35,
+            pointBackgroundColor: pointColors,
+            pointBorderColor: '#0B1118',
+            pointBorderWidth: 1.5,
+            pointRadius: 4,
+            fill: {
+              target: 'origin',
+              above: 'rgba(0, 163, 224, 0.08)'
+            }
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#16202A',
+              titleColor: '#E2E8F0',
+              bodyColor: '#38BDF8',
+              borderColor: '#1E2D3B',
+              borderWidth: 1,
+              callbacks: {
+                label: function(context) {
+                  const pt = points[context.dataIndex];
+                  return `${pt.bpm} ppm (${pt.source})`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#16202A' },
+              ticks: { color: '#64748B', font: { size: 9 }, maxTicksLimit: 8 }
+            },
+            y: {
+              grid: { color: '#1E2D3B' },
+              ticks: { color: '#64748B', font: { size: 9 } },
+              min: 40,
+              max: 140
+            }
+          }
+        }
+      });
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+{
+  "usuario": "Luis B.",
+  "ultima_actualizacion": "2026-10-11 17:43:36",
+  "dispositivos": {
+    "fenix_7": {
+      "nombre": "Garmin Fénix 7 Solar",
+      "estado": "Conectado",
+      "bateria": 88,
+      "rol": "Entrenamientos & Deportes"
+    },
+    "helio_strap": {
+      "nombre": "Amazfit Helio Strap",
+      "estado": "Conectado",
+      "bateria": 92,
+      "rol": "Sueño, VFC 24h & Reposo Continuo"
+    }
+  },
+  "disposicion_rendimiento": {
+    "score": 84,
+    "nivel": "ÓPTIMA",
+    "hrv_status": "Equilibrada (54 ms)",
+    "recuperacion_horas": 0,
+    "sueno_calidad": "Reparador (7.4h)"
+  },
+  "active_intelligence": "Tu frecuencia cardíaca de reposo media se mantiene en 48 ppm, lo que refleja un tono parasimpático robusto. La recuperación tras la última sesión de fuerza registró una caída de -64 ppm en el primer minuto, confirmando una rápida reactivación vagal. Tu ventana de VFC nocturna medida por la Helio Strap (54 ms) está alineada con tu línea base de 3 semanas. Estás en estado óptimo para entrenar hoy.",
+  "body_battery": {
+    "actual": 82,
+    "cargado": 74,
+    "drenado": 26,
+    "max": 96,
+    "min": 18
+  },
+  "metricas_clave": {
+    "rhr": 51,
+    "hrv": 50,
+    "sueno_horas": 7.4,
+    "sueno_score": 88,
+    "pasos": 3254,
+    "meta_pasos": 8000,
+    "estres": 27,
+    "vo2max": 35.0,
+    "min_intensidad": 111,
+    "meta_intensidad": 150
+  },
+  "curva_fc_24h": [
+    {
+      "hora": "00:00",
+      "bpm": 46,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "01:00",
+      "bpm": 47,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "02:00",
+      "bpm": 48,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "03:00",
+      "bpm": 46,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "04:00",
+      "bpm": 47,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "05:00",
+      "bpm": 48,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "06:00",
+      "bpm": 46,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "07:00",
+      "bpm": 66,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "08:00",
+      "bpm": 68,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "09:00",
+      "bpm": 61,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "10:00",
+      "bpm": 64,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "11:00",
+      "bpm": 67,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "12:00",
+      "bpm": 58,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "13:00",
+      "bpm": 61,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "14:00",
+      "bpm": 58,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "15:00",
+      "bpm": 54,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "16:00",
+      "bpm": 56,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "17:00",
+      "bpm": 85,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "18:00",
+      "bpm": 126,
+      "source": "Garmin Fénix 7"
+    },
+    {
+      "hora": "19:00",
+      "bpm": 59,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "20:00",
+      "bpm": 56,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "21:00",
+      "bpm": 57,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "22:00",
+      "bpm": 58,
+      "source": "Amazfit Helio Strap"
+    },
+    {
+      "hora": "23:00",
+      "bpm": 59,
+      "source": "Amazfit Helio Strap"
+    }
+  ],
+  "actividades": [
+    {
+      "fecha": "2026-09-29",
+      "nombre": "Ciclismo en sala",
+      "duracion": "50m 46s",
+      "distancia": "-",
+      "fc_media_max": "126.0 (Máx 198.0)",
+      "hr_recovery": "-82 ppm (🔥)",
+      "calorias": 394
+    },
+    {
+      "fecha": "2026-10-04",
+      "nombre": "Fuerza",
+      "duracion": "49m 43s",
+      "distancia": "-",
+      "fc_media_max": "121.0 (Máx 172.0)",
+      "hr_recovery": "-64 ppm (🔥)",
+      "calorias": 337
+    }
+  ],
+  "historico_semanas": [
+    {
+      "semana": "2026-W35",
+      "pasos": 60726,
+      "sueno": 7.1,
+      "rhr": 47,
+      "vo2": 35.0,
+      "hrv": 59,
+      "estres": 26
+    },
+    {
+      "semana": "2026-W36",
+      "pasos": 58458,
+      "sueno": 6.9,
+      "rhr": 47,
+      "vo2": 36.0,
+      "hrv": 60,
+      "estres": 26
+    },
+    {
+      "semana": "2026-W37",
+      "pasos": 62537,
+      "sueno": 7.3,
+      "rhr": 47,
+      "vo2": 36.0,
+      "hrv": 60,
+      "estres": 25
+    },
+    {
+      "semana": "2026-W38",
+      "pasos": 33796,
+      "sueno": 6.8,
+      "rhr": 47,
+      "vo2": 36.0,
+      "hrv": 58,
+      "estres": 23
+    },
+    {
+      "semana": "2026-W39",
+      "pasos": 45941,
+      "sueno": 6.9,
+      "rhr": 49,
+      "vo2": 36.0,
+      "hrv": 58,
+      "estres": 27
+    },
+    {
+      "semana": "2026-W40",
+      "pasos": 44198,
+      "sueno": 7.1,
+      "rhr": 48,
+      "vo2": 35.0,
+      "hrv": 54,
+      "estres": 25
+    }
+  ]
+}
