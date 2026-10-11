@@ -1,6 +1,7 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-11 19:43:06",
+  "ultima_actualizacion": "2026-10-11 19:49:36",
+  "semana_actual": "2026-W41",
   "dispositivos": {
     "fenix_7": {
       "nombre": "Garmin Fénix 7 Solar",
@@ -221,7 +222,6 @@
       "calorias": 634
     }
   ],
-  "evaluaciones_recov": [],
   "desglose_diario": [
     {
       "fecha": "2026-10-05",
@@ -289,13 +289,221 @@
   ],
   "historico_semanas": [
     {
+      "semana": "2026-W32",
+      "pasos": 44473,
+      "sueno": 6.6,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 60,
+      "estres": 23,
+      "dias": [
+        {
+          "fecha": "2026-08-03",
+          "pasos": 8156,
+          "sueno": 6.8,
+          "rhr": 49,
+          "estres": 27,
+          "hrv": 62,
+          "min_intensidad": 160
+        },
+        {
+          "fecha": "2026-08-04",
+          "pasos": 5321,
+          "sueno": 6.4,
+          "rhr": 50,
+          "estres": 22,
+          "hrv": 55,
+          "min_intensidad": 116
+        },
+        {
+          "fecha": "2026-08-05",
+          "pasos": 5214,
+          "sueno": 6.5,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 62,
+          "min_intensidad": 123
+        },
+        {
+          "fecha": "2026-08-07",
+          "pasos": 6452,
+          "sueno": 6.3,
+          "rhr": 53,
+          "estres": 22,
+          "hrv": 60,
+          "min_intensidad": 113
+        },
+        {
+          "fecha": "2026-08-08",
+          "pasos": 6198,
+          "sueno": 7.2,
+          "rhr": 48,
+          "estres": 22,
+          "hrv": 57,
+          "min_intensidad": 128
+        },
+        {
+          "fecha": "2026-08-09",
+          "pasos": 6803,
+          "sueno": 6.3,
+          "rhr": 50,
+          "estres": 24,
+          "hrv": 69,
+          "min_intensidad": 146
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-08-06",
+          "nombre": "Fuerza",
+          "duracion": "57m 38s",
+          "distancia": "-",
+          "fc_media_max": "107.0 (Máx 149.0)",
+          "hr_recovery": "-70 ppm (🔥)",
+          "calorias": 316
+        }
+      ]
+    },
+    {
+      "semana": "2026-W33",
+      "pasos": 67180,
+      "sueno": 6.6,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 60,
+      "estres": 24,
+      "dias": [
+        {
+          "fecha": "2026-08-10",
+          "pasos": 9722,
+          "sueno": 6.4,
+          "rhr": 49,
+          "estres": 22,
+          "hrv": 61,
+          "min_intensidad": 203
+        },
+        {
+          "fecha": "2026-08-11",
+          "pasos": 10137,
+          "sueno": 6.6,
+          "rhr": 51,
+          "estres": 21,
+          "hrv": 64,
+          "min_intensidad": 238
+        },
+        {
+          "fecha": "2026-08-12",
+          "pasos": 5361,
+          "sueno": 5.5,
+          "rhr": 49,
+          "estres": 21,
+          "hrv": 54,
+          "min_intensidad": 125
+        },
+        {
+          "fecha": "2026-08-13",
+          "pasos": 13127,
+          "sueno": 7.1,
+          "rhr": 45,
+          "estres": 24,
+          "hrv": 63,
+          "min_intensidad": 225
+        },
+        {
+          "fecha": "2026-08-14",
+          "pasos": 8138,
+          "sueno": 7.6,
+          "rhr": 51,
+          "estres": 31,
+          "hrv": 50,
+          "min_intensidad": 184
+        },
+        {
+          "fecha": "2026-08-16",
+          "pasos": 5515,
+          "sueno": 6.3,
+          "rhr": 50,
+          "estres": 24,
+          "hrv": 72,
+          "min_intensidad": 121
+        }
+      ],
+      "actividades": []
+    },
+    {
       "semana": "2026-W34",
       "pasos": 44420,
       "sueno": 7.2,
       "rhr": 48,
       "vo2": 35.0,
       "hrv": 56,
-      "estres": 25
+      "estres": 25,
+      "dias": [
+        {
+          "fecha": "2026-08-17",
+          "pasos": 3045,
+          "sueno": 6.5,
+          "rhr": 49,
+          "estres": 20,
+          "hrv": 52,
+          "min_intensidad": 67
+        },
+        {
+          "fecha": "2026-08-18",
+          "pasos": 4962,
+          "sueno": 8.1,
+          "rhr": 46,
+          "estres": 23,
+          "hrv": 56,
+          "min_intensidad": 120
+        },
+        {
+          "fecha": "2026-08-19",
+          "pasos": 5759,
+          "sueno": 6.5,
+          "rhr": 50,
+          "estres": 32,
+          "hrv": 48,
+          "min_intensidad": 105
+        },
+        {
+          "fecha": "2026-08-20",
+          "pasos": 7307,
+          "sueno": 7.8,
+          "rhr": 50,
+          "estres": 29,
+          "hrv": 63,
+          "min_intensidad": 135
+        },
+        {
+          "fecha": "2026-08-21",
+          "pasos": 6605,
+          "sueno": 6.2,
+          "rhr": 47,
+          "estres": 23,
+          "hrv": 63,
+          "min_intensidad": 159
+        },
+        {
+          "fecha": "2026-08-22",
+          "pasos": 7347,
+          "sueno": 8.0,
+          "rhr": 48,
+          "estres": 27,
+          "hrv": 54,
+          "min_intensidad": 165
+        },
+        {
+          "fecha": "2026-08-23",
+          "pasos": 9395,
+          "sueno": 7.5,
+          "rhr": 48,
+          "estres": 26,
+          "hrv": 60,
+          "min_intensidad": 186
+        }
+      ],
+      "actividades": []
     },
     {
       "semana": "2026-W35",
@@ -304,7 +512,83 @@
       "rhr": 47,
       "vo2": 35.0,
       "hrv": 59,
-      "estres": 26
+      "estres": 26,
+      "dias": [
+        {
+          "fecha": "2026-08-24",
+          "pasos": 8004,
+          "sueno": 6.9,
+          "rhr": 47,
+          "estres": 28,
+          "hrv": 61,
+          "min_intensidad": 175
+        },
+        {
+          "fecha": "2026-08-25",
+          "pasos": 7252,
+          "sueno": 6.7,
+          "rhr": 49,
+          "estres": 27,
+          "hrv": 56,
+          "min_intensidad": 152
+        },
+        {
+          "fecha": "2026-08-26",
+          "pasos": 14531,
+          "sueno": 6.6,
+          "rhr": 48,
+          "estres": 29,
+          "hrv": 61,
+          "min_intensidad": 221
+        },
+        {
+          "fecha": "2026-08-27",
+          "pasos": 6047,
+          "sueno": 9.2,
+          "rhr": 46,
+          "estres": 22,
+          "hrv": 59,
+          "min_intensidad": 102
+        },
+        {
+          "fecha": "2026-08-28",
+          "pasos": 6759,
+          "sueno": 6.5,
+          "rhr": 48,
+          "estres": 24,
+          "hrv": 63,
+          "min_intensidad": 119
+        },
+        {
+          "fecha": "2026-08-29",
+          "pasos": 6178,
+          "sueno": 7.0,
+          "rhr": 47,
+          "estres": 22,
+          "hrv": 58,
+          "min_intensidad": 159
+        },
+        {
+          "fecha": "2026-08-30",
+          "pasos": 11955,
+          "sueno": 7.1,
+          "rhr": 46,
+          "estres": 32,
+          "hrv": 59,
+          "min_intensidad": 211
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-08-24",
+          "nombre": "Fuerza",
+          "duracion": "30m 2s",
+          "distancia": "-",
+          "fc_media_max": "112.0 (Máx 148.0)",
+          "hr_recovery": "-50 ppm (🔥)",
+          "calorias": 194
+        }
+      ]
     },
     {
       "semana": "2026-W36",
@@ -313,7 +597,83 @@
       "rhr": 47,
       "vo2": 36.0,
       "hrv": 60,
-      "estres": 26
+      "estres": 26,
+      "dias": [
+        {
+          "fecha": "2026-08-31",
+          "pasos": 10810,
+          "sueno": 6.8,
+          "rhr": 48,
+          "estres": 25,
+          "hrv": 59,
+          "min_intensidad": 211
+        },
+        {
+          "fecha": "2026-09-01",
+          "pasos": 7896,
+          "sueno": 6.9,
+          "rhr": 47,
+          "estres": 27,
+          "hrv": 59,
+          "min_intensidad": 173
+        },
+        {
+          "fecha": "2026-09-02",
+          "pasos": 8674,
+          "sueno": 7.0,
+          "rhr": 46,
+          "estres": 27,
+          "hrv": 62,
+          "min_intensidad": 158
+        },
+        {
+          "fecha": "2026-09-03",
+          "pasos": 12328,
+          "sueno": 6.7,
+          "rhr": 47,
+          "estres": 29,
+          "hrv": 62,
+          "min_intensidad": 253
+        },
+        {
+          "fecha": "2026-09-04",
+          "pasos": 6907,
+          "sueno": 6.2,
+          "rhr": 51,
+          "estres": 25,
+          "hrv": 60,
+          "min_intensidad": 132
+        },
+        {
+          "fecha": "2026-09-05",
+          "pasos": 5828,
+          "sueno": 7.3,
+          "rhr": 45,
+          "estres": 21,
+          "hrv": 60,
+          "min_intensidad": 130
+        },
+        {
+          "fecha": "2026-09-06",
+          "pasos": 6015,
+          "sueno": 7.5,
+          "rhr": 48,
+          "estres": 30,
+          "hrv": 60,
+          "min_intensidad": 141
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-01",
+          "nombre": "Ciclismo en sala",
+          "duracion": "50m 21s",
+          "distancia": "-",
+          "fc_media_max": "131.0 (Máx 168.0)",
+          "hr_recovery": "-47 ppm (🔥)",
+          "calorias": 361
+        }
+      ]
     },
     {
       "semana": "2026-W37",
@@ -322,7 +682,74 @@
       "rhr": 47,
       "vo2": 36.0,
       "hrv": 60,
-      "estres": 25
+      "estres": 25,
+      "dias": [
+        {
+          "fecha": "2026-09-07",
+          "pasos": 9381,
+          "sueno": 7.8,
+          "rhr": 48,
+          "estres": 29,
+          "hrv": 53,
+          "min_intensidad": 183
+        },
+        {
+          "fecha": "2026-09-08",
+          "pasos": 6772,
+          "sueno": 8.1,
+          "rhr": 47,
+          "estres": 22,
+          "hrv": 72,
+          "min_intensidad": 149
+        },
+        {
+          "fecha": "2026-09-09",
+          "pasos": 7999,
+          "sueno": 7.2,
+          "rhr": 46,
+          "estres": 25,
+          "hrv": 63,
+          "min_intensidad": 161
+        },
+        {
+          "fecha": "2026-09-10",
+          "pasos": 7786,
+          "sueno": 7.2,
+          "rhr": 48,
+          "estres": 24,
+          "hrv": 60,
+          "min_intensidad": 146
+        },
+        {
+          "fecha": "2026-09-11",
+          "pasos": 9236,
+          "sueno": 6.3,
+          "rhr": 46,
+          "estres": 21,
+          "hrv": 55,
+          "min_intensidad": 148
+        },
+        {
+          "fecha": "2026-09-12",
+          "pasos": 7559,
+          "sueno": 7.4,
+          "rhr": 46,
+          "estres": 22,
+          "hrv": 59,
+          "min_intensidad": 121
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-07",
+          "nombre": "Ciclismo en sala",
+          "duracion": "56m 6s",
+          "distancia": "-",
+          "fc_media_max": "121.0 (Máx 166.0)",
+          "hr_recovery": "-69 ppm (🔥)",
+          "calorias": 355
+        }
+      ]
     },
     {
       "semana": "2026-W38",
@@ -331,7 +758,74 @@
       "rhr": 47,
       "vo2": 36.0,
       "hrv": 58,
-      "estres": 23
+      "estres": 23,
+      "dias": [
+        {
+          "fecha": "2026-09-14",
+          "pasos": 7103,
+          "sueno": 6.8,
+          "rhr": 46,
+          "estres": 27,
+          "hrv": 58,
+          "min_intensidad": 138
+        },
+        {
+          "fecha": "2026-09-15",
+          "pasos": 6680,
+          "sueno": 7.1,
+          "rhr": 47,
+          "estres": 24,
+          "hrv": 48,
+          "min_intensidad": 146
+        },
+        {
+          "fecha": "2026-09-16",
+          "pasos": 6348,
+          "sueno": 6.8,
+          "rhr": 49,
+          "estres": 25,
+          "hrv": 65,
+          "min_intensidad": 131
+        },
+        {
+          "fecha": "2026-09-17",
+          "pasos": 5482,
+          "sueno": 6.7,
+          "rhr": 48,
+          "estres": 22,
+          "hrv": 61,
+          "min_intensidad": 120
+        },
+        {
+          "fecha": "2026-09-18",
+          "pasos": 5919,
+          "sueno": 6.8,
+          "rhr": 46,
+          "estres": 24,
+          "hrv": 59,
+          "min_intensidad": 121
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-14",
+          "nombre": "Ciclismo en sala",
+          "duracion": "49m 30s",
+          "distancia": "-",
+          "fc_media_max": "127.0 (Máx 173.0)",
+          "hr_recovery": "-49 ppm (🔥)",
+          "calorias": 385
+        },
+        {
+          "fecha": "2026-09-20",
+          "nombre": "Fuerza",
+          "duracion": "1h 1m",
+          "distancia": "-",
+          "fc_media_max": "112.0 (Máx 153.0)",
+          "hr_recovery": "-59 ppm (🔥)",
+          "calorias": 362
+        }
+      ]
     },
     {
       "semana": "2026-W39",
@@ -340,7 +834,74 @@
       "rhr": 49,
       "vo2": 36.0,
       "hrv": 58,
-      "estres": 27
+      "estres": 27,
+      "dias": [
+        {
+          "fecha": "2026-09-22",
+          "pasos": 8798,
+          "sueno": 6.5,
+          "rhr": 47,
+          "estres": 29,
+          "hrv": 55,
+          "min_intensidad": 162
+        },
+        {
+          "fecha": "2026-09-23",
+          "pasos": 5136,
+          "sueno": 7.0,
+          "rhr": 47,
+          "estres": 23,
+          "hrv": 60,
+          "min_intensidad": 118
+        },
+        {
+          "fecha": "2026-09-25",
+          "pasos": 6612,
+          "sueno": 6.6,
+          "rhr": 51,
+          "estres": 28,
+          "hrv": 58,
+          "min_intensidad": 143
+        },
+        {
+          "fecha": "2026-09-26",
+          "pasos": 9074,
+          "sueno": 6.1,
+          "rhr": 51,
+          "estres": 28,
+          "hrv": 64,
+          "min_intensidad": 186
+        },
+        {
+          "fecha": "2026-09-27",
+          "pasos": 4815,
+          "sueno": 8.3,
+          "rhr": 46,
+          "estres": 22,
+          "hrv": 53,
+          "min_intensidad": 93
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-22",
+          "nombre": "Ciclismo en sala",
+          "duracion": "51m 58s",
+          "distancia": "-",
+          "fc_media_max": "125.0 (Máx 173.0)",
+          "hr_recovery": "-57 ppm (🔥)",
+          "calorias": 283
+        },
+        {
+          "fecha": "2026-09-26",
+          "nombre": "Valencia Tenis",
+          "duracion": "51m 2s",
+          "distancia": "1.73 km",
+          "fc_media_max": "133.0 (Máx 195.0)",
+          "hr_recovery": "-123 ppm (🔥)",
+          "calorias": 439
+        }
+      ]
     },
     {
       "semana": "2026-W40",
@@ -349,7 +910,92 @@
       "rhr": 48,
       "vo2": 35.0,
       "hrv": 54,
-      "estres": 25
+      "estres": 25,
+      "dias": [
+        {
+          "fecha": "2026-09-28",
+          "pasos": 8724,
+          "sueno": 8.0,
+          "rhr": 47,
+          "estres": 29,
+          "hrv": 56,
+          "min_intensidad": 194
+        },
+        {
+          "fecha": "2026-09-29",
+          "pasos": 7844,
+          "sueno": 6.7,
+          "rhr": 49,
+          "estres": 29,
+          "hrv": 44,
+          "min_intensidad": 161
+        },
+        {
+          "fecha": "2026-09-30",
+          "pasos": 7935,
+          "sueno": 6.8,
+          "rhr": 46,
+          "estres": 23,
+          "hrv": 59,
+          "min_intensidad": 153
+        },
+        {
+          "fecha": "2026-10-01",
+          "pasos": 6349,
+          "sueno": 6.8,
+          "rhr": 50,
+          "estres": 25,
+          "hrv": 65,
+          "min_intensidad": 144
+        },
+        {
+          "fecha": "2026-10-02",
+          "pasos": 2778,
+          "sueno": 6.9,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 53,
+          "min_intensidad": 59
+        },
+        {
+          "fecha": "2026-10-03",
+          "pasos": 7314,
+          "sueno": 7.3,
+          "rhr": 50,
+          "estres": 27,
+          "hrv": 56,
+          "min_intensidad": 126
+        },
+        {
+          "fecha": "2026-10-04",
+          "pasos": 3254,
+          "sueno": 7.4,
+          "rhr": 51,
+          "estres": 27,
+          "hrv": 50,
+          "min_intensidad": 111
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-29",
+          "nombre": "Ciclismo en sala",
+          "duracion": "50m 46s",
+          "distancia": "-",
+          "fc_media_max": "126.0 (Máx 198.0)",
+          "hr_recovery": "-82 ppm (🔥)",
+          "calorias": 394
+        },
+        {
+          "fecha": "2026-10-04",
+          "nombre": "Fuerza",
+          "duracion": "49m 43s",
+          "distancia": "-",
+          "fc_media_max": "121.0 (Máx 172.0)",
+          "hr_recovery": "-64 ppm (🔥)",
+          "calorias": 337
+        }
+      ]
     },
     {
       "semana": "2026-W41",
@@ -358,9 +1004,1350 @@
       "rhr": 47,
       "vo2": 35.0,
       "hrv": 50,
-      "estres": 22
+      "estres": 22,
+      "dias": [
+        {
+          "fecha": "2026-10-05",
+          "pasos": 7440,
+          "sueno": 6.9,
+          "rhr": 49,
+          "estres": 25,
+          "hrv": 49,
+          "min_intensidad": 158
+        },
+        {
+          "fecha": "2026-10-06",
+          "pasos": 8587,
+          "sueno": 6.6,
+          "rhr": 46,
+          "estres": 24,
+          "hrv": 51,
+          "min_intensidad": 158
+        },
+        {
+          "fecha": "2026-10-07",
+          "pasos": 3093,
+          "sueno": 6.7,
+          "rhr": 47,
+          "estres": 21,
+          "hrv": 51,
+          "min_intensidad": 77
+        },
+        {
+          "fecha": "2026-10-08",
+          "pasos": 3768,
+          "sueno": 6.7,
+          "rhr": 47,
+          "estres": 19,
+          "hrv": 47,
+          "min_intensidad": 66
+        },
+        {
+          "fecha": "2026-10-09",
+          "pasos": 21424,
+          "sueno": 7.0,
+          "rhr": 45,
+          "estres": 24,
+          "hrv": 58,
+          "min_intensidad": 346
+        },
+        {
+          "fecha": "2026-10-10",
+          "pasos": 21480,
+          "sueno": 8.6,
+          "rhr": 49,
+          "estres": 23,
+          "hrv": 43,
+          "min_intensidad": 343
+        },
+        {
+          "fecha": "2026-10-11",
+          "pasos": 18550,
+          "sueno": 8.3,
+          "rhr": 48,
+          "estres": 18,
+          "hrv": 51,
+          "min_intensidad": 293
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-10-06",
+          "nombre": "Ciclismo en sala",
+          "duracion": "49m 12s",
+          "distancia": "-",
+          "fc_media_max": "131.0 (Máx 168.0)",
+          "hr_recovery": "-73 ppm (🔥)",
+          "calorias": 348
+        },
+        {
+          "fecha": "2026-10-09",
+          "nombre": "Joch Caminar",
+          "duracion": "3h 25m",
+          "distancia": "10.44 km",
+          "fc_media_max": "101.0 (Máx 165.0)",
+          "hr_recovery": "-96 ppm (🔥)",
+          "calorias": 1034
+        },
+        {
+          "fecha": "2026-10-10",
+          "nombre": "Les Angles Caminar",
+          "duracion": "5h 14m",
+          "distancia": "11.49 km",
+          "fc_media_max": "101.0 (Máx 156.0)",
+          "hr_recovery": "-68 ppm (🔥)",
+          "calorias": 1371
+        },
+        {
+          "fecha": "2026-10-11",
+          "nombre": "Casteil Caminar",
+          "duracion": "2h 30m",
+          "distancia": "5.38 km",
+          "fc_media_max": "86.0 (Máx 161.0)",
+          "hr_recovery": "-58 ppm (🔥)",
+          "calorias": 577
+        },
+        {
+          "fecha": "2026-10-11",
+          "nombre": "Codalet Caminar",
+          "duracion": "3h 9m",
+          "distancia": "7.49 km",
+          "fc_media_max": "78.0 (Máx 144.0)",
+          "hr_recovery": "-62 ppm (🔥)",
+          "calorias": 634
+        }
+      ]
     }
   ],
+  "semanas_detalle": {
+    "2026-W27": {
+      "semana": "2026-W27",
+      "pasos": 52899,
+      "sueno": 6.7,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 63,
+      "estres": 25,
+      "dias": [
+        {
+          "fecha": "2026-06-29",
+          "pasos": 6625,
+          "sueno": 6.8,
+          "rhr": 48,
+          "estres": 25,
+          "hrv": 68,
+          "min_intensidad": 147
+        },
+        {
+          "fecha": "2026-07-01",
+          "pasos": 8972,
+          "sueno": 5.9,
+          "rhr": 49,
+          "estres": 23,
+          "hrv": 81,
+          "min_intensidad": 131
+        },
+        {
+          "fecha": "2026-07-02",
+          "pasos": 9740,
+          "sueno": 6.8,
+          "rhr": 46,
+          "estres": 24,
+          "hrv": 62,
+          "min_intensidad": 199
+        },
+        {
+          "fecha": "2026-07-03",
+          "pasos": 5525,
+          "sueno": 6.2,
+          "rhr": 49,
+          "estres": 25,
+          "hrv": 51,
+          "min_intensidad": 101
+        },
+        {
+          "fecha": "2026-07-04",
+          "pasos": 6203,
+          "sueno": 6.8,
+          "rhr": 52,
+          "estres": 25,
+          "hrv": 57,
+          "min_intensidad": 128
+        },
+        {
+          "fecha": "2026-07-05",
+          "pasos": 7204,
+          "sueno": 7.8,
+          "rhr": 51,
+          "estres": 27,
+          "hrv": 63,
+          "min_intensidad": 151
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-06-29",
+          "nombre": "Ciclismo en sala",
+          "duracion": "50m 58s",
+          "distancia": "-",
+          "fc_media_max": "123.0 (Máx 160.0)",
+          "hr_recovery": "-42 ppm (🟢)",
+          "calorias": 381
+        }
+      ]
+    },
+    "2026-W28": {
+      "semana": "2026-W28",
+      "pasos": 59444,
+      "sueno": 5.9,
+      "rhr": 50,
+      "vo2": 37.0,
+      "hrv": 64,
+      "estres": 26,
+      "dias": [
+        {
+          "fecha": "2026-07-06",
+          "pasos": 10907,
+          "sueno": 6.3,
+          "rhr": 48,
+          "estres": 29,
+          "hrv": 61,
+          "min_intensidad": 195
+        },
+        {
+          "fecha": "2026-07-07",
+          "pasos": 8581,
+          "sueno": 5.2,
+          "rhr": 47,
+          "estres": 24,
+          "hrv": 63,
+          "min_intensidad": 170
+        },
+        {
+          "fecha": "2026-07-08",
+          "pasos": 11262,
+          "sueno": 7.1,
+          "rhr": 51,
+          "estres": 24,
+          "hrv": 69,
+          "min_intensidad": 151
+        },
+        {
+          "fecha": "2026-07-09",
+          "pasos": 7022,
+          "sueno": 6.6,
+          "rhr": 49,
+          "estres": 26,
+          "hrv": 68,
+          "min_intensidad": 150
+        },
+        {
+          "fecha": "2026-07-10",
+          "pasos": 7936,
+          "sueno": 3.7,
+          "rhr": 52,
+          "estres": 24,
+          "hrv": 63,
+          "min_intensidad": 149
+        },
+        {
+          "fecha": "2026-07-11",
+          "pasos": 9081,
+          "sueno": 6.6,
+          "rhr": 51,
+          "estres": 27,
+          "hrv": 63,
+          "min_intensidad": 198
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-07-07",
+          "nombre": "Ciclismo en sala",
+          "duracion": "55m 7s",
+          "distancia": "-",
+          "fc_media_max": "127.0 (Máx 172.0)",
+          "hr_recovery": "-62 ppm (🔥)",
+          "calorias": 384
+        },
+        {
+          "fecha": "2026-07-11",
+          "nombre": "Fuerza",
+          "duracion": "53m 39s",
+          "distancia": "-",
+          "fc_media_max": "108.0 (Máx 148.0)",
+          "hr_recovery": "-33 ppm (🟢)",
+          "calorias": 305
+        }
+      ]
+    },
+    "2026-W29": {
+      "semana": "2026-W29",
+      "pasos": 44970,
+      "sueno": 6.7,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 57,
+      "estres": 22,
+      "dias": [
+        {
+          "fecha": "2026-07-13",
+          "pasos": 7294,
+          "sueno": 7.0,
+          "rhr": 50,
+          "estres": 22,
+          "hrv": 56,
+          "min_intensidad": 129
+        },
+        {
+          "fecha": "2026-07-14",
+          "pasos": 6805,
+          "sueno": 7.0,
+          "rhr": 50,
+          "estres": 24,
+          "hrv": 54,
+          "min_intensidad": 147
+        },
+        {
+          "fecha": "2026-07-15",
+          "pasos": 8412,
+          "sueno": 6.2,
+          "rhr": 51,
+          "estres": 25,
+          "hrv": 55,
+          "min_intensidad": 155
+        },
+        {
+          "fecha": "2026-07-16",
+          "pasos": 5420,
+          "sueno": 5.7,
+          "rhr": 52,
+          "estres": 21,
+          "hrv": 68,
+          "min_intensidad": 99
+        },
+        {
+          "fecha": "2026-07-17",
+          "pasos": 6620,
+          "sueno": 6.5,
+          "rhr": 48,
+          "estres": 18,
+          "hrv": 57,
+          "min_intensidad": 112
+        },
+        {
+          "fecha": "2026-07-18",
+          "pasos": 5350,
+          "sueno": 6.8,
+          "rhr": 49,
+          "estres": 21,
+          "hrv": 61,
+          "min_intensidad": 112
+        },
+        {
+          "fecha": "2026-07-19",
+          "pasos": 5069,
+          "sueno": 7.5,
+          "rhr": 48,
+          "estres": 24,
+          "hrv": 51,
+          "min_intensidad": 131
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-07-14",
+          "nombre": "Ciclismo en sala",
+          "duracion": "1h 4m",
+          "distancia": "-",
+          "fc_media_max": "121.0 (Máx 167.0)",
+          "hr_recovery": "-68 ppm (🔥)",
+          "calorias": 397
+        }
+      ]
+    },
+    "2026-W30": {
+      "semana": "2026-W30",
+      "pasos": 56335,
+      "sueno": 6.4,
+      "rhr": 50,
+      "vo2": 37.0,
+      "hrv": 58,
+      "estres": 22,
+      "dias": [
+        {
+          "fecha": "2026-07-20",
+          "pasos": 3869,
+          "sueno": 5.7,
+          "rhr": 51,
+          "estres": 20,
+          "hrv": 53,
+          "min_intensidad": 79
+        },
+        {
+          "fecha": "2026-07-21",
+          "pasos": 5954,
+          "sueno": 7.0,
+          "rhr": 50,
+          "estres": 26,
+          "hrv": 52,
+          "min_intensidad": 137
+        },
+        {
+          "fecha": "2026-07-22",
+          "pasos": 6921,
+          "sueno": 6.6,
+          "rhr": 51,
+          "estres": 25,
+          "hrv": 58,
+          "min_intensidad": 146
+        },
+        {
+          "fecha": "2026-07-24",
+          "pasos": 8106,
+          "sueno": 7.1,
+          "rhr": 49,
+          "estres": 19,
+          "hrv": 59,
+          "min_intensidad": 147
+        },
+        {
+          "fecha": "2026-07-25",
+          "pasos": 8553,
+          "sueno": 6.0,
+          "rhr": 50,
+          "estres": 19,
+          "hrv": 64,
+          "min_intensidad": 173
+        },
+        {
+          "fecha": "2026-07-26",
+          "pasos": 12207,
+          "sueno": 6.3,
+          "rhr": 47,
+          "estres": 21,
+          "hrv": 63,
+          "min_intensidad": 258
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-07-21",
+          "nombre": "Ciclismo en sala",
+          "duracion": "51m 42s",
+          "distancia": "-",
+          "fc_media_max": "131.0 (Máx 168.0)",
+          "hr_recovery": "-53 ppm (🔥)",
+          "calorias": 377
+        }
+      ]
+    },
+    "2026-W31": {
+      "semana": "2026-W31",
+      "pasos": 70757,
+      "sueno": 6.8,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 53,
+      "estres": 22,
+      "dias": [
+        {
+          "fecha": "2026-07-27",
+          "pasos": 8405,
+          "sueno": 6.5,
+          "rhr": 49,
+          "estres": 20,
+          "hrv": 53,
+          "min_intensidad": 121
+        },
+        {
+          "fecha": "2026-07-28",
+          "pasos": 14222,
+          "sueno": 6.6,
+          "rhr": 47,
+          "estres": 20,
+          "hrv": 49,
+          "min_intensidad": 253
+        },
+        {
+          "fecha": "2026-07-29",
+          "pasos": 15974,
+          "sueno": 6.3,
+          "rhr": 49,
+          "estres": 30,
+          "hrv": 53,
+          "min_intensidad": 213
+        },
+        {
+          "fecha": "2026-07-30",
+          "pasos": 10885,
+          "sueno": 7.3,
+          "rhr": 50,
+          "estres": 21,
+          "hrv": 53,
+          "min_intensidad": 181
+        },
+        {
+          "fecha": "2026-07-31",
+          "pasos": 9092,
+          "sueno": 6.9,
+          "rhr": 49,
+          "estres": 20,
+          "hrv": 54,
+          "min_intensidad": 159
+        },
+        {
+          "fecha": "2026-08-01",
+          "pasos": 6617,
+          "sueno": 6.1,
+          "rhr": 48,
+          "estres": 21,
+          "hrv": 56,
+          "min_intensidad": 155
+        },
+        {
+          "fecha": "2026-08-02",
+          "pasos": 5562,
+          "sueno": 7.8,
+          "rhr": 52,
+          "estres": 23,
+          "hrv": 55,
+          "min_intensidad": 138
+        }
+      ],
+      "actividades": []
+    },
+    "2026-W32": {
+      "semana": "2026-W32",
+      "pasos": 44473,
+      "sueno": 6.6,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 60,
+      "estres": 23,
+      "dias": [
+        {
+          "fecha": "2026-08-03",
+          "pasos": 8156,
+          "sueno": 6.8,
+          "rhr": 49,
+          "estres": 27,
+          "hrv": 62,
+          "min_intensidad": 160
+        },
+        {
+          "fecha": "2026-08-04",
+          "pasos": 5321,
+          "sueno": 6.4,
+          "rhr": 50,
+          "estres": 22,
+          "hrv": 55,
+          "min_intensidad": 116
+        },
+        {
+          "fecha": "2026-08-05",
+          "pasos": 5214,
+          "sueno": 6.5,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 62,
+          "min_intensidad": 123
+        },
+        {
+          "fecha": "2026-08-07",
+          "pasos": 6452,
+          "sueno": 6.3,
+          "rhr": 53,
+          "estres": 22,
+          "hrv": 60,
+          "min_intensidad": 113
+        },
+        {
+          "fecha": "2026-08-08",
+          "pasos": 6198,
+          "sueno": 7.2,
+          "rhr": 48,
+          "estres": 22,
+          "hrv": 57,
+          "min_intensidad": 128
+        },
+        {
+          "fecha": "2026-08-09",
+          "pasos": 6803,
+          "sueno": 6.3,
+          "rhr": 50,
+          "estres": 24,
+          "hrv": 69,
+          "min_intensidad": 146
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-08-06",
+          "nombre": "Fuerza",
+          "duracion": "57m 38s",
+          "distancia": "-",
+          "fc_media_max": "107.0 (Máx 149.0)",
+          "hr_recovery": "-70 ppm (🔥)",
+          "calorias": 316
+        }
+      ]
+    },
+    "2026-W33": {
+      "semana": "2026-W33",
+      "pasos": 67180,
+      "sueno": 6.6,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 60,
+      "estres": 24,
+      "dias": [
+        {
+          "fecha": "2026-08-10",
+          "pasos": 9722,
+          "sueno": 6.4,
+          "rhr": 49,
+          "estres": 22,
+          "hrv": 61,
+          "min_intensidad": 203
+        },
+        {
+          "fecha": "2026-08-11",
+          "pasos": 10137,
+          "sueno": 6.6,
+          "rhr": 51,
+          "estres": 21,
+          "hrv": 64,
+          "min_intensidad": 238
+        },
+        {
+          "fecha": "2026-08-12",
+          "pasos": 5361,
+          "sueno": 5.5,
+          "rhr": 49,
+          "estres": 21,
+          "hrv": 54,
+          "min_intensidad": 125
+        },
+        {
+          "fecha": "2026-08-13",
+          "pasos": 13127,
+          "sueno": 7.1,
+          "rhr": 45,
+          "estres": 24,
+          "hrv": 63,
+          "min_intensidad": 225
+        },
+        {
+          "fecha": "2026-08-14",
+          "pasos": 8138,
+          "sueno": 7.6,
+          "rhr": 51,
+          "estres": 31,
+          "hrv": 50,
+          "min_intensidad": 184
+        },
+        {
+          "fecha": "2026-08-16",
+          "pasos": 5515,
+          "sueno": 6.3,
+          "rhr": 50,
+          "estres": 24,
+          "hrv": 72,
+          "min_intensidad": 121
+        }
+      ],
+      "actividades": []
+    },
+    "2026-W34": {
+      "semana": "2026-W34",
+      "pasos": 44420,
+      "sueno": 7.2,
+      "rhr": 48,
+      "vo2": 35.0,
+      "hrv": 56,
+      "estres": 25,
+      "dias": [
+        {
+          "fecha": "2026-08-17",
+          "pasos": 3045,
+          "sueno": 6.5,
+          "rhr": 49,
+          "estres": 20,
+          "hrv": 52,
+          "min_intensidad": 67
+        },
+        {
+          "fecha": "2026-08-18",
+          "pasos": 4962,
+          "sueno": 8.1,
+          "rhr": 46,
+          "estres": 23,
+          "hrv": 56,
+          "min_intensidad": 120
+        },
+        {
+          "fecha": "2026-08-19",
+          "pasos": 5759,
+          "sueno": 6.5,
+          "rhr": 50,
+          "estres": 32,
+          "hrv": 48,
+          "min_intensidad": 105
+        },
+        {
+          "fecha": "2026-08-20",
+          "pasos": 7307,
+          "sueno": 7.8,
+          "rhr": 50,
+          "estres": 29,
+          "hrv": 63,
+          "min_intensidad": 135
+        },
+        {
+          "fecha": "2026-08-21",
+          "pasos": 6605,
+          "sueno": 6.2,
+          "rhr": 47,
+          "estres": 23,
+          "hrv": 63,
+          "min_intensidad": 159
+        },
+        {
+          "fecha": "2026-08-22",
+          "pasos": 7347,
+          "sueno": 8.0,
+          "rhr": 48,
+          "estres": 27,
+          "hrv": 54,
+          "min_intensidad": 165
+        },
+        {
+          "fecha": "2026-08-23",
+          "pasos": 9395,
+          "sueno": 7.5,
+          "rhr": 48,
+          "estres": 26,
+          "hrv": 60,
+          "min_intensidad": 186
+        }
+      ],
+      "actividades": []
+    },
+    "2026-W35": {
+      "semana": "2026-W35",
+      "pasos": 60726,
+      "sueno": 7.1,
+      "rhr": 47,
+      "vo2": 35.0,
+      "hrv": 59,
+      "estres": 26,
+      "dias": [
+        {
+          "fecha": "2026-08-24",
+          "pasos": 8004,
+          "sueno": 6.9,
+          "rhr": 47,
+          "estres": 28,
+          "hrv": 61,
+          "min_intensidad": 175
+        },
+        {
+          "fecha": "2026-08-25",
+          "pasos": 7252,
+          "sueno": 6.7,
+          "rhr": 49,
+          "estres": 27,
+          "hrv": 56,
+          "min_intensidad": 152
+        },
+        {
+          "fecha": "2026-08-26",
+          "pasos": 14531,
+          "sueno": 6.6,
+          "rhr": 48,
+          "estres": 29,
+          "hrv": 61,
+          "min_intensidad": 221
+        },
+        {
+          "fecha": "2026-08-27",
+          "pasos": 6047,
+          "sueno": 9.2,
+          "rhr": 46,
+          "estres": 22,
+          "hrv": 59,
+          "min_intensidad": 102
+        },
+        {
+          "fecha": "2026-08-28",
+          "pasos": 6759,
+          "sueno": 6.5,
+          "rhr": 48,
+          "estres": 24,
+          "hrv": 63,
+          "min_intensidad": 119
+        },
+        {
+          "fecha": "2026-08-29",
+          "pasos": 6178,
+          "sueno": 7.0,
+          "rhr": 47,
+          "estres": 22,
+          "hrv": 58,
+          "min_intensidad": 159
+        },
+        {
+          "fecha": "2026-08-30",
+          "pasos": 11955,
+          "sueno": 7.1,
+          "rhr": 46,
+          "estres": 32,
+          "hrv": 59,
+          "min_intensidad": 211
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-08-24",
+          "nombre": "Fuerza",
+          "duracion": "30m 2s",
+          "distancia": "-",
+          "fc_media_max": "112.0 (Máx 148.0)",
+          "hr_recovery": "-50 ppm (🔥)",
+          "calorias": 194
+        }
+      ]
+    },
+    "2026-W36": {
+      "semana": "2026-W36",
+      "pasos": 58458,
+      "sueno": 6.9,
+      "rhr": 47,
+      "vo2": 36.0,
+      "hrv": 60,
+      "estres": 26,
+      "dias": [
+        {
+          "fecha": "2026-08-31",
+          "pasos": 10810,
+          "sueno": 6.8,
+          "rhr": 48,
+          "estres": 25,
+          "hrv": 59,
+          "min_intensidad": 211
+        },
+        {
+          "fecha": "2026-09-01",
+          "pasos": 7896,
+          "sueno": 6.9,
+          "rhr": 47,
+          "estres": 27,
+          "hrv": 59,
+          "min_intensidad": 173
+        },
+        {
+          "fecha": "2026-09-02",
+          "pasos": 8674,
+          "sueno": 7.0,
+          "rhr": 46,
+          "estres": 27,
+          "hrv": 62,
+          "min_intensidad": 158
+        },
+        {
+          "fecha": "2026-09-03",
+          "pasos": 12328,
+          "sueno": 6.7,
+          "rhr": 47,
+          "estres": 29,
+          "hrv": 62,
+          "min_intensidad": 253
+        },
+        {
+          "fecha": "2026-09-04",
+          "pasos": 6907,
+          "sueno": 6.2,
+          "rhr": 51,
+          "estres": 25,
+          "hrv": 60,
+          "min_intensidad": 132
+        },
+        {
+          "fecha": "2026-09-05",
+          "pasos": 5828,
+          "sueno": 7.3,
+          "rhr": 45,
+          "estres": 21,
+          "hrv": 60,
+          "min_intensidad": 130
+        },
+        {
+          "fecha": "2026-09-06",
+          "pasos": 6015,
+          "sueno": 7.5,
+          "rhr": 48,
+          "estres": 30,
+          "hrv": 60,
+          "min_intensidad": 141
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-01",
+          "nombre": "Ciclismo en sala",
+          "duracion": "50m 21s",
+          "distancia": "-",
+          "fc_media_max": "131.0 (Máx 168.0)",
+          "hr_recovery": "-47 ppm (🔥)",
+          "calorias": 361
+        }
+      ]
+    },
+    "2026-W37": {
+      "semana": "2026-W37",
+      "pasos": 62537,
+      "sueno": 7.3,
+      "rhr": 47,
+      "vo2": 36.0,
+      "hrv": 60,
+      "estres": 25,
+      "dias": [
+        {
+          "fecha": "2026-09-07",
+          "pasos": 9381,
+          "sueno": 7.8,
+          "rhr": 48,
+          "estres": 29,
+          "hrv": 53,
+          "min_intensidad": 183
+        },
+        {
+          "fecha": "2026-09-08",
+          "pasos": 6772,
+          "sueno": 8.1,
+          "rhr": 47,
+          "estres": 22,
+          "hrv": 72,
+          "min_intensidad": 149
+        },
+        {
+          "fecha": "2026-09-09",
+          "pasos": 7999,
+          "sueno": 7.2,
+          "rhr": 46,
+          "estres": 25,
+          "hrv": 63,
+          "min_intensidad": 161
+        },
+        {
+          "fecha": "2026-09-10",
+          "pasos": 7786,
+          "sueno": 7.2,
+          "rhr": 48,
+          "estres": 24,
+          "hrv": 60,
+          "min_intensidad": 146
+        },
+        {
+          "fecha": "2026-09-11",
+          "pasos": 9236,
+          "sueno": 6.3,
+          "rhr": 46,
+          "estres": 21,
+          "hrv": 55,
+          "min_intensidad": 148
+        },
+        {
+          "fecha": "2026-09-12",
+          "pasos": 7559,
+          "sueno": 7.4,
+          "rhr": 46,
+          "estres": 22,
+          "hrv": 59,
+          "min_intensidad": 121
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-07",
+          "nombre": "Ciclismo en sala",
+          "duracion": "56m 6s",
+          "distancia": "-",
+          "fc_media_max": "121.0 (Máx 166.0)",
+          "hr_recovery": "-69 ppm (🔥)",
+          "calorias": 355
+        }
+      ]
+    },
+    "2026-W38": {
+      "semana": "2026-W38",
+      "pasos": 33796,
+      "sueno": 6.8,
+      "rhr": 47,
+      "vo2": 36.0,
+      "hrv": 58,
+      "estres": 23,
+      "dias": [
+        {
+          "fecha": "2026-09-14",
+          "pasos": 7103,
+          "sueno": 6.8,
+          "rhr": 46,
+          "estres": 27,
+          "hrv": 58,
+          "min_intensidad": 138
+        },
+        {
+          "fecha": "2026-09-15",
+          "pasos": 6680,
+          "sueno": 7.1,
+          "rhr": 47,
+          "estres": 24,
+          "hrv": 48,
+          "min_intensidad": 146
+        },
+        {
+          "fecha": "2026-09-16",
+          "pasos": 6348,
+          "sueno": 6.8,
+          "rhr": 49,
+          "estres": 25,
+          "hrv": 65,
+          "min_intensidad": 131
+        },
+        {
+          "fecha": "2026-09-17",
+          "pasos": 5482,
+          "sueno": 6.7,
+          "rhr": 48,
+          "estres": 22,
+          "hrv": 61,
+          "min_intensidad": 120
+        },
+        {
+          "fecha": "2026-09-18",
+          "pasos": 5919,
+          "sueno": 6.8,
+          "rhr": 46,
+          "estres": 24,
+          "hrv": 59,
+          "min_intensidad": 121
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-14",
+          "nombre": "Ciclismo en sala",
+          "duracion": "49m 30s",
+          "distancia": "-",
+          "fc_media_max": "127.0 (Máx 173.0)",
+          "hr_recovery": "-49 ppm (🔥)",
+          "calorias": 385
+        },
+        {
+          "fecha": "2026-09-20",
+          "nombre": "Fuerza",
+          "duracion": "1h 1m",
+          "distancia": "-",
+          "fc_media_max": "112.0 (Máx 153.0)",
+          "hr_recovery": "-59 ppm (🔥)",
+          "calorias": 362
+        }
+      ]
+    },
+    "2026-W39": {
+      "semana": "2026-W39",
+      "pasos": 45941,
+      "sueno": 6.9,
+      "rhr": 49,
+      "vo2": 36.0,
+      "hrv": 58,
+      "estres": 27,
+      "dias": [
+        {
+          "fecha": "2026-09-22",
+          "pasos": 8798,
+          "sueno": 6.5,
+          "rhr": 47,
+          "estres": 29,
+          "hrv": 55,
+          "min_intensidad": 162
+        },
+        {
+          "fecha": "2026-09-23",
+          "pasos": 5136,
+          "sueno": 7.0,
+          "rhr": 47,
+          "estres": 23,
+          "hrv": 60,
+          "min_intensidad": 118
+        },
+        {
+          "fecha": "2026-09-25",
+          "pasos": 6612,
+          "sueno": 6.6,
+          "rhr": 51,
+          "estres": 28,
+          "hrv": 58,
+          "min_intensidad": 143
+        },
+        {
+          "fecha": "2026-09-26",
+          "pasos": 9074,
+          "sueno": 6.1,
+          "rhr": 51,
+          "estres": 28,
+          "hrv": 64,
+          "min_intensidad": 186
+        },
+        {
+          "fecha": "2026-09-27",
+          "pasos": 4815,
+          "sueno": 8.3,
+          "rhr": 46,
+          "estres": 22,
+          "hrv": 53,
+          "min_intensidad": 93
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-22",
+          "nombre": "Ciclismo en sala",
+          "duracion": "51m 58s",
+          "distancia": "-",
+          "fc_media_max": "125.0 (Máx 173.0)",
+          "hr_recovery": "-57 ppm (🔥)",
+          "calorias": 283
+        },
+        {
+          "fecha": "2026-09-26",
+          "nombre": "Valencia Tenis",
+          "duracion": "51m 2s",
+          "distancia": "1.73 km",
+          "fc_media_max": "133.0 (Máx 195.0)",
+          "hr_recovery": "-123 ppm (🔥)",
+          "calorias": 439
+        }
+      ]
+    },
+    "2026-W40": {
+      "semana": "2026-W40",
+      "pasos": 44198,
+      "sueno": 7.1,
+      "rhr": 48,
+      "vo2": 35.0,
+      "hrv": 54,
+      "estres": 25,
+      "dias": [
+        {
+          "fecha": "2026-09-28",
+          "pasos": 8724,
+          "sueno": 8.0,
+          "rhr": 47,
+          "estres": 29,
+          "hrv": 56,
+          "min_intensidad": 194
+        },
+        {
+          "fecha": "2026-09-29",
+          "pasos": 7844,
+          "sueno": 6.7,
+          "rhr": 49,
+          "estres": 29,
+          "hrv": 44,
+          "min_intensidad": 161
+        },
+        {
+          "fecha": "2026-09-30",
+          "pasos": 7935,
+          "sueno": 6.8,
+          "rhr": 46,
+          "estres": 23,
+          "hrv": 59,
+          "min_intensidad": 153
+        },
+        {
+          "fecha": "2026-10-01",
+          "pasos": 6349,
+          "sueno": 6.8,
+          "rhr": 50,
+          "estres": 25,
+          "hrv": 65,
+          "min_intensidad": 144
+        },
+        {
+          "fecha": "2026-10-02",
+          "pasos": 2778,
+          "sueno": 6.9,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 53,
+          "min_intensidad": 59
+        },
+        {
+          "fecha": "2026-10-03",
+          "pasos": 7314,
+          "sueno": 7.3,
+          "rhr": 50,
+          "estres": 27,
+          "hrv": 56,
+          "min_intensidad": 126
+        },
+        {
+          "fecha": "2026-10-04",
+          "pasos": 3254,
+          "sueno": 7.4,
+          "rhr": 51,
+          "estres": 27,
+          "hrv": 50,
+          "min_intensidad": 111
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-09-29",
+          "nombre": "Ciclismo en sala",
+          "duracion": "50m 46s",
+          "distancia": "-",
+          "fc_media_max": "126.0 (Máx 198.0)",
+          "hr_recovery": "-82 ppm (🔥)",
+          "calorias": 394
+        },
+        {
+          "fecha": "2026-10-04",
+          "nombre": "Fuerza",
+          "duracion": "49m 43s",
+          "distancia": "-",
+          "fc_media_max": "121.0 (Máx 172.0)",
+          "hr_recovery": "-64 ppm (🔥)",
+          "calorias": 337
+        }
+      ]
+    },
+    "2026-W41": {
+      "semana": "2026-W41",
+      "pasos": 84342,
+      "sueno": 7.2,
+      "rhr": 47,
+      "vo2": 35.0,
+      "hrv": 50,
+      "estres": 22,
+      "dias": [
+        {
+          "fecha": "2026-10-05",
+          "pasos": 7440,
+          "sueno": 6.9,
+          "rhr": 49,
+          "estres": 25,
+          "hrv": 49,
+          "min_intensidad": 158
+        },
+        {
+          "fecha": "2026-10-06",
+          "pasos": 8587,
+          "sueno": 6.6,
+          "rhr": 46,
+          "estres": 24,
+          "hrv": 51,
+          "min_intensidad": 158
+        },
+        {
+          "fecha": "2026-10-07",
+          "pasos": 3093,
+          "sueno": 6.7,
+          "rhr": 47,
+          "estres": 21,
+          "hrv": 51,
+          "min_intensidad": 77
+        },
+        {
+          "fecha": "2026-10-08",
+          "pasos": 3768,
+          "sueno": 6.7,
+          "rhr": 47,
+          "estres": 19,
+          "hrv": 47,
+          "min_intensidad": 66
+        },
+        {
+          "fecha": "2026-10-09",
+          "pasos": 21424,
+          "sueno": 7.0,
+          "rhr": 45,
+          "estres": 24,
+          "hrv": 58,
+          "min_intensidad": 346
+        },
+        {
+          "fecha": "2026-10-10",
+          "pasos": 21480,
+          "sueno": 8.6,
+          "rhr": 49,
+          "estres": 23,
+          "hrv": 43,
+          "min_intensidad": 343
+        },
+        {
+          "fecha": "2026-10-11",
+          "pasos": 18550,
+          "sueno": 8.3,
+          "rhr": 48,
+          "estres": 18,
+          "hrv": 51,
+          "min_intensidad": 293
+        }
+      ],
+      "actividades": [
+        {
+          "fecha": "2026-10-06",
+          "nombre": "Ciclismo en sala",
+          "duracion": "49m 12s",
+          "distancia": "-",
+          "fc_media_max": "131.0 (Máx 168.0)",
+          "hr_recovery": "-73 ppm (🔥)",
+          "calorias": 348
+        },
+        {
+          "fecha": "2026-10-09",
+          "nombre": "Joch Caminar",
+          "duracion": "3h 25m",
+          "distancia": "10.44 km",
+          "fc_media_max": "101.0 (Máx 165.0)",
+          "hr_recovery": "-96 ppm (🔥)",
+          "calorias": 1034
+        },
+        {
+          "fecha": "2026-10-10",
+          "nombre": "Les Angles Caminar",
+          "duracion": "5h 14m",
+          "distancia": "11.49 km",
+          "fc_media_max": "101.0 (Máx 156.0)",
+          "hr_recovery": "-68 ppm (🔥)",
+          "calorias": 1371
+        },
+        {
+          "fecha": "2026-10-11",
+          "nombre": "Casteil Caminar",
+          "duracion": "2h 30m",
+          "distancia": "5.38 km",
+          "fc_media_max": "86.0 (Máx 161.0)",
+          "hr_recovery": "-58 ppm (🔥)",
+          "calorias": 577
+        },
+        {
+          "fecha": "2026-10-11",
+          "nombre": "Codalet Caminar",
+          "duracion": "3h 9m",
+          "distancia": "7.49 km",
+          "fc_media_max": "78.0 (Máx 144.0)",
+          "hr_recovery": "-62 ppm (🔥)",
+          "calorias": 634
+        }
+      ]
+    }
+  },
   "desafios": [
     {
       "id": "pasos_50k",

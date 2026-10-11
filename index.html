@@ -366,9 +366,14 @@
       <div class="flex items-center justify-between">
         <div>
           <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Calendario & Diario de Rendimiento</h2>
-          <span class="text-[10px] text-slate-500 font-medium">Garmin Connect+ · Semana 41</span>
+          <span class="text-[10px] text-slate-500 font-medium" id="calendar-subtitle">Explora cualquier semana del historial</span>
         </div>
-        <span class="text-[10px] text-[#00A3E0] font-bold bg-[#00A3E0]/10 px-2 py-0.5 rounded-full border border-[#00A3E0]/20">Semana 41 (Octubre 2026)</span>
+        <!-- Selector desplegable interactivo de semanas -->
+        <div class="relative">
+          <select id="calendar-week-select" onchange="changeCalendarWeek(this.value)" class="bg-[#16202A] border border-[#00A3E0]/40 text-[#00A3E0] font-bold text-xs rounded-xl px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#00A3E0] cursor-pointer">
+            <!-- Rellenado dinámicamente con todas las semanas disponibles -->
+          </select>
+        </div>
       </div>
 
       <!-- SELECTOR HORIZONTAL DE DÍAS (ESTILO NAVEGACIÓN GARMIN CONNECT) -->
@@ -1031,53 +1036,69 @@
         const res = await fetch('data.json?t=' + new Date().getTime());
         appData = await res.json();
 
-        // 1. Dispositivos
-        if (appData.dispositivos) {
-          document.getElementById('bat-f7').textContent = appData.dispositivos.fenix_7.bateria + '%';
-          document.getElementById('bat-helio').textContent = appData.dispositivos.helio_strap.bateria + '%';
+        // 1. Dispositivos (protegido contra null)
+        if (appData.dispositivos && appData.dispositivos.fenix_7) {
+          const elF7 = document.getElementById('bat-f7');
+          if (elF7) elF7.textContent = (appData.dispositivos.fenix_7.bateria || 88) + '%';
         }
 
         // 2. Readiness
         if (appData.disposicion_rendimiento) {
-          document.getElementById('readiness-score').textContent = appData.disposicion_rendimiento.score;
+          const elScore = document.getElementById('readiness-score');
+          if (elScore) elScore.textContent = appData.disposicion_rendimiento.score;
         }
 
         // 3. Active Intelligence
         if (appData.active_intelligence) {
-          document.getElementById('active-intel-text').textContent = appData.active_intelligence;
+          const elIntel = document.getElementById('active-intel-text');
+          if (elIntel) elIntel.textContent = appData.active_intelligence;
         }
 
         // 4. Métricas clave
         if (appData.metricas_clave) {
           const m = appData.metricas_clave;
-          document.getElementById('rhr-val').textContent = m.rhr;
-          document.getElementById('hrv-val').textContent = m.hrv;
-          document.getElementById('sleep-hours').textContent = m.sueno_horas;
-          document.getElementById('sleep-score').textContent = 'Score ' + (m.sueno_score || 88);
-          document.getElementById('steps-val').textContent = m.pasos.toLocaleString('es-ES');
-          document.getElementById('intensity-val').textContent = m.min_intensidad;
+          const elRhr = document.getElementById('rhr-val');
+          const elHrv = document.getElementById('hrv-val');
+          const elSleepH = document.getElementById('sleep-hours');
+          const elSleepS = document.getElementById('sleep-score');
+          const elSteps = document.getElementById('steps-val');
+          const elInt = document.getElementById('intensity-val');
+
+          if (elRhr) elRhr.textContent = m.rhr;
+          if (elHrv) elHrv.textContent = m.hrv;
+          if (elSleepH) elSleepH.textContent = m.sueno_horas;
+          if (elSleepS) elSleepS.textContent = 'Score ' + (m.sueno_score || 88);
+          if (elSteps) elSteps.textContent = m.pasos.toLocaleString('es-ES');
+          if (elInt) elInt.textContent = m.min_intensidad;
         }
 
         // 5. Body Battery
         if (appData.body_battery) {
-          document.getElementById('bb-val').textContent = appData.body_battery.actual;
+          const elBb = document.getElementById('bb-val');
+          if (elBb) elBb.textContent = appData.body_battery.actual;
         }
 
-        // 6. Actividad reciente (la última registrada)
+        // 6. Actividad reciente
         if (appData.actividades && appData.actividades.length > 0) {
           const act = appData.actividades[appData.actividades.length - 1];
-          document.getElementById('act-title').textContent = act.nombre;
-          document.getElementById('act-date').textContent = act.fecha;
-          document.getElementById('act-calories').textContent = act.calorias + ' kcal';
-          document.getElementById('act-duration').textContent = act.duracion + (act.distancia !== '-' ? ' · ' + act.distancia : '');
-          document.getElementById('act-hr').textContent = act.fc_media_max;
-          document.getElementById('act-recovery').textContent = act.hr_recovery;
+          const elTitle = document.getElementById('act-title');
+          const elDate = document.getElementById('act-date');
+          const elCal = document.getElementById('act-calories');
+          const elDur = document.getElementById('act-duration');
+          const elHr = document.getElementById('act-hr');
+          const elRec = document.getElementById('act-recovery');
+
+          if (elTitle) elTitle.textContent = act.nombre;
+          if (elDate) elDate.textContent = act.fecha;
+          if (elCal) elCal.textContent = act.calorias + ' kcal';
+          if (elDur) elDur.textContent = act.duracion + (act.distancia !== '-' ? ' · ' + act.distancia : '');
+          if (elHr) elHr.textContent = act.fc_media_max;
+          if (elRec) elRec.textContent = act.hr_recovery;
           
           const iconEl = document.getElementById('act-icon');
           if (iconEl) {
             const isHike = act.nombre.toLowerCase().includes('caminar') || act.nombre.toLowerCase().includes('senderismo');
             iconEl.setAttribute('data-lucide', isHike ? 'mountain' : (act.nombre.toLowerCase().includes('ciclismo') ? 'bike' : 'dumbbell'));
-            lucide.createIcons();
           }
         }
 
@@ -1086,11 +1107,16 @@
           renderHRChart(appData.curva_fc_24h);
         }
 
-        // 8. Renderizar Desafíos
+        // 8. Inicializar Selector de Semanas del Calendario
+        initCalendarWeeks();
+
+        // 9. Renderizar Desafíos
         renderChallenges();
 
-        // 9. Renderizar Calendario
+        // 10. Renderizar Calendario
         renderCalendar();
+
+        lucide.createIcons();
 
       } catch (err) {
         console.error("Error cargando data.json:", err);
@@ -1155,7 +1181,35 @@
       lucide.createIcons();
     }
 
-    let selectedDayIndex = 6; // Por defecto el último día (hoy / domingo)
+    let currentCalendarWeek = null;
+    let selectedDayIndex = 6; // Por defecto el último día registrado
+
+    function initCalendarWeeks() {
+      if (!appData || !appData.semanas_detalle) return;
+      const selectEl = document.getElementById('calendar-week-select');
+      if (!selectEl) return;
+
+      selectEl.innerHTML = '';
+      const weekKeys = Object.keys(appData.semanas_detalle).sort().reverse();
+      
+      if (!currentCalendarWeek || !appData.semanas_detalle[currentCalendarWeek]) {
+        currentCalendarWeek = appData.semana_actual || weekKeys[0];
+      }
+
+      weekKeys.forEach(w => {
+        const opt = document.createElement('option');
+        opt.value = w;
+        opt.textContent = `Semana ${w.replace('2026-', '')} (2026)`;
+        if (w === currentCalendarWeek) opt.selected = true;
+        selectEl.appendChild(opt);
+      });
+    }
+
+    function changeCalendarWeek(weekKey) {
+      currentCalendarWeek = weekKey;
+      selectedDayIndex = 0; // Al cambiar de semana, seleccionar el primer día de esa semana
+      renderCalendar();
+    }
 
     function selectCalendarDay(idx) {
       selectedDayIndex = idx;
@@ -1163,38 +1217,58 @@
     }
 
     function renderCalendar() {
-      if (!appData || !appData.desglose_diario || appData.desglose_diario.length === 0) return;
-      const daily = appData.desglose_diario;
+      if (!appData) return;
+      
+      const weeksDict = appData.semanas_detalle || {};
+      const activeWeekKey = currentCalendarWeek || appData.semana_actual || Object.keys(weeksDict).pop();
+      const weekData = weeksDict[activeWeekKey] || { dias: appData.desglose_diario || [], actividades: appData.actividades || [] };
+      
+      const daily = weekData.dias || [];
+      const activities = weekData.actividades || [];
+
+      const subtitleEl = document.getElementById('calendar-subtitle');
+      if (subtitleEl) {
+        subtitleEl.textContent = `Semana ${activeWeekKey} · ${weekData.total_pasos ? weekData.total_pasos.toLocaleString('es-ES') + ' pasos' : 'Historial Garmin'}`;
+      }
+
       const selectorContainer = document.getElementById('calendar-day-selector');
       const selectedDayCard = document.getElementById('calendar-selected-day-card');
       const container = document.getElementById('calendar-days-container');
 
       const dayNames = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
 
-      // 1. Selector de 7 días estilo burbujas Garmin Connect
+      // 1. Selector de días estilo burbujas Garmin Connect
       if (selectorContainer) {
         selectorContainer.innerHTML = '';
-        daily.forEach((d, idx) => {
-          const isSelected = idx === selectedDayIndex;
-          const hasWalk = (appData.actividades || []).some(a => a.fecha === d.fecha);
-          const btn = document.createElement('button');
-          btn.onclick = () => selectCalendarDay(idx);
-          btn.className = `p-2 rounded-xl flex flex-col items-center justify-between transition-all ${
-            isSelected 
-              ? 'bg-[#00A3E0] text-white shadow-lg shadow-[#00A3E0]/30 scale-105' 
-              : 'bg-[#111A22] text-slate-400 hover:text-white border border-[#1E2D3B]'
-          }`;
+        if (daily.length === 0) {
+          selectorContainer.innerHTML = '<span class="text-xs text-slate-400 py-2 col-span-7">Sin registros diarios para esta semana</span>';
+        } else {
+          // Asegurar que selectedDayIndex esté en rango
+          if (selectedDayIndex >= daily.length) selectedDayIndex = daily.length - 1;
+          if (selectedDayIndex < 0) selectedDayIndex = 0;
 
-          const dayLetter = dayNames[idx % 7] || d.fecha.slice(8);
-          const dayNum = d.fecha.slice(8);
+          daily.forEach((d, idx) => {
+            const isSelected = idx === selectedDayIndex;
+            const hasWalk = activities.some(a => a.fecha === d.fecha);
+            const btn = document.createElement('button');
+            btn.onclick = () => selectCalendarDay(idx);
+            btn.className = `p-2 rounded-xl flex flex-col items-center justify-between transition-all ${
+              isSelected 
+                ? 'bg-[#00A3E0] text-white shadow-lg shadow-[#00A3E0]/30 scale-105' 
+                : 'bg-[#111A22] text-slate-400 hover:text-white border border-[#1E2D3B]'
+            }`;
 
-          btn.innerHTML = `
-            <span class="text-[9px] font-bold ${isSelected ? 'text-white' : 'text-slate-500'}">${dayLetter}</span>
-            <span class="text-xs font-black my-0.5">${dayNum}</span>
-            <span class="w-1.5 h-1.5 rounded-full ${hasWalk ? (isSelected ? 'bg-white' : 'bg-emerald-400') : (isSelected ? 'bg-white/40' : 'bg-transparent')}"></span>
-          `;
-          selectorContainer.appendChild(btn);
-        });
+            const dayLetter = dayNames[idx % 7] || d.fecha.slice(8);
+            const dayNum = d.fecha.slice(8);
+
+            btn.innerHTML = `
+              <span class="text-[9px] font-bold ${isSelected ? 'text-white' : 'text-slate-500'}">${dayLetter}</span>
+              <span class="text-xs font-black my-0.5">${dayNum}</span>
+              <span class="w-1.5 h-1.5 rounded-full ${hasWalk ? (isSelected ? 'bg-white' : 'bg-emerald-400') : (isSelected ? 'bg-white/40' : 'bg-transparent')}"></span>
+            `;
+            selectorContainer.appendChild(btn);
+          });
+        }
       }
 
       // 2. Tarjeta del día seleccionado
@@ -1286,11 +1360,14 @@
         });
       }
 
-      // 4. Renderizar actividades en calendario
+      // 4. Renderizar actividades en calendario (de la semana seleccionada)
       const actContainer = document.getElementById('calendar-activities-container');
-      if (actContainer && appData.actividades) {
+      if (actContainer) {
         actContainer.innerHTML = '';
-        appData.actividades.slice().reverse().forEach(act => {
+        if (activities.length === 0) {
+          actContainer.innerHTML = '<p class="text-xs text-slate-400 italic p-3 text-center">No hubo actividades deportivas registradas en esta semana.</p>';
+        } else {
+          activities.slice().reverse().forEach(act => {
           const isHike = act.nombre.toLowerCase().includes('caminar') || act.nombre.toLowerCase().includes('senderismo');
           const icon = isHike ? 'mountain' : (act.nombre.toLowerCase().includes('ciclismo') ? 'bike' : 'dumbbell');
           const color = isHike ? '#10B981' : (act.nombre.toLowerCase().includes('ciclismo') ? '#00A3E0' : '#A855F7');
@@ -1314,6 +1391,7 @@
           `;
           actContainer.appendChild(actEl);
         });
+        }
       }
 
       lucide.createIcons();

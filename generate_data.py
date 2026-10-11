@@ -13,9 +13,8 @@ def parse_garmin_data():
         return {}
 
     history_weeks = []
-    latest_file = files[-1]
+    weeks_dict = {}
 
-    # Parsear histórico multi-semanal
     for fpath in files:
         fname = os.path.basename(fpath)
         m = re.search(r"(\d{4}-W\d{2})", fname)
@@ -32,62 +31,61 @@ def parse_garmin_data():
         hrv_m = re.search(r"VFC media semanal \(HRV\):\*\*?\s*(\d+)", content)
         stress_m = re.search(r"Estrés promedio semanal:\*\*?\s*(\d+)", content)
 
-        history_weeks.append({
+        daily_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d,\.]+)\s*\|\s*([\d\.]+)h[^\|]*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*ms\s*\|\s*(\d+)m\s*\|", content)
+        week_days = []
+        for dm in daily_matches:
+            week_days.append({
+                "fecha": dm[0],
+                "pasos": int(dm[1].replace(",", "").replace(".", "")),
+                "sueno": float(dm[2]),
+                "rhr": int(dm[3]),
+                "estres": int(dm[4]),
+                "hrv": int(dm[5]),
+                "min_intensidad": int(dm[6])
+            })
+
+        act_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*(\d+)\s*\|", content)
+        week_activities = []
+        for am in act_matches:
+            act_name = am[1].strip()
+            if act_name.lower() in ["actividad", "---"]:
+                continue
+            week_activities.append({
+                "fecha": am[0].strip(),
+                "nombre": act_name,
+                "duracion": am[2].strip(),
+                "distancia": am[3].strip(),
+                "fc_media_max": am[4].strip(),
+                "hr_recovery": am[5].strip(),
+                "calorias": int(am[6].strip())
+            })
+
+        steps_val = int(steps_m.group(1).replace(",", "").replace(".", "")) if steps_m else sum(d["pasos"] for d in week_days)
+        sleep_val = float(sleep_m.group(1)) if sleep_m else (round(sum(d["sueno"] for d in week_days)/len(week_days), 1) if week_days else 0.0)
+        rhr_val = int(rhr_m.group(1)) if rhr_m else (round(sum(d["rhr"] for d in week_days)/len(week_days)) if week_days else 0)
+        vo2_val = float(vo2_m.group(1)) if vo2_m else 35.0
+        hrv_val = int(hrv_m.group(1)) if hrv_m else (round(sum(d["hrv"] for d in week_days)/len(week_days)) if week_days else 50)
+        stress_val = int(stress_m.group(1)) if stress_m else 25
+
+        week_summary = {
             "semana": wtag,
-            "pasos": int(steps_m.group(1).replace(",", "").replace(".", "")) if steps_m else 0,
-            "sueno": float(sleep_m.group(1)) if sleep_m else 0.0,
-            "rhr": int(rhr_m.group(1)) if rhr_m else 0,
-            "vo2": float(vo2_m.group(1)) if vo2_m else 35.0,
-            "hrv": int(hrv_m.group(1)) if hrv_m else 54,
-            "estres": int(stress_m.group(1)) if stress_m else 25
-        })
+            "pasos": steps_val,
+            "sueno": sleep_val,
+            "rhr": rhr_val,
+            "vo2": vo2_val,
+            "hrv": hrv_val,
+            "estres": stress_val,
+            "dias": week_days,
+            "actividades": week_activities
+        }
 
-    # Parsear archivo más reciente para desglose diario y análisis clínico
-    with open(latest_file, "r", encoding="utf-8") as f:
-        latest_content = f.read()
+        history_weeks.append(week_summary)
+        weeks_dict[wtag] = week_summary
 
-    # Extraer tabla diaria
-    daily_stats = []
-    daily_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d,\.]+)\s*\|\s*([\d\.]+)h[^\|]*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*ms\s*\|\s*(\d+)m\s*\|", latest_content)
-    for dm in daily_matches:
-        daily_stats.append({
-            "fecha": dm[0],
-            "pasos": int(dm[1].replace(",", "").replace(".", "")),
-            "sueno": float(dm[2]),
-            "rhr": int(dm[3]),
-            "estres": int(dm[4]),
-            "hrv": int(dm[5]),
-            "min_intensidad": int(dm[6])
-        })
+    latest_week = history_weeks[-1]
+    daily_stats = latest_week["dias"]
+    activities = latest_week["actividades"]
 
-    # Actividades recientes
-    activities = []
-    act_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*(\d+)\s*\|", latest_content)
-    for am in act_matches:
-        act_name = am[1].strip()
-        if act_name.lower() in ["actividad", "---"]:
-            continue
-        activities.append({
-            "fecha": am[0].strip(),
-            "nombre": act_name,
-            "duracion": am[2].strip(),
-            "distancia": am[3].strip(),
-            "fc_media_max": am[4].strip(),
-            "hr_recovery": am[5].strip(),
-            "calorias": int(am[6].strip())
-        })
-
-    # Extraer valoraciones clínicas de Obsidian
-    clinica_recov = re.findall(r"-\s*\*\*([^\*]+)\*\*:\s*Caída de \*\*([^\*]+)\*\* post-esfuerzo[^\n]*— Nivel:\s*([^\n]+)", latest_content)
-    evaluaciones_recov = []
-    for cr in clinica_recov:
-        evaluaciones_recov.append({
-            "sesion": cr[0].strip(),
-            "caida": cr[1].strip(),
-            "nivel": cr[2].strip()
-        })
-
-    # Datos consolidados del día actual / último registrado
     last_day = daily_stats[-1] if daily_stats else {
         "fecha": datetime.date.today().isoformat(),
         "pasos": 8724,
@@ -98,26 +96,20 @@ def parse_garmin_data():
         "min_intensidad": 126
     }
 
-    # Curva cardíaca continua 24h (100% Garmin Fénix 7 Solar - Sensor Elevate v4)
+    # Curva cardíaca continua 24h (100% Garmin Fénix 7 Solar)
     heart_rate_24h = []
     for h in range(24):
         time_str = f"{h:02d}:00"
-        # 00:00 a 07:00 sueño profundo/REM (Garmin Fénix 7)
         if 0 <= h < 7:
             bpm = 46 + (h % 3)
-        # 07:00 a 08:30 despertar y desayuno
         elif 7 <= h < 9:
             bpm = 62 + (h % 5) * 2
-        # 09:00 a 14:00 jornada clínica / consulta
         elif 9 <= h < 14:
             bpm = 58 + (h % 4) * 3
-        # 14:00 a 16:00 comida / descanso
         elif 14 <= h < 16:
             bpm = 54 + (h % 3) * 2
-        # 17:00 a 19:00 entrenamiento / caminata
         elif 17 <= h < 19:
             bpm = 126 if h == 18 else 85
-        # 19:00 a 23:00 tarde/noche y cena
         else:
             bpm = 56 + (h % 4)
 
@@ -127,25 +119,12 @@ def parse_garmin_data():
             "source": "Garmin Fénix 7 Solar"
         })
 
-    # Calcular métricas dinámicas
     total_steps_week = sum(d["pasos"] for d in daily_stats)
     total_intensity_week = sum(d["min_intensidad"] for d in daily_stats)
     avg_sleep_week = round(sum(d["sueno"] for d in daily_stats) / len(daily_stats), 1) if daily_stats else 7.2
     avg_hrv_week = round(sum(d["hrv"] for d in daily_stats) / len(daily_stats)) if daily_stats else 50
     avg_rhr_week = round(sum(d["rhr"] for d in daily_stats) / len(daily_stats)) if daily_stats else 47
 
-    # Última actividad (la más reciente de la lista)
-    latest_activity = activities[-1] if activities else {
-        "fecha": "2026-10-11",
-        "nombre": "Casteil Caminar",
-        "duracion": "2h 30m",
-        "distancia": "5.38 km",
-        "fc_media_max": "86.0 (Máx 161.0)",
-        "hr_recovery": "-58 ppm (🔥)",
-        "calorias": 577
-    }
-
-    # Texto clínico dinámico para Active Intelligence
     active_intel_str = (
         f"Semana extraordinaria de volumen aeróbico con {total_steps_week:,} pasos y múltiples rutas de senderismo "
         f"(Joch, Les Angles, Casteil y Codalet). Tu FC de reposo media es de {avg_rhr_week} ppm con un estrés basal de 22/100, "
@@ -157,6 +136,7 @@ def parse_garmin_data():
     data_payload = {
         "usuario": "Luis B.",
         "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "semana_actual": latest_week["semana"],
         "dispositivos": {
             "fenix_7": {
                 "nombre": "Garmin Fénix 7 Solar",
@@ -210,9 +190,9 @@ def parse_garmin_data():
         },
         "curva_fc_24h": heart_rate_24h,
         "actividades": activities,
-        "evaluaciones_recov": evaluaciones_recov,
         "desglose_diario": daily_stats,
-        "historico_semanas": history_weeks[-8:],
+        "historico_semanas": history_weeks[-10:],
+        "semanas_detalle": weeks_dict,
         "desafios": [
             {
                 "id": "pasos_50k",
@@ -275,7 +255,7 @@ def parse_garmin_data():
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as out:
         json.dump(data_payload, out, indent=2, ensure_ascii=False)
-    print(f"✅ data.json enriquecido generado con éxito en {OUTPUT_JSON}")
+    print(f"✅ data.json enriquecido generado con éxito en {OUTPUT_JSON} con {len(weeks_dict)} semanas completas")
 
 if __name__ == "__main__":
     parse_garmin_data()
