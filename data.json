@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-11 17:43:36",
+  "ultima_actualizacion": "2026-10-11 19:08:46",
   "dispositivos": {
     "fenix_7": {
       "nombre": "Garmin Fénix 7 Solar",
@@ -184,7 +184,90 @@
       "calorias": 337
     }
   ],
+  "desglose_diario": [
+    {
+      "fecha": "2026-09-28",
+      "pasos": 8724,
+      "sueno": 8.0,
+      "rhr": 47,
+      "estres": 29,
+      "hrv": 56,
+      "min_intensidad": 194
+    },
+    {
+      "fecha": "2026-09-29",
+      "pasos": 7844,
+      "sueno": 6.7,
+      "rhr": 49,
+      "estres": 29,
+      "hrv": 44,
+      "min_intensidad": 161
+    },
+    {
+      "fecha": "2026-09-30",
+      "pasos": 7935,
+      "sueno": 6.8,
+      "rhr": 46,
+      "estres": 23,
+      "hrv": 59,
+      "min_intensidad": 153
+    },
+    {
+      "fecha": "2026-10-01",
+      "pasos": 6349,
+      "sueno": 6.8,
+      "rhr": 50,
+      "estres": 25,
+      "hrv": 65,
+      "min_intensidad": 144
+    },
+    {
+      "fecha": "2026-10-02",
+      "pasos": 2778,
+      "sueno": 6.9,
+      "rhr": 48,
+      "estres": 20,
+      "hrv": 53,
+      "min_intensidad": 59
+    },
+    {
+      "fecha": "2026-10-03",
+      "pasos": 7314,
+      "sueno": 7.3,
+      "rhr": 50,
+      "estres": 27,
+      "hrv": 56,
+      "min_intensidad": 126
+    },
+    {
+      "fecha": "2026-10-04",
+      "pasos": 3254,
+      "sueno": 7.4,
+      "rhr": 51,
+      "estres": 27,
+      "hrv": 50,
+      "min_intensidad": 111
+    }
+  ],
   "historico_semanas": [
+    {
+      "semana": "2026-W33",
+      "pasos": 67180,
+      "sueno": 6.6,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 60,
+      "estres": 24
+    },
+    {
+      "semana": "2026-W34",
+      "pasos": 44420,
+      "sueno": 7.2,
+      "rhr": 48,
+      "vo2": 35.0,
+      "hrv": 56,
+      "estres": 25
+    },
     {
       "semana": "2026-W35",
       "pasos": 60726,
@@ -238,6 +321,44 @@
       "vo2": 35.0,
       "hrv": 54,
       "estres": 25
+    }
+  ],
+  "desafios": [
+    {
+      "titulo": "Objetivo Semanal de Pasos (Garmin+)",
+      "progreso": 44198,
+      "meta": 50000,
+      "unidad": "pasos",
+      "estado": "En progreso (88%)",
+      "color": "#00A3E0",
+      "icono": "footprints"
+    },
+    {
+      "titulo": "Minutos de Intensidad Moderada/Alta",
+      "progreso": 164,
+      "meta": 150,
+      "unidad": "min",
+      "estado": "Completado 🔥 (+14 min)",
+      "color": "#F59E0B",
+      "icono": "flame"
+    },
+    {
+      "titulo": "Consistencia de Sueño y VFC",
+      "progreso": 6,
+      "meta": 7,
+      "unidad": "días >7h",
+      "estado": "Casi listo (85%)",
+      "color": "#A855F7",
+      "icono": "moon"
+    },
+    {
+      "titulo": "Reactivación Vagal Óptima (HR Recovery)",
+      "progreso": 2,
+      "meta": 2,
+      "unidad": "sesiones >45 ppm",
+      "estado": "Superado 🔥 (Top Nivel)",
+      "color": "#10B981",
+      "icono": "heart"
     }
   ]
 }

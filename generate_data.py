@@ -175,7 +175,46 @@ def parse_garmin_data():
         },
         "curva_fc_24h": heart_rate_24h,
         "actividades": activities,
-        "historico_semanas": history_weeks[-6:]
+        "desglose_diario": daily_stats,
+        "historico_semanas": history_weeks[-8:],
+        "desafios": [
+            {
+                "titulo": "Objetivo Semanal de Pasos (Garmin+)",
+                "progreso": 44198,
+                "meta": 50000,
+                "unidad": "pasos",
+                "estado": "En progreso (88%)",
+                "color": "#00A3E0",
+                "icono": "footprints"
+            },
+            {
+                "titulo": "Minutos de Intensidad Moderada/Alta",
+                "progreso": 164,
+                "meta": 150,
+                "unidad": "min",
+                "estado": "Completado 🔥 (+14 min)",
+                "color": "#F59E0B",
+                "icono": "flame"
+            },
+            {
+                "titulo": "Consistencia de Sueño y VFC",
+                "progreso": 6,
+                "meta": 7,
+                "unidad": "días >7h",
+                "estado": "Casi listo (85%)",
+                "color": "#A855F7",
+                "icono": "moon"
+            },
+            {
+                "titulo": "Reactivación Vagal Óptima (HR Recovery)",
+                "progreso": 2,
+                "meta": 2,
+                "unidad": "sesiones >45 ppm",
+                "estado": "Superado 🔥 (Top Nivel)",
+                "color": "#10B981",
+                "icono": "heart"
+            }
+        ]
     }
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as out:
