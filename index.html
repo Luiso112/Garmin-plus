@@ -364,20 +364,45 @@
     <!-- ==================== TAB 3: CALENDARIO & DIARIO ==================== -->
     <div id="tab-calendar" class="hidden space-y-4">
       <div class="flex items-center justify-between">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Calendario de Sesiones y Métricas</h2>
-        <span class="text-[10px] text-[#00A3E0] font-medium">Semana 40 (2026)</span>
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Calendario & Diario de Rendimiento</h2>
+          <span class="text-[10px] text-slate-500 font-medium">Garmin Connect+ · Semana 41</span>
+        </div>
+        <span class="text-[10px] text-[#00A3E0] font-bold bg-[#00A3E0]/10 px-2 py-0.5 rounded-full border border-[#00A3E0]/20">Semana 41 (Octubre 2026)</span>
       </div>
 
-      <!-- Historial Diario (Semana Actual) -->
-      <section class="garmin-card p-4 space-y-3" id="calendar-days-container">
-        <!-- Generado dinámicamente -->
+      <!-- SELECTOR HORIZONTAL DE DÍAS (ESTILO NAVEGACIÓN GARMIN CONNECT) -->
+      <section class="garmin-card p-3 shadow-md">
+        <div class="text-[10px] uppercase font-bold text-slate-400 mb-2 px-1 flex items-center justify-between">
+          <span>Selecciona un Día</span>
+          <span class="text-slate-500">Toca para ver desglose</span>
+        </div>
+        <div id="calendar-day-selector" class="grid grid-cols-7 gap-1 text-center">
+          <!-- Renderizado dinámico de los 7 días con estados -->
+        </div>
       </section>
 
-      <!-- Resumen de Entrenamientos en Calendario (Dinámico) -->
-      <section class="garmin-card p-4">
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Entrenamientos & Rutas en Calendario</h3>
+      <!-- TARJETA DE DETALLE DEL DÍA SELECCIONADO (DINÁMICA) -->
+      <section id="calendar-selected-day-card" class="garmin-card p-4 space-y-3 border-l-4 border-l-[#00A3E0] shadow-lg">
+        <!-- Renderizado dinámico al tocar un día -->
+      </section>
+
+      <!-- HISTORIAL DIARIO COMPLETO (TABLA SEMANAL DE ALTO IMPACTO) -->
+      <section class="garmin-card p-4 space-y-2 shadow-md">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Métricas de la Semana Día a Día</h3>
+        <div id="calendar-days-container" class="space-y-1.5">
+          <!-- Generado dinámicamente -->
+        </div>
+      </section>
+
+      <!-- RESUMEN DE RUTAS Y ENTRENAMIENTOS DE LA SEMANA -->
+      <section class="garmin-card p-4 shadow-md">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Rutas de Montaña & Entrenamientos</h3>
+          <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">5 Actividades</span>
+        </div>
         <div id="calendar-activities-container" class="space-y-2">
-          <!-- Generado dinámicamente con todas las rutas de la semana -->
+          <!-- Generado dinámicamente con todas las rutas -->
         </div>
       </section>
     </div>
@@ -385,23 +410,118 @@
     <!-- ==================== TAB 4: ESTADÍSTICAS & TENDENCIAS ==================== -->
     <div id="tab-stats" class="hidden space-y-4">
       <div class="flex items-center justify-between">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Tendencias Históricas (Obsidian Vault)</h2>
-        <span class="text-[10px] text-purple-400 font-semibold bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">Últimas Semanas</span>
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Estadísticas & Tendencias Clínicas</h2>
+          <span class="text-[10px] text-slate-500 font-medium">Garmin Connect+ · Obsidian Vault</span>
+        </div>
+        <span class="text-[10px] text-purple-400 font-bold bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">Histórico Multi-Semanal</span>
       </div>
 
-      <!-- GRÁFICA DE PASOS HISTÓRICOS -->
+      <!-- TARJETAS DE RESUMEN BIOMÉTRICO GENERAL -->
+      <div class="grid grid-cols-3 gap-2">
+        <div class="garmin-card p-2.5 text-center">
+          <span class="text-[9px] uppercase font-bold text-slate-400 block">VO2 Máx</span>
+          <span class="text-lg font-black text-white" id="stat-vo2">35.0</span>
+          <span class="text-[9px] text-emerald-400 block font-semibold">Bueno (Fénix 7)</span>
+        </div>
+        <div class="garmin-card p-2.5 text-center">
+          <span class="text-[9px] uppercase font-bold text-slate-400 block">FC Reposo Media</span>
+          <span class="text-lg font-black text-rose-400" id="stat-rhr-avg">47 <span class="text-[10px] text-slate-400">ppm</span></span>
+          <span class="text-[9px] text-slate-400 block">Braquicardia</span>
+        </div>
+        <div class="garmin-card p-2.5 text-center">
+          <span class="text-[9px] uppercase font-bold text-slate-400 block">Estrés Basal</span>
+          <span class="text-lg font-black text-cyan-400" id="stat-stress-avg">22 <span class="text-[10px] text-slate-400">/100</span></span>
+          <span class="text-[9px] text-emerald-400 block font-semibold">Bajo · Óptimo</span>
+        </div>
+      </div>
+
+      <!-- 1. GRÁFICA DE PASOS HISTÓRICOS (SEMANAS) -->
       <section class="garmin-card p-4 shadow-lg">
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Evolución de Pasos Semanales</h3>
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Evolución de Pasos Semanales</h3>
+          </div>
+          <span class="text-[10px] text-emerald-400 font-semibold" id="stat-steps-peak">Pico: 84.342 pasos</span>
+        </div>
         <div class="h-44 w-full">
           <canvas id="weeklyStepsChart"></canvas>
         </div>
       </section>
 
-      <!-- GRÁFICA DE FC REPOSO Y VFC HISTÓRICA -->
+      <!-- 2. GRÁFICA DE FC REPOSO Y VFC HISTÓRICA -->
       <section class="garmin-card p-4 shadow-lg">
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">FC Reposo vs VFC (HRV) Semanal</h3>
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">FC Reposo vs VFC (HRV) Semanal</h3>
+          </div>
+          <span class="text-[10px] text-slate-400">Correlación Vagal</span>
+        </div>
         <div class="h-44 w-full">
           <canvas id="weeklyRhrHrvChart"></canvas>
+        </div>
+      </section>
+
+      <!-- 3. DISTRIBUCIÓN DE INTENSIDAD Y ZONAS CARDÍACAS -->
+      <section class="garmin-card p-4 shadow-lg space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="flame" class="w-4 h-4 text-amber-500"></i>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Zonas Cardíacas & Tiempo en Esfuerzo</h3>
+          </div>
+          <span class="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">1.441 min totales</span>
+        </div>
+        
+        <div class="space-y-2 text-xs">
+          <div>
+            <div class="flex justify-between text-slate-300 text-[11px] mb-1">
+              <span>Zona 1 · Recuperación Activa (< 115 ppm)</span>
+              <span class="font-bold text-slate-400">820 min (57%)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div class="bg-blue-400 h-full rounded-full" style="width: 57%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-slate-300 text-[11px] mb-1">
+              <span>Zona 2 · Base Aeróbica / Senderismo (115-135 ppm)</span>
+              <span class="font-bold text-emerald-400">430 min (30%)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div class="bg-emerald-400 h-full rounded-full" style="width: 30%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-slate-300 text-[11px] mb-1">
+              <span>Zona 3 · Ritmo & Ascensos (135-152 ppm)</span>
+              <span class="font-bold text-amber-400">145 min (10%)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div class="bg-amber-400 h-full rounded-full" style="width: 10%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-slate-300 text-[11px] mb-1">
+              <span>Zona 4 / 5 · Umbral / Máximo (> 152 ppm)</span>
+              <span class="font-bold text-rose-400">46 min (3%)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div class="bg-rose-500 h-full rounded-full" style="width: 3%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. TABLA CLÍNICA COMPARATIVA DE LAS ÚLTIMAS SEMANAS -->
+      <section class="garmin-card p-4 shadow-lg space-y-2">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Histórico Resumen por Semanas</h3>
+        <div id="stats-weekly-table" class="space-y-1.5 text-xs">
+          <!-- Generado dinámicamente -->
         </div>
       </section>
     </div>
@@ -985,21 +1105,49 @@
       appData.desafios.forEach(d => {
         const pct = Math.min(100, Math.round((d.progreso / d.meta) * 100));
         const card = document.createElement('div');
-        card.className = 'garmin-card p-3.5 space-y-2';
+        card.className = 'garmin-card p-4 space-y-3 border-l-4 shadow-md';
+        card.style.borderLeftColor = d.color;
         card.innerHTML = `
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <i data-lucide="${d.icono}" class="w-4 h-4" style="color:${d.color}"></i>
-              <span class="text-xs font-bold text-white">${d.titulo}</span>
+          <div class="flex items-start justify-between">
+            <div class="flex items-start space-x-2.5">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: ${d.color}20; color: ${d.color}">
+                <i data-lucide="${d.icono}" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white">${d.titulo}</h4>
+                <p class="text-[10px] text-slate-400 font-medium">${d.subtitulo || 'Objetivo de Rendimiento'}</p>
+              </div>
             </div>
-            <span class="text-[10px] font-semibold" style="color:${d.color}">${d.estado}</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full" style="background-color: ${d.color}15; color: ${d.color}; border: 1px solid ${d.color}30">
+              ${d.estado}
+            </span>
           </div>
-          <div class="flex items-baseline justify-between text-xs">
-            <span class="text-slate-300 font-semibold">${d.progreso.toLocaleString('es-ES')} <span class="text-slate-400 font-normal">/ ${d.meta.toLocaleString('es-ES')} ${d.unidad}</span></span>
-            <span class="text-[11px] font-bold text-white">${pct}%</span>
+
+          <p class="text-[11px] text-slate-300 leading-relaxed bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
+            ${d.descripcion || 'Progreso acumulado durante la semana actual en base a los registros de Garmin Connect.'}
+          </p>
+
+          <div class="space-y-1.5">
+            <div class="flex items-baseline justify-between text-xs">
+              <span class="text-slate-300 font-semibold">
+                ${d.progreso.toLocaleString('es-ES')} <span class="text-slate-500 font-normal">/ ${d.meta.toLocaleString('es-ES')} ${d.unidad}</span>
+              </span>
+              <span class="text-xs font-black text-white">${pct}%</span>
+            </div>
+            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-700" style="width: ${pct}%; background-color: ${d.color};"></div>
+            </div>
           </div>
-          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div class="h-full rounded-full transition-all duration-500" style="width: ${pct}%; background-color: ${d.color};"></div>
+
+          <div class="flex items-center justify-between text-[10px] text-slate-400 pt-1 border-t border-[#1E2D3B]">
+            <span class="flex items-center space-x-1">
+              <i data-lucide="clock" class="w-3 h-3 text-slate-500"></i>
+              <span>${d.plazo || 'Semana 41'}</span>
+            </span>
+            <span class="flex items-center space-x-1 font-semibold text-emerald-400">
+              <i data-lucide="award" class="w-3 h-3"></i>
+              <span>${d.recompensa || 'Insignia Garmin+'}</span>
+            </span>
           </div>
         `;
         container.appendChild(card);
@@ -1007,35 +1155,138 @@
       lucide.createIcons();
     }
 
+    let selectedDayIndex = 6; // Por defecto el último día (hoy / domingo)
+
+    function selectCalendarDay(idx) {
+      selectedDayIndex = idx;
+      renderCalendar();
+    }
+
     function renderCalendar() {
-      if (!appData || !appData.desglose_diario) return;
+      if (!appData || !appData.desglose_diario || appData.desglose_diario.length === 0) return;
+      const daily = appData.desglose_diario;
+      const selectorContainer = document.getElementById('calendar-day-selector');
+      const selectedDayCard = document.getElementById('calendar-selected-day-card');
       const container = document.getElementById('calendar-days-container');
-      container.innerHTML = `
-        <div class="flex items-center justify-between text-xs text-slate-400 font-bold border-b border-[#1E2D3B] pb-2">
-          <span>Día / Fecha</span>
-          <span>Pasos</span>
-          <span>Sueño</span>
-          <span>VFC</span>
-          <span>FC Rep.</span>
-        </div>
-      `;
 
-      appData.desglose_diario.forEach(day => {
-        const row = document.createElement('div');
-        row.className = 'flex items-center justify-between text-xs py-1.5 border-b border-[#1E2D3B]/40 hover:bg-[#111A22]/40 rounded px-1';
-        row.innerHTML = `
-          <div class="flex flex-col">
-            <span class="font-bold text-white">${day.fecha.slice(5)}</span>
+      const dayNames = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+
+      // 1. Selector de 7 días estilo burbujas Garmin Connect
+      if (selectorContainer) {
+        selectorContainer.innerHTML = '';
+        daily.forEach((d, idx) => {
+          const isSelected = idx === selectedDayIndex;
+          const hasWalk = (appData.actividades || []).some(a => a.fecha === d.fecha);
+          const btn = document.createElement('button');
+          btn.onclick = () => selectCalendarDay(idx);
+          btn.className = `p-2 rounded-xl flex flex-col items-center justify-between transition-all ${
+            isSelected 
+              ? 'bg-[#00A3E0] text-white shadow-lg shadow-[#00A3E0]/30 scale-105' 
+              : 'bg-[#111A22] text-slate-400 hover:text-white border border-[#1E2D3B]'
+          }`;
+
+          const dayLetter = dayNames[idx % 7] || d.fecha.slice(8);
+          const dayNum = d.fecha.slice(8);
+
+          btn.innerHTML = `
+            <span class="text-[9px] font-bold ${isSelected ? 'text-white' : 'text-slate-500'}">${dayLetter}</span>
+            <span class="text-xs font-black my-0.5">${dayNum}</span>
+            <span class="w-1.5 h-1.5 rounded-full ${hasWalk ? (isSelected ? 'bg-white' : 'bg-emerald-400') : (isSelected ? 'bg-white/40' : 'bg-transparent')}"></span>
+          `;
+          selectorContainer.appendChild(btn);
+        });
+      }
+
+      // 2. Tarjeta del día seleccionado
+      const selDay = daily[selectedDayIndex] || daily[daily.length - 1];
+      const selActs = (appData.actividades || []).filter(a => a.fecha === selDay.fecha);
+
+      if (selectedDayCard && selDay) {
+        selectedDayCard.innerHTML = `
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <i data-lucide="calendar" class="w-4 h-4 text-[#00A3E0]"></i>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-white">Día ${selDay.fecha}</h3>
+            </div>
+            <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">
+              ${selActs.length > 0 ? selActs.length + ' Actividad(es)' : 'Descanso / Recuperación'}
+            </span>
           </div>
-          <span class="text-slate-300 font-medium">${day.pasos.toLocaleString('es-ES')}</span>
-          <span class="text-indigo-400 font-medium">${day.sueno}h</span>
-          <span class="text-emerald-400 font-medium">${day.hrv} ms</span>
-          <span class="text-rose-400 font-medium">${day.rhr} ppm</span>
-        `;
-        container.appendChild(row);
-      });
 
-      // Renderizar entrenamientos en calendario
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
+              <span class="text-slate-400 text-[10px] block">Pasos</span>
+              <span class="text-white font-bold text-base">${selDay.pasos.toLocaleString('es-ES')}</span>
+              <span class="text-[9px] text-[#00A3E0] block font-medium">${selDay.pasos >= 8000 ? '✓ Meta superada' : 'Base'}</span>
+            </div>
+            <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
+              <span class="text-slate-400 text-[10px] block">Sueño</span>
+              <span class="text-indigo-400 font-bold text-base">${selDay.sueno}h</span>
+              <span class="text-[9px] text-slate-400 block">${selDay.sueno >= 7.0 ? 'Reparador' : 'Ligero'}</span>
+            </div>
+            <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
+              <span class="text-slate-400 text-[10px] block">VFC Nocturna</span>
+              <span class="text-emerald-400 font-bold text-base">${selDay.hrv} ms</span>
+              <span class="text-[9px] text-emerald-400 block font-medium">Equilibrada</span>
+            </div>
+            <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B]">
+              <span class="text-slate-400 text-[10px] block">FC de Reposo</span>
+              <span class="text-rose-400 font-bold text-base">${selDay.rhr} ppm</span>
+              <span class="text-[9px] text-slate-400 block">Braquicardia</span>
+            </div>
+          </div>
+
+          ${selActs.length > 0 ? `
+            <div class="pt-2 border-t border-[#1E2D3B]">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1.5">Sesiones del Día:</span>
+              ${selActs.map(a => `
+                <div class="bg-[#111A22] p-2 rounded-lg border border-[#1E2D3B] flex items-center justify-between text-xs">
+                  <div class="flex items-center space-x-2">
+                    <i data-lucide="mountain" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span class="font-bold text-white">${a.nombre}</span>
+                    <span class="text-[10px] text-slate-400">(${a.duracion}${a.distancia !== '-' ? ' · ' + a.distancia : ''})</span>
+                  </div>
+                  <span class="font-bold text-emerald-400">${a.calorias} kcal</span>
+                </div>
+              `).join('')}
+            </div>
+          ` : `
+            <p class="text-[11px] text-slate-400 italic">No hubo registro de actividad deportiva estructurada este día (caminata base habitual).</p>
+          `}
+        `;
+      }
+
+      // 3. Tabla diaria completa
+      if (container) {
+        container.innerHTML = `
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold border-b border-[#1E2D3B] pb-1.5 px-2">
+            <span>FECHA</span>
+            <span>PASOS</span>
+            <span>SUEÑO</span>
+            <span>VFC</span>
+            <span>FC REP.</span>
+          </div>
+        `;
+
+        daily.forEach((day, idx) => {
+          const row = document.createElement('div');
+          const isSel = idx === selectedDayIndex;
+          row.onclick = () => selectCalendarDay(idx);
+          row.className = `flex items-center justify-between text-xs py-2 px-2 rounded-xl cursor-pointer transition-all ${
+            isSel ? 'bg-[#00A3E0]/15 border border-[#00A3E0]/40 text-white' : 'hover:bg-[#111A22] border border-transparent'
+          }`;
+          row.innerHTML = `
+            <span class="font-bold ${isSel ? 'text-[#00A3E0]' : 'text-slate-300'}">${day.fecha.slice(5)}</span>
+            <span class="text-slate-200 font-semibold">${day.pasos.toLocaleString('es-ES')}</span>
+            <span class="text-indigo-400 font-medium">${day.sueno}h</span>
+            <span class="text-emerald-400 font-medium">${day.hrv} ms</span>
+            <span class="text-rose-400 font-medium">${day.rhr} ppm</span>
+          `;
+          container.appendChild(row);
+        });
+      }
+
+      // 4. Renderizar actividades en calendario
       const actContainer = document.getElementById('calendar-activities-container');
       if (actContainer && appData.actividades) {
         actContainer.innerHTML = '';
@@ -1045,7 +1296,7 @@
           const color = isHike ? '#10B981' : (act.nombre.toLowerCase().includes('ciclismo') ? '#00A3E0' : '#A855F7');
 
           const actEl = document.createElement('div');
-          actEl.className = 'flex items-center justify-between bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] text-xs hover:border-[#2D4155] cursor-pointer transition-colors';
+          actEl.className = 'flex items-center justify-between bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] text-xs hover:border-[#2D4155] cursor-pointer transition-colors';
           actEl.innerHTML = `
             <div class="flex items-center space-x-2.5">
               <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800" style="color: ${color}">
@@ -1063,8 +1314,9 @@
           `;
           actContainer.appendChild(actEl);
         });
-        lucide.createIcons();
       }
+
+      lucide.createIcons();
     }
 
     function renderHRChart(points) {
@@ -1213,6 +1465,32 @@
           }
         }
       });
+
+      // 3. Tabla histórica de semanas en estadísticas
+      const statsTable = document.getElementById('stats-weekly-table');
+      if (statsTable) {
+        statsTable.innerHTML = `
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold border-b border-[#1E2D3B] pb-1.5 px-2">
+            <span>SEMANA</span>
+            <span>PASOS</span>
+            <span>SUEÑO</span>
+            <span>VFC</span>
+            <span>FC REP.</span>
+          </div>
+        `;
+        history.slice().reverse().forEach(h => {
+          const row = document.createElement('div');
+          row.className = 'flex items-center justify-between text-xs py-1.5 px-2 rounded-lg bg-[#111A22] border border-[#1E2D3B]/40';
+          row.innerHTML = `
+            <span class="font-bold text-white">${h.semana}</span>
+            <span class="text-[#00A3E0] font-semibold">${h.pasos.toLocaleString('es-ES')}</span>
+            <span class="text-indigo-400 font-medium">${h.sueno}h</span>
+            <span class="text-emerald-400 font-medium">${h.hrv} ms</span>
+            <span class="text-rose-400 font-medium">${h.rhr} ppm</span>
+          `;
+          statsTable.appendChild(row);
+        });
+      }
     }
 
     loadData();

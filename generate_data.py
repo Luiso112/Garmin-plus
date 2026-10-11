@@ -215,40 +215,60 @@ def parse_garmin_data():
         "historico_semanas": history_weeks[-8:],
         "desafios": [
             {
-                "titulo": "Objetivo Semanal de Pasos (Garmin+)",
+                "id": "pasos_50k",
+                "titulo": "Objetivo Semanal de Pasos",
+                "subtitulo": "Volumen Aeróbico Base",
+                "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
                 "progreso": total_steps_week,
                 "meta": 50000,
                 "unidad": "pasos",
                 "estado": f"¡SUPERADO! 🔥 ({round((total_steps_week/50000)*100)}%)",
                 "color": "#10B981",
-                "icono": "footprints"
+                "icono": "footprints",
+                "plazo": "Cierra hoy 23:59",
+                "recompensa": "Insignia Oro Pasos (+200 pts)"
             },
             {
-                "titulo": "Minutos de Intensidad Moderada/Alta",
+                "id": "intensidad_150",
+                "titulo": "Minutos de Intensidad Cardíaca",
+                "subtitulo": "Salud Cardiovascular (OMS)",
+                "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
                 "progreso": total_intensity_week,
                 "meta": 150,
                 "unidad": "min",
-                "estado": f"Completado 🔥 ({total_intensity_week} min)",
+                "estado": f"¡Completado con Éxito! 🔥 ({total_intensity_week} min)",
                 "color": "#F59E0B",
-                "icono": "flame"
+                "icono": "flame",
+                "plazo": "Cierra hoy 23:59",
+                "recompensa": "Insignia Cardio Pro"
             },
             {
-                "titulo": "Consistencia de Sueño y VFC",
-                "progreso": sum(1 for d in daily_stats if d["sueno"] >= 7.0),
-                "meta": 7,
-                "unidad": "días >7h",
-                "estado": "En progreso (Excelente)",
-                "color": "#A855F7",
-                "icono": "moon"
-            },
-            {
-                "titulo": "Senderismo & Reactivación Vagal (Montaña)",
+                "id": "recuperacion_senderismo",
+                "titulo": "Senderismo & Reactivación Vagal",
+                "subtitulo": "Resistencia en Desnivel & Tono Parasimpático",
+                "descripcion": "Completar al menos 4 salidas de montaña monitorizando una caída cardíaca post-esfuerzo >50 ppm en 60 segundos.",
                 "progreso": len([a for a in activities if 'caminar' in a['nombre'].lower()]),
                 "meta": 4,
                 "unidad": "rutas de montaña",
                 "estado": "Objetivo Cumplido 🔥 (4/4 Rutas)",
                 "color": "#00A3E0",
-                "icono": "mountain"
+                "icono": "mountain",
+                "plazo": "Completado esta semana",
+                "recompensa": "Medalla Maestro de Montaña"
+            },
+            {
+                "id": "sueno_vfc",
+                "titulo": "Consistencia de Sueño (>7h) & VFC",
+                "subtitulo": "Regeneración Celular & Sistema Inmune",
+                "descripcion": "Dormir más de 7 horas en al menos 5 noches para estabilizar el sistema nervioso autónomo y mantener la VFC >50 ms.",
+                "progreso": sum(1 for d in daily_stats if d["sueno"] >= 7.0),
+                "meta": 5,
+                "unidad": "noches >7h",
+                "estado": "Cerca del objetivo (Excelente consistencia)",
+                "color": "#A855F7",
+                "icono": "moon",
+                "plazo": "Evaluación continua semanal",
+                "recompensa": "Insignia Regeneración Profunda"
             }
         ]
     }
