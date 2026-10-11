@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-11 19:49:36",
+  "ultima_actualizacion": "2026-10-11 19:52:54",
   "semana_actual": "2026-W41",
   "dispositivos": {
     "fenix_7": {
@@ -29,7 +29,7 @@
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 84.342 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.3h) ha mantenido tu VFC en 50 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 84.440 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.3h) ha mantenido tu VFC en 50 ms.",
   "body_battery": {
     "actual": 85,
     "cargado": 78,
@@ -44,13 +44,13 @@
     "hrv": 51,
     "sueno_horas": 8.3,
     "sueno_score": 90,
-    "pasos": 18550,
+    "pasos": 18648,
     "meta_pasos": 8000,
-    "pasos_semana": 84342,
+    "pasos_semana": 84440,
     "estres": 18,
     "vo2max": 35.0,
-    "min_intensidad": 293,
-    "intensidad_semana": 1441,
+    "min_intensidad": 295,
+    "intensidad_semana": 1443,
     "meta_intensidad": 150
   },
   "curva_fc_24h": [
@@ -279,12 +279,12 @@
     },
     {
       "fecha": "2026-10-11",
-      "pasos": 18550,
+      "pasos": 18648,
       "sueno": 8.3,
       "rhr": 48,
       "estres": 18,
       "hrv": 51,
-      "min_intensidad": 293
+      "min_intensidad": 295
     }
   ],
   "historico_semanas": [
@@ -999,7 +999,7 @@
     },
     {
       "semana": "2026-W41",
-      "pasos": 84342,
+      "pasos": 84440,
       "sueno": 7.2,
       "rhr": 47,
       "vo2": 35.0,
@@ -1062,12 +1062,12 @@
         },
         {
           "fecha": "2026-10-11",
-          "pasos": 18550,
+          "pasos": 18648,
           "sueno": 8.3,
           "rhr": 48,
           "estres": 18,
           "hrv": 51,
-          "min_intensidad": 293
+          "min_intensidad": 295
         }
       ],
       "actividades": [
@@ -2228,7 +2228,7 @@
     },
     "2026-W41": {
       "semana": "2026-W41",
-      "pasos": 84342,
+      "pasos": 84440,
       "sueno": 7.2,
       "rhr": 47,
       "vo2": 35.0,
@@ -2291,12 +2291,12 @@
         },
         {
           "fecha": "2026-10-11",
-          "pasos": 18550,
+          "pasos": 18648,
           "sueno": 8.3,
           "rhr": 48,
           "estres": 18,
           "hrv": 51,
-          "min_intensidad": 293
+          "min_intensidad": 295
         }
       ],
       "actividades": [
@@ -2354,7 +2354,7 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 84342,
+      "progreso": 84440,
       "meta": 50000,
       "unidad": "pasos",
       "estado": "¡SUPERADO! 🔥 (169%)",
@@ -2368,10 +2368,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 1441,
+      "progreso": 1443,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (1441 min)",
+      "estado": "¡Completado con Éxito! 🔥 (1443 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
