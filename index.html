@@ -135,15 +135,15 @@
             <div class="flex-1 text-xs space-y-1.5 text-slate-300">
               <div class="flex items-center justify-between">
                 <span class="text-slate-400">Estado de VFC:</span>
-                <span class="font-semibold text-emerald-400">Equilibrada (54 ms)</span>
+                <span class="font-semibold text-emerald-400" id="readiness-hrv">Equilibrada (51 ms)</span>
               </div>
               <div class="flex items-center justify-between">
                 <span class="text-slate-400">Historial de Sueño:</span>
-                <span class="font-semibold text-slate-200">7.4h Reparador</span>
+                <span class="font-semibold text-slate-200" id="readiness-sleep">8.3h Reparador</span>
               </div>
               <div class="flex items-center justify-between">
                 <span class="text-slate-400">Tiempo Recuperación:</span>
-                <span class="font-semibold text-emerald-400">0 horas (Listo)</span>
+                <span class="font-semibold text-emerald-400" id="readiness-recov">0 horas (Listo)</span>
               </div>
             </div>
           </div>
@@ -345,8 +345,8 @@
             <span class="text-xs text-slate-400">horas</span>
           </div>
           <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-            <span>Helio Strap</span>
-            <span class="text-emerald-400 font-medium">REM + Prof.</span>
+            <span>Garmin Fénix 7</span>
+            <span class="text-emerald-400 font-medium">REM + Profundo</span>
           </div>
         </div>
 
@@ -1437,7 +1437,13 @@
         // 2. Readiness
         if (appData.disposicion_rendimiento) {
           const elScore = document.getElementById('readiness-score');
+          const elHrv = document.getElementById('readiness-hrv');
+          const elSleep = document.getElementById('readiness-sleep');
+          const elRec = document.getElementById('readiness-recov');
           if (elScore) elScore.textContent = appData.disposicion_rendimiento.score;
+          if (elHrv && appData.disposicion_rendimiento.hrv_status) elHrv.textContent = appData.disposicion_rendimiento.hrv_status;
+          if (elSleep && appData.disposicion_rendimiento.sueno_calidad) elSleep.textContent = appData.disposicion_rendimiento.sueno_calidad;
+          if (elRec) elRec.textContent = (appData.disposicion_rendimiento.recuperacion_horas || 0) + ' horas (Listo)';
         }
 
         // 0. Morning Report (Connect+ Exclusive)
