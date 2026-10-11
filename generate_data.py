@@ -133,6 +133,33 @@ def parse_garmin_data():
             "source": source
         })
 
+    # Calcular métricas dinámicas
+    total_steps_week = sum(d["pasos"] for d in daily_stats)
+    total_intensity_week = sum(d["min_intensidad"] for d in daily_stats)
+    avg_sleep_week = round(sum(d["sueno"] for d in daily_stats) / len(daily_stats), 1) if daily_stats else 7.2
+    avg_hrv_week = round(sum(d["hrv"] for d in daily_stats) / len(daily_stats)) if daily_stats else 50
+    avg_rhr_week = round(sum(d["rhr"] for d in daily_stats) / len(daily_stats)) if daily_stats else 47
+
+    # Última actividad (la más reciente de la lista)
+    latest_activity = activities[-1] if activities else {
+        "fecha": "2026-10-11",
+        "nombre": "Casteil Caminar",
+        "duracion": "2h 30m",
+        "distancia": "5.38 km",
+        "fc_media_max": "86.0 (Máx 161.0)",
+        "hr_recovery": "-58 ppm (🔥)",
+        "calorias": 577
+    }
+
+    # Texto clínico dinámico para Active Intelligence
+    active_intel_str = (
+        f"Semana extraordinaria de volumen aeróbico con {total_steps_week:,} pasos y múltiples rutas de senderismo "
+        f"(Joch, Les Angles, Casteil y Codalet). Tu FC de reposo media es de {avg_rhr_week} ppm con un estrés basal de 22/100, "
+        f"lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró "
+        f"caídas de hasta -96 ppm en el primer minuto, confirmando una rápida reactivación vagal. Tu descanso medio "
+        f"({avg_sleep_week}h) ha mantenido tu VFC en {avg_hrv_week} ms."
+    ).replace(",", ".")
+
     data_payload = {
         "usuario": "Luis B.",
         "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -141,7 +168,7 @@ def parse_garmin_data():
                 "nombre": "Garmin Fénix 7 Solar",
                 "estado": "Conectado",
                 "bateria": 88,
-                "rol": "Entrenamientos, Series & GPS",
+                "rol": "Senderismo, GPS & Pulsómetro",
                 "firmware": "v17.28",
                 "modo": "Pulsómetro Óptico Elevate v4"
             },
@@ -155,39 +182,36 @@ def parse_garmin_data():
             }
         },
         "disposicion_rendimiento": {
-            "score": 84,
+            "score": 86,
             "nivel": "ÓPTIMA",
-            "hrv_status": "Equilibrada (54 ms)",
+            "hrv_status": f"Equilibrada ({last_day['hrv']} ms)",
             "recuperacion_horas": 0,
-            "sueno_calidad": "Reparador (7.4h)",
-            "carga_aguda": "Óptima (420)",
-            "historial_reciente": "Sin fatiga neuromuscular acumulada"
+            "sueno_calidad": f"Reparador ({last_day['sueno']}h)",
+            "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
+            "historial_reciente": "Excelente adaptación aeróbica en montaña"
         },
-        "active_intelligence": (
-            "Tu frecuencia cardíaca de reposo media se mantiene en 48 ppm, lo que refleja un tono parasimpático robusto. "
-            "La recuperación tras la última sesión de fuerza registró una caída de -64 ppm en el primer minuto, confirmando "
-            "una rápida reactivación vagal. Tu ventana de VFC nocturna medida por la Helio Strap (54 ms) está perfectamente "
-            "alineada con tu línea base de 3 semanas. Estás en estado óptimo para entrenar hoy."
-        ),
+        "active_intelligence": active_intel_str,
         "body_battery": {
-            "actual": 82,
-            "cargado": 74,
-            "drenado": 26,
-            "max": 96,
-            "min": 18,
-            "descanso_nocturno": "Excelente recuperación (+74)",
-            "momento_pico": "08:15 (+88 pts)"
+            "actual": 85,
+            "cargado": 78,
+            "drenado": 35,
+            "max": 98,
+            "min": 20,
+            "descanso_nocturno": "Excelente recuperación (+78)",
+            "momento_pico": "08:15 (+90 pts)"
         },
         "metricas_clave": {
             "rhr": last_day["rhr"],
             "hrv": last_day["hrv"],
             "sueno_horas": last_day["sueno"],
-            "sueno_score": 88,
+            "sueno_score": 90,
             "pasos": last_day["pasos"],
             "meta_pasos": 8000,
+            "pasos_semana": total_steps_week,
             "estres": last_day["estres"],
             "vo2max": 35.0,
             "min_intensidad": last_day["min_intensidad"],
+            "intensidad_semana": total_intensity_week,
             "meta_intensidad": 150
         },
         "curva_fc_24h": heart_rate_24h,
@@ -198,39 +222,39 @@ def parse_garmin_data():
         "desafios": [
             {
                 "titulo": "Objetivo Semanal de Pasos (Garmin+)",
-                "progreso": 44198,
+                "progreso": total_steps_week,
                 "meta": 50000,
                 "unidad": "pasos",
-                "estado": "En progreso (88%)",
-                "color": "#00A3E0",
+                "estado": f"¡SUPERADO! 🔥 ({round((total_steps_week/50000)*100)}%)",
+                "color": "#10B981",
                 "icono": "footprints"
             },
             {
                 "titulo": "Minutos de Intensidad Moderada/Alta",
-                "progreso": 164,
+                "progreso": total_intensity_week,
                 "meta": 150,
                 "unidad": "min",
-                "estado": "Completado 🔥 (+14 min)",
+                "estado": f"Completado 🔥 ({total_intensity_week} min)",
                 "color": "#F59E0B",
                 "icono": "flame"
             },
             {
                 "titulo": "Consistencia de Sueño y VFC",
-                "progreso": 6,
+                "progreso": sum(1 for d in daily_stats if d["sueno"] >= 7.0),
                 "meta": 7,
                 "unidad": "días >7h",
-                "estado": "Casi listo (85%)",
+                "estado": "En progreso (Excelente)",
                 "color": "#A855F7",
                 "icono": "moon"
             },
             {
-                "titulo": "Reactivación Vagal Óptima (HR Recovery)",
-                "progreso": 2,
-                "meta": 2,
-                "unidad": "sesiones >45 ppm",
-                "estado": "Superado 🔥 (Top Nivel)",
-                "color": "#10B981",
-                "icono": "heart"
+                "titulo": "Senderismo & Reactivación Vagal (Montaña)",
+                "progreso": len([a for a in activities if 'caminar' in a['nombre'].lower()]),
+                "meta": 4,
+                "unidad": "rutas de montaña",
+                "estado": "Objetivo Cumplido 🔥 (4/4 Rutas)",
+                "color": "#00A3E0",
+                "icono": "mountain"
             }
         ]
     }

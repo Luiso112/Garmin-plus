@@ -1,12 +1,12 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-11 19:14:22",
+  "ultima_actualizacion": "2026-10-11 19:17:31",
   "dispositivos": {
     "fenix_7": {
       "nombre": "Garmin Fénix 7 Solar",
       "estado": "Conectado",
       "bateria": 88,
-      "rol": "Entrenamientos, Series & GPS",
+      "rol": "Senderismo, GPS & Pulsómetro",
       "firmware": "v17.28",
       "modo": "Pulsómetro Óptico Elevate v4"
     },
@@ -20,34 +20,36 @@
     }
   },
   "disposicion_rendimiento": {
-    "score": 84,
+    "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (54 ms)",
+    "hrv_status": "Equilibrada (51 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (7.4h)",
-    "carga_aguda": "Óptima (420)",
-    "historial_reciente": "Sin fatiga neuromuscular acumulada"
+    "sueno_calidad": "Reparador (8.3h)",
+    "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
+    "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Tu frecuencia cardíaca de reposo media se mantiene en 48 ppm, lo que refleja un tono parasimpático robusto. La recuperación tras la última sesión de fuerza registró una caída de -64 ppm en el primer minuto, confirmando una rápida reactivación vagal. Tu ventana de VFC nocturna medida por la Helio Strap (54 ms) está perfectamente alineada con tu línea base de 3 semanas. Estás en estado óptimo para entrenar hoy.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 84.342 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.3h) ha mantenido tu VFC en 50 ms.",
   "body_battery": {
-    "actual": 82,
-    "cargado": 74,
-    "drenado": 26,
-    "max": 96,
-    "min": 18,
-    "descanso_nocturno": "Excelente recuperación (+74)",
-    "momento_pico": "08:15 (+88 pts)"
+    "actual": 85,
+    "cargado": 78,
+    "drenado": 35,
+    "max": 98,
+    "min": 20,
+    "descanso_nocturno": "Excelente recuperación (+78)",
+    "momento_pico": "08:15 (+90 pts)"
   },
   "metricas_clave": {
-    "rhr": 51,
-    "hrv": 50,
-    "sueno_horas": 7.4,
-    "sueno_score": 88,
-    "pasos": 3254,
+    "rhr": 48,
+    "hrv": 51,
+    "sueno_horas": 8.3,
+    "sueno_score": 90,
+    "pasos": 18550,
     "meta_pasos": 8000,
-    "estres": 27,
+    "pasos_semana": 84342,
+    "estres": 18,
     "vo2max": 35.0,
-    "min_intensidad": 111,
+    "min_intensidad": 293,
+    "intensidad_semana": 1441,
     "meta_intensidad": 150
   },
   "curva_fc_24h": [
@@ -174,100 +176,118 @@
   ],
   "actividades": [
     {
-      "fecha": "2026-09-29",
+      "fecha": "2026-10-06",
       "nombre": "Ciclismo en sala",
-      "duracion": "50m 46s",
+      "duracion": "49m 12s",
       "distancia": "-",
-      "fc_media_max": "126.0 (Máx 198.0)",
-      "hr_recovery": "-82 ppm (🔥)",
-      "calorias": 394
+      "fc_media_max": "131.0 (Máx 168.0)",
+      "hr_recovery": "-73 ppm (🔥)",
+      "calorias": 348
     },
     {
-      "fecha": "2026-10-04",
-      "nombre": "Fuerza",
-      "duracion": "49m 43s",
-      "distancia": "-",
-      "fc_media_max": "121.0 (Máx 172.0)",
-      "hr_recovery": "-64 ppm (🔥)",
-      "calorias": 337
+      "fecha": "2026-10-09",
+      "nombre": "Joch Caminar",
+      "duracion": "3h 25m",
+      "distancia": "10.44 km",
+      "fc_media_max": "101.0 (Máx 165.0)",
+      "hr_recovery": "-96 ppm (🔥)",
+      "calorias": 1034
+    },
+    {
+      "fecha": "2026-10-10",
+      "nombre": "Les Angles Caminar",
+      "duracion": "5h 14m",
+      "distancia": "11.49 km",
+      "fc_media_max": "101.0 (Máx 156.0)",
+      "hr_recovery": "-68 ppm (🔥)",
+      "calorias": 1371
+    },
+    {
+      "fecha": "2026-10-11",
+      "nombre": "Casteil Caminar",
+      "duracion": "2h 30m",
+      "distancia": "5.38 km",
+      "fc_media_max": "86.0 (Máx 161.0)",
+      "hr_recovery": "-58 ppm (🔥)",
+      "calorias": 577
+    },
+    {
+      "fecha": "2026-10-11",
+      "nombre": "Codalet Caminar",
+      "duracion": "3h 9m",
+      "distancia": "7.49 km",
+      "fc_media_max": "78.0 (Máx 144.0)",
+      "hr_recovery": "-62 ppm (🔥)",
+      "calorias": 634
     }
   ],
   "evaluaciones_recov": [],
   "desglose_diario": [
     {
-      "fecha": "2026-09-28",
-      "pasos": 8724,
-      "sueno": 8.0,
-      "rhr": 47,
-      "estres": 29,
-      "hrv": 56,
-      "min_intensidad": 194
-    },
-    {
-      "fecha": "2026-09-29",
-      "pasos": 7844,
-      "sueno": 6.7,
-      "rhr": 49,
-      "estres": 29,
-      "hrv": 44,
-      "min_intensidad": 161
-    },
-    {
-      "fecha": "2026-09-30",
-      "pasos": 7935,
-      "sueno": 6.8,
-      "rhr": 46,
-      "estres": 23,
-      "hrv": 59,
-      "min_intensidad": 153
-    },
-    {
-      "fecha": "2026-10-01",
-      "pasos": 6349,
-      "sueno": 6.8,
-      "rhr": 50,
-      "estres": 25,
-      "hrv": 65,
-      "min_intensidad": 144
-    },
-    {
-      "fecha": "2026-10-02",
-      "pasos": 2778,
+      "fecha": "2026-10-05",
+      "pasos": 7440,
       "sueno": 6.9,
+      "rhr": 49,
+      "estres": 25,
+      "hrv": 49,
+      "min_intensidad": 158
+    },
+    {
+      "fecha": "2026-10-06",
+      "pasos": 8587,
+      "sueno": 6.6,
+      "rhr": 46,
+      "estres": 24,
+      "hrv": 51,
+      "min_intensidad": 158
+    },
+    {
+      "fecha": "2026-10-07",
+      "pasos": 3093,
+      "sueno": 6.7,
+      "rhr": 47,
+      "estres": 21,
+      "hrv": 51,
+      "min_intensidad": 77
+    },
+    {
+      "fecha": "2026-10-08",
+      "pasos": 3768,
+      "sueno": 6.7,
+      "rhr": 47,
+      "estres": 19,
+      "hrv": 47,
+      "min_intensidad": 66
+    },
+    {
+      "fecha": "2026-10-09",
+      "pasos": 21424,
+      "sueno": 7.0,
+      "rhr": 45,
+      "estres": 24,
+      "hrv": 58,
+      "min_intensidad": 346
+    },
+    {
+      "fecha": "2026-10-10",
+      "pasos": 21480,
+      "sueno": 8.6,
+      "rhr": 49,
+      "estres": 23,
+      "hrv": 43,
+      "min_intensidad": 343
+    },
+    {
+      "fecha": "2026-10-11",
+      "pasos": 18550,
+      "sueno": 8.3,
       "rhr": 48,
-      "estres": 20,
-      "hrv": 53,
-      "min_intensidad": 59
-    },
-    {
-      "fecha": "2026-10-03",
-      "pasos": 7314,
-      "sueno": 7.3,
-      "rhr": 50,
-      "estres": 27,
-      "hrv": 56,
-      "min_intensidad": 126
-    },
-    {
-      "fecha": "2026-10-04",
-      "pasos": 3254,
-      "sueno": 7.4,
-      "rhr": 51,
-      "estres": 27,
-      "hrv": 50,
-      "min_intensidad": 111
+      "estres": 18,
+      "hrv": 51,
+      "min_intensidad": 293
     }
   ],
   "historico_semanas": [
-    {
-      "semana": "2026-W33",
-      "pasos": 67180,
-      "sueno": 6.6,
-      "rhr": 49,
-      "vo2": 37.0,
-      "hrv": 60,
-      "estres": 24
-    },
     {
       "semana": "2026-W34",
       "pasos": 44420,
@@ -330,44 +350,53 @@
       "vo2": 35.0,
       "hrv": 54,
       "estres": 25
+    },
+    {
+      "semana": "2026-W41",
+      "pasos": 84342,
+      "sueno": 7.2,
+      "rhr": 47,
+      "vo2": 35.0,
+      "hrv": 50,
+      "estres": 22
     }
   ],
   "desafios": [
     {
       "titulo": "Objetivo Semanal de Pasos (Garmin+)",
-      "progreso": 44198,
+      "progreso": 84342,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "En progreso (88%)",
-      "color": "#00A3E0",
+      "estado": "¡SUPERADO! 🔥 (169%)",
+      "color": "#10B981",
       "icono": "footprints"
     },
     {
       "titulo": "Minutos de Intensidad Moderada/Alta",
-      "progreso": 164,
+      "progreso": 1441,
       "meta": 150,
       "unidad": "min",
-      "estado": "Completado 🔥 (+14 min)",
+      "estado": "Completado 🔥 (1441 min)",
       "color": "#F59E0B",
       "icono": "flame"
     },
     {
       "titulo": "Consistencia de Sueño y VFC",
-      "progreso": 6,
+      "progreso": 3,
       "meta": 7,
       "unidad": "días >7h",
-      "estado": "Casi listo (85%)",
+      "estado": "En progreso (Excelente)",
       "color": "#A855F7",
       "icono": "moon"
     },
     {
-      "titulo": "Reactivación Vagal Óptima (HR Recovery)",
-      "progreso": 2,
-      "meta": 2,
-      "unidad": "sesiones >45 ppm",
-      "estado": "Superado 🔥 (Top Nivel)",
-      "color": "#10B981",
-      "icono": "heart"
+      "titulo": "Senderismo & Reactivación Vagal (Montaña)",
+      "progreso": 4,
+      "meta": 4,
+      "unidad": "rutas de montaña",
+      "estado": "Objetivo Cumplido 🔥 (4/4 Rutas)",
+      "color": "#00A3E0",
+      "icono": "mountain"
     }
   ]
 }
