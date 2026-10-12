@@ -309,7 +309,32 @@
       <!-- GRID DE TARJETAS BIOMÉTRICAS CLICABLES (2 COLS EN MOVIL, 3 COLS EN IPAD) -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
 
-        <!-- BODY BATTERY -->
+        <!-- SUEÑO (PRIMERA ESTADÍSTICA DE AT A GLANCE CON FECHA DE SINCRONIZACIÓN) -->
+        <div onclick="openDetail('sleep')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-indigo-500">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
+              <span class="font-semibold text-slate-200">Sueño</span>
+            </div>
+            <div class="flex items-center space-x-1">
+              <span class="text-[9px] text-indigo-400 font-bold bg-indigo-500/10 px-1.5 py-0.5 rounded border border-indigo-500/20" id="sleep-score">Score 90</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+            </div>
+          </div>
+          <div class="my-2 flex items-baseline justify-between">
+            <div class="flex items-baseline space-x-1">
+              <span class="text-3xl font-black text-white" id="sleep-hours">8.3</span>
+              <span class="text-xs text-slate-400">horas</span>
+            </div>
+            <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded" id="sleep-date">11 Oct</span>
+          </div>
+          <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+            <span id="sleep-sync-label">Garmin Fénix 7</span>
+            <span class="text-emerald-400 font-medium" id="sleep-sync-time">Sincronizado</span>
+          </div>
+        </div>
+
+        <!-- BODY BATTERY (SEGUNDA POSICIÓN) -->
         <div onclick="openDetail('body_battery')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
           <div class="flex items-center justify-between text-xs text-slate-400">
             <div class="flex items-center space-x-1.5">
@@ -325,28 +350,6 @@
           <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
             <span>Drenado: <b class="text-amber-400" id="bb-drained">-47</b></span>
             <span>Cargado: <b class="text-emerald-400" id="bb-charged">+64</b></span>
-          </div>
-        </div>
-
-        <!-- SUEÑO -->
-        <div onclick="openDetail('sleep')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <div class="flex items-center space-x-1.5">
-              <i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
-              <span class="font-semibold">Sueño</span>
-            </div>
-            <div class="flex items-center space-x-0.5">
-              <span class="text-[10px] text-indigo-400 font-bold" id="sleep-score">Score 88</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
-            </div>
-          </div>
-          <div class="my-2 flex items-baseline space-x-1">
-            <span class="text-3xl font-black text-white" id="sleep-hours">7.4</span>
-            <span class="text-xs text-slate-400">horas</span>
-          </div>
-          <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-            <span>Garmin Fénix 7</span>
-            <span class="text-emerald-400 font-medium">REM + Profundo</span>
           </div>
         </div>
 
@@ -1502,12 +1505,29 @@
           const elSteps = document.getElementById('steps-val');
           const elInt = document.getElementById('intensity-val');
 
+          const elSleepDate = document.getElementById('sleep-date');
+          const elSleepSyncTime = document.getElementById('sleep-sync-time');
+
           if (elRhr) elRhr.textContent = m.rhr;
           if (elHrv) elHrv.textContent = m.hrv;
           if (elSleepH) elSleepH.textContent = m.sueno_horas;
-          if (elSleepS) elSleepS.textContent = 'Score ' + (m.sueno_score || 88);
+          if (elSleepS) elSleepS.textContent = 'Score ' + (m.sueno_score || 90);
           if (elSteps) elSteps.textContent = m.pasos.toLocaleString('es-ES');
           if (elInt) elInt.textContent = m.min_intensidad;
+
+          // Fecha y hora de la última sincronización de sueño
+          if (m.fecha && elSleepDate) {
+            const parts = m.fecha.split('-');
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+            const dayNum = parseInt(parts[2], 10);
+            const mNum = parseInt(parts[1], 10) - 1;
+            elSleepDate.textContent = dayNum + ' ' + (months[mNum] || '');
+          }
+          if (appData.ultima_actualizacion && elSleepSyncTime) {
+            const timePart = appData.ultima_actualizacion.split(' ')[1] || '';
+            const hm = timePart.slice(0, 5);
+            elSleepSyncTime.textContent = 'Sync ' + hm;
+          }
         }
 
         // 5. Body Battery

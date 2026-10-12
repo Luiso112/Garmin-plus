@@ -255,6 +255,7 @@ def parse_garmin_data():
         "active_intelligence": active_intel_str,
         "body_battery": real_bb,
         "metricas_clave": {
+            "fecha": last_day.get("fecha", datetime.date.today().isoformat()),
             "rhr": last_day["rhr"],
             "hrv": last_day["hrv"],
             "sueno_horas": last_day["sueno"],
