@@ -41,17 +41,19 @@ def parse_garmin_data():
         hrv_m = re.search(r"VFC media semanal \(HRV\):\*\*?\s*(\d+)", content)
         stress_m = re.search(r"Estrés promedio semanal:\*\*?\s*(\d+)", content)
 
-        daily_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d,\.]+)\s*\|\s*([\d\.]+)h[^\|]*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*ms\s*\|\s*(\d+)m\s*\|", content)
+        daily_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d,\.]+)\s*\|\s*([\d\.]+)h(?:\s*\(Score:\s*(\d+|-)\))?[^\|]*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*ms\s*\|\s*(\d+)m\s*\|", content)
         week_days = []
         for dm in daily_matches:
+            s_score = int(dm[3]) if dm[3] and dm[3].isdigit() else 85
             week_days.append({
                 "fecha": dm[0],
                 "pasos": int(dm[1].replace(",", "").replace(".", "")),
                 "sueno": float(dm[2]),
-                "rhr": int(dm[3]),
-                "estres": int(dm[4]),
-                "hrv": int(dm[5]),
-                "min_intensidad": int(dm[6])
+                "sueno_score": s_score,
+                "rhr": int(dm[4]),
+                "estres": int(dm[5]),
+                "hrv": int(dm[6]),
+                "min_intensidad": int(dm[7])
             })
 
         act_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*(\d+)\s*\|", content)
@@ -259,7 +261,7 @@ def parse_garmin_data():
             "rhr": last_day["rhr"],
             "hrv": last_day["hrv"],
             "sueno_horas": last_day["sueno"],
-            "sueno_score": 90,
+            "sueno_score": last_day.get("sueno_score", 86),
             "pasos": last_day["pasos"],
             "meta_pasos": 8000,
             "pasos_semana": total_steps_week,
