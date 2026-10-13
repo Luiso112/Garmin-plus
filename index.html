@@ -637,10 +637,11 @@
         <p>Despliegue: <b>GitHub Pages + Antigravity</b></p>
       </section>
     </div>
+  </main>
 
   <!-- MODAL DE PERSONALIZACIÓN DE AT A GLANCE (DE UN VISTAZO) -->
-  <div id="customize-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
-    <div class="bg-[#0F1722] border border-[#1E2D3B] w-full max-w-md rounded-t-2xl sm:rounded-2xl p-5 max-h-[85vh] flex flex-col shadow-2xl space-y-4">
+  <div id="customize-modal" class="fixed inset-0 z-[70] bg-black/80 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity pb-safe">
+    <div class="bg-[#0F1722] border border-[#1E2D3B] w-full max-w-md rounded-t-2xl sm:rounded-2xl p-5 max-h-[85vh] flex flex-col shadow-2xl space-y-4 mb-2 sm:mb-0">
       
       <!-- Cabecera del modal -->
       <div class="flex items-center justify-between border-b border-[#1E2D3B] pb-3">
@@ -651,7 +652,7 @@
           </h3>
           <p class="text-[11px] text-slate-400 mt-0.5">Ordena con ⬆️ ⬇️ y activa/desactiva tus métricas favoritas.</p>
         </div>
-        <button onclick="closeCustomizeModal()" class="w-7 h-7 rounded-full bg-[#16222F] hover:bg-[#1E2D3B] flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+        <button type="button" onclick="closeCustomizeModal()" class="w-7 h-7 rounded-full bg-[#16222F] hover:bg-[#1E2D3B] flex items-center justify-center text-slate-400 hover:text-white transition-colors">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
@@ -663,10 +664,10 @@
 
       <!-- Pie de acciones -->
       <div class="border-t border-[#1E2D3B] pt-3 flex items-center justify-between">
-        <button onclick="resetGlancePreferences()" class="text-xs text-slate-400 hover:text-rose-400 transition-colors font-medium">
+        <button type="button" onclick="resetGlancePreferences()" class="text-xs text-slate-400 hover:text-rose-400 transition-colors font-medium">
           Restablecer
         </button>
-        <button onclick="saveAndApplyGlancePreferences()" class="px-4 py-2 rounded-xl bg-[#00A3E0] hover:bg-[#0092c8] text-white font-bold text-xs shadow-lg shadow-[#00A3E0]/20 transition-all active:scale-95">
+        <button type="button" id="btn-save-glance" onclick="saveAndApplyGlancePreferences()" class="px-4 py-2 rounded-xl bg-[#00A3E0] hover:bg-[#0092c8] text-white font-bold text-xs shadow-lg shadow-[#00A3E0]/20 transition-all active:scale-95">
           Guardar cambios
         </button>
       </div>
@@ -1972,7 +1973,22 @@
     function saveAndApplyGlancePreferences() {
       saveGlancePreferences(tempCustomizePrefs);
       renderGlanceCards();
-      closeCustomizeModal();
+
+      const btn = document.getElementById('btn-save-glance');
+      if (btn) {
+        const origText = btn.innerHTML;
+        btn.innerHTML = '✓ ¡Guardado!';
+        btn.classList.remove('bg-[#00A3E0]');
+        btn.classList.add('bg-emerald-500');
+        setTimeout(() => {
+          btn.innerHTML = origText;
+          btn.classList.remove('bg-emerald-500');
+          btn.classList.add('bg-[#00A3E0]');
+          closeCustomizeModal();
+        }, 350);
+      } else {
+        closeCustomizeModal();
+      }
     }
 
     function renderChallenges() {
