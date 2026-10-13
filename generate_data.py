@@ -210,6 +210,50 @@ def parse_garmin_data():
                     for p in pts:
                         t_str = datetime.datetime.fromtimestamp(p[0]/1000).strftime("%H:%M")
                         curva.append({"hora": t_str, "valor": p[1]})
+                    # Extraer eventos de actividad e impacto en Body Battery
+                    events_raw = item.get("bodyBatteryActivityEvent", [])
+                    factores = []
+                    for ev in events_raw:
+                        ev_type = ev.get("eventType")
+                        impact = ev.get("bodyBatteryImpact", 0)
+                        dur_ms = ev.get("durationInMilliseconds", 0)
+                        dur_mins = round(dur_ms / 60000)
+                        dur_str = f"{dur_mins // 60}h {dur_mins % 60:02d}m" if dur_mins >= 60 else f"{dur_mins} min"
+                        
+                        if ev_type == "SLEEP":
+                            factores.append({
+                                "nombre": "Sueño Nocturno",
+                                "subtitulo": f"{dur_str} regenerador",
+                                "impacto": f"+{abs(impact)} ↑",
+                                "es_recuperacion": True
+                            })
+                        elif ev_type == "RECOVERY":
+                            factores.append({
+                                "nombre": "Descanso y Calma (Estrés Bajo)",
+                                "subtitulo": f"{dur_str} relajación / reposo",
+                                "impacto": f"+{impact} ↑" if impact > 0 else "0 (Estable)",
+                                "es_recuperacion": True
+                            })
+                        else:
+                            factores.append({
+                                "nombre": f"Actividad ({ev_type.capitalize()})",
+                                "subtitulo": f"{dur_str} en movimiento",
+                                "impacto": f"-{abs(impact)} ↓",
+                                "es_recuperacion": False
+                            })
+
+                    if not factores:
+                        factores = [
+                            {"nombre": "Sueño Nocturno", "subtitulo": f"{round(last_day['sueno'], 1)}h reparador", "impacto": f"+{ch} ↑", "es_recuperacion": True},
+                            {"nombre": "Gasto Basal y Actividad Diaria", "subtitulo": "Consumo metabólico activo", "impacto": f"-{dr} ↓", "es_recuperacion": False}
+                        ]
+
+                    analisis_txt = (
+                        f"Iniciaste el día con una recarga nocturna de +{ch} puntos alcanzando un pico de {max(vals_only)}/100. "
+                        f"A lo largo de la jornada se han drenado {dr} puntos con un nivel actual de {curr}/100, manteniendo "
+                        f"una excelente reserva de energía y recuperación vagal estable."
+                    )
+
                     real_bb = {
                         "actual": curr,
                         "cargado": ch,
@@ -218,7 +262,9 @@ def parse_garmin_data():
                         "min": min(vals_only),
                         "descanso_nocturno": f"Recuperación (+{ch} pts)",
                         "momento_pico": f"Pico del día ({max(vals_only)} pts)",
-                        "curva_puntos": curva
+                        "curva_puntos": curva,
+                        "factores_impacto": factores,
+                        "analisis_clinico": analisis_txt
                     }
         except Exception as e:
             print("Aviso al consultar Body Battery en vivo:", e)

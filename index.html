@@ -344,11 +344,11 @@
             <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
           </div>
           <div class="my-2 flex items-baseline space-x-1">
-            <span class="text-3xl font-black text-white" id="bb-val">95</span>
+            <span class="text-3xl font-black text-white" id="bb-val">64</span>
             <span class="text-xs text-slate-400">/100</span>
           </div>
           <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-            <span>Drenado: <b class="text-amber-400" id="bb-drained">-8</b></span>
+            <span>Drenado: <b class="text-amber-400" id="bb-drained">-39</b></span>
             <span>Cargado: <b class="text-emerald-400" id="bb-charged">+47</b></span>
           </div>
         </div>
@@ -901,51 +901,24 @@
             </div>
             
             <div class="space-y-1.5 text-xs">
-              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
-                <div>
-                  <span class="font-bold text-white block">Sueño Nocturno</span>
-                  <span class="text-[10px] text-slate-400">8h 16m reparador</span>
+              ${((appData.body_battery && appData.body_battery.factores_impacto) || [
+                { nombre: "Sueño Nocturno", subtitulo: "Descanso reparador", impacto: `+${appData.body_battery.cargado} ↑`, es_recuperacion: true },
+                { nombre: "Gasto y Actividad Diaria", subtitulo: "Consumo de la jornada", impacto: `-${appData.body_battery.drenado} ↓`, es_recuperacion: false }
+              ]).map(f => `
+                <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+                  <div>
+                    <span class="font-bold text-white block">${f.nombre}</span>
+                    <span class="text-[10px] text-slate-400">${f.subtitulo}</span>
+                  </div>
+                  <span class="${f.es_recuperacion ? 'text-emerald-400' : 'text-amber-400'} font-black text-sm">${f.impacto}</span>
                 </div>
-                <span class="text-emerald-400 font-black text-sm">+62 ↑</span>
-              </div>
-
-              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
-                <div>
-                  <span class="font-bold text-white block">Estrés bajo (Descanso matutino)</span>
-                  <span class="text-[10px] text-slate-400">30 min relajación</span>
-                </div>
-                <span class="text-emerald-400 font-black text-sm">+2 ↑</span>
-              </div>
-
-              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
-                <div>
-                  <span class="font-bold text-white block">Casteil Caminar (Senderismo)</span>
-                  <span class="text-[10px] text-slate-400">2h 30m · Desnivel montaña</span>
-                </div>
-                <span class="text-amber-400 font-black text-sm">-18 ↓</span>
-              </div>
-
-              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
-                <div>
-                  <span class="font-bold text-white block">Codalet Caminar (Senderismo)</span>
-                  <span class="text-[10px] text-slate-400">3h 09m · Marcha prolongada</span>
-                </div>
-                <span class="text-amber-400 font-black text-sm">-13 ↓</span>
-              </div>
-
-              <div class="bg-[#111A22] p-2.5 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
-                <div>
-                  <span class="font-bold text-white block">Estrés bajo (Pausa vespertina)</span>
-                  <span class="text-[10px] text-slate-400">49 min recuperación</span>
-                </div>
-                <span class="text-emerald-400 font-black text-sm">+2 ↑</span>
-              </div>
+              `).join('')}
             </div>
           </section>
 
           <section class="garmin-card p-4 text-xs text-slate-300 leading-relaxed border-l-4 border-l-cyan-400">
-            <h4 class="font-bold text-white mb-1">💡 Análisis Clínico de la Carga</h4>
-            Comenzaste la jornada con una recarga masiva durante el sueño de <b>+62 puntos</b> (8h 16m). La doble sesión de caminata y senderismo (Casteil -18 y Codalet -13) drenó tu energía de manera controlada sin generar estrés cardiovascular dañino, respaldada por momentos de recuperación de estrés bajo (+2 y +2).
+            <h4 class="font-bold text-white mb-1">💡 Análisis de la Jornada</h4>
+            ${(appData.body_battery && appData.body_battery.analisis_clinico) || `Iniciaste el día con una recarga de +${appData.body_battery.cargado} puntos y un pico de energía de ${appData.body_battery.max}/100. Has drenado ${appData.body_battery.drenado} puntos manteniendo tu reserva actual en ${appData.body_battery.actual}/100.`}
           </section>
         `;
         chartCallback = () => {
