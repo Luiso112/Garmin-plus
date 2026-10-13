@@ -204,12 +204,16 @@ def main():
     print(txt)
     if write:
         d = json.load(open(DATA, encoding="utf-8"))
-        d["ai_coach_insights"] = {
-            "fecha": date.today().isoformat(), "modelo": model, "texto": txt}
+        insight = {"fecha": date.today().isoformat(), "modelo": model, "texto": txt}
+        d["ai_coach_insights"] = insight
         tmp = DATA + ".tmp"
-        json.dump(d, open(tmp, "w", encoding="utf-8"), ensure_ascii=False)
+        json.dump(d, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
         os.replace(tmp, DATA)
-        print("✓ data.json actualizado (campo ai_coach_insights)", file=sys.stderr)
+        # Fichero propio e inmortales: generate_data.py NO lo toca → el informe
+        # sobrevive a los syncs entre semana (la UI puede fetch'earlo también).
+        json.dump(insight, open("/home/luis/garmin-plus/coach_insights.json", "w",
+                                encoding="utf-8"), ensure_ascii=False, indent=2)
+        print("✓ data.json + coach_insights.json actualizados", file=sys.stderr)
     if not no_tg:
         sys.path.insert(0, f"{VAULT}/000 NEXUS/_SCRIPTS")
         from notify_telegram import send_telegram

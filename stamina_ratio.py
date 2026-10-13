@@ -107,7 +107,7 @@ def main():
     if write:
         tmp = DATA + ".tmp"
         with open(tmp, "w", encoding="utf-8") as f:
-            json.dump(d, f, ensure_ascii=False)
+            json.dump(d, f, ensure_ascii=False, indent=2)
         os.replace(tmp, DATA)
         print("✓ data.json actualizado (campo acwr)", file=sys.stderr)
 
