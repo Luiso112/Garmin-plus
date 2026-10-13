@@ -99,8 +99,8 @@ def diary_week(days=14):
         def g(k):
             mm = re.search(rf"^{k}:\s*([\d.]+)", y, re.M)
             return mm.group(1) if mm else None
-        row = {k: g(k) for k in ("meditacion", "conocimiento", "fuerza", "andar",
-                                 "control", "nutricion", "espiritualidad")}
+        row = {k: g(k) for k in ("meditación", "conocimiento", "fuerza", "andar",
+                                 "control", "nutrición", "espiritualidad")}
         if any(v for v in row.values()):
             out.append({"fecha": d, **row})
     return out

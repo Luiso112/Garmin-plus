@@ -20,7 +20,8 @@ LOG_FILE = "/home/luis/garmin-plus/sync.log"
 def log(msg):
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{ts}] {msg}"
-    print(line, flush=True)
+    # Solo escrita directa al fichero: el cron redirige stdout al mismo sync.log,
+    # imprimir aquí duplicaba cada línea.
     try:
         with open(LOG_FILE, "a", encoding="utf-8") as f:
             f.write(line + "\n")
@@ -85,6 +86,13 @@ def run_sync():
     # 3. Comprobar si hay cambios y hacer git push a GitHub Pages
     try:
         log("3/3 Comprobando cambios para GitHub Pages...")
+        # Red de seguridad: no publicar data.json roto
+        smoke = subprocess.run(
+            ["/usr/bin/python3", os.path.join(GARMIN_PLUS_DIR, "smoke_test.py")],
+            capture_output=True, text=True, timeout=30)
+        if smoke.returncode != 0:
+            log(f"⛔ smoke_test falló: {smoke.stdout.strip()[:200]} — push cancelado")
+            return
         status = subprocess.run(
             ["git", "-C", GARMIN_PLUS_DIR, "status", "--porcelain"],
             capture_output=True,

@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-13 15:48:22",
+  "ultima_actualizacion": "2026-10-13 16:14:25",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -31,54 +31,39 @@
   },
   "active_intelligence": "Semana extraordinaria de volumen aeróbico con 9.853 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 44 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.6h) ha mantenido tu VFC en 60 ms.",
   "body_battery": {
-    "actual": 64,
-    "cargado": 47,
-    "drenado": 39,
-    "max": 100,
-    "min": 56,
-    "descanso_nocturno": "Recuperación (+47 pts)",
-    "momento_pico": "Pico del día (100 pts)",
+    "actual": 41,
+    "cargado": 65,
+    "drenado": 57,
+    "max": 94,
+    "min": 33,
+    "descanso_nocturno": "Recuperación nocturna (+62 pts)",
+    "momento_pico": "08:15 (94 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
-        "valor": 56
+        "valor": 33
       },
       {
-        "hora": "05:03",
-        "valor": 96
+        "hora": "07:24",
+        "valor": 90
       },
       {
-        "hora": "06:27",
-        "valor": 100
+        "hora": "08:15",
+        "valor": 94
       },
       {
-        "hora": "09:57",
-        "valor": 85
+        "hora": "15:00",
+        "valor": 57
       },
       {
-        "hora": "10:30",
-        "valor": 85
+        "hora": "15:06",
+        "valor": 57
       },
       {
-        "hora": "15:27",
-        "valor": 64
+        "hora": "22:27",
+        "valor": 41
       }
-    ],
-    "factores_impacto": [
-      {
-        "nombre": "Sueño Nocturno",
-        "subtitulo": "7h 49m regenerador",
-        "impacto": "+48 ↑",
-        "es_recuperacion": true
-      },
-      {
-        "nombre": "Descanso y Calma (Estrés Bajo)",
-        "subtitulo": "1h 00m relajación / reposo",
-        "impacto": "0 (Estable)",
-        "es_recuperacion": true
-      }
-    ],
-    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +47 puntos alcanzando un pico de 100/100. A lo largo de la jornada se han drenado 39 puntos con un nivel actual de 64/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
+    ]
   },
   "metricas_clave": {
     "fecha": "2026-10-13",
@@ -8901,5 +8886,19 @@
       "plazo": "Evaluación continua semanal",
       "recompensa": "Insignia Regeneración Profunda"
     }
-  ]
+  ],
+  "acwr": {
+    "fecha": "2026-10-13",
+    "carga_aguda_min_dia": 93.3,
+    "carga_cronica_min_dia": 117.5,
+    "ratio_acwr": 0.79,
+    "semaforo": "Desentrenamiento (baja carga)",
+    "emoji": "🟦",
+    "fatiga": {
+      "nivel": "BAJA",
+      "motivos": [],
+      "mensaje": "Todo en verde. Sin señales de alarma."
+    },
+    "dias_usados": 59
+  }
 }

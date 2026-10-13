@@ -419,6 +419,19 @@ def parse_garmin_data():
         ]
     }
 
+    # Preservar campos enriquecidos que este generador NO produce
+    # (acwr, ai_coach_insights y futuros sidecars de agentes).
+    # LEER antes de abrir en modo "w" (eso truncaría el fichero).
+    preserved = {}
+    try:
+        with open(OUTPUT_JSON, encoding="utf-8") as prev:
+            old = json.load(prev)
+        for k in ("acwr", "ai_coach_insights"):
+            if k in old:
+                preserved[k] = old[k]
+    except (OSError, ValueError):
+        pass
+    data_payload.update(preserved)
     with open(OUTPUT_JSON, "w", encoding="utf-8") as out:
         json.dump(data_payload, out, indent=2, ensure_ascii=False)
     print(f"✅ data.json enriquecido con GPS y elevación generado en {OUTPUT_JSON}")
