@@ -302,130 +302,19 @@
 
       <!-- 3. DE UN VISTAZO (AT A GLANCE) -->
       <div class="flex items-center justify-between pt-1">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">De un Vistazo (At a Glance)</h2>
+        <div class="flex items-center space-x-2">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">De un Vistazo (At a Glance)</h2>
+          <button onclick="openCustomizeModal()" class="flex items-center space-x-1 px-2 py-0.5 rounded-full bg-[#16222F] hover:bg-[#1E2D3B] text-[10px] font-semibold text-[#00A3E0] border border-[#00A3E0]/30 transition-all active:scale-95">
+            <i data-lucide="sliders-horizontal" class="w-3 h-3"></i>
+            <span>Editar</span>
+          </button>
+        </div>
         <span class="text-[10px] text-slate-500 font-medium">Toca para abrir análisis</span>
       </div>
 
-      <!-- GRID DE TARJETAS BIOMÉTRICAS CLICABLES (2 COLS EN MOVIL, 3 COLS EN IPAD) -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-
-        <!-- SUEÑO (PRIMERA ESTADÍSTICA DE AT A GLANCE CON FECHA DE SINCRONIZACIÓN) -->
-        <div onclick="openDetail('sleep')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-indigo-500">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <div class="flex items-center space-x-1.5">
-              <i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
-              <span class="font-semibold text-slate-200">Sueño</span>
-            </div>
-            <div class="flex items-center space-x-1">
-              <span class="text-[9px] text-indigo-400 font-bold bg-indigo-500/10 px-1.5 py-0.5 rounded border border-indigo-500/20" id="sleep-score">Score 87</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
-            </div>
-          </div>
-          <div class="my-2 flex items-baseline justify-between">
-            <div class="flex items-baseline space-x-1">
-              <span class="text-3xl font-black text-white" id="sleep-hours">7.7</span>
-              <span class="text-xs text-slate-400">horas</span>
-            </div>
-            <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded" id="sleep-date">13 Oct</span>
-          </div>
-          <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-            <span id="sleep-sync-label">Garmin Fénix 7</span>
-            <span class="text-emerald-400 font-medium" id="sleep-sync-time">Sincronizado</span>
-          </div>
-        </div>
-
-        <!-- BODY BATTERY (SEGUNDA POSICIÓN) -->
-        <div onclick="openDetail('body_battery')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <div class="flex items-center space-x-1.5">
-              <i data-lucide="battery-charging" class="w-4 h-4 text-cyan-400"></i>
-              <span class="font-semibold">Body Battery</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
-          </div>
-          <div class="my-2 flex items-baseline space-x-1">
-            <span class="text-3xl font-black text-white" id="bb-val">64</span>
-            <span class="text-xs text-slate-400">/100</span>
-          </div>
-          <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-            <span>Drenado: <b class="text-amber-400" id="bb-drained">-39</b></span>
-            <span>Cargado: <b class="text-emerald-400" id="bb-charged">+47</b></span>
-          </div>
-        </div>
-
-        <!-- FC REPOSO -->
-        <div onclick="openDetail('rhr')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <div class="flex items-center space-x-1.5">
-              <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
-              <span class="font-semibold">FC de Reposo</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
-          </div>
-          <div class="my-2 flex items-baseline space-x-1">
-            <span class="text-3xl font-black text-white" id="rhr-val">48</span>
-            <span class="text-xs text-slate-400">ppm</span>
-          </div>
-          <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-            <span>Media 7 días</span>
-            <span class="text-emerald-400 font-medium">47 ppm 🟢</span>
-          </div>
-        </div>
-
-        <!-- VFC (HRV) -->
-        <div onclick="openDetail('hrv')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <div class="flex items-center space-x-1.5">
-              <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
-              <span class="font-semibold">VFC (HRV)</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
-          </div>
-          <div class="my-2 flex items-baseline space-x-1">
-            <span class="text-3xl font-black text-white" id="hrv-val">54</span>
-            <span class="text-xs text-slate-400">ms</span>
-          </div>
-          <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-            <span>Línea base</span>
-            <span class="text-emerald-400 font-medium">50-60 ms</span>
-          </div>
-        </div>
-
-        <!-- PASOS -->
-        <div onclick="openDetail('steps')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <div class="flex items-center space-x-1.5">
-              <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
-              <span class="font-semibold">Pasos Totales</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
-          </div>
-          <div class="my-2 flex items-baseline space-x-1">
-            <span class="text-2xl font-black text-white" id="steps-val">8,724</span>
-            <span class="text-xs text-slate-400">/ 8k</span>
-          </div>
-          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
-            <div class="bg-[#00A3E0] h-full rounded-full" style="width: 100%"></div>
-          </div>
-        </div>
-
-        <!-- MINUTOS DE INTENSIDAD -->
-        <div onclick="openDetail('intensity')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <div class="flex items-center space-x-1.5">
-              <i data-lucide="flame" class="w-4 h-4 text-amber-500"></i>
-              <span class="font-semibold">Intensidad</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
-          </div>
-          <div class="my-2 flex items-baseline space-x-1">
-            <span class="text-2xl font-black text-white" id="intensity-val">164</span>
-            <span class="text-xs text-slate-400">/ 150m</span>
-          </div>
-          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
-            <div class="bg-amber-500 h-full rounded-full" style="width: 100%"></div>
-          </div>
-        </div>
+      <!-- GRID DINÁMICO DE TARJETAS BIOMÉTRICAS CONFIGURABLES (2 COLS EN MOVIL, 3 COLS EN TABLET/DESKTOP) -->
+      <div id="glance-cards-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <!-- Renderizado dinámicamente mediante renderGlanceCards() según preferencias guardadas -->
       </div>
 
       <!-- 4. GRÁFICA CONTINUA HÍBRIDA (24H) -->
@@ -749,7 +638,41 @@
       </section>
     </div>
 
-  </main>
+  <!-- MODAL DE PERSONALIZACIÓN DE AT A GLANCE (DE UN VISTAZO) -->
+  <div id="customize-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
+    <div class="bg-[#0F1722] border border-[#1E2D3B] w-full max-w-md rounded-t-2xl sm:rounded-2xl p-5 max-h-[85vh] flex flex-col shadow-2xl space-y-4">
+      
+      <!-- Cabecera del modal -->
+      <div class="flex items-center justify-between border-b border-[#1E2D3B] pb-3">
+        <div>
+          <h3 class="text-sm font-bold text-white flex items-center space-x-1.5">
+            <i data-lucide="sliders-horizontal" class="w-4 h-4 text-[#00A3E0]"></i>
+            <span>Personalizar 'De un Vistazo'</span>
+          </h3>
+          <p class="text-[11px] text-slate-400 mt-0.5">Ordena con ⬆️ ⬇️ y activa/desactiva tus métricas favoritas.</p>
+        </div>
+        <button onclick="closeCustomizeModal()" class="w-7 h-7 rounded-full bg-[#16222F] hover:bg-[#1E2D3B] flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Lista reordenable y toggleable de métricas -->
+      <div id="customize-items-list" class="space-y-2 overflow-y-auto pr-1 flex-1 py-1">
+        <!-- Renderizado dinámicamente por JS -->
+      </div>
+
+      <!-- Pie de acciones -->
+      <div class="border-t border-[#1E2D3B] pt-3 flex items-center justify-between">
+        <button onclick="resetGlancePreferences()" class="text-xs text-slate-400 hover:text-rose-400 transition-colors font-medium">
+          Restablecer
+        </button>
+        <button onclick="saveAndApplyGlancePreferences()" class="px-4 py-2 rounded-xl bg-[#00A3E0] hover:bg-[#0092c8] text-white font-bold text-xs shadow-lg shadow-[#00A3E0]/20 transition-all active:scale-95">
+          Guardar cambios
+        </button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- BARRA DE NAVEGACIÓN INFERIOR (ESTILO GARMIN CONNECT APP) -->
   <nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#0B1118]/95 backdrop-blur-md border-t border-[#1E2D3B] px-6 py-2.5 safe-bottom-nav">
@@ -1118,6 +1041,56 @@
             </p>
           </section>
         `;
+      } else if (metricKey === 'stress') {
+        title = "Nivel de Estrés Diario";
+        html = `
+          <section class="garmin-card p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 Solar (Estrés Basal)</span>
+              <span class="text-xs font-bold ${m.estres <= 25 ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' : 'text-amber-400 bg-amber-500/10 border-amber-500/20'} px-2 py-0.5 rounded-full border">
+                ${m.estres <= 25 ? 'Reposo Excelente' : (m.estres <= 50 ? 'Bajo' : 'Medio')}
+              </span>
+            </div>
+            <div class="flex items-baseline space-x-2">
+              <span class="text-5xl font-black text-white">${m.estres}</span>
+              <span class="text-sm text-slate-400">/ 100 puntuación</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Puntuación promedio de estrés calculada a partir de los intervalos R-R del pulso cardíaco en reposo. Un nivel inferior a 25 refleja predominio del sistema parasimpático y recuperación celular activa.
+            </p>
+          </section>
+
+          <section class="garmin-card p-4 space-y-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Estrés por Día (Semana Actual)</h3>
+            <div class="h-44 w-full">
+              <canvas id="detailChart"></canvas>
+            </div>
+          </section>
+        `;
+        chartCallback = () => {
+          const ctx = document.getElementById('detailChart').getContext('2d');
+          const labels = daily.map(d => d.fecha.slice(5));
+          const vals = daily.map(d => d.estres);
+          renderDetailLineChart(ctx, labels, vals, '#38BDF8', 'Nivel Estrés', 0, 100);
+        };
+
+      } else if (metricKey === 'vo2max') {
+        title = "Capacidad Aeróbica (VO₂ Máx)";
+        html = `
+          <section class="garmin-card p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase font-bold text-slate-400">Firstbeat Analytics™</span>
+              <span class="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">Excelente Edad Fitness</span>
+            </div>
+            <div class="flex items-baseline space-x-2">
+              <span class="text-5xl font-black text-white">${m.vo2max || 35.0}</span>
+              <span class="text-sm text-slate-400">mL/kg/min</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Tu consumo máximo de oxígeno estima tu eficiencia cardiorrespiratoria durante esfuerzos prolongados. Respaldado por el volumen de caminatas y desniveles positivos en montaña.
+            </p>
+          </section>
+        `;
       } else if (metricKey === 'activity' || metricKey.startsWith('act_')) {
         title = "Detalle de Actividad";
         
@@ -1468,50 +1441,8 @@
           if (elDesc) elDesc.textContent = (a.emoji || '🟩') + ' ' + (a.semaforo || '') + '. ' + ((a.fatiga && a.fatiga.mensaje) || '');
         }
 
-        // 4. Métricas clave
-        if (appData.metricas_clave) {
-          const m = appData.metricas_clave;
-          const elRhr = document.getElementById('rhr-val');
-          const elHrv = document.getElementById('hrv-val');
-          const elSleepH = document.getElementById('sleep-hours');
-          const elSleepS = document.getElementById('sleep-score');
-          const elSteps = document.getElementById('steps-val');
-          const elInt = document.getElementById('intensity-val');
-
-          const elSleepDate = document.getElementById('sleep-date');
-          const elSleepSyncTime = document.getElementById('sleep-sync-time');
-
-          if (elRhr) elRhr.textContent = m.rhr;
-          if (elHrv) elHrv.textContent = m.hrv;
-          if (elSleepH) elSleepH.textContent = m.sueno_horas;
-          if (elSleepS) elSleepS.textContent = 'Score ' + (m.sueno_score || 90);
-          if (elSteps) elSteps.textContent = m.pasos.toLocaleString('es-ES');
-          if (elInt) elInt.textContent = m.min_intensidad;
-
-          // Fecha y hora de la última sincronización de sueño
-          if (m.fecha && elSleepDate) {
-            const parts = m.fecha.split('-');
-            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-            const dayNum = parseInt(parts[2], 10);
-            const mNum = parseInt(parts[1], 10) - 1;
-            elSleepDate.textContent = dayNum + ' ' + (months[mNum] || '');
-          }
-          if (appData.ultima_actualizacion && elSleepSyncTime) {
-            const timePart = appData.ultima_actualizacion.split(' ')[1] || '';
-            const hm = timePart.slice(0, 5);
-            elSleepSyncTime.textContent = 'Sync ' + hm;
-          }
-        }
-
-        // 5. Body Battery
-        if (appData.body_battery) {
-          const elBb = document.getElementById('bb-val');
-          const elCharged = document.getElementById('bb-charged');
-          const elDrained = document.getElementById('bb-drained');
-          if (elBb) elBb.textContent = appData.body_battery.actual;
-          if (elCharged) elCharged.textContent = '+' + appData.body_battery.cargado;
-          if (elDrained) elDrained.textContent = '-' + appData.body_battery.drenado;
-        }
+        // 4. De un Vistazo (At a Glance) dinámico y configurable
+        renderGlanceCards();
 
         // 6. Actividad reciente
         if (appData.actividades && appData.actividades.length > 0) {
@@ -1556,6 +1487,450 @@
       } catch (err) {
         console.error("Error cargando data.json:", err);
       }
+    // ========================================================
+    // DE UN VISTAZO (AT A GLANCE): MOTOR DINÁMICO & PERSONALIZABLE
+    // ========================================================
+    const GLANCE_METRICS_CATALOG = {
+      sleep: {
+        id: 'sleep',
+        titulo: 'Sueño',
+        icono: 'moon',
+        colorIcon: 'text-indigo-400',
+        borderColor: 'border-t-indigo-500',
+        renderCard: (data) => {
+          const m = data.metricas_clave || {};
+          let dateStr = 'Hoy';
+          if (m.fecha) {
+            const p = m.fecha.split('-');
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+            dateStr = parseInt(p[2], 10) + ' ' + (months[parseInt(p[1], 10) - 1] || '');
+          }
+          let syncStr = 'Sincronizado';
+          if (data.ultima_actualizacion) {
+            const timePart = data.ultima_actualizacion.split(' ')[1] || '';
+            syncStr = 'Sync ' + timePart.slice(0, 5);
+          }
+          return `
+            <div onclick="openDetail('sleep')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-indigo-500">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
+                  <span class="font-semibold text-slate-200">Sueño</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                  <span class="text-[9px] text-indigo-400 font-bold bg-indigo-500/10 px-1.5 py-0.5 rounded border border-indigo-500/20">Score ${m.sueno_score || 87}</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
+              </div>
+              <div class="my-2 flex items-baseline justify-between">
+                <div class="flex items-baseline space-x-1">
+                  <span class="text-3xl font-black text-white">${m.sueno_horas || 7.7}</span>
+                  <span class="text-xs text-slate-400">horas</span>
+                </div>
+                <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">${dateStr}</span>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+                <span>Garmin Fénix 7</span>
+                <span class="text-emerald-400 font-medium">${syncStr}</span>
+              </div>
+            </div>
+          `;
+        }
+      },
+      body_battery: {
+        id: 'body_battery',
+        titulo: 'Body Battery',
+        icono: 'battery-charging',
+        colorIcon: 'text-cyan-400',
+        borderColor: 'border-t-cyan-500',
+        renderCard: (data) => {
+          const bb = data.body_battery || { actual: 64, cargado: 47, drenado: 39 };
+          return `
+            <div onclick="openDetail('body_battery')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-cyan-500">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="battery-charging" class="w-4 h-4 text-cyan-400"></i>
+                  <span class="font-semibold">Body Battery</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-3xl font-black text-white">${bb.actual}</span>
+                <span class="text-xs text-slate-400">/100</span>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+                <span>Drenado: <b class="text-amber-400">-${bb.drenado}</b></span>
+                <span>Cargado: <b class="text-emerald-400">+${bb.cargado}</b></span>
+              </div>
+            </div>
+          `;
+        }
+      },
+      rhr: {
+        id: 'rhr',
+        titulo: 'FC de Reposo',
+        icono: 'heart',
+        colorIcon: 'text-rose-500',
+        borderColor: 'border-t-rose-500',
+        renderCard: (data) => {
+          const m = data.metricas_clave || {};
+          return `
+            <div onclick="openDetail('rhr')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-rose-500">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
+                  <span class="font-semibold">FC de Reposo</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-3xl font-black text-white">${m.rhr || 42}</span>
+                <span class="text-xs text-slate-400">ppm</span>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+                <span>Media 7 días</span>
+                <span class="text-emerald-400 font-medium">47 ppm 🟢</span>
+              </div>
+            </div>
+          `;
+        }
+      },
+      hrv: {
+        id: 'hrv',
+        titulo: 'VFC (HRV Nocturna)',
+        icono: 'waveform',
+        colorIcon: 'text-emerald-400',
+        borderColor: 'border-t-emerald-500',
+        renderCard: (data) => {
+          const m = data.metricas_clave || {};
+          return `
+            <div onclick="openDetail('hrv')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-emerald-500">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
+                  <span class="font-semibold">VFC (HRV)</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-3xl font-black text-white">${m.hrv || 67}</span>
+                <span class="text-xs text-slate-400">ms</span>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+                <span>Línea base</span>
+                <span class="text-emerald-400 font-medium">50-60 ms</span>
+              </div>
+            </div>
+          `;
+        }
+      },
+      steps: {
+        id: 'steps',
+        titulo: 'Pasos Diarios',
+        icono: 'footprints',
+        colorIcon: 'text-[#00A3E0]',
+        borderColor: 'border-t-[#00A3E0]',
+        renderCard: (data) => {
+          const m = data.metricas_clave || {};
+          const stepsVal = m.pasos || 0;
+          const metaVal = m.meta_pasos || 8000;
+          const pct = Math.min(100, Math.round((stepsVal / metaVal) * 100));
+          return `
+            <div onclick="openDetail('steps')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-[#00A3E0]">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
+                  <span class="font-semibold">Pasos Totales</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-2xl font-black text-white">${stepsVal.toLocaleString('es-ES')}</span>
+                <span class="text-xs text-slate-400">/ ${(metaVal/1000).toFixed(0)}k</span>
+              </div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+                <div class="bg-[#00A3E0] h-full rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+              </div>
+            </div>
+          `;
+        }
+      },
+      intensity: {
+        id: 'intensity',
+        titulo: 'Minutos de Intensidad',
+        icono: 'flame',
+        colorIcon: 'text-amber-500',
+        borderColor: 'border-t-amber-500',
+        renderCard: (data) => {
+          const m = data.metricas_clave || {};
+          const intVal = m.min_intensidad || 0;
+          const metaInt = m.meta_intensidad || 150;
+          const pct = Math.min(100, Math.round((intVal / metaInt) * 100));
+          return `
+            <div onclick="openDetail('intensity')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-amber-500">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="flame" class="w-4 h-4 text-amber-500"></i>
+                  <span class="font-semibold">Intensidad</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-2xl font-black text-white">${intVal}</span>
+                <span class="text-xs text-slate-400">/ ${metaInt}m</span>
+              </div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
+                <div class="bg-amber-500 h-full rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+              </div>
+            </div>
+          `;
+        }
+      },
+      stress: {
+        id: 'stress',
+        titulo: 'Nivel de Estrés',
+        icono: 'zap',
+        colorIcon: 'text-sky-400',
+        borderColor: 'border-t-sky-400',
+        renderCard: (data) => {
+          const m = data.metricas_clave || {};
+          const stVal = m.estres || 8;
+          const nivel = stVal <= 25 ? 'Reposo' : (stVal <= 50 ? 'Bajo' : 'Medio');
+          const colorNivel = stVal <= 25 ? 'text-emerald-400' : 'text-amber-400';
+          return `
+            <div onclick="openDetail('stress')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-sky-400">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="zap" class="w-4 h-4 text-sky-400"></i>
+                  <span class="font-semibold">Estrés</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-3xl font-black text-white">${stVal}</span>
+                <span class="text-xs text-slate-400">/ 100</span>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+                <span>Estado actual</span>
+                <span class="${colorNivel} font-medium">${nivel} 🟢</span>
+              </div>
+            </div>
+          `;
+        }
+      },
+      readiness: {
+        id: 'readiness',
+        titulo: 'Disposición (Readiness)',
+        icono: 'activity',
+        colorIcon: 'text-emerald-400',
+        borderColor: 'border-t-emerald-400',
+        renderCard: (data) => {
+          const r = data.disposicion_rendimiento || { score: 86, nivel: 'ÓPTIMA' };
+          return `
+            <div onclick="openDetail('readiness')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-emerald-400">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
+                  <span class="font-semibold">Disposición</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-3xl font-black text-white">${r.score}</span>
+                <span class="text-xs text-slate-400">/ 100</span>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+                <span>Rendimiento</span>
+                <span class="text-emerald-400 font-bold">${r.nivel}</span>
+              </div>
+            </div>
+          `;
+        }
+      },
+      vo2max: {
+        id: 'vo2max',
+        titulo: 'VO₂ Máx',
+        icono: 'wind',
+        colorIcon: 'text-teal-400',
+        borderColor: 'border-t-teal-400',
+        renderCard: (data) => {
+          const m = data.metricas_clave || {};
+          return `
+            <div onclick="openDetail('vo2max')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-teal-400">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="wind" class="w-4 h-4 text-teal-400"></i>
+                  <span class="font-semibold">VO₂ Máx</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+              </div>
+              <div class="my-2 flex items-baseline space-x-1">
+                <span class="text-3xl font-black text-white">${m.vo2max || 35.0}</span>
+                <span class="text-xs text-slate-400">mL/kg</span>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
+                <span>Condición</span>
+                <span class="text-teal-400 font-medium">Excelente</span>
+              </div>
+            </div>
+          `;
+        }
+      }
+    };
+
+    const DEFAULT_GLANCE_PREFS = [
+      { id: 'sleep', enabled: true },
+      { id: 'body_battery', enabled: true },
+      { id: 'rhr', enabled: true },
+      { id: 'hrv', enabled: true },
+      { id: 'steps', enabled: true },
+      { id: 'intensity', enabled: true },
+      { id: 'stress', enabled: false },
+      { id: 'readiness', enabled: false },
+      { id: 'vo2max', enabled: false }
+    ];
+
+    function getGlancePreferences() {
+      try {
+        const saved = localStorage.getItem('garmin_plus_glance_prefs');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            // Asegurar que todas las métricas del catálogo existan en la lista
+            const existingIds = new Set(parsed.map(p => p.id));
+            DEFAULT_GLANCE_PREFS.forEach(def => {
+              if (!existingIds.has(def.id)) {
+                parsed.push(def);
+              }
+            });
+            return parsed;
+          }
+        }
+      } catch (e) {
+        console.warn('Error reading glance preferences from localStorage:', e);
+      }
+      return JSON.parse(JSON.stringify(DEFAULT_GLANCE_PREFS));
+    }
+
+    function saveGlancePreferences(prefs) {
+      try {
+        localStorage.setItem('garmin_plus_glance_prefs', JSON.stringify(prefs));
+      } catch (e) {
+        console.warn('Error saving glance preferences to localStorage:', e);
+      }
+    }
+
+    function renderGlanceCards() {
+      if (!appData) return;
+      const grid = document.getElementById('glance-cards-grid');
+      if (!grid) return;
+
+      const prefs = getGlancePreferences();
+      const visiblePrefs = prefs.filter(p => p.enabled);
+
+      if (visiblePrefs.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-2 md:col-span-3 text-center py-8 text-slate-500 text-xs garmin-card p-4">
+            <p>Has desactivado todas las tarjetas del menú 'De un Vistazo'.</p>
+            <button onclick="openCustomizeModal()" class="mt-2 text-[#00A3E0] font-bold hover:underline">
+              Toca aquí para seleccionar métricas
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = visiblePrefs.map(pref => {
+        const metric = GLANCE_METRICS_CATALOG[pref.id];
+        if (!metric) return '';
+        return metric.renderCard(appData);
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    // Modal de personalización: estado temporal durante la edición
+    let tempCustomizePrefs = [];
+
+    function openCustomizeModal() {
+      tempCustomizePrefs = JSON.parse(JSON.stringify(getGlancePreferences()));
+      renderCustomizeList();
+      const modal = document.getElementById('customize-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        lucide.createIcons();
+      }
+    }
+
+    function closeCustomizeModal() {
+      const modal = document.getElementById('customize-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function renderCustomizeList() {
+      const container = document.getElementById('customize-items-list');
+      if (!container) return;
+
+      container.innerHTML = tempCustomizePrefs.map((item, index) => {
+        const def = GLANCE_METRICS_CATALOG[item.id];
+        if (!def) return '';
+
+        const isFirst = index === 0;
+        const isLast = index === tempCustomizePrefs.length - 1;
+
+        return `
+          <div class="flex items-center justify-between bg-[#111A22] border ${item.enabled ? 'border-[#1E2D3B]' : 'border-[#1E2D3B]/40 opacity-60'} p-2.5 rounded-xl transition-all">
+            <div class="flex items-center space-x-2.5">
+              <button onclick="toggleGlanceItem(${index})" class="w-6 h-6 rounded-md flex items-center justify-center transition-colors ${item.enabled ? 'bg-[#00A3E0] text-white' : 'bg-[#1E2D3B] text-slate-500'}">
+                <i data-lucide="${item.enabled ? 'check' : 'plus'}" class="w-3.5 h-3.5"></i>
+              </button>
+              <div class="flex items-center space-x-2">
+                <i data-lucide="${def.icono}" class="w-4 h-4 ${def.colorIcon}"></i>
+                <span class="text-xs font-semibold ${item.enabled ? 'text-white' : 'text-slate-400'}">${def.titulo}</span>
+              </div>
+            </div>
+
+            <!-- Botones subir / bajar -->
+            <div class="flex items-center space-x-1">
+              <button onclick="moveGlanceItem(${index}, -1)" ${isFirst ? 'disabled' : ''} class="w-7 h-7 rounded-lg bg-[#16222F] hover:bg-[#1E2D3B] disabled:opacity-20 disabled:hover:bg-[#16222F] flex items-center justify-center text-slate-300 transition-colors">
+                <i data-lucide="chevron-up" class="w-3.5 h-3.5"></i>
+              </button>
+              <button onclick="moveGlanceItem(${index}, 1)" ${isLast ? 'disabled' : ''} class="w-7 h-7 rounded-lg bg-[#16222F] hover:bg-[#1E2D3B] disabled:opacity-20 disabled:hover:bg-[#16222F] flex items-center justify-center text-slate-300 transition-colors">
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function toggleGlanceItem(index) {
+      if (tempCustomizePrefs[index]) {
+        tempCustomizePrefs[index].enabled = !tempCustomizePrefs[index].enabled;
+        renderCustomizeList();
+      }
+    }
+
+    function moveGlanceItem(index, direction) {
+      const targetIndex = index + direction;
+      if (targetIndex < 0 || targetIndex >= tempCustomizePrefs.length) return;
+      const temp = tempCustomizePrefs[index];
+      tempCustomizePrefs[index] = tempCustomizePrefs[targetIndex];
+      tempCustomizePrefs[targetIndex] = temp;
+      renderCustomizeList();
+    }
+
+    function resetGlancePreferences() {
+      tempCustomizePrefs = JSON.parse(JSON.stringify(DEFAULT_GLANCE_PREFS));
+      renderCustomizeList();
+    }
+
+    function saveAndApplyGlancePreferences() {
+      saveGlancePreferences(tempCustomizePrefs);
+      renderGlanceCards();
+      closeCustomizeModal();
     }
 
     function renderChallenges() {
