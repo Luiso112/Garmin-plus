@@ -185,8 +185,8 @@ def parse_garmin_data():
             {"hora": "22:27", "valor": 41}
         ]
     }
-    # Solo intentar si no hay limitación
-    if os.getenv("FETCH_LIVE_GARMIN", "0") == "1":
+    # Intento de consulta en vivo a Garmin Connect (si falla o da 429 mantiene el valor previo)
+    if os.getenv("FETCH_LIVE_GARMIN", "1") == "1":
         try:
             from dotenv import load_dotenv
             from garminconnect import Garmin
