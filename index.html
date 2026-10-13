@@ -243,11 +243,11 @@
               <i data-lucide="mountain-snow" class="w-4 h-4 text-[#00A3E0]"></i>
               <span class="font-bold">Hill Score</span>
             </div>
-            <span class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-1.5 py-0.5 rounded">68/100</span>
+            <span id="hill-score-badge" class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-1.5 py-0.5 rounded">68/100</span>
           </div>
           <div class="my-1.5">
-            <span class="text-xl font-black text-white">Experto</span>
-            <span class="text-[10px] text-slate-400 block">+574m desnivel máx</span>
+            <span id="hill-score-level" class="text-xl font-black text-white">Experto</span>
+            <span id="hill-score-sub" class="text-[10px] text-slate-400 block">+574m desnivel máx</span>
           </div>
         </div>
 
@@ -257,11 +257,11 @@
               <i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
               <span class="font-bold">Endurance</span>
             </div>
-            <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/15 px-1.5 py-0.5 rounded">5.420</span>
+            <span id="endurance-score-badge" class="text-[9px] font-bold text-emerald-400 bg-emerald-500/15 px-1.5 py-0.5 rounded">5.420</span>
           </div>
           <div class="my-1.5">
-            <span class="text-xl font-black text-white">Avanzado</span>
-            <span class="text-[10px] text-slate-400 block">Capacidad aeróbica alta</span>
+            <span id="endurance-score-level" class="text-xl font-black text-white">Avanzado</span>
+            <span id="endurance-score-sub" class="text-[10px] text-slate-400 block">Capacidad aeróbica alta</span>
           </div>
         </div>
       </div>
@@ -1425,6 +1425,7 @@
         // 3b. Carga Aguda/Crónica (ACWR)
         if (appData.acwr) {
           const a = appData.acwr;
+          const elCard = document.getElementById('acwr-card');
           const elBadge = document.getElementById('acwr-badge');
           const elAguda = document.getElementById('acwr-aguda');
           const elCronica = document.getElementById('acwr-cronica');
@@ -1439,6 +1440,45 @@
             elFatiga.className = 'text-xs font-bold ' + (a.fatiga.nivel === 'ALTA' ? 'text-rose-400' : (a.fatiga.nivel === 'MEDIA' ? 'text-amber-400' : 'text-emerald-400'));
           }
           if (elDesc) elDesc.textContent = (a.emoji || '🟩') + ' ' + (a.semaforo || '') + '. ' + ((a.fatiga && a.fatiga.mensaje) || '');
+
+          // Ajustar color dinámico del borde y badge del ACWR según ratio
+          if (elCard && elBadge) {
+            elCard.className = elCard.className.replace(/border-l-\w+-\d+/g, '');
+            if (a.ratio_acwr > 1.5) {
+              elCard.classList.add('border-l-rose-500');
+              elBadge.className = 'text-[10px] font-bold text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full border border-rose-500/20';
+            } else if (a.ratio_acwr >= 1.3) {
+              elCard.classList.add('border-l-amber-400');
+              elBadge.className = 'text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20';
+            } else if (a.ratio_acwr >= 0.8) {
+              elCard.classList.add('border-l-emerald-400');
+              elBadge.className = 'text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20';
+            } else {
+              elCard.classList.add('border-l-sky-400');
+              elBadge.className = 'text-[10px] font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded-full border border-sky-500/20';
+            }
+          }
+        }
+
+        // 3c. Connect+ Training Scores dinámicos (Hill Score & Endurance Score)
+        if (appData.training_scores) {
+          const ts = appData.training_scores;
+          if (ts.hill_score) {
+            const hBadge = document.getElementById('hill-score-badge');
+            const hLevel = document.getElementById('hill-score-level');
+            const hSub = document.getElementById('hill-score-sub');
+            if (hBadge) hBadge.textContent = ts.hill_score.valor + '/100';
+            if (hLevel) hLevel.textContent = ts.hill_score.nivel.split(' ')[0] || 'Experto';
+            if (hSub) hSub.textContent = ts.hill_score.interpretacion || '+574m desnivel máx';
+          }
+          if (ts.endurance_score) {
+            const eBadge = document.getElementById('endurance-score-badge');
+            const eLevel = document.getElementById('endurance-score-level');
+            const eSub = document.getElementById('endurance-score-sub');
+            if (eBadge) eBadge.textContent = Number(ts.endurance_score.valor).toLocaleString('es-ES');
+            if (eLevel) eLevel.textContent = ts.endurance_score.nivel || 'Bien entrenado';
+            if (eSub) eSub.textContent = ts.endurance_score.interpretacion || 'Capacidad aeróbica';
+          }
         }
 
         // 4. De un Vistazo (At a Glance) dinámico y configurable

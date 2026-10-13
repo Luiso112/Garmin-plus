@@ -269,90 +269,149 @@ def parse_garmin_data():
         except Exception as e:
             print("Aviso al consultar Body Battery en vivo:", e)
 
-    data_payload = {
-        "usuario": "Luis B.",
-        "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "semana_actual": latest_week["semana"],
-        "dispositivos": {
-            "fenix_7": {
-                "nombre": "Garmin Fénix 7 Solar",
-                "estado": "Conectado · Activo Principal",
-                "bateria": 88,
-                "rol": "Monitorización 24h, Sueño, VFC, GPS & Pulsómetro",
-                "firmware": "v17.28",
-                "modo": "Pulsómetro Óptico Elevate™ v4 Continuo"
+        # Cálculo dinámico de Training Scores y Training Effect basado en semanas y desglose
+        # Hill score: calculado por desnivel acumulado en rutas GPS recientes o actividades
+        rutas_con_desnivel = [r for r in gps_data.values() if r.get("desnivel_positivo", 0) > 0]
+        max_desnivel = max([r.get("desnivel_positivo", 0) for r in rutas_con_desnivel], default=0)
+        total_desnivel = sum(r.get("desnivel_positivo", 0) for r in rutas_con_desnivel)
+        
+        # Base Hill Score: proporcional a la tolerancia a desnivel positivo (máx y volumen)
+        if max_desnivel >= 500:
+            hill_val = min(85, 60 + int(max_desnivel / 35))
+            hill_level = "Experto en Colinas (Montaña)"
+            top_routes = [f"+{r.get('desnivel_positivo')}m en {r.get('nombre', '').replace(' Caminar', '')}" for r in sorted(rutas_con_desnivel, key=lambda x: x.get('desnivel_positivo', 0), reverse=True)[:2]]
+            hill_desc = f"Excelente tolerancia a desniveles positivos ({', '.join(top_routes)})."
+        elif max_desnivel >= 250:
+            hill_val = 55 + int(max_desnivel / 30)
+            hill_level = "Avanzado en Desnivel"
+            hill_desc = f"Buena capacidad de ascensión con desnivel acumulado de +{total_desnivel}m."
+        else:
+            hill_val = 45
+            hill_level = "Moderado en Terreno Llano"
+            hill_desc = "Volumen predominante en llano o pendientes suaves."
+
+        # Endurance score: derivado del volumen de pasos semanales, min de intensidad y VO2 máx
+        # Rango Garmin de Endurance Score: 4000-6000 para atletas recreacionales entrenados
+        endurance_base = 4200 + int((total_steps_week / 1000) * 85) + int(total_intensity_week * 4)
+        endurance_val = min(6800, max(3800, endurance_base))
+        if endurance_val >= 5200:
+            endurance_level = "Bien entrenado"
+            endurance_desc = "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel."
+            endurance_color = "#10B981"
+        elif endurance_val >= 4500:
+            endurance_level = "Moderado / Activo"
+            endurance_desc = "Buena base aeróbica con respuesta cardiovascular estable."
+            endurance_color = "#38BDF8"
+        else:
+            endurance_level = "En desarrollo"
+            endurance_desc = "Construyendo volumen aeróbico inicial."
+            endurance_color = "#F59E0B"
+
+        # Training Effect semanal dinámico según minutos de intensidad
+        if total_intensity_week >= 200:
+            te_aero_num = round(min(5.0, 3.5 + (total_intensity_week - 200) / 100), 1)
+            te_aero_txt = f"{te_aero_num} (Impacto Sobresaliente)"
+            te_anaero_txt = "1.8 (Impacto Menor)"
+            te_beneficio = "Capacidad Aeróbica Máxima y Eficiencia Mitocondrial"
+        elif total_intensity_week >= 120:
+            te_aero_num = round(min(4.5, 3.0 + (total_intensity_week - 120) / 100), 1)
+            te_aero_txt = f"{te_aero_num} (Impacto Muy Fuerte)"
+            te_anaero_txt = "1.5 (Impacto Menor)"
+            te_beneficio = "Base Aeróbica y Capacidad Mitocondrial"
+        elif total_intensity_week >= 60:
+            te_aero_num = round(2.0 + total_intensity_week / 60, 1)
+            te_aero_txt = f"{te_aero_num} (Mantenimiento Aeróbico)"
+            te_anaero_txt = "0.8 (Sin Impacto Anaeróbico)"
+            te_beneficio = "Mantenimiento del Estado Físico"
+        else:
+            te_aero_txt = "1.2 (Recuperación Activa)"
+            te_anaero_txt = "0.0 (Sin Impacto)"
+            te_beneficio = "Recuperación y Regeneración"
+
+        data_payload = {
+            "usuario": "Luis B.",
+            "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "semana_actual": latest_week["semana"],
+            "dispositivos": {
+                "fenix_7": {
+                    "nombre": "Garmin Fénix 7 Solar",
+                    "estado": "Conectado · Activo Principal",
+                    "bateria": 88,
+                    "rol": "Monitorización 24h, Sueño, VFC, GPS & Pulsómetro",
+                    "firmware": "v17.28",
+                    "modo": "Pulsómetro Óptico Elevate™ v4 Continuo"
+                },
+                "helio_strap": {
+                    "nombre": "Amazfit Helio Strap",
+                    "estado": "No vinculada (Opcional futuro)",
+                    "bateria": None,
+                    "rol": "Sin emparejar (Modo 100% Garmin Fénix 7)",
+                    "firmware": "-",
+                    "modo": "Desactivada"
+                }
             },
-            "helio_strap": {
-                "nombre": "Amazfit Helio Strap",
-                "estado": "No vinculada (Opcional futuro)",
-                "bateria": None,
-                "rol": "Sin emparejar (Modo 100% Garmin Fénix 7)",
-                "firmware": "-",
-                "modo": "Desactivada"
-            }
-        },
-        "disposicion_rendimiento": {
-            "score": 86,
-            "nivel": "ÓPTIMA",
-            "hrv_status": f"Equilibrada ({last_day['hrv']} ms)",
-            "recuperacion_horas": 0,
-            "sueno_calidad": f"Reparador ({last_day['sueno']}h)",
-            "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
-            "historial_reciente": "Excelente adaptación aeróbica en montaña"
-        },
-        "active_intelligence": active_intel_str,
-        "body_battery": real_bb,
-        "metricas_clave": {
-            "fecha": last_day.get("fecha", datetime.date.today().isoformat()),
-            "rhr": last_day["rhr"],
-            "hrv": last_day["hrv"],
-            "sueno_horas": last_day["sueno"],
-            "sueno_score": last_day.get("sueno_score", 86),
-            "pasos": last_day["pasos"],
-            "meta_pasos": 8000,
-            "pasos_semana": total_steps_week,
-            "estres": last_day["estres"],
-            "vo2max": 35.0,
-            "min_intensidad": last_day["min_intensidad"],
-            "intensidad_semana": total_intensity_week,
-            "meta_intensidad": 150
-        },
-        "morning_report": {
-            "saludo": "¡Buenos días, Luis!",
-            "resumen_descanso": f"Tu sueño ha sido reparador ({last_day['sueno']}h) con un Body Battery al {last_day.get('bb', 85)}% de energía.",
-            "estado_vfc": f"VFC nocturna equilibrada en {last_day['hrv']} ms dentro de tu rango basal habitual.",
-            "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
-            "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
-            "clima_sugerido": "Condiciones favorables para actividad al aire libre"
-        },
-        "race_predictor": {
-            "vo2max": 35.0,
-            "distancias": [
-                {"prueba": "5K", "tiempo": "30m 15s", "ritmo": "6:03 min/km"},
-                {"prueba": "10K", "tiempo": "1h 03m", "ritmo": "6:20 min/km"},
-                {"prueba": "Media Maratón (21K)", "tiempo": "2h 24m", "ritmo": "6:50 min/km"},
-                {"prueba": "Maratón (42K)", "tiempo": "5h 12m", "ritmo": "7:24 min/km"}
-            ]
-        },
-        "training_scores": {
-            "endurance_score": {
-                "valor": 5420,
-                "nivel": "Bien entrenado",
-                "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
-                "color": "#10B981"
+            "disposicion_rendimiento": {
+                "score": 86,
+                "nivel": "ÓPTIMA",
+                "hrv_status": f"Equilibrada ({last_day['hrv']} ms)",
+                "recuperacion_horas": 0,
+                "sueno_calidad": f"Reparador ({last_day['sueno']}h)",
+                "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
+                "historial_reciente": "Excelente adaptación aeróbica en montaña"
             },
-            "hill_score": {
-                "valor": 68,
-                "nivel": "Experto en Colinas (Montaña)",
-                "interpretacion": "Excelente tolerancia a desniveles positivos (+574m en Joch, +493m en Les Angles).",
-                "color": "#00A3E0"
+            "active_intelligence": active_intel_str,
+            "body_battery": real_bb,
+            "metricas_clave": {
+                "fecha": last_day.get("fecha", datetime.date.today().isoformat()),
+                "rhr": last_day["rhr"],
+                "hrv": last_day["hrv"],
+                "sueno_horas": last_day["sueno"],
+                "sueno_score": last_day.get("sueno_score", 86),
+                "pasos": last_day["pasos"],
+                "meta_pasos": 8000,
+                "pasos_semana": total_steps_week,
+                "estres": last_day["estres"],
+                "vo2max": 35.0,
+                "min_intensidad": last_day["min_intensidad"],
+                "intensidad_semana": total_intensity_week,
+                "meta_intensidad": 150
             },
-            "training_effect_semanal": {
-                "aerobico": "4.2 (Impacto Muy Fuerte)",
-                "anaerobico": "1.5 (Impacto Menor)",
-                "beneficio_principal": "Base Aeróbica y Capacidad Mitocondrial"
-            }
-        },
+            "morning_report": {
+                "saludo": "¡Buenos días, Luis!",
+                "resumen_descanso": f"Tu sueño ha sido reparador ({last_day['sueno']}h) con un Body Battery al {real_bb.get('actual', last_day.get('bb', 85))}% de energía.",
+                "estado_vfc": f"VFC nocturna equilibrada en {last_day['hrv']} ms dentro de tu rango basal habitual.",
+                "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
+                "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
+                "clima_sugerido": "Condiciones favorables para actividad al aire libre"
+            },
+            "race_predictor": {
+                "vo2max": 35.0,
+                "distancias": [
+                    {"prueba": "5K", "tiempo": "30m 15s", "ritmo": "6:03 min/km"},
+                    {"prueba": "10K", "tiempo": "1h 03m", "ritmo": "6:20 min/km"},
+                    {"prueba": "Media Maratón (21K)", "tiempo": "2h 24m", "ritmo": "6:50 min/km"},
+                    {"prueba": "Maratón (42K)", "tiempo": "5h 12m", "ritmo": "7:24 min/km"}
+                ]
+            },
+            "training_scores": {
+                "endurance_score": {
+                    "valor": endurance_val,
+                    "nivel": endurance_level,
+                    "interpretacion": endurance_desc,
+                    "color": endurance_color
+                },
+                "hill_score": {
+                    "valor": hill_val,
+                    "nivel": hill_level,
+                    "interpretacion": hill_desc,
+                    "color": "#00A3E0"
+                },
+                "training_effect_semanal": {
+                    "aerobico": te_aero_txt,
+                    "anaerobico": te_anaero_txt,
+                    "beneficio_principal": te_beneficio
+                }
+            },
         "curva_fc_24h": heart_rate_24h,
         "actividades": activities,
         "desglose_diario": daily_stats,
