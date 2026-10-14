@@ -8,6 +8,32 @@ GARMIN_DIR = "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/
 OUTPUT_JSON = "/home/luis/garmin-plus/data.json"
 GPS_FILE = "/home/luis/garmin-plus/activities_gps.json"
 
+def _fmt(tiempo_s):
+    """Segundos → 'Hh MMm SSs' / 'Mm SSs'."""
+    s = int(round(tiempo_s))
+    h, s = divmod(s, 3600)
+    m, s = divmod(s, 60)
+    return (f"{h}h {m:02d}m {s:02d}s" if h else f"{m}m {s:02d}s")
+
+
+def _race_block(vo2):
+    """Predicción de carreras (Jack Daniels simplificado: vVO2max ≈ VO2max/3.5 km/h,
+    ritmo de carrera ≈ factor de duración × vVO2max). Escala con el VO2 real."""
+    v = vo2 / 3.5  # vVO2max aproximado en km/h
+    races = [("5K", 5.0, 0.92), ("10K", 10.0, 0.87),
+             ("Media Maratón (21K)", 21.097, 0.82), ("Maratón (42K)", 42.195, 0.78)]
+    dists = []
+    for nombre, km, factor in races:
+        sec = km / (v * factor) * 3600
+        pace = sec / 60.0 / km
+        pm = int(pace)
+        ps = int(round((pace - pm) * 60))
+        dists.append({"prueba": nombre, "tiempo": _fmt(sec),
+                      "ritmo": f"{pm}:{ps:02d} min/km"})
+    return {"vo2max": vo2, "distancias": dists,
+            "metodo": "Daniels (estimación a partir de VO2max real)"}
+
+
 def parse_garmin_data():
     files = sorted(glob.glob(os.path.join(GARMIN_DIR, "*-W* - Garmin.md")))
     if not files:
@@ -122,6 +148,7 @@ def parse_garmin_data():
 
     # Curva cardíaca continua 24h
     heart_rate_24h = []
+    heart_rate_24h_stats = None
     for h in range(24):
         time_str = f"{h:02d}:00"
         if 0 <= h < 7:
@@ -197,7 +224,11 @@ def parse_garmin_data():
             g_pass = os.getenv('GARMIN_PASSWORD')
             if g_user and g_pass:
                 client = Garmin(g_user, g_pass)
-                client.login()
+                token_dir = '/home/luis/.privada/personal/.garmin_tokens'
+                if os.path.exists(token_dir):
+                    client.login(token_dir)
+                else:
+                    client.login()
                 bb_data = client.get_body_battery(datetime.date.today().isoformat())
                 if bb_data and isinstance(bb_data, list) and len(bb_data) > 0:
                     item = bb_data[0]
@@ -266,6 +297,24 @@ def parse_garmin_data():
                         "factores_impacto": factores,
                         "analisis_clinico": analisis_txt
                     }
+
+                # Curva FC 24h REAL (desde Garmin Connect API)
+                hr_data = client.get_heart_rates(datetime.date.today().isoformat())
+                raw_hr = hr_data.get("heartRateValues") or hr_data.get("valuesArray") or []
+                valid_hr = [p for p in raw_hr if isinstance(p, list) and len(p) >= 2 and p[1] is not None]
+                if valid_hr:
+                    paso = max(1, len(valid_hr) // 48)  # ~48 puntos representativos
+                    heart_rate_24h = []
+                    for item in valid_hr[::paso]:
+                        ts, bpm = item[0], item[1]
+                        t_str = datetime.datetime.fromtimestamp(ts / 1000).strftime("%H:%M")
+                        heart_rate_24h.append({"hora": t_str, "bpm": bpm,
+                                               "source": "Garmin Fénix 7 Solar (Continuo Real)"})
+                    if "minHeartRate" in hr_data:
+                        heart_rate_24h_stats = {
+                            "min": hr_data.get("minHeartRate"),
+                            "max": hr_data.get("maxHeartRate"),
+                            "rhr": hr_data.get("restingHeartRate")}
         except Exception as e:
             print("Aviso al consultar Body Battery en vivo:", e)
 
@@ -371,7 +420,7 @@ def parse_garmin_data():
                 "meta_pasos": 8000,
                 "pasos_semana": total_steps_week,
                 "estres": last_day["estres"],
-                "vo2max": 35.0,
+                "vo2max": latest_week["vo2"],
                 "min_intensidad": last_day["min_intensidad"],
                 "intensidad_semana": total_intensity_week,
                 "meta_intensidad": 150
@@ -384,15 +433,7 @@ def parse_garmin_data():
                 "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
                 "clima_sugerido": "Condiciones favorables para actividad al aire libre"
             },
-            "race_predictor": {
-                "vo2max": 35.0,
-                "distancias": [
-                    {"prueba": "5K", "tiempo": "30m 15s", "ritmo": "6:03 min/km"},
-                    {"prueba": "10K", "tiempo": "1h 03m", "ritmo": "6:20 min/km"},
-                    {"prueba": "Media Maratón (21K)", "tiempo": "2h 24m", "ritmo": "6:50 min/km"},
-                    {"prueba": "Maratón (42K)", "tiempo": "5h 12m", "ritmo": "7:24 min/km"}
-                ]
-            },
+            "race_predictor": _race_block(latest_week["vo2"] or 35.0),
             "training_scores": {
                 "endurance_score": {
                     "valor": endurance_val,
@@ -413,6 +454,7 @@ def parse_garmin_data():
                 }
             },
         "curva_fc_24h": heart_rate_24h,
+        "curva_fc_24h_stats": heart_rate_24h_stats,
         "actividades": activities,
         "desglose_diario": daily_stats,
         "historico_semanas": history_weeks[-10:],
