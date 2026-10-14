@@ -149,6 +149,7 @@ def parse_garmin_data():
     # Curva cardíaca continua 24h
     heart_rate_24h = []
     heart_rate_24h_stats = None
+    curva_fc_dias = None
     for h in range(24):
         time_str = f"{h:02d}:00"
         if 0 <= h < 7:
@@ -298,25 +299,53 @@ def parse_garmin_data():
                         "analisis_clinico": analisis_txt
                     }
 
-                # Curva FC 24h REAL (desde Garmin Connect API)
-                hr_data = client.get_heart_rates(datetime.date.today().isoformat())
-                raw_hr = hr_data.get("heartRateValues") or hr_data.get("valuesArray") or []
-                valid_hr = [p for p in raw_hr if isinstance(p, list) and len(p) >= 2 and p[1] is not None]
-                if valid_hr:
-                    paso = max(1, len(valid_hr) // 48)  # ~48 puntos representativos
-                    heart_rate_24h = []
-                    for item in valid_hr[::paso]:
-                        ts, bpm = item[0], item[1]
-                        t_str = datetime.datetime.fromtimestamp(ts / 1000).strftime("%H:%M")
-                        heart_rate_24h.append({"hora": t_str, "bpm": bpm,
-                                               "source": "Garmin Fénix 7 Solar (Continuo Real)"})
-                    if "minHeartRate" in hr_data:
-                        heart_rate_24h_stats = {
-                            "min": hr_data.get("minHeartRate"),
-                            "max": hr_data.get("maxHeartRate"),
-                            "rhr": hr_data.get("restingHeartRate")}
+                # Curva FC 24h REAL (Hoy y Ayer con preservación de picos de entrenamiento)
+                today_str = datetime.date.today().isoformat()
+                yesterday_str = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
+                
+                def extract_hr_curve(target_date):
+                    data = client.get_heart_rates(target_date)
+                    raw = data.get("heartRateValues") or data.get("valuesArray") or []
+                    valid = [p for p in raw if isinstance(p, list) and len(p) >= 2 and p[1] is not None]
+                    if not valid:
+                        return None, None
+                    # Samplear a ~72 puntos preservando picos máximos para que se vea el spinning / intensidad
+                    paso = max(1, len(valid) // 72)
+                    pts = []
+                    for i in range(0, len(valid), paso):
+                        chunk = valid[i:i+paso]
+                        # Tomar el punto de mayor FC del intervalo para no diluir el ejercicio intenso
+                        chunk_max = max(chunk, key=lambda x: x[1])
+                        t_str = datetime.datetime.fromtimestamp(chunk_max[0] / 1000).strftime("%H:%M")
+                        pts.append({"hora": t_str, "bpm": chunk_max[1], "source": "Garmin Fénix 7 Solar (Continuo Real)"})
+                    stats = {
+                        "min": data.get("minHeartRate"),
+                        "max": data.get("maxHeartRate"),
+                        "rhr": data.get("restingHeartRate")
+                    }
+                    return pts, stats
+
+                today_pts, today_stats = extract_hr_curve(today_str)
+                yesterday_pts, yesterday_stats = extract_hr_curve(yesterday_str)
+
+                if today_pts:
+                    heart_rate_24h = today_pts
+                    heart_rate_24h_stats = today_stats
+                
+                curva_fc_dias = {
+                    "hoy": {
+                        "fecha": today_str,
+                        "puntos": today_pts or heart_rate_24h,
+                        "stats": today_stats or heart_rate_24h_stats
+                    },
+                    "ayer": {
+                        "fecha": yesterday_str,
+                        "puntos": yesterday_pts or [],
+                        "stats": yesterday_stats or {}
+                    }
+                }
         except Exception as e:
-            print("Aviso al consultar Body Battery en vivo:", e)
+            print("Aviso al consultar Body Battery y FC en vivo:", e)
 
         # Cálculo dinámico de Training Scores y Training Effect basado en semanas y desglose
         # Hill score: calculado por desnivel acumulado en rutas GPS recientes o actividades
@@ -455,6 +484,7 @@ def parse_garmin_data():
             },
         "curva_fc_24h": heart_rate_24h,
         "curva_fc_24h_stats": heart_rate_24h_stats,
+        "curva_fc_dias": curva_fc_dias,
         "actividades": activities,
         "desglose_diario": daily_stats,
         "historico_semanas": history_weeks[-10:],

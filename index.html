@@ -321,16 +321,23 @@
       <section class="garmin-card p-4 shadow-lg">
         <div class="flex items-center justify-between mb-3">
           <div>
-            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Frecuencia Cardíaca Continua (24h)</h2>
+            <div class="flex items-center space-x-2">
+              <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">FC Continua</h2>
+              <!-- Selector Hoy / Ayer -->
+              <div class="inline-flex rounded-lg bg-[#0F172A] p-0.5 border border-[#1E2D3B]">
+                <button id="btn-hr-hoy" onclick="switchHRDay('hoy')" class="px-2 py-0.5 text-[10px] font-semibold rounded-md bg-[#00A3E0] text-white transition-all shadow-sm">Hoy</button>
+                <button id="btn-hr-ayer" onclick="switchHRDay('ayer')" class="px-2 py-0.5 text-[10px] font-medium rounded-md text-slate-400 hover:text-slate-200 transition-all">Ayer (Spinning)</button>
+              </div>
+            </div>
             <div class="flex items-center space-x-3 text-[10px] text-slate-400 mt-1">
               <span class="flex items-center space-x-1">
                 <span class="w-2 h-2 rounded-full bg-[#00A3E0]"></span>
-                <span class="text-slate-300 font-medium">Garmin Fénix 7 Solar (Sensor Óptico Elevate™ v4)</span>
+                <span class="text-slate-300 font-medium">Garmin Fénix 7 Solar (Elevate™ Continuo)</span>
               </span>
             </div>
           </div>
           <span id="hr-rango" class="text-xs font-bold text-rose-400 bg-rose-500/10 px-2 py-1 rounded-md border border-rose-500/20">
-            48-126 ppm
+            42-78 ppm
           </span>
         </div>
         <div class="h-44 w-full">
@@ -2278,11 +2285,51 @@
       lucide.createIcons();
     }
 
+    let currentHRDay = 'hoy';
+
+    function switchHRDay(dayKey) {
+      currentHRDay = dayKey;
+      const btnHoy = document.getElementById('btn-hr-hoy');
+      const btnAyer = document.getElementById('btn-hr-ayer');
+      const elRango = document.getElementById('hr-rango');
+
+      if (dayKey === 'hoy') {
+        if (btnHoy) {
+          btnHoy.className = "px-2 py-0.5 text-[10px] font-semibold rounded-md bg-[#00A3E0] text-white transition-all shadow-sm";
+        }
+        if (btnAyer) {
+          btnAyer.className = "px-2 py-0.5 text-[10px] font-medium rounded-md text-slate-400 hover:text-slate-200 transition-all";
+        }
+        const pts = (appData.curva_fc_dias && appData.curva_fc_dias.hoy && appData.curva_fc_dias.hoy.puntos) ? appData.curva_fc_dias.hoy.puntos : appData.curva_fc_24h;
+        const s = (appData.curva_fc_dias && appData.curva_fc_dias.hoy && appData.curva_fc_dias.hoy.stats) ? appData.curva_fc_dias.hoy.stats : appData.curva_fc_24h_stats;
+        if (pts) renderHRChart(pts);
+        if (elRango && s && s.min && s.max) {
+          elRango.textContent = `${s.min}-${s.max} ppm`;
+        }
+      } else {
+        if (btnAyer) {
+          btnAyer.className = "px-2 py-0.5 text-[10px] font-semibold rounded-md bg-[#00A3E0] text-white transition-all shadow-sm";
+        }
+        if (btnHoy) {
+          btnHoy.className = "px-2 py-0.5 text-[10px] font-medium rounded-md text-slate-400 hover:text-slate-200 transition-all";
+        }
+        const pts = (appData.curva_fc_dias && appData.curva_fc_dias.ayer && appData.curva_fc_dias.ayer.puntos) ? appData.curva_fc_dias.ayer.puntos : [];
+        const s = (appData.curva_fc_dias && appData.curva_fc_dias.ayer && appData.curva_fc_dias.ayer.stats) ? appData.curva_fc_dias.ayer.stats : {};
+        if (pts.length) renderHRChart(pts);
+        if (elRango && s && s.min && s.max) {
+          elRango.textContent = `${s.min}-${s.max} ppm 🔥`;
+        }
+      }
+    }
+
     function renderHRChart(points) {
       const ctx = document.getElementById('hrChart').getContext('2d');
       const labels = points.map(p => p.hora);
       const dataVals = points.map(p => p.bpm);
-      const pointColors = points.map(() => '#00A3E0');
+      const pointColors = points.map(p => p.bpm >= 140 ? '#EF4444' : (p.bpm >= 100 ? '#F59E0B' : '#00A3E0'));
+
+      const maxVal = Math.max(...dataVals, 100);
+      const yMax = Math.ceil((maxVal + 10) / 10) * 10;
 
       if (hrChartInstance) hrChartInstance.destroy();
 
@@ -2299,7 +2346,7 @@
             pointBackgroundColor: pointColors,
             pointBorderColor: '#0B1118',
             pointBorderWidth: 1.5,
-            pointRadius: 4,
+            pointRadius: 3.5,
             fill: {
               target: 'origin',
               above: 'rgba(0, 163, 224, 0.08)'
@@ -2333,8 +2380,8 @@
             y: {
               grid: { color: '#1E2D3B' },
               ticks: { color: '#64748B', font: { size: 9 } },
-              min: 40,
-              max: 140
+              min: 35,
+              max: Math.max(140, yMax)
             }
           }
         }
