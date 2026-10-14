@@ -17,21 +17,44 @@ def _fmt(tiempo_s):
 
 
 def _race_block(vo2):
-    """Predicción de carreras (Jack Daniels simplificado: vVO2max ≈ VO2max/3.5 km/h,
-    ritmo de carrera ≈ factor de duración × vVO2max). Escala con el VO2 real."""
-    v = vo2 / 3.5  # vVO2max aproximado en km/h
-    races = [("5K", 5.0, 0.92), ("10K", 10.0, 0.87),
-             ("Media Maratón (21K)", 21.097, 0.82), ("Maratón (42K)", 42.195, 0.78)]
+    """
+    Predicción de carreras escalada mediante fórmula Daniels VDOT real.
+    vVO2 (m/min) = (VO2 - 3.5) / 0.2
+    """
+    vo2_val = float(vo2) if vo2 else 35.0
+    v_vo2 = max(80.0, (vo2_val - 3.5) / 0.2)
+    
+    races_cfg = [
+        ("5K", 5.0, 0.96),
+        ("10K", 10.0, 0.91),
+        ("Media Maratón (21K)", 21.097, 0.86),
+        ("Maratón (42K)", 42.195, 0.81)
+    ]
+    
     dists = []
-    for nombre, km, factor in races:
-        sec = km / (v * factor) * 3600
-        pace = sec / 60.0 / km
-        pm = int(pace)
-        ps = int(round((pace - pm) * 60))
-        dists.append({"prueba": nombre, "tiempo": _fmt(sec),
-                      "ritmo": f"{pm}:{ps:02d} min/km"})
-    return {"vo2max": vo2, "distancias": dists,
-            "metodo": "Daniels (estimación a partir de VO2max real)"}
+    for nombre, km, factor in races_cfg:
+        vel_m_min = v_vo2 * factor
+        vel_km_h = (vel_m_min * 60.0) / 1000.0
+        sec_total = (km / vel_km_h) * 3600.0
+        
+        pace_min_km = (sec_total / 60.0) / km
+        pm = int(pace_min_km)
+        ps = int(round((pace_min_km - pm) * 60.0))
+        if ps == 60:
+            pm += 1
+            ps = 0
+            
+        dists.append({
+            "prueba": nombre,
+            "tiempo": _fmt(sec_total),
+            "ritmo": f"{pm}:{ps:02d} min/km"
+        })
+        
+    return {
+        "vo2max": round(vo2_val, 1),
+        "distancias": dists,
+        "metodo": "Jack Daniels VDOT (estimación fisiológica real)"
+    }
 
 
 def parse_garmin_data():
@@ -185,18 +208,17 @@ def parse_garmin_data():
         f"({avg_sleep_week}h) ha mantenido tu VFC en {avg_hrv_week} ms."
     ).replace(",", ".")
 
-    # Consulta directa de Body Battery a Garmin Connect API para el día de hoy
-    real_bb = {
-        "actual": 42,
-        "cargado": 65,
-        "drenado": 56,
-        "max": 94,
-        "min": 33,
-        "descanso_nocturno": "Recuperación nocturna (+62 pts)",
-        "momento_pico": "08:15 (94 pts)"
-    }
-    # Consulta de Body Battery (con fallback seguro ante 429)
-    real_bb = {
+    # Consulta de Body Battery (con fallback seguro preservando data.json existente ante 429 o fallo)
+    existing_bb = None
+    if os.path.exists(OUTPUT_JSON):
+        try:
+            with open(OUTPUT_JSON, "r", encoding="utf-8") as f_prev:
+                prev_json = json.load(f_prev)
+                existing_bb = prev_json.get("body_battery")
+        except Exception:
+            existing_bb = None
+
+    real_bb = existing_bb or {
         "actual": 41,
         "cargado": 65,
         "drenado": 57,

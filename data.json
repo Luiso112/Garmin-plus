@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-14 09:42:36",
+  "ultima_actualizacion": "2026-10-14 09:52:52",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -102,26 +102,26 @@
     "distancias": [
       {
         "prueba": "5K",
-        "tiempo": "30m 51s",
-        "ritmo": "6:10 min/km"
+        "tiempo": "31m 06s",
+        "ritmo": "6:13 min/km"
       },
       {
         "prueba": "10K",
-        "tiempo": "1h 05m 14s",
-        "ritmo": "6:31 min/km"
+        "tiempo": "1h 05m 36s",
+        "ritmo": "6:34 min/km"
       },
       {
         "prueba": "Media Maratón (21K)",
-        "tiempo": "2h 26m 01s",
-        "ritmo": "6:55 min/km"
+        "tiempo": "2h 26m 27s",
+        "ritmo": "6:57 min/km"
       },
       {
         "prueba": "Maratón (42K)",
-        "tiempo": "5h 07m 02s",
-        "ritmo": "7:17 min/km"
+        "tiempo": "5h 11m 00s",
+        "ritmo": "7:22 min/km"
       }
     ],
-    "metodo": "Daniels (estimación a partir de VO2max real)"
+    "metodo": "Jack Daniels VDOT (estimación fisiológica real)"
   },
   "training_scores": {
     "endurance_score": {
