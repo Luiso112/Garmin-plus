@@ -169,30 +169,44 @@ def parse_garmin_data():
         "min_intensidad": 126
     }
 
-    # Curva cardíaca continua 24h
+    # Curva cardíaca continua 24h (preservar existente de data.json si existe)
     heart_rate_24h = []
     heart_rate_24h_stats = None
     curva_fc_dias = None
-    for h in range(24):
-        time_str = f"{h:02d}:00"
-        if 0 <= h < 7:
-            bpm = 46 + (h % 3)
-        elif 7 <= h < 9:
-            bpm = 62 + (h % 5) * 2
-        elif 9 <= h < 14:
-            bpm = 58 + (h % 4) * 3
-        elif 14 <= h < 16:
-            bpm = 54 + (h % 3) * 2
-        elif 17 <= h < 19:
-            bpm = 126 if h == 18 else 85
-        else:
-            bpm = 56 + (h % 4)
+    if os.path.exists(OUTPUT_JSON):
+        try:
+            with open(OUTPUT_JSON, "r", encoding="utf-8") as f_prev:
+                prev_json = json.load(f_prev)
+                if prev_json.get("curva_fc_24h"):
+                    heart_rate_24h = prev_json["curva_fc_24h"]
+                if prev_json.get("curva_fc_24h_stats"):
+                    heart_rate_24h_stats = prev_json["curva_fc_24h_stats"]
+                if prev_json.get("curva_fc_dias"):
+                    curva_fc_dias = prev_json["curva_fc_dias"]
+        except Exception:
+            pass
 
-        heart_rate_24h.append({
-            "hora": time_str,
-            "bpm": bpm,
-            "source": "Garmin Fénix 7 Solar"
-        })
+    if not heart_rate_24h:
+        for h in range(24):
+            time_str = f"{h:02d}:00"
+            if 0 <= h < 7:
+                bpm = 46 + (h % 3)
+            elif 7 <= h < 9:
+                bpm = 62 + (h % 5) * 2
+            elif 9 <= h < 14:
+                bpm = 58 + (h % 4) * 3
+            elif 14 <= h < 16:
+                bpm = 54 + (h % 3) * 2
+            elif 17 <= h < 19:
+                bpm = 126 if h == 18 else 85
+            else:
+                bpm = 56 + (h % 4)
+
+            heart_rate_24h.append({
+                "hora": time_str,
+                "bpm": bpm,
+                "source": "Garmin Fénix 7 Solar"
+            })
 
     total_steps_week = sum(d["pasos"] for d in daily_stats)
     total_intensity_week = sum(d["min_intensidad"] for d in daily_stats)
