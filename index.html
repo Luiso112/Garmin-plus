@@ -32,15 +32,48 @@
       --sab: env(safe-area-inset-bottom, 0px);
       --sal: env(safe-area-inset-left, 0px);
       --sar: env(safe-area-inset-right, 0px);
+
+      /* Tema Oscuro Garmin (Predeterminado) */
+      --bg-main: #0B1118;
+      --bg-header: rgba(11, 17, 24, 0.95);
+      --bg-card: linear-gradient(180deg, #16202A 0%, #121A23 100%);
+      --bg-subcard: #111A22;
+      --bg-pill: #16222F;
+      --border-card: #1E2D3B;
+      --border-card-hover: #2D4155;
+      --text-main: #FFFFFF;
+      --text-muted: #94A3B8;
+      --text-sub: #E2E8F0;
+      --grid-line: #1E2D3B;
+      --grid-line-alt: #16202A;
     }
+
+    /* Tema Claro Garmin Connect (iOS Light Mode) */
+    html.light-theme,
+    html:not(.dark-theme) body.theme-system-light {
+      --bg-main: #F1F5F9;
+      --bg-header: rgba(255, 255, 255, 0.96);
+      --bg-card: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      --bg-subcard: #F1F5F9;
+      --bg-pill: #E2E8F0;
+      --border-card: #E2E8F0;
+      --border-card-hover: #CBD5E1;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-sub: #334155;
+      --grid-line: #E2E8F0;
+      --grid-line-alt: #F1F5F9;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #0B1118;
-      color: #E2E8F0;
+      background-color: var(--bg-main);
+      color: var(--text-sub);
       -webkit-tap-highlight-color: transparent;
       padding-top: var(--sat);
       padding-left: var(--sal);
       padding-right: var(--sar);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     .safe-top-header {
       padding-top: max(1rem, var(--sat));
@@ -49,18 +82,66 @@
       padding-bottom: max(0.65rem, var(--sab));
     }
     .garmin-card {
-      background: linear-gradient(180deg, #16202A 0%, #121A23 100%);
-      border: 1px solid #1E2D3B;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
       border-radius: 16px;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .garmin-card-interactive:active {
       transform: scale(0.975);
       transition: transform 0.1s ease;
     }
     .garmin-card-hover:hover {
-      border-color: #2D4155;
+      border-color: var(--border-card-hover);
     }
     ::-webkit-scrollbar { display: none; }
+
+    /* Adaptaciones de modo claro */
+    html.light-theme header,
+    html:not(.dark-theme) body.theme-system-light header {
+      background-color: var(--bg-header) !important;
+      border-color: var(--border-card) !important;
+    }
+    html.light-theme nav,
+    html:not(.dark-theme) body.theme-system-light nav {
+      background-color: var(--bg-header) !important;
+      border-color: var(--border-card) !important;
+    }
+    html.light-theme .bg-\[\#111A22\],
+    html:not(.dark-theme) body.theme-system-light .bg-\[\#111A22\] {
+      background-color: var(--bg-subcard) !important;
+      border-color: var(--border-card) !important;
+    }
+    html.light-theme .bg-\[\#16202A\],
+    html:not(.dark-theme) body.theme-system-light .bg-\[\#16202A\] {
+      background-color: var(--bg-subcard) !important;
+      border-color: var(--border-card) !important;
+    }
+    html.light-theme .bg-\[\#0F1722\],
+    html.light-theme .bg-\[\#0F172A\],
+    html:not(.dark-theme) body.theme-system-light .bg-\[\#0F1722\],
+    html:not(.dark-theme) body.theme-system-light .bg-\[\#0F172A\] {
+      background-color: #FFFFFF !important;
+      border-color: var(--border-card) !important;
+    }
+    html.light-theme .border-\[\#1E2D3B\],
+    html:not(.dark-theme) body.theme-system-light .border-\[\#1E2D3B\] {
+      border-color: var(--border-card) !important;
+    }
+    html.light-theme .text-white,
+    html:not(.dark-theme) body.theme-system-light .text-white {
+      color: var(--text-main) !important;
+    }
+    html.light-theme .text-slate-200,
+    html.light-theme .text-slate-300,
+    html:not(.dark-theme) body.theme-system-light .text-slate-200,
+    html:not(.dark-theme) body.theme-system-light .text-slate-300 {
+      color: var(--text-sub) !important;
+    }
+    html.light-theme .text-slate-400,
+    html:not(.dark-theme) body.theme-system-light .text-slate-400 {
+      color: var(--text-muted) !important;
+    }
   </style>
 </head>
 <body class="min-h-screen pb-28 select-none">
@@ -634,6 +715,38 @@
             </div>
           </div>
           <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/30">OK</span>
+        </div>
+      </section>
+
+      <!-- APARIENCIA & TEMA (SINCRONIZACIÓN CON IPHONE) -->
+      <section class="garmin-card p-4 space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="sun-moon" class="w-4 h-4 text-[#00A3E0]"></i>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Apariencia & Pantalla</h2>
+          </div>
+          <span id="theme-status-badge" class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-2 py-0.5 rounded-full border border-[#00A3E0]/30">Auto (iPhone)</span>
+        </div>
+        <p class="text-[11px] text-slate-400">
+          Sincroniza el aspecto de día y noche automáticamente según la configuración de aspecto de tu iPhone o elige un modo fijo.
+        </p>
+
+        <div class="grid grid-cols-3 gap-2 pt-1">
+          <button type="button" id="theme-btn-auto" onclick="setAppTheme('auto')" class="flex flex-col items-center justify-center p-2.5 rounded-xl border border-[#00A3E0] bg-[#00A3E0]/15 text-[#00A3E0] transition-all active:scale-95">
+            <i data-lucide="smartphone" class="w-4 h-4 mb-1"></i>
+            <span class="text-[11px] font-bold">Auto (iPhone)</span>
+            <span class="text-[9px] opacity-75">Día / Noche</span>
+          </button>
+          <button type="button" id="theme-btn-dark" onclick="setAppTheme('dark')" class="flex flex-col items-center justify-center p-2.5 rounded-xl border border-[#1E2D3B] bg-[#111A22] text-slate-400 hover:text-white transition-all active:scale-95">
+            <i data-lucide="moon" class="w-4 h-4 mb-1"></i>
+            <span class="text-[11px] font-bold">Oscuro</span>
+            <span class="text-[9px] opacity-75">Noche OLED</span>
+          </button>
+          <button type="button" id="theme-btn-light" onclick="setAppTheme('light')" class="flex flex-col items-center justify-center p-2.5 rounded-xl border border-[#1E2D3B] bg-[#111A22] text-slate-400 hover:text-white transition-all active:scale-95">
+            <i data-lucide="sun" class="w-4 h-4 mb-1"></i>
+            <span class="text-[11px] font-bold">Claro</span>
+            <span class="text-[9px] opacity-75">Día / Sol</span>
+          </button>
         </div>
       </section>
 
@@ -2331,6 +2444,12 @@
       const maxVal = Math.max(...dataVals, 100);
       const yMax = Math.ceil((maxVal + 10) / 10) * 10;
 
+      const isLight = document.documentElement.classList.contains('light-theme');
+      const chartGridColor = isLight ? '#E2E8F0' : '#1E2D3B';
+      const chartTextColor = isLight ? '#64748B' : '#94A3B8';
+      const chartBorderPoint = isLight ? '#FFFFFF' : '#0B1118';
+      const chartLineColor = isLight ? '#0F172A' : '#E2E8F0';
+
       if (hrChartInstance) hrChartInstance.destroy();
 
       hrChartInstance = new Chart(ctx, {
@@ -2340,11 +2459,11 @@
           datasets: [{
             label: 'Frecuencia Cardíaca',
             data: dataVals,
-            borderColor: '#E2E8F0',
+            borderColor: chartLineColor,
             borderWidth: 2,
             tension: 0.35,
             pointBackgroundColor: pointColors,
-            pointBorderColor: '#0B1118',
+            pointBorderColor: chartBorderPoint,
             pointBorderWidth: 1.5,
             pointRadius: 3.5,
             fill: {
@@ -2359,10 +2478,10 @@
           plugins: {
             legend: { display: false },
             tooltip: {
-              backgroundColor: '#16202A',
-              titleColor: '#E2E8F0',
-              bodyColor: '#38BDF8',
-              borderColor: '#1E2D3B',
+              backgroundColor: isLight ? '#FFFFFF' : '#16202A',
+              titleColor: isLight ? '#0F172A' : '#E2E8F0',
+              bodyColor: '#00A3E0',
+              borderColor: chartGridColor,
               borderWidth: 1,
               callbacks: {
                 label: function(context) {
@@ -2374,12 +2493,12 @@
           },
           scales: {
             x: {
-              grid: { color: '#16202A' },
-              ticks: { color: '#64748B', font: { size: 9 }, maxTicksLimit: 8 }
+              grid: { color: isLight ? '#F1F5F9' : '#16202A' },
+              ticks: { color: chartTextColor, font: { size: 9 }, maxTicksLimit: 8 }
             },
             y: {
-              grid: { color: '#1E2D3B' },
-              ticks: { color: '#64748B', font: { size: 9 } },
+              grid: { color: chartGridColor },
+              ticks: { color: chartTextColor, font: { size: 9 } },
               min: 35,
               max: Math.max(140, yMax)
             }
@@ -2392,6 +2511,10 @@
       if (!appData || !appData.historico_semanas) return;
       const history = appData.historico_semanas;
       const labels = history.map(h => h.semana.replace('2026-', ''));
+
+      const isLight = document.documentElement.classList.contains('light-theme');
+      const chartGridColor = isLight ? '#E2E8F0' : '#1E2D3B';
+      const chartTextColor = isLight ? '#64748B' : '#94A3B8';
 
       // 1. Gráfica de Pasos
       const ctxSteps = document.getElementById('weeklyStepsChart').getContext('2d');
@@ -2413,8 +2536,8 @@
           maintainAspectRatio: false,
           plugins: { legend: { display: false } },
           scales: {
-            x: { grid: { display: false }, ticks: { color: '#94A3B8', font: { size: 10 } } },
-            y: { grid: { color: '#1E2D3B' }, ticks: { color: '#64748B', font: { size: 9 } } }
+            x: { grid: { display: false }, ticks: { color: chartTextColor, font: { size: 10 } } },
+            y: { grid: { color: chartGridColor }, ticks: { color: chartTextColor, font: { size: 9 } } }
           }
         }
       });
@@ -2452,13 +2575,13 @@
           plugins: {
             legend: {
               display: true,
-              labels: { color: '#94A3B8', font: { size: 10 }, boxWidth: 12 }
+              labels: { color: chartTextColor, font: { size: 10 }, boxWidth: 12 }
             }
           },
           scales: {
-            x: { grid: { display: false }, ticks: { color: '#94A3B8', font: { size: 10 } } },
+            x: { grid: { display: false }, ticks: { color: chartTextColor, font: { size: 10 } } },
             y: {
-              grid: { color: '#1E2D3B' },
+              grid: { color: chartGridColor },
               ticks: { color: '#10B981', font: { size: 9 } },
               title: { display: true, text: 'VFC (ms)', color: '#10B981', font: { size: 9 } }
             },
@@ -2498,6 +2621,99 @@
         });
       }
     }
+
+    // ==================== GESTIÓN DE TEMA (SINCRONIZACIÓN CON IPHONE) ====================
+    let currentThemeMode = localStorage.getItem('garmin_plus_theme') || 'auto';
+
+    function isSystemDark() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function applyTheme() {
+      const htmlEl = document.documentElement;
+      const bodyEl = document.body;
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      const isDark = currentThemeMode === 'dark' || (currentThemeMode === 'auto' && isSystemDark());
+
+      if (isDark) {
+        htmlEl.classList.remove('light-theme');
+        htmlEl.classList.add('dark-theme');
+        bodyEl.classList.remove('theme-system-light');
+        if (metaThemeColor) metaThemeColor.setAttribute('content', '#0B1118');
+      } else {
+        htmlEl.classList.remove('dark-theme');
+        htmlEl.classList.add('light-theme');
+        bodyEl.classList.add('theme-system-light');
+        if (metaThemeColor) metaThemeColor.setAttribute('content', '#F1F5F9');
+      }
+
+      updateThemeUI();
+
+      // Si los gráficos están creados, refrescar para adaptar ejes y leyendas
+      if (hrChartInstance && appData && appData.curva_fc_24h) {
+        // Redibujar gráfico HR con contraste adaptado
+        const pts = (appData.curva_fc_dias && appData.curva_fc_dias.hoy && appData.curva_fc_dias.hoy.puntos) ? appData.curva_fc_dias.hoy.puntos : appData.curva_fc_24h;
+        renderHRChart(pts);
+      }
+      if (stepsChartInstance || rhrHrvChartInstance) {
+        renderWeeklyCharts();
+      }
+    }
+
+    function setAppTheme(mode) {
+      currentThemeMode = mode;
+      localStorage.setItem('garmin_plus_theme', mode);
+      applyTheme();
+    }
+
+    function updateThemeUI() {
+      const badge = document.getElementById('theme-status-badge');
+      const btnAuto = document.getElementById('theme-btn-auto');
+      const btnDark = document.getElementById('theme-btn-dark');
+      const btnLight = document.getElementById('theme-btn-light');
+
+      const isSysDark = isSystemDark();
+
+      if (badge) {
+        if (currentThemeMode === 'auto') {
+          badge.textContent = `Auto (${isSysDark ? 'Noche' : 'Día'})`;
+        } else if (currentThemeMode === 'dark') {
+          badge.textContent = 'Fijo: Oscuro';
+        } else {
+          badge.textContent = 'Fijo: Claro';
+        }
+      }
+
+      const activeClass = ['border-[#00A3E0]', 'bg-[#00A3E0]/15', 'text-[#00A3E0]'];
+      const inactiveClass = ['border-[#1E2D3B]', 'bg-[#111A22]', 'text-slate-400'];
+
+      [
+        { btn: btnAuto, mode: 'auto' },
+        { btn: btnDark, mode: 'dark' },
+        { btn: btnLight, mode: 'light' }
+      ].forEach(({ btn, mode }) => {
+        if (!btn) return;
+        if (currentThemeMode === mode) {
+          btn.classList.add(...activeClass);
+          btn.classList.remove(...inactiveClass);
+        } else {
+          btn.classList.remove(...activeClass);
+          btn.classList.add(...inactiveClass);
+        }
+      });
+    }
+
+    // Escuchar cambios de apariencia en vivo en el iPhone (prefers-color-scheme)
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (currentThemeMode === 'auto') {
+          applyTheme();
+        }
+      });
+    }
+
+    // Aplicar tema inicial inmediatamente
+    applyTheme();
 
     loadData();
   </script>
