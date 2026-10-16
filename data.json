@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-16 14:00:14",
+  "ultima_actualizacion": "2026-10-16 21:00:12",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -29,11 +29,11 @@
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 31.010 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.1h) ha mantenido tu VFC en 58 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 36.120 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.1h) ha mantenido tu VFC en 58 ms.",
   "body_battery": {
-    "actual": 67,
+    "actual": 38,
     "cargado": 46,
-    "drenado": 3,
+    "drenado": 32,
     "max": 70,
     "min": 24,
     "descanso_nocturno": "Recuperación (+46 pts)",
@@ -44,24 +44,24 @@
         "valor": 24
       },
       {
-        "hora": "02:48",
-        "valor": 41
-      },
-      {
-        "hora": "02:51",
-        "valor": 42
-      },
-      {
-        "hora": "05:36",
-        "valor": 59
-      },
-      {
-        "hora": "05:42",
-        "valor": 59
+        "hora": "06:15",
+        "valor": 62
       },
       {
         "hora": "07:30",
         "valor": 70
+      },
+      {
+        "hora": "12:51",
+        "valor": 54
+      },
+      {
+        "hora": "13:00",
+        "valor": 54
+      },
+      {
+        "hora": "19:15",
+        "valor": 38
       }
     ],
     "factores_impacto": [
@@ -72,7 +72,7 @@
         "es_recuperacion": true
       }
     ],
-    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +46 puntos alcanzando un pico de 70/100. A lo largo de la jornada se han drenado 3 puntos con un nivel actual de 67/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
+    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +46 puntos alcanzando un pico de 70/100. A lo largo de la jornada se han drenado 32 puntos con un nivel actual de 38/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
     "fecha": "2026-10-16",
@@ -80,18 +80,18 @@
     "hrv": 53,
     "sueno_horas": 7.3,
     "sueno_score": 79,
-    "pasos": 417,
+    "pasos": 5527,
     "meta_pasos": 8000,
-    "pasos_semana": 31010,
-    "estres": 23,
+    "pasos_semana": 36120,
+    "estres": 26,
     "vo2max": 37.0,
-    "min_intensidad": 13,
-    "intensidad_semana": 517,
+    "min_intensidad": 2,
+    "intensidad_semana": 506,
     "meta_intensidad": 150
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 67% de energía.",
+    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 38% de energía.",
     "estado_vfc": "VFC nocturna equilibrada en 53 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
@@ -144,37 +144,12 @@
   },
   "curva_fc_24h": [
     {
-      "hora": "00:02",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "00:06",
       "bpm": 59,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "00:12",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "00:18",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "00:28",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "00:30",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "00:40",
       "bpm": 59,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
@@ -189,33 +164,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "00:54",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "01:04",
       "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "01:06",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "01:12",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "01:22",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "01:26",
-      "bpm": 60,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -229,42 +179,12 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "01:42",
-      "bpm": 57,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "01:50",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "01:56",
       "bpm": 60,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "02:02",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "02:10",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:12",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:18",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:24",
       "bpm": 58,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
@@ -274,28 +194,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "02:36",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:42",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "02:50",
       "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:54",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "03:00",
-      "bpm": 60,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -309,48 +209,13 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "03:20",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "03:28",
       "bpm": 62,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "03:30",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "03:36",
-      "bpm": 56,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "03:44",
       "bpm": 57,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "03:48",
-      "bpm": 56,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "03:54",
-      "bpm": 56,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "04:00",
-      "bpm": 55,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "04:06",
-      "bpm": 56,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -364,43 +229,13 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "04:24",
-      "bpm": 55,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "04:34",
       "bpm": 55,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "04:36",
-      "bpm": 55,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "04:44",
-      "bpm": 55,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "04:52",
-      "bpm": 56,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "04:56",
       "bpm": 57,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:02",
-      "bpm": 55,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:06",
-      "bpm": 56,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -414,33 +249,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "05:24",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:30",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "05:36",
       "bpm": 54,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:46",
-      "bpm": 53,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:48",
-      "bpm": 53,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:54",
-      "bpm": 53,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -449,28 +259,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "06:06",
-      "bpm": 54,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "06:12",
       "bpm": 54,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "06:20",
-      "bpm": 54,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "06:24",
-      "bpm": 53,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "06:30",
-      "bpm": 53,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -484,33 +274,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "06:48",
-      "bpm": 52,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "06:54",
-      "bpm": 51,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "07:02",
       "bpm": 53,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "07:10",
-      "bpm": 53,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "07:14",
-      "bpm": 53,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "07:18",
-      "bpm": 52,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -519,13 +284,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "07:32",
-      "bpm": 55,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "07:40",
-      "bpm": 75,
+      "hora": "07:42",
+      "bpm": 79,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -534,44 +294,224 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "07:48",
-      "bpm": 84,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "07:54",
-      "bpm": 57,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "08:04",
       "bpm": 68,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "08:06",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "08:16",
-      "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "08:22",
-      "bpm": 70,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
       "hora": "08:24",
       "bpm": 75,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "08:40",
+      "bpm": 81,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "08:52",
+      "bpm": 75,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "09:04",
+      "bpm": 64,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "09:22",
+      "bpm": 82,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "09:46",
+      "bpm": 72,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "10:04",
+      "bpm": 63,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "10:14",
+      "bpm": 76,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "10:24",
+      "bpm": 58,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "10:54",
+      "bpm": 68,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:04",
+      "bpm": 72,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:22",
+      "bpm": 69,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:34",
+      "bpm": 66,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:48",
+      "bpm": 73,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:02",
+      "bpm": 71,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:26",
+      "bpm": 79,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:32",
+      "bpm": 64,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:02",
+      "bpm": 86,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:04",
+      "bpm": 85,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:24",
+      "bpm": 60,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:48",
+      "bpm": 57,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:56",
+      "bpm": 70,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:22",
+      "bpm": 76,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:30",
+      "bpm": 69,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:50",
+      "bpm": 62,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "15:04",
+      "bpm": 61,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "15:22",
+      "bpm": 65,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "15:34",
+      "bpm": 63,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "15:56",
+      "bpm": 64,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "16:10",
+      "bpm": 66,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "16:24",
+      "bpm": 65,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "16:40",
+      "bpm": 67,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:00",
+      "bpm": 65,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:18",
+      "bpm": 72,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:34",
+      "bpm": 107,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:36",
+      "bpm": 104,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "18:04",
+      "bpm": 66,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "18:10",
+      "bpm": 71,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "18:26",
+      "bpm": 70,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "18:44",
+      "bpm": 65,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "19:04",
+      "bpm": 66,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "19:12",
+      "bpm": 63,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
     }
   ],
   "curva_fc_24h_stats": {
-    "min": 48,
-    "max": 85,
+    "min": 43,
+    "max": 107,
     "rhr": 51
   },
   "curva_fc_dias": {
@@ -579,37 +519,12 @@
       "fecha": "2026-10-16",
       "puntos": [
         {
-          "hora": "00:02",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "00:06",
           "bpm": 59,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "00:12",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "00:18",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "00:28",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "00:30",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "00:40",
           "bpm": 59,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
@@ -624,33 +539,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "00:54",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "01:04",
           "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "01:06",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "01:12",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "01:22",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "01:26",
-          "bpm": 60,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -664,42 +554,12 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "01:42",
-          "bpm": 57,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "01:50",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "01:56",
           "bpm": 60,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "02:02",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "02:10",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:12",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:18",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:24",
           "bpm": 58,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
@@ -709,28 +569,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "02:36",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:42",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "02:50",
           "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:54",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "03:00",
-          "bpm": 60,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -744,48 +584,13 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "03:20",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "03:28",
           "bpm": 62,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "03:30",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "03:36",
-          "bpm": 56,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "03:44",
           "bpm": 57,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "03:48",
-          "bpm": 56,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "03:54",
-          "bpm": 56,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "04:00",
-          "bpm": 55,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "04:06",
-          "bpm": 56,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -799,43 +604,13 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "04:24",
-          "bpm": 55,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "04:34",
           "bpm": 55,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "04:36",
-          "bpm": 55,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "04:44",
-          "bpm": 55,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "04:52",
-          "bpm": 56,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "04:56",
           "bpm": 57,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:02",
-          "bpm": 55,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:06",
-          "bpm": 56,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -849,33 +624,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "05:24",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:30",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "05:36",
           "bpm": 54,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:46",
-          "bpm": 53,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:48",
-          "bpm": 53,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:54",
-          "bpm": 53,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -884,28 +634,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "06:06",
-          "bpm": 54,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "06:12",
           "bpm": 54,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "06:20",
-          "bpm": 54,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "06:24",
-          "bpm": 53,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "06:30",
-          "bpm": 53,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -919,33 +649,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "06:48",
-          "bpm": 52,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "06:54",
-          "bpm": 51,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "07:02",
           "bpm": 53,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "07:10",
-          "bpm": 53,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "07:14",
-          "bpm": 53,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "07:18",
-          "bpm": 52,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -954,13 +659,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "07:32",
-          "bpm": 55,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "07:40",
-          "bpm": 75,
+          "hora": "07:42",
+          "bpm": 79,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -969,44 +669,224 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "07:48",
-          "bpm": 84,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "07:54",
-          "bpm": 57,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "08:04",
           "bpm": 68,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "08:06",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "08:16",
-          "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "08:22",
-          "bpm": 70,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
           "hora": "08:24",
           "bpm": 75,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "08:40",
+          "bpm": 81,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "08:52",
+          "bpm": 75,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "09:04",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "09:22",
+          "bpm": 82,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "09:46",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "10:04",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "10:14",
+          "bpm": 76,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "10:24",
+          "bpm": 58,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "10:54",
+          "bpm": 68,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:04",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:22",
+          "bpm": 69,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:34",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:48",
+          "bpm": 73,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:02",
+          "bpm": 71,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:26",
+          "bpm": 79,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:32",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:02",
+          "bpm": 86,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:04",
+          "bpm": 85,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:24",
+          "bpm": 60,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:48",
+          "bpm": 57,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:56",
+          "bpm": 70,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:22",
+          "bpm": 76,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:30",
+          "bpm": 69,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:50",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "15:04",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "15:22",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "15:34",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "15:56",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "16:10",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "16:24",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "16:40",
+          "bpm": 67,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:00",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:18",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:34",
+          "bpm": 107,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:36",
+          "bpm": 104,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:04",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:10",
+          "bpm": 71,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:26",
+          "bpm": 70,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:44",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:04",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:12",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
         }
       ],
       "stats": {
-        "min": 48,
-        "max": 85,
+        "min": 43,
+        "max": 107,
         "rhr": 51
       }
     },
@@ -1437,1070 +1317,16 @@
     },
     {
       "fecha": "2026-10-16",
-      "pasos": 417,
+      "pasos": 5527,
       "sueno": 7.3,
       "sueno_score": 79,
       "rhr": 51,
-      "estres": 23,
+      "estres": 26,
       "hrv": 53,
-      "min_intensidad": 13
+      "min_intensidad": 2
     }
   ],
   "historico_semanas": [
-    {
-      "semana": "2026-W33",
-      "pasos": 67180,
-      "sueno": 6.6,
-      "rhr": 49,
-      "vo2": 37.0,
-      "hrv": 60,
-      "estres": 24,
-      "dias": [
-        {
-          "fecha": "2026-08-10",
-          "pasos": 9722,
-          "sueno": 6.4,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 22,
-          "hrv": 61,
-          "min_intensidad": 203
-        },
-        {
-          "fecha": "2026-08-11",
-          "pasos": 10137,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 21,
-          "hrv": 64,
-          "min_intensidad": 238
-        },
-        {
-          "fecha": "2026-08-12",
-          "pasos": 5361,
-          "sueno": 5.5,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 21,
-          "hrv": 54,
-          "min_intensidad": 125
-        },
-        {
-          "fecha": "2026-08-13",
-          "pasos": 13127,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 45,
-          "estres": 24,
-          "hrv": 63,
-          "min_intensidad": 225
-        },
-        {
-          "fecha": "2026-08-14",
-          "pasos": 8138,
-          "sueno": 7.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 31,
-          "hrv": 50,
-          "min_intensidad": 184
-        },
-        {
-          "fecha": "2026-08-16",
-          "pasos": 5515,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 24,
-          "hrv": 72,
-          "min_intensidad": 121
-        }
-      ],
-      "actividades": []
-    },
-    {
-      "semana": "2026-W34",
-      "pasos": 44420,
-      "sueno": 7.2,
-      "rhr": 48,
-      "vo2": 35.0,
-      "hrv": 56,
-      "estres": 25,
-      "dias": [
-        {
-          "fecha": "2026-08-17",
-          "pasos": 3045,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 52,
-          "min_intensidad": 67
-        },
-        {
-          "fecha": "2026-08-18",
-          "pasos": 4962,
-          "sueno": 8.1,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 23,
-          "hrv": 56,
-          "min_intensidad": 120
-        },
-        {
-          "fecha": "2026-08-19",
-          "pasos": 5759,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 32,
-          "hrv": 48,
-          "min_intensidad": 105
-        },
-        {
-          "fecha": "2026-08-20",
-          "pasos": 7307,
-          "sueno": 7.8,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 29,
-          "hrv": 63,
-          "min_intensidad": 135
-        },
-        {
-          "fecha": "2026-08-21",
-          "pasos": 6605,
-          "sueno": 6.2,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 23,
-          "hrv": 63,
-          "min_intensidad": 159
-        },
-        {
-          "fecha": "2026-08-22",
-          "pasos": 7347,
-          "sueno": 8.0,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 27,
-          "hrv": 54,
-          "min_intensidad": 165
-        },
-        {
-          "fecha": "2026-08-23",
-          "pasos": 9395,
-          "sueno": 7.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 26,
-          "hrv": 60,
-          "min_intensidad": 186
-        }
-      ],
-      "actividades": []
-    },
-    {
-      "semana": "2026-W35",
-      "pasos": 60726,
-      "sueno": 7.1,
-      "rhr": 47,
-      "vo2": 35.0,
-      "hrv": 59,
-      "estres": 26,
-      "dias": [
-        {
-          "fecha": "2026-08-24",
-          "pasos": 8004,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 28,
-          "hrv": 61,
-          "min_intensidad": 175
-        },
-        {
-          "fecha": "2026-08-25",
-          "pasos": 7252,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 27,
-          "hrv": 56,
-          "min_intensidad": 152
-        },
-        {
-          "fecha": "2026-08-26",
-          "pasos": 14531,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 29,
-          "hrv": 61,
-          "min_intensidad": 221
-        },
-        {
-          "fecha": "2026-08-27",
-          "pasos": 6047,
-          "sueno": 9.2,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 22,
-          "hrv": 59,
-          "min_intensidad": 102
-        },
-        {
-          "fecha": "2026-08-28",
-          "pasos": 6759,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 24,
-          "hrv": 63,
-          "min_intensidad": 119
-        },
-        {
-          "fecha": "2026-08-29",
-          "pasos": 6178,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 22,
-          "hrv": 58,
-          "min_intensidad": 159
-        },
-        {
-          "fecha": "2026-08-30",
-          "pasos": 11955,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 32,
-          "hrv": 59,
-          "min_intensidad": 211
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-08-24",
-          "nombre": "Fuerza",
-          "duracion": "30m 2s",
-          "distancia": "-",
-          "fc_media_max": "112.0 (Máx 148.0)",
-          "hr_recovery": "-50 ppm (🔥)",
-          "calorias": 194,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    {
-      "semana": "2026-W36",
-      "pasos": 58458,
-      "sueno": 6.9,
-      "rhr": 47,
-      "vo2": 36.0,
-      "hrv": 60,
-      "estres": 26,
-      "dias": [
-        {
-          "fecha": "2026-08-31",
-          "pasos": 10810,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 25,
-          "hrv": 59,
-          "min_intensidad": 211
-        },
-        {
-          "fecha": "2026-09-01",
-          "pasos": 7896,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 27,
-          "hrv": 59,
-          "min_intensidad": 173
-        },
-        {
-          "fecha": "2026-09-02",
-          "pasos": 8674,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 27,
-          "hrv": 62,
-          "min_intensidad": 158
-        },
-        {
-          "fecha": "2026-09-03",
-          "pasos": 12328,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 29,
-          "hrv": 62,
-          "min_intensidad": 253
-        },
-        {
-          "fecha": "2026-09-04",
-          "pasos": 6907,
-          "sueno": 6.2,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 25,
-          "hrv": 60,
-          "min_intensidad": 132
-        },
-        {
-          "fecha": "2026-09-05",
-          "pasos": 5828,
-          "sueno": 7.3,
-          "sueno_score": 85,
-          "rhr": 45,
-          "estres": 21,
-          "hrv": 60,
-          "min_intensidad": 130
-        },
-        {
-          "fecha": "2026-09-06",
-          "pasos": 6015,
-          "sueno": 7.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 30,
-          "hrv": 60,
-          "min_intensidad": 141
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-01",
-          "nombre": "Ciclismo en sala",
-          "duracion": "50m 21s",
-          "distancia": "-",
-          "fc_media_max": "131.0 (Máx 168.0)",
-          "hr_recovery": "-47 ppm (🔥)",
-          "calorias": 361,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    {
-      "semana": "2026-W37",
-      "pasos": 62537,
-      "sueno": 7.3,
-      "rhr": 47,
-      "vo2": 36.0,
-      "hrv": 60,
-      "estres": 25,
-      "dias": [
-        {
-          "fecha": "2026-09-07",
-          "pasos": 9381,
-          "sueno": 7.8,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 29,
-          "hrv": 53,
-          "min_intensidad": 183
-        },
-        {
-          "fecha": "2026-09-08",
-          "pasos": 6772,
-          "sueno": 8.1,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 22,
-          "hrv": 72,
-          "min_intensidad": 149
-        },
-        {
-          "fecha": "2026-09-09",
-          "pasos": 7999,
-          "sueno": 7.2,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 25,
-          "hrv": 63,
-          "min_intensidad": 161
-        },
-        {
-          "fecha": "2026-09-10",
-          "pasos": 7786,
-          "sueno": 7.2,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 24,
-          "hrv": 60,
-          "min_intensidad": 146
-        },
-        {
-          "fecha": "2026-09-11",
-          "pasos": 9236,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 21,
-          "hrv": 55,
-          "min_intensidad": 148
-        },
-        {
-          "fecha": "2026-09-12",
-          "pasos": 7559,
-          "sueno": 7.4,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 22,
-          "hrv": 59,
-          "min_intensidad": 121
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-07",
-          "nombre": "Ciclismo en sala",
-          "duracion": "56m 6s",
-          "distancia": "-",
-          "fc_media_max": "121.0 (Máx 166.0)",
-          "hr_recovery": "-69 ppm (🔥)",
-          "calorias": 355,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    {
-      "semana": "2026-W38",
-      "pasos": 33796,
-      "sueno": 6.8,
-      "rhr": 47,
-      "vo2": 36.0,
-      "hrv": 58,
-      "estres": 23,
-      "dias": [
-        {
-          "fecha": "2026-09-14",
-          "pasos": 7103,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 27,
-          "hrv": 58,
-          "min_intensidad": 138
-        },
-        {
-          "fecha": "2026-09-15",
-          "pasos": 6680,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 24,
-          "hrv": 48,
-          "min_intensidad": 146
-        },
-        {
-          "fecha": "2026-09-16",
-          "pasos": 6348,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 25,
-          "hrv": 65,
-          "min_intensidad": 131
-        },
-        {
-          "fecha": "2026-09-17",
-          "pasos": 5482,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 22,
-          "hrv": 61,
-          "min_intensidad": 120
-        },
-        {
-          "fecha": "2026-09-18",
-          "pasos": 5919,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 24,
-          "hrv": 59,
-          "min_intensidad": 121
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-14",
-          "nombre": "Ciclismo en sala",
-          "duracion": "49m 30s",
-          "distancia": "-",
-          "fc_media_max": "127.0 (Máx 173.0)",
-          "hr_recovery": "-49 ppm (🔥)",
-          "calorias": 385,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-09-20",
-          "nombre": "Fuerza",
-          "duracion": "1h 1m",
-          "distancia": "-",
-          "fc_media_max": "112.0 (Máx 153.0)",
-          "hr_recovery": "-59 ppm (🔥)",
-          "calorias": 362,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    {
-      "semana": "2026-W39",
-      "pasos": 45941,
-      "sueno": 6.9,
-      "rhr": 49,
-      "vo2": 36.0,
-      "hrv": 58,
-      "estres": 27,
-      "dias": [
-        {
-          "fecha": "2026-09-22",
-          "pasos": 8798,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 29,
-          "hrv": 55,
-          "min_intensidad": 162
-        },
-        {
-          "fecha": "2026-09-23",
-          "pasos": 5136,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 23,
-          "hrv": 60,
-          "min_intensidad": 118
-        },
-        {
-          "fecha": "2026-09-25",
-          "pasos": 6612,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 28,
-          "hrv": 58,
-          "min_intensidad": 143
-        },
-        {
-          "fecha": "2026-09-26",
-          "pasos": 9074,
-          "sueno": 6.1,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 28,
-          "hrv": 64,
-          "min_intensidad": 186
-        },
-        {
-          "fecha": "2026-09-27",
-          "pasos": 4815,
-          "sueno": 8.3,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 22,
-          "hrv": 53,
-          "min_intensidad": 93
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-22",
-          "nombre": "Ciclismo en sala",
-          "duracion": "51m 58s",
-          "distancia": "-",
-          "fc_media_max": "125.0 (Máx 173.0)",
-          "hr_recovery": "-57 ppm (🔥)",
-          "calorias": 283,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-09-26",
-          "nombre": "Valencia Tenis",
-          "duracion": "51m 2s",
-          "distancia": "1.73 km",
-          "fc_media_max": "133.0 (Máx 195.0)",
-          "hr_recovery": "-123 ppm (🔥)",
-          "calorias": 439,
-          "has_gps": true,
-          "gps": {
-            "id": 24508678027,
-            "nombre": "Valencia Tenis",
-            "fecha": "2026-09-26",
-            "distancia_km": 1.73,
-            "duracion_min": 51,
-            "desnivel_positivo": 0,
-            "desnivel_negativo": 0,
-            "altitud_max": 0,
-            "altitud_min": 0,
-            "ritmo_medio": 0.56,
-            "fc_media": 133.0,
-            "fc_max": 195.0,
-            "cadencia_media": 26,
-            "start_coords": [
-              39.46466968394816,
-              -0.35616902634501457
-            ],
-            "end_coords": [
-              39.46472844108939,
-              -0.3563664201647043
-            ],
-            "polyline": [
-              [
-                39.46466968394816,
-                -0.35616902634501457
-              ],
-              [
-                39.46475367061794,
-                -0.356438085436821
-              ],
-              [
-                39.46476708166301,
-                -0.3564098384231329
-              ],
-              [
-                39.464753083884716,
-                -0.35644604824483395
-              ],
-              [
-                39.46475668810308,
-                -0.3564496524631977
-              ],
-              [
-                39.46478074416518,
-                -0.3564573638141155
-              ],
-              [
-                39.464768674224615,
-                -0.3564039710909128
-              ],
-              [
-                39.46472114883363,
-                -0.35644613206386566
-              ],
-              [
-                39.464783761650324,
-                -0.3563358262181282
-              ],
-              [
-                39.464775547385216,
-                -0.3563319705426693
-              ],
-              [
-                39.46482164785266,
-                -0.3564239200204611
-              ],
-              [
-                39.46478636004031,
-                -0.3563798312097788
-              ],
-              [
-                39.464799435809255,
-                -0.3563672583550215
-              ],
-              [
-                39.46468871086836,
-                -0.35644177347421646
-              ],
-              [
-                39.46478602476418,
-                -0.3563885483890772
-              ],
-              [
-                39.46479583159089,
-                -0.3563454654067755
-              ],
-              [
-                39.464813182130456,
-                -0.35640313290059566
-              ],
-              [
-                39.46479122154415,
-                -0.3563783224672079
-              ],
-              [
-                39.464776972308755,
-                -0.3563652466982603
-              ],
-              [
-                39.46480153128505,
-                -0.3563563618808985
-              ],
-              [
-                39.4647350627929,
-                -0.35639315843582153
-              ],
-              [
-                39.46476926095784,
-                -0.35637589171528816
-              ],
-              [
-                39.46479340083897,
-                -0.35636004991829395
-              ],
-              [
-                39.46478602476418,
-                -0.35638016648590565
-              ],
-              [
-                39.464786276221275,
-                -0.3563603851944208
-              ],
-              [
-                39.464780911803246,
-                -0.3564080782234669
-              ],
-              [
-                39.46478812023997,
-                -0.35637371242046356
-              ],
-              [
-                39.464812679216266,
-                -0.3563592955470085
-              ],
-              [
-                39.464785270392895,
-                -0.3563805855810642
-              ],
-              [
-                39.46478996425867,
-                -0.35642760805785656
-              ],
-              [
-                39.464795077219605,
-                -0.3563827648758888
-              ],
-              [
-                39.464785773307085,
-                -0.35636432468891144
-              ],
-              [
-                39.46475618518889,
-                -0.35647111013531685
-              ],
-              [
-                39.46472777053714,
-                -0.3564049769192934
-              ],
-              [
-                39.464801363646984,
-                -0.35637748427689075
-              ],
-              [
-                39.464806811884046,
-                -0.356406569480896
-              ],
-              [
-                39.464816031977534,
-                -0.35637790337204933
-              ],
-              [
-                39.464756017550826,
-                -0.3564342297613621
-              ],
-              [
-                39.46480848826468,
-                -0.3564010374248028
-              ],
-              [
-                39.46480270475149,
-                -0.35631923004984856
-              ],
-              [
-                39.46481049992144,
-                -0.35640958696603775
-              ],
-              [
-                39.46478560566902,
-                -0.35637807101011276
-              ],
-              [
-                39.46475576609373,
-                -0.35638410598039627
-              ],
-              [
-                39.464818043634295,
-                -0.3564078267663717
-              ],
-              [
-                39.4648058898747,
-                -0.35638502798974514
-              ],
-              [
-                39.464799519628286,
-                -0.35639709793031216
-              ],
-              [
-                39.46472869254649,
-                -0.3564758878201246
-              ],
-              [
-                39.464825335890055,
-                -0.35642207600176334
-              ],
-              [
-                39.46480664424598,
-                -0.35640137270092964
-              ],
-              [
-                39.464807817712426,
-                -0.35639550536870956
-              ],
-              [
-                39.46476045995951,
-                -0.3564320504665375
-              ],
-              [
-                39.46477638557553,
-                -0.3563958406448364
-              ],
-              [
-                39.46481049992144,
-                -0.3564102575182915
-              ],
-              [
-                39.46478736586869,
-                -0.35639709793031216
-              ],
-              [
-                39.464785773307085,
-                -0.3563407715409994
-              ],
-              [
-                39.464822905138135,
-                -0.3564184717833996
-              ],
-              [
-                39.4648212287575,
-                -0.3564092516899109
-              ],
-              [
-                39.464824413880706,
-                -0.35642802715301514
-              ],
-              [
-                39.464770182967186,
-                -0.35642853006720543
-              ],
-              [
-                39.46483715437353,
-                -0.3564045578241348
-              ],
-              [
-                39.46480706334114,
-                -0.3563717845827341
-              ],
-              [
-                39.464813601225615,
-                -0.3563936613500118
-              ],
-              [
-                39.464833633974195,
-                -0.35640296526253223
-              ],
-              [
-                39.46472198702395,
-                -0.35646557807922363
-              ],
-              [
-                39.4648159481585,
-                -0.3564167954027653
-              ],
-              [
-                39.46483304724097,
-                -0.35639114677906036
-              ],
-              [
-                39.46481175720692,
-                -0.3563661687076092
-              ],
-              [
-                39.46479482576251,
-                -0.3563770651817322
-              ],
-              [
-                39.464839501306415,
-                -0.356418052688241
-              ],
-              [
-                39.46475978940725,
-                -0.3564494848251343
-              ],
-              [
-                39.46482793428004,
-                -0.35640363581478596
-              ],
-              [
-                39.46470580995083,
-                -0.35642643459141254
-              ],
-              [
-                39.46476222015917,
-                -0.3563984390348196
-              ],
-              [
-                39.46480111218989,
-                -0.35641444846987724
-              ],
-              [
-                39.46480639278889,
-                -0.3563886322081089
-              ],
-              [
-                39.46476951241493,
-                -0.35646071657538414
-              ],
-              [
-                39.46487596258521,
-                -0.3564037196338177
-              ],
-              [
-                39.4648230727762,
-                -0.35639064386487007
-              ],
-              [
-                39.46480052545667,
-                -0.35638351924717426
-              ],
-              [
-                39.464751575142145,
-                -0.3564745467156172
-              ],
-              [
-                39.464737409725785,
-                -0.3564778994768858
-              ],
-              [
-                39.464771607890725,
-                -0.3564136102795601
-              ]
-            ],
-            "elevation_profile": []
-          }
-        }
-      ]
-    },
-    {
-      "semana": "2026-W40",
-      "pasos": 44198,
-      "sueno": 7.1,
-      "rhr": 48,
-      "vo2": 35.0,
-      "hrv": 54,
-      "estres": 25,
-      "dias": [
-        {
-          "fecha": "2026-09-28",
-          "pasos": 8724,
-          "sueno": 8.0,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 29,
-          "hrv": 56,
-          "min_intensidad": 194
-        },
-        {
-          "fecha": "2026-09-29",
-          "pasos": 7844,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 29,
-          "hrv": 44,
-          "min_intensidad": 161
-        },
-        {
-          "fecha": "2026-09-30",
-          "pasos": 7935,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 23,
-          "hrv": 59,
-          "min_intensidad": 153
-        },
-        {
-          "fecha": "2026-10-01",
-          "pasos": 6349,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 25,
-          "hrv": 65,
-          "min_intensidad": 144
-        },
-        {
-          "fecha": "2026-10-02",
-          "pasos": 2778,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 20,
-          "hrv": 53,
-          "min_intensidad": 59
-        },
-        {
-          "fecha": "2026-10-03",
-          "pasos": 7314,
-          "sueno": 7.3,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 27,
-          "hrv": 56,
-          "min_intensidad": 126
-        },
-        {
-          "fecha": "2026-10-04",
-          "pasos": 3254,
-          "sueno": 7.4,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 27,
-          "hrv": 50,
-          "min_intensidad": 111
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-29",
-          "nombre": "Ciclismo en sala",
-          "duracion": "50m 46s",
-          "distancia": "-",
-          "fc_media_max": "126.0 (Máx 198.0)",
-          "hr_recovery": "-82 ppm (🔥)",
-          "calorias": 394,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-04",
-          "nombre": "Fuerza",
-          "duracion": "49m 43s",
-          "distancia": "-",
-          "fc_media_max": "121.0 (Máx 172.0)",
-          "hr_recovery": "-64 ppm (🔥)",
-          "calorias": 337,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
     {
       "semana": "2026-W41",
       "pasos": 84679,
@@ -4380,12 +3206,12 @@
     },
     {
       "semana": "2026-W42",
-      "pasos": 31010,
+      "pasos": 36120,
       "sueno": 7.1,
       "rhr": 46,
       "vo2": 37.0,
       "hrv": 57,
-      "estres": 21,
+      "estres": 22,
       "dias": [
         {
           "fecha": "2026-10-12",
@@ -4429,13 +3255,13 @@
         },
         {
           "fecha": "2026-10-16",
-          "pasos": 417,
+          "pasos": 5527,
           "sueno": 7.3,
           "sueno_score": 79,
           "rhr": 51,
-          "estres": 23,
+          "estres": 26,
           "hrv": 53,
-          "min_intensidad": 13
+          "min_intensidad": 2
         }
       ],
       "actividades": [
@@ -4454,1583 +3280,6 @@
     }
   ],
   "semanas_detalle": {
-    "2026-W27": {
-      "semana": "2026-W27",
-      "pasos": 52899,
-      "sueno": 6.7,
-      "rhr": 49,
-      "vo2": 37.0,
-      "hrv": 63,
-      "estres": 25,
-      "dias": [
-        {
-          "fecha": "2026-06-29",
-          "pasos": 6625,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 25,
-          "hrv": 68,
-          "min_intensidad": 147
-        },
-        {
-          "fecha": "2026-07-01",
-          "pasos": 8972,
-          "sueno": 5.9,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 23,
-          "hrv": 81,
-          "min_intensidad": 131
-        },
-        {
-          "fecha": "2026-07-02",
-          "pasos": 9740,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 24,
-          "hrv": 62,
-          "min_intensidad": 199
-        },
-        {
-          "fecha": "2026-07-03",
-          "pasos": 5525,
-          "sueno": 6.2,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 25,
-          "hrv": 51,
-          "min_intensidad": 101
-        },
-        {
-          "fecha": "2026-07-04",
-          "pasos": 6203,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 52,
-          "estres": 25,
-          "hrv": 57,
-          "min_intensidad": 128
-        },
-        {
-          "fecha": "2026-07-05",
-          "pasos": 7204,
-          "sueno": 7.8,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 27,
-          "hrv": 63,
-          "min_intensidad": 151
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-06-29",
-          "nombre": "Ciclismo en sala",
-          "duracion": "50m 58s",
-          "distancia": "-",
-          "fc_media_max": "123.0 (Máx 160.0)",
-          "hr_recovery": "-42 ppm (🟢)",
-          "calorias": 381,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W28": {
-      "semana": "2026-W28",
-      "pasos": 59444,
-      "sueno": 5.9,
-      "rhr": 50,
-      "vo2": 37.0,
-      "hrv": 64,
-      "estres": 26,
-      "dias": [
-        {
-          "fecha": "2026-07-06",
-          "pasos": 10907,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 29,
-          "hrv": 61,
-          "min_intensidad": 195
-        },
-        {
-          "fecha": "2026-07-07",
-          "pasos": 8581,
-          "sueno": 5.2,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 24,
-          "hrv": 63,
-          "min_intensidad": 170
-        },
-        {
-          "fecha": "2026-07-08",
-          "pasos": 11262,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 24,
-          "hrv": 69,
-          "min_intensidad": 151
-        },
-        {
-          "fecha": "2026-07-09",
-          "pasos": 7022,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 26,
-          "hrv": 68,
-          "min_intensidad": 150
-        },
-        {
-          "fecha": "2026-07-10",
-          "pasos": 7936,
-          "sueno": 3.7,
-          "sueno_score": 85,
-          "rhr": 52,
-          "estres": 24,
-          "hrv": 63,
-          "min_intensidad": 149
-        },
-        {
-          "fecha": "2026-07-11",
-          "pasos": 9081,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 27,
-          "hrv": 63,
-          "min_intensidad": 198
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-07-07",
-          "nombre": "Ciclismo en sala",
-          "duracion": "55m 7s",
-          "distancia": "-",
-          "fc_media_max": "127.0 (Máx 172.0)",
-          "hr_recovery": "-62 ppm (🔥)",
-          "calorias": 384,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-07-11",
-          "nombre": "Fuerza",
-          "duracion": "53m 39s",
-          "distancia": "-",
-          "fc_media_max": "108.0 (Máx 148.0)",
-          "hr_recovery": "-33 ppm (🟢)",
-          "calorias": 305,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W29": {
-      "semana": "2026-W29",
-      "pasos": 44970,
-      "sueno": 6.7,
-      "rhr": 49,
-      "vo2": 37.0,
-      "hrv": 57,
-      "estres": 22,
-      "dias": [
-        {
-          "fecha": "2026-07-13",
-          "pasos": 7294,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 22,
-          "hrv": 56,
-          "min_intensidad": 129
-        },
-        {
-          "fecha": "2026-07-14",
-          "pasos": 6805,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 24,
-          "hrv": 54,
-          "min_intensidad": 147
-        },
-        {
-          "fecha": "2026-07-15",
-          "pasos": 8412,
-          "sueno": 6.2,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 25,
-          "hrv": 55,
-          "min_intensidad": 155
-        },
-        {
-          "fecha": "2026-07-16",
-          "pasos": 5420,
-          "sueno": 5.7,
-          "sueno_score": 85,
-          "rhr": 52,
-          "estres": 21,
-          "hrv": 68,
-          "min_intensidad": 99
-        },
-        {
-          "fecha": "2026-07-17",
-          "pasos": 6620,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 18,
-          "hrv": 57,
-          "min_intensidad": 112
-        },
-        {
-          "fecha": "2026-07-18",
-          "pasos": 5350,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 21,
-          "hrv": 61,
-          "min_intensidad": 112
-        },
-        {
-          "fecha": "2026-07-19",
-          "pasos": 5069,
-          "sueno": 7.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 24,
-          "hrv": 51,
-          "min_intensidad": 131
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-07-14",
-          "nombre": "Ciclismo en sala",
-          "duracion": "1h 4m",
-          "distancia": "-",
-          "fc_media_max": "121.0 (Máx 167.0)",
-          "hr_recovery": "-68 ppm (🔥)",
-          "calorias": 397,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W30": {
-      "semana": "2026-W30",
-      "pasos": 56335,
-      "sueno": 6.4,
-      "rhr": 50,
-      "vo2": 37.0,
-      "hrv": 58,
-      "estres": 22,
-      "dias": [
-        {
-          "fecha": "2026-07-20",
-          "pasos": 3869,
-          "sueno": 5.7,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 20,
-          "hrv": 53,
-          "min_intensidad": 79
-        },
-        {
-          "fecha": "2026-07-21",
-          "pasos": 5954,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 26,
-          "hrv": 52,
-          "min_intensidad": 137
-        },
-        {
-          "fecha": "2026-07-22",
-          "pasos": 6921,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 25,
-          "hrv": 58,
-          "min_intensidad": 146
-        },
-        {
-          "fecha": "2026-07-24",
-          "pasos": 8106,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 19,
-          "hrv": 59,
-          "min_intensidad": 147
-        },
-        {
-          "fecha": "2026-07-25",
-          "pasos": 8553,
-          "sueno": 6.0,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 19,
-          "hrv": 64,
-          "min_intensidad": 173
-        },
-        {
-          "fecha": "2026-07-26",
-          "pasos": 12207,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 21,
-          "hrv": 63,
-          "min_intensidad": 258
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-07-21",
-          "nombre": "Ciclismo en sala",
-          "duracion": "51m 42s",
-          "distancia": "-",
-          "fc_media_max": "131.0 (Máx 168.0)",
-          "hr_recovery": "-53 ppm (🔥)",
-          "calorias": 377,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W31": {
-      "semana": "2026-W31",
-      "pasos": 70757,
-      "sueno": 6.8,
-      "rhr": 49,
-      "vo2": 37.0,
-      "hrv": 53,
-      "estres": 22,
-      "dias": [
-        {
-          "fecha": "2026-07-27",
-          "pasos": 8405,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 53,
-          "min_intensidad": 121
-        },
-        {
-          "fecha": "2026-07-28",
-          "pasos": 14222,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 20,
-          "hrv": 49,
-          "min_intensidad": 253
-        },
-        {
-          "fecha": "2026-07-29",
-          "pasos": 15974,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 30,
-          "hrv": 53,
-          "min_intensidad": 213
-        },
-        {
-          "fecha": "2026-07-30",
-          "pasos": 10885,
-          "sueno": 7.3,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 21,
-          "hrv": 53,
-          "min_intensidad": 181
-        },
-        {
-          "fecha": "2026-07-31",
-          "pasos": 9092,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 54,
-          "min_intensidad": 159
-        },
-        {
-          "fecha": "2026-08-01",
-          "pasos": 6617,
-          "sueno": 6.1,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 21,
-          "hrv": 56,
-          "min_intensidad": 155
-        },
-        {
-          "fecha": "2026-08-02",
-          "pasos": 5562,
-          "sueno": 7.8,
-          "sueno_score": 85,
-          "rhr": 52,
-          "estres": 23,
-          "hrv": 55,
-          "min_intensidad": 138
-        }
-      ],
-      "actividades": []
-    },
-    "2026-W32": {
-      "semana": "2026-W32",
-      "pasos": 44473,
-      "sueno": 6.6,
-      "rhr": 49,
-      "vo2": 37.0,
-      "hrv": 60,
-      "estres": 23,
-      "dias": [
-        {
-          "fecha": "2026-08-03",
-          "pasos": 8156,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 27,
-          "hrv": 62,
-          "min_intensidad": 160
-        },
-        {
-          "fecha": "2026-08-04",
-          "pasos": 5321,
-          "sueno": 6.4,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 22,
-          "hrv": 55,
-          "min_intensidad": 116
-        },
-        {
-          "fecha": "2026-08-05",
-          "pasos": 5214,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 20,
-          "hrv": 62,
-          "min_intensidad": 123
-        },
-        {
-          "fecha": "2026-08-07",
-          "pasos": 6452,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 53,
-          "estres": 22,
-          "hrv": 60,
-          "min_intensidad": 113
-        },
-        {
-          "fecha": "2026-08-08",
-          "pasos": 6198,
-          "sueno": 7.2,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 22,
-          "hrv": 57,
-          "min_intensidad": 128
-        },
-        {
-          "fecha": "2026-08-09",
-          "pasos": 6803,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 24,
-          "hrv": 69,
-          "min_intensidad": 146
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-08-06",
-          "nombre": "Fuerza",
-          "duracion": "57m 38s",
-          "distancia": "-",
-          "fc_media_max": "107.0 (Máx 149.0)",
-          "hr_recovery": "-70 ppm (🔥)",
-          "calorias": 316,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W33": {
-      "semana": "2026-W33",
-      "pasos": 67180,
-      "sueno": 6.6,
-      "rhr": 49,
-      "vo2": 37.0,
-      "hrv": 60,
-      "estres": 24,
-      "dias": [
-        {
-          "fecha": "2026-08-10",
-          "pasos": 9722,
-          "sueno": 6.4,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 22,
-          "hrv": 61,
-          "min_intensidad": 203
-        },
-        {
-          "fecha": "2026-08-11",
-          "pasos": 10137,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 21,
-          "hrv": 64,
-          "min_intensidad": 238
-        },
-        {
-          "fecha": "2026-08-12",
-          "pasos": 5361,
-          "sueno": 5.5,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 21,
-          "hrv": 54,
-          "min_intensidad": 125
-        },
-        {
-          "fecha": "2026-08-13",
-          "pasos": 13127,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 45,
-          "estres": 24,
-          "hrv": 63,
-          "min_intensidad": 225
-        },
-        {
-          "fecha": "2026-08-14",
-          "pasos": 8138,
-          "sueno": 7.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 31,
-          "hrv": 50,
-          "min_intensidad": 184
-        },
-        {
-          "fecha": "2026-08-16",
-          "pasos": 5515,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 24,
-          "hrv": 72,
-          "min_intensidad": 121
-        }
-      ],
-      "actividades": []
-    },
-    "2026-W34": {
-      "semana": "2026-W34",
-      "pasos": 44420,
-      "sueno": 7.2,
-      "rhr": 48,
-      "vo2": 35.0,
-      "hrv": 56,
-      "estres": 25,
-      "dias": [
-        {
-          "fecha": "2026-08-17",
-          "pasos": 3045,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 52,
-          "min_intensidad": 67
-        },
-        {
-          "fecha": "2026-08-18",
-          "pasos": 4962,
-          "sueno": 8.1,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 23,
-          "hrv": 56,
-          "min_intensidad": 120
-        },
-        {
-          "fecha": "2026-08-19",
-          "pasos": 5759,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 32,
-          "hrv": 48,
-          "min_intensidad": 105
-        },
-        {
-          "fecha": "2026-08-20",
-          "pasos": 7307,
-          "sueno": 7.8,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 29,
-          "hrv": 63,
-          "min_intensidad": 135
-        },
-        {
-          "fecha": "2026-08-21",
-          "pasos": 6605,
-          "sueno": 6.2,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 23,
-          "hrv": 63,
-          "min_intensidad": 159
-        },
-        {
-          "fecha": "2026-08-22",
-          "pasos": 7347,
-          "sueno": 8.0,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 27,
-          "hrv": 54,
-          "min_intensidad": 165
-        },
-        {
-          "fecha": "2026-08-23",
-          "pasos": 9395,
-          "sueno": 7.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 26,
-          "hrv": 60,
-          "min_intensidad": 186
-        }
-      ],
-      "actividades": []
-    },
-    "2026-W35": {
-      "semana": "2026-W35",
-      "pasos": 60726,
-      "sueno": 7.1,
-      "rhr": 47,
-      "vo2": 35.0,
-      "hrv": 59,
-      "estres": 26,
-      "dias": [
-        {
-          "fecha": "2026-08-24",
-          "pasos": 8004,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 28,
-          "hrv": 61,
-          "min_intensidad": 175
-        },
-        {
-          "fecha": "2026-08-25",
-          "pasos": 7252,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 27,
-          "hrv": 56,
-          "min_intensidad": 152
-        },
-        {
-          "fecha": "2026-08-26",
-          "pasos": 14531,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 29,
-          "hrv": 61,
-          "min_intensidad": 221
-        },
-        {
-          "fecha": "2026-08-27",
-          "pasos": 6047,
-          "sueno": 9.2,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 22,
-          "hrv": 59,
-          "min_intensidad": 102
-        },
-        {
-          "fecha": "2026-08-28",
-          "pasos": 6759,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 24,
-          "hrv": 63,
-          "min_intensidad": 119
-        },
-        {
-          "fecha": "2026-08-29",
-          "pasos": 6178,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 22,
-          "hrv": 58,
-          "min_intensidad": 159
-        },
-        {
-          "fecha": "2026-08-30",
-          "pasos": 11955,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 32,
-          "hrv": 59,
-          "min_intensidad": 211
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-08-24",
-          "nombre": "Fuerza",
-          "duracion": "30m 2s",
-          "distancia": "-",
-          "fc_media_max": "112.0 (Máx 148.0)",
-          "hr_recovery": "-50 ppm (🔥)",
-          "calorias": 194,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W36": {
-      "semana": "2026-W36",
-      "pasos": 58458,
-      "sueno": 6.9,
-      "rhr": 47,
-      "vo2": 36.0,
-      "hrv": 60,
-      "estres": 26,
-      "dias": [
-        {
-          "fecha": "2026-08-31",
-          "pasos": 10810,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 25,
-          "hrv": 59,
-          "min_intensidad": 211
-        },
-        {
-          "fecha": "2026-09-01",
-          "pasos": 7896,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 27,
-          "hrv": 59,
-          "min_intensidad": 173
-        },
-        {
-          "fecha": "2026-09-02",
-          "pasos": 8674,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 27,
-          "hrv": 62,
-          "min_intensidad": 158
-        },
-        {
-          "fecha": "2026-09-03",
-          "pasos": 12328,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 29,
-          "hrv": 62,
-          "min_intensidad": 253
-        },
-        {
-          "fecha": "2026-09-04",
-          "pasos": 6907,
-          "sueno": 6.2,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 25,
-          "hrv": 60,
-          "min_intensidad": 132
-        },
-        {
-          "fecha": "2026-09-05",
-          "pasos": 5828,
-          "sueno": 7.3,
-          "sueno_score": 85,
-          "rhr": 45,
-          "estres": 21,
-          "hrv": 60,
-          "min_intensidad": 130
-        },
-        {
-          "fecha": "2026-09-06",
-          "pasos": 6015,
-          "sueno": 7.5,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 30,
-          "hrv": 60,
-          "min_intensidad": 141
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-01",
-          "nombre": "Ciclismo en sala",
-          "duracion": "50m 21s",
-          "distancia": "-",
-          "fc_media_max": "131.0 (Máx 168.0)",
-          "hr_recovery": "-47 ppm (🔥)",
-          "calorias": 361,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W37": {
-      "semana": "2026-W37",
-      "pasos": 62537,
-      "sueno": 7.3,
-      "rhr": 47,
-      "vo2": 36.0,
-      "hrv": 60,
-      "estres": 25,
-      "dias": [
-        {
-          "fecha": "2026-09-07",
-          "pasos": 9381,
-          "sueno": 7.8,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 29,
-          "hrv": 53,
-          "min_intensidad": 183
-        },
-        {
-          "fecha": "2026-09-08",
-          "pasos": 6772,
-          "sueno": 8.1,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 22,
-          "hrv": 72,
-          "min_intensidad": 149
-        },
-        {
-          "fecha": "2026-09-09",
-          "pasos": 7999,
-          "sueno": 7.2,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 25,
-          "hrv": 63,
-          "min_intensidad": 161
-        },
-        {
-          "fecha": "2026-09-10",
-          "pasos": 7786,
-          "sueno": 7.2,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 24,
-          "hrv": 60,
-          "min_intensidad": 146
-        },
-        {
-          "fecha": "2026-09-11",
-          "pasos": 9236,
-          "sueno": 6.3,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 21,
-          "hrv": 55,
-          "min_intensidad": 148
-        },
-        {
-          "fecha": "2026-09-12",
-          "pasos": 7559,
-          "sueno": 7.4,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 22,
-          "hrv": 59,
-          "min_intensidad": 121
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-07",
-          "nombre": "Ciclismo en sala",
-          "duracion": "56m 6s",
-          "distancia": "-",
-          "fc_media_max": "121.0 (Máx 166.0)",
-          "hr_recovery": "-69 ppm (🔥)",
-          "calorias": 355,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W38": {
-      "semana": "2026-W38",
-      "pasos": 33796,
-      "sueno": 6.8,
-      "rhr": 47,
-      "vo2": 36.0,
-      "hrv": 58,
-      "estres": 23,
-      "dias": [
-        {
-          "fecha": "2026-09-14",
-          "pasos": 7103,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 27,
-          "hrv": 58,
-          "min_intensidad": 138
-        },
-        {
-          "fecha": "2026-09-15",
-          "pasos": 6680,
-          "sueno": 7.1,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 24,
-          "hrv": 48,
-          "min_intensidad": 146
-        },
-        {
-          "fecha": "2026-09-16",
-          "pasos": 6348,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 25,
-          "hrv": 65,
-          "min_intensidad": 131
-        },
-        {
-          "fecha": "2026-09-17",
-          "pasos": 5482,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 22,
-          "hrv": 61,
-          "min_intensidad": 120
-        },
-        {
-          "fecha": "2026-09-18",
-          "pasos": 5919,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 24,
-          "hrv": 59,
-          "min_intensidad": 121
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-14",
-          "nombre": "Ciclismo en sala",
-          "duracion": "49m 30s",
-          "distancia": "-",
-          "fc_media_max": "127.0 (Máx 173.0)",
-          "hr_recovery": "-49 ppm (🔥)",
-          "calorias": 385,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-09-20",
-          "nombre": "Fuerza",
-          "duracion": "1h 1m",
-          "distancia": "-",
-          "fc_media_max": "112.0 (Máx 153.0)",
-          "hr_recovery": "-59 ppm (🔥)",
-          "calorias": 362,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
-    "2026-W39": {
-      "semana": "2026-W39",
-      "pasos": 45941,
-      "sueno": 6.9,
-      "rhr": 49,
-      "vo2": 36.0,
-      "hrv": 58,
-      "estres": 27,
-      "dias": [
-        {
-          "fecha": "2026-09-22",
-          "pasos": 8798,
-          "sueno": 6.5,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 29,
-          "hrv": 55,
-          "min_intensidad": 162
-        },
-        {
-          "fecha": "2026-09-23",
-          "pasos": 5136,
-          "sueno": 7.0,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 23,
-          "hrv": 60,
-          "min_intensidad": 118
-        },
-        {
-          "fecha": "2026-09-25",
-          "pasos": 6612,
-          "sueno": 6.6,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 28,
-          "hrv": 58,
-          "min_intensidad": 143
-        },
-        {
-          "fecha": "2026-09-26",
-          "pasos": 9074,
-          "sueno": 6.1,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 28,
-          "hrv": 64,
-          "min_intensidad": 186
-        },
-        {
-          "fecha": "2026-09-27",
-          "pasos": 4815,
-          "sueno": 8.3,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 22,
-          "hrv": 53,
-          "min_intensidad": 93
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-22",
-          "nombre": "Ciclismo en sala",
-          "duracion": "51m 58s",
-          "distancia": "-",
-          "fc_media_max": "125.0 (Máx 173.0)",
-          "hr_recovery": "-57 ppm (🔥)",
-          "calorias": 283,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-09-26",
-          "nombre": "Valencia Tenis",
-          "duracion": "51m 2s",
-          "distancia": "1.73 km",
-          "fc_media_max": "133.0 (Máx 195.0)",
-          "hr_recovery": "-123 ppm (🔥)",
-          "calorias": 439,
-          "has_gps": true,
-          "gps": {
-            "id": 24508678027,
-            "nombre": "Valencia Tenis",
-            "fecha": "2026-09-26",
-            "distancia_km": 1.73,
-            "duracion_min": 51,
-            "desnivel_positivo": 0,
-            "desnivel_negativo": 0,
-            "altitud_max": 0,
-            "altitud_min": 0,
-            "ritmo_medio": 0.56,
-            "fc_media": 133.0,
-            "fc_max": 195.0,
-            "cadencia_media": 26,
-            "start_coords": [
-              39.46466968394816,
-              -0.35616902634501457
-            ],
-            "end_coords": [
-              39.46472844108939,
-              -0.3563664201647043
-            ],
-            "polyline": [
-              [
-                39.46466968394816,
-                -0.35616902634501457
-              ],
-              [
-                39.46475367061794,
-                -0.356438085436821
-              ],
-              [
-                39.46476708166301,
-                -0.3564098384231329
-              ],
-              [
-                39.464753083884716,
-                -0.35644604824483395
-              ],
-              [
-                39.46475668810308,
-                -0.3564496524631977
-              ],
-              [
-                39.46478074416518,
-                -0.3564573638141155
-              ],
-              [
-                39.464768674224615,
-                -0.3564039710909128
-              ],
-              [
-                39.46472114883363,
-                -0.35644613206386566
-              ],
-              [
-                39.464783761650324,
-                -0.3563358262181282
-              ],
-              [
-                39.464775547385216,
-                -0.3563319705426693
-              ],
-              [
-                39.46482164785266,
-                -0.3564239200204611
-              ],
-              [
-                39.46478636004031,
-                -0.3563798312097788
-              ],
-              [
-                39.464799435809255,
-                -0.3563672583550215
-              ],
-              [
-                39.46468871086836,
-                -0.35644177347421646
-              ],
-              [
-                39.46478602476418,
-                -0.3563885483890772
-              ],
-              [
-                39.46479583159089,
-                -0.3563454654067755
-              ],
-              [
-                39.464813182130456,
-                -0.35640313290059566
-              ],
-              [
-                39.46479122154415,
-                -0.3563783224672079
-              ],
-              [
-                39.464776972308755,
-                -0.3563652466982603
-              ],
-              [
-                39.46480153128505,
-                -0.3563563618808985
-              ],
-              [
-                39.4647350627929,
-                -0.35639315843582153
-              ],
-              [
-                39.46476926095784,
-                -0.35637589171528816
-              ],
-              [
-                39.46479340083897,
-                -0.35636004991829395
-              ],
-              [
-                39.46478602476418,
-                -0.35638016648590565
-              ],
-              [
-                39.464786276221275,
-                -0.3563603851944208
-              ],
-              [
-                39.464780911803246,
-                -0.3564080782234669
-              ],
-              [
-                39.46478812023997,
-                -0.35637371242046356
-              ],
-              [
-                39.464812679216266,
-                -0.3563592955470085
-              ],
-              [
-                39.464785270392895,
-                -0.3563805855810642
-              ],
-              [
-                39.46478996425867,
-                -0.35642760805785656
-              ],
-              [
-                39.464795077219605,
-                -0.3563827648758888
-              ],
-              [
-                39.464785773307085,
-                -0.35636432468891144
-              ],
-              [
-                39.46475618518889,
-                -0.35647111013531685
-              ],
-              [
-                39.46472777053714,
-                -0.3564049769192934
-              ],
-              [
-                39.464801363646984,
-                -0.35637748427689075
-              ],
-              [
-                39.464806811884046,
-                -0.356406569480896
-              ],
-              [
-                39.464816031977534,
-                -0.35637790337204933
-              ],
-              [
-                39.464756017550826,
-                -0.3564342297613621
-              ],
-              [
-                39.46480848826468,
-                -0.3564010374248028
-              ],
-              [
-                39.46480270475149,
-                -0.35631923004984856
-              ],
-              [
-                39.46481049992144,
-                -0.35640958696603775
-              ],
-              [
-                39.46478560566902,
-                -0.35637807101011276
-              ],
-              [
-                39.46475576609373,
-                -0.35638410598039627
-              ],
-              [
-                39.464818043634295,
-                -0.3564078267663717
-              ],
-              [
-                39.4648058898747,
-                -0.35638502798974514
-              ],
-              [
-                39.464799519628286,
-                -0.35639709793031216
-              ],
-              [
-                39.46472869254649,
-                -0.3564758878201246
-              ],
-              [
-                39.464825335890055,
-                -0.35642207600176334
-              ],
-              [
-                39.46480664424598,
-                -0.35640137270092964
-              ],
-              [
-                39.464807817712426,
-                -0.35639550536870956
-              ],
-              [
-                39.46476045995951,
-                -0.3564320504665375
-              ],
-              [
-                39.46477638557553,
-                -0.3563958406448364
-              ],
-              [
-                39.46481049992144,
-                -0.3564102575182915
-              ],
-              [
-                39.46478736586869,
-                -0.35639709793031216
-              ],
-              [
-                39.464785773307085,
-                -0.3563407715409994
-              ],
-              [
-                39.464822905138135,
-                -0.3564184717833996
-              ],
-              [
-                39.4648212287575,
-                -0.3564092516899109
-              ],
-              [
-                39.464824413880706,
-                -0.35642802715301514
-              ],
-              [
-                39.464770182967186,
-                -0.35642853006720543
-              ],
-              [
-                39.46483715437353,
-                -0.3564045578241348
-              ],
-              [
-                39.46480706334114,
-                -0.3563717845827341
-              ],
-              [
-                39.464813601225615,
-                -0.3563936613500118
-              ],
-              [
-                39.464833633974195,
-                -0.35640296526253223
-              ],
-              [
-                39.46472198702395,
-                -0.35646557807922363
-              ],
-              [
-                39.4648159481585,
-                -0.3564167954027653
-              ],
-              [
-                39.46483304724097,
-                -0.35639114677906036
-              ],
-              [
-                39.46481175720692,
-                -0.3563661687076092
-              ],
-              [
-                39.46479482576251,
-                -0.3563770651817322
-              ],
-              [
-                39.464839501306415,
-                -0.356418052688241
-              ],
-              [
-                39.46475978940725,
-                -0.3564494848251343
-              ],
-              [
-                39.46482793428004,
-                -0.35640363581478596
-              ],
-              [
-                39.46470580995083,
-                -0.35642643459141254
-              ],
-              [
-                39.46476222015917,
-                -0.3563984390348196
-              ],
-              [
-                39.46480111218989,
-                -0.35641444846987724
-              ],
-              [
-                39.46480639278889,
-                -0.3563886322081089
-              ],
-              [
-                39.46476951241493,
-                -0.35646071657538414
-              ],
-              [
-                39.46487596258521,
-                -0.3564037196338177
-              ],
-              [
-                39.4648230727762,
-                -0.35639064386487007
-              ],
-              [
-                39.46480052545667,
-                -0.35638351924717426
-              ],
-              [
-                39.464751575142145,
-                -0.3564745467156172
-              ],
-              [
-                39.464737409725785,
-                -0.3564778994768858
-              ],
-              [
-                39.464771607890725,
-                -0.3564136102795601
-              ]
-            ],
-            "elevation_profile": []
-          }
-        }
-      ]
-    },
-    "2026-W40": {
-      "semana": "2026-W40",
-      "pasos": 44198,
-      "sueno": 7.1,
-      "rhr": 48,
-      "vo2": 35.0,
-      "hrv": 54,
-      "estres": 25,
-      "dias": [
-        {
-          "fecha": "2026-09-28",
-          "pasos": 8724,
-          "sueno": 8.0,
-          "sueno_score": 85,
-          "rhr": 47,
-          "estres": 29,
-          "hrv": 56,
-          "min_intensidad": 194
-        },
-        {
-          "fecha": "2026-09-29",
-          "pasos": 7844,
-          "sueno": 6.7,
-          "sueno_score": 85,
-          "rhr": 49,
-          "estres": 29,
-          "hrv": 44,
-          "min_intensidad": 161
-        },
-        {
-          "fecha": "2026-09-30",
-          "pasos": 7935,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 46,
-          "estres": 23,
-          "hrv": 59,
-          "min_intensidad": 153
-        },
-        {
-          "fecha": "2026-10-01",
-          "pasos": 6349,
-          "sueno": 6.8,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 25,
-          "hrv": 65,
-          "min_intensidad": 144
-        },
-        {
-          "fecha": "2026-10-02",
-          "pasos": 2778,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 20,
-          "hrv": 53,
-          "min_intensidad": 59
-        },
-        {
-          "fecha": "2026-10-03",
-          "pasos": 7314,
-          "sueno": 7.3,
-          "sueno_score": 85,
-          "rhr": 50,
-          "estres": 27,
-          "hrv": 56,
-          "min_intensidad": 126
-        },
-        {
-          "fecha": "2026-10-04",
-          "pasos": 3254,
-          "sueno": 7.4,
-          "sueno_score": 85,
-          "rhr": 51,
-          "estres": 27,
-          "hrv": 50,
-          "min_intensidad": 111
-        }
-      ],
-      "actividades": [
-        {
-          "fecha": "2026-09-29",
-          "nombre": "Ciclismo en sala",
-          "duracion": "50m 46s",
-          "distancia": "-",
-          "fc_media_max": "126.0 (Máx 198.0)",
-          "hr_recovery": "-82 ppm (🔥)",
-          "calorias": 394,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-04",
-          "nombre": "Fuerza",
-          "duracion": "49m 43s",
-          "distancia": "-",
-          "fc_media_max": "121.0 (Máx 172.0)",
-          "hr_recovery": "-64 ppm (🔥)",
-          "calorias": 337,
-          "has_gps": false,
-          "gps": null
-        }
-      ]
-    },
     "2026-W41": {
       "semana": "2026-W41",
       "pasos": 84679,
@@ -7910,12 +5159,12 @@
     },
     "2026-W42": {
       "semana": "2026-W42",
-      "pasos": 31010,
+      "pasos": 36120,
       "sueno": 7.1,
       "rhr": 46,
       "vo2": 37.0,
       "hrv": 57,
-      "estres": 21,
+      "estres": 22,
       "dias": [
         {
           "fecha": "2026-10-12",
@@ -7959,13 +5208,13 @@
         },
         {
           "fecha": "2026-10-16",
-          "pasos": 417,
+          "pasos": 5527,
           "sueno": 7.3,
           "sueno_score": 79,
           "rhr": 51,
-          "estres": 23,
+          "estres": 26,
           "hrv": 53,
-          "min_intensidad": 13
+          "min_intensidad": 2
         }
       ],
       "actividades": [
@@ -10088,10 +7337,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 31010,
+      "progreso": 36120,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (62%)",
+      "estado": "¡SUPERADO! 🔥 (72%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -10102,10 +7351,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 517,
+      "progreso": 506,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (517 min)",
+      "estado": "¡Completado con Éxito! 🔥 (506 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
