@@ -266,18 +266,43 @@ def parse_garmin_data():
                     client.login(token_dir)
                 else:
                     client.login()
-                bb_data = client.get_body_battery(datetime.date.today().isoformat())
+                today_str = datetime.date.today().isoformat()
+                yesterday_str = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
+
+                # Consulta de User Summary y Sleep Data del día para garantizar datos idénticos a Garmin Connect
+                user_summary = {}
+                try:
+                    user_summary = client.connectapi(f'/usersummary-service/usersummary/daily/{client.display_name}?calendarDate={today_str}') or {}
+                except Exception as e_sum:
+                    print("Aviso al consultar usersummary en vivo:", e_sum)
+
+                bb_data = client.get_body_battery(today_str)
                 if bb_data and isinstance(bb_data, list) and len(bb_data) > 0:
                     item = bb_data[0]
-                    ch = item.get("charged", 65)
-                    dr = item.get("drained", 57)
                     pts = item.get("bodyBatteryValuesArray", [])
-                    curr = pts[-1][1] if pts else 41
-                    vals_only = [p[1] for p in pts] if pts else [41]
+                    vals_only = [p[1] for p in pts] if pts else []
+
+                    # Priorizar valor más reciente consolidado por Garmin Connect
+                    curr = user_summary.get("bodyBatteryMostRecentValue")
+                    if curr is None:
+                        curr = pts[-1][1] if pts else 41
+
+                    ch = user_summary.get("bodyBatteryChargedValue")
+                    if ch is None:
+                        ch = item.get("charged", 65)
+
+                    dr = user_summary.get("bodyBatteryDrainedValue")
+                    if dr is None:
+                        dr = item.get("drained", 0)
+
+                    bb_high = user_summary.get("bodyBatteryHighestValue") or (max(vals_only) if vals_only else curr)
+                    bb_low = user_summary.get("bodyBatteryLowestValue") or (min(vals_only) if vals_only else curr)
+
                     curva = []
                     for p in pts:
                         t_str = datetime.datetime.fromtimestamp(p[0]/1000).strftime("%H:%M")
                         curva.append({"hora": t_str, "valor": p[1]})
+
                     # Extraer eventos de actividad e impacto en Body Battery
                     events_raw = item.get("bodyBatteryActivityEvent", [])
                     factores = []
@@ -317,7 +342,7 @@ def parse_garmin_data():
                         ]
 
                     analisis_txt = (
-                        f"Iniciaste el día con una recarga nocturna de +{ch} puntos alcanzando un pico de {max(vals_only)}/100. "
+                        f"Iniciaste el día con una recarga nocturna de +{ch} puntos alcanzando un pico de {bb_high}/100. "
                         f"A lo largo de la jornada se han drenado {dr} puntos con un nivel actual de {curr}/100, manteniendo "
                         f"una excelente reserva de energía y recuperación vagal estable."
                     )
@@ -326,18 +351,28 @@ def parse_garmin_data():
                         "actual": curr,
                         "cargado": ch,
                         "drenado": dr,
-                        "max": max(vals_only),
-                        "min": min(vals_only),
+                        "max": bb_high,
+                        "min": bb_low,
                         "descanso_nocturno": f"Recuperación (+{ch} pts)",
-                        "momento_pico": f"Pico del día ({max(vals_only)} pts)",
+                        "momento_pico": f"Pico del día ({bb_high} pts)",
                         "curva_puntos": curva,
                         "factores_impacto": factores,
                         "analisis_clinico": analisis_txt
                     }
 
-                # Curva FC 24h REAL (Hoy y Ayer con preservación de picos de entrenamiento)
-                today_str = datetime.date.today().isoformat()
-                yesterday_str = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
+                # Si el último día de la nota de Obsidian coincide con hoy, enriquecer con score real de sueño si existe
+                try:
+                    sleep_live = client.get_sleep_data(today_str) or {}
+                    dto_live = sleep_live.get("dailySleepDTO", {}) or {}
+                    real_sec = dto_live.get("sleepTimeSeconds")
+                    real_score = dto_live.get("sleepScores", {}).get("overall", {}).get("value")
+                    if last_day.get("fecha") == today_str:
+                        if real_sec:
+                            last_day["sueno"] = round(real_sec / 3600.0, 1)
+                        if real_score is not None:
+                            last_day["sueno_score"] = real_score
+                except Exception as e_sl:
+                    print("Aviso al comprobar sueño en vivo:", e_sl)
                 
                 def extract_hr_curve(target_date):
                     data = client.get_heart_rates(target_date)
