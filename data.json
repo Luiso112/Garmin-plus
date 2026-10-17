@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-17 14:00:07",
+  "ultima_actualizacion": "2026-10-17 21:00:04",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -31,25 +31,17 @@
   },
   "active_intelligence": "Semana extraordinaria de volumen aeróbico con 39.227 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.1h) ha mantenido tu VFC en 58 ms.",
   "body_battery": {
-    "actual": 30,
-    "cargado": 23,
-    "drenado": 15,
+    "actual": 22,
+    "cargado": 29,
+    "drenado": 29,
     "max": 35,
     "min": 13,
-    "descanso_nocturno": "Recuperación (+23 pts)",
+    "descanso_nocturno": "Recuperación (+29 pts)",
     "momento_pico": "Pico del día (35 pts)",
     "curva_puntos": [
       {
-        "hora": "00:00",
-        "valor": 22
-      },
-      {
         "hora": "02:00",
         "valor": 13
-      },
-      {
-        "hora": "03:42",
-        "valor": 17
       },
       {
         "hora": "05:45",
@@ -60,8 +52,16 @@
         "valor": 35
       },
       {
-        "hora": "10:36",
-        "valor": 30
+        "hora": "12:24",
+        "valor": 25
+      },
+      {
+        "hora": "14:33",
+        "valor": 29
+      },
+      {
+        "hora": "19:15",
+        "valor": 22
       }
     ],
     "factores_impacto": [
@@ -70,9 +70,21 @@
         "subtitulo": "3h 36m regenerador",
         "impacto": "+21 ↑",
         "es_recuperacion": true
+      },
+      {
+        "nombre": "Descanso y Calma (Estrés Bajo)",
+        "subtitulo": "1h 44m relajación / reposo",
+        "impacto": "+4 ↑",
+        "es_recuperacion": true
+      },
+      {
+        "nombre": "Actividad (Nap)",
+        "subtitulo": "49 min en movimiento",
+        "impacto": "-2 ↓",
+        "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +23 puntos alcanzando un pico de 35/100. A lo largo de la jornada se han drenado 15 puntos con un nivel actual de 30/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
+    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +29 puntos alcanzando un pico de 35/100. A lo largo de la jornada se han drenado 29 puntos con un nivel actual de 22/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
     "fecha": "2026-10-16",
@@ -91,7 +103,7 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 30% de energía.",
+    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 22% de energía.",
     "estado_vfc": "VFC nocturna equilibrada en 53 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
@@ -149,33 +161,13 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "00:12",
-      "bpm": 73,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "00:16",
-      "bpm": 71,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "00:26",
       "bpm": 71,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
       "hora": "00:34",
       "bpm": 75,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "00:46",
-      "bpm": 72,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "00:52",
-      "bpm": 69,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -189,18 +181,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "01:16",
-      "bpm": 97,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "01:24",
       "bpm": 113,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "01:28",
-      "bpm": 104,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -209,18 +191,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "01:44",
-      "bpm": 80,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "01:58",
       "bpm": 88,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:02",
-      "bpm": 70,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -229,22 +201,7 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "02:20",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:26",
-      "bpm": 63,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "02:36",
-      "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "02:40",
       "bpm": 65,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
@@ -259,33 +216,13 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "03:04",
-      "bpm": 68,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "03:14",
-      "bpm": 69,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "03:20",
       "bpm": 72,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "03:30",
-      "bpm": 74,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "03:42",
       "bpm": 81,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "03:44",
-      "bpm": 67,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -299,33 +236,13 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "04:08",
-      "bpm": 67,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "04:22",
-      "bpm": 70,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "04:24",
       "bpm": 70,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
       "hora": "04:36",
       "bpm": 68,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "04:42",
-      "bpm": 67,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "04:48",
-      "bpm": 66,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -339,33 +256,13 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "05:16",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "05:24",
       "bpm": 65,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "05:30",
-      "bpm": 64,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "05:36",
       "bpm": 68,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:44",
-      "bpm": 57,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "05:54",
-      "bpm": 58,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -379,27 +276,12 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "06:22",
-      "bpm": 75,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "06:24",
       "bpm": 73,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "06:36",
-      "bpm": 64,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "06:46",
-      "bpm": 67,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "06:54",
       "bpm": 67,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
@@ -409,23 +291,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "07:06",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "07:18",
       "bpm": 82,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "07:20",
-      "bpm": 69,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "07:32",
-      "bpm": 64,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -439,23 +306,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "07:58",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "08:06",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "08:14",
       "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "08:18",
-      "bpm": 66,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -469,16 +321,6 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "08:40",
-      "bpm": 63,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "08:50",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "08:58",
       "bpm": 64,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
@@ -489,23 +331,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "09:14",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "09:26",
       "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "09:28",
-      "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "09:38",
-      "bpm": 73,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -519,23 +346,8 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "10:00",
-      "bpm": 69,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "10:10",
-      "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
       "hora": "10:18",
       "bpm": 66,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "10:26",
-      "bpm": 71,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
@@ -549,18 +361,168 @@
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "10:48",
+      "hora": "11:06",
+      "bpm": 72,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:26",
+      "bpm": 79,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:28",
       "bpm": 78,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "10:56",
+      "hora": "11:44",
+      "bpm": 68,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:14",
+      "bpm": 60,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:30",
+      "bpm": 60,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:34",
+      "bpm": 58,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:02",
+      "bpm": 57,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:04",
+      "bpm": 54,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:22",
+      "bpm": 59,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:40",
+      "bpm": 52,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:02",
+      "bpm": 52,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:10",
+      "bpm": 53,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:26",
+      "bpm": 55,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:52",
+      "bpm": 71,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:56",
       "bpm": 69,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "15:22",
+      "bpm": 62,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "15:32",
+      "bpm": 81,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "15:46",
+      "bpm": 72,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "16:08",
+      "bpm": 59,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "16:16",
+      "bpm": 56,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "16:44",
+      "bpm": 61,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "16:52",
+      "bpm": 81,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:04",
+      "bpm": 64,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:20",
+      "bpm": 63,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:36",
+      "bpm": 63,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "17:54",
+      "bpm": 67,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "18:20",
+      "bpm": 76,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "18:38",
+      "bpm": 63,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "18:42",
+      "bpm": 64,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "19:10",
+      "bpm": 64,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "19:22",
+      "bpm": 70,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     }
   ],
   "curva_fc_24h_stats": {
-    "min": 53,
+    "min": 49,
     "max": 113,
     "rhr": 50
   },
@@ -574,33 +536,13 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "00:12",
-          "bpm": 73,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "00:16",
-          "bpm": 71,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "00:26",
           "bpm": 71,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
           "hora": "00:34",
           "bpm": 75,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "00:46",
-          "bpm": 72,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "00:52",
-          "bpm": 69,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -614,18 +556,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "01:16",
-          "bpm": 97,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "01:24",
           "bpm": 113,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "01:28",
-          "bpm": 104,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -634,18 +566,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "01:44",
-          "bpm": 80,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "01:58",
           "bpm": 88,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:02",
-          "bpm": 70,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -654,22 +576,7 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "02:20",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:26",
-          "bpm": 63,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "02:36",
-          "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "02:40",
           "bpm": 65,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
@@ -684,33 +591,13 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "03:04",
-          "bpm": 68,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "03:14",
-          "bpm": 69,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "03:20",
           "bpm": 72,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "03:30",
-          "bpm": 74,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "03:42",
           "bpm": 81,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "03:44",
-          "bpm": 67,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -724,33 +611,13 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "04:08",
-          "bpm": 67,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "04:22",
-          "bpm": 70,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "04:24",
           "bpm": 70,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
           "hora": "04:36",
           "bpm": 68,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "04:42",
-          "bpm": 67,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "04:48",
-          "bpm": 66,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -764,33 +631,13 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "05:16",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "05:24",
           "bpm": 65,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "05:30",
-          "bpm": 64,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "05:36",
           "bpm": 68,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:44",
-          "bpm": 57,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "05:54",
-          "bpm": 58,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -804,27 +651,12 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "06:22",
-          "bpm": 75,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "06:24",
           "bpm": 73,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "06:36",
-          "bpm": 64,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "06:46",
-          "bpm": 67,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "06:54",
           "bpm": 67,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
@@ -834,23 +666,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "07:06",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "07:18",
           "bpm": 82,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "07:20",
-          "bpm": 69,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "07:32",
-          "bpm": 64,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -864,23 +681,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "07:58",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "08:06",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "08:14",
           "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "08:18",
-          "bpm": 66,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -894,16 +696,6 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "08:40",
-          "bpm": 63,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "08:50",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "08:58",
           "bpm": 64,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
@@ -914,23 +706,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "09:14",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "09:26",
           "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "09:28",
-          "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "09:38",
-          "bpm": 73,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -944,23 +721,8 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "10:00",
-          "bpm": 69,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "10:10",
-          "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
           "hora": "10:18",
           "bpm": 66,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "10:26",
-          "bpm": 71,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
@@ -974,18 +736,168 @@
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "10:48",
+          "hora": "11:06",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:26",
+          "bpm": 79,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:28",
           "bpm": 78,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "10:56",
+          "hora": "11:44",
+          "bpm": 68,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:14",
+          "bpm": 60,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:30",
+          "bpm": 60,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:34",
+          "bpm": 58,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:02",
+          "bpm": 57,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:04",
+          "bpm": 54,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:22",
+          "bpm": 59,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:40",
+          "bpm": 52,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:02",
+          "bpm": 52,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:10",
+          "bpm": 53,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:26",
+          "bpm": 55,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:52",
+          "bpm": 71,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:56",
           "bpm": 69,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "15:22",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "15:32",
+          "bpm": 81,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "15:46",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "16:08",
+          "bpm": 59,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "16:16",
+          "bpm": 56,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "16:44",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "16:52",
+          "bpm": 81,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:04",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:20",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:36",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:54",
+          "bpm": 67,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:20",
+          "bpm": 76,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:38",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:42",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:10",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:22",
+          "bpm": 70,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         }
       ],
       "stats": {
-        "min": 53,
+        "min": 49,
         "max": 113,
         "rhr": 50
       }
