@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-17 08:35:34",
+  "ultima_actualizacion": "2026-10-17 09:00:34",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -23,21 +23,21 @@
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (64 ms)",
+    "hrv_status": "Equilibrada (53 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (3.6h)",
+    "sueno_calidad": "Reparador (7.3h)",
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 42.424 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.5h) ha mantenido tu VFC en 59 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 39.227 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.1h) ha mantenido tu VFC en 58 ms.",
   "body_battery": {
-    "actual": 34,
-    "cargado": 22,
+    "actual": 35,
+    "cargado": 23,
     "drenado": 10,
-    "max": 34,
+    "max": 35,
     "min": 13,
-    "descanso_nocturno": "Recuperación (+22 pts)",
-    "momento_pico": "Pico del día (34 pts)",
+    "descanso_nocturno": "Recuperación (+23 pts)",
+    "momento_pico": "Pico del día (35 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
@@ -48,7 +48,7 @@
         "valor": 13
       },
       {
-        "hora": "02:54",
+        "hora": "02:57",
         "valor": 13
       },
       {
@@ -56,49 +56,43 @@
         "valor": 34
       },
       {
-        "hora": "05:48",
+        "hora": "05:54",
         "valor": 34
       },
       {
-        "hora": "05:48",
-        "valor": 34
+        "hora": "08:36",
+        "valor": 35
       }
     ],
     "factores_impacto": [
       {
         "nombre": "Sueño Nocturno",
-        "subtitulo": "3.6h reparador",
-        "impacto": "+22 ↑",
+        "subtitulo": "3h 36m regenerador",
+        "impacto": "+21 ↑",
         "es_recuperacion": true
-      },
-      {
-        "nombre": "Gasto Basal y Actividad Diaria",
-        "subtitulo": "Consumo metabólico activo",
-        "impacto": "-10 ↓",
-        "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +22 puntos alcanzando un pico de 34/100. A lo largo de la jornada se han drenado 10 puntos con un nivel actual de 34/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
+    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +23 puntos alcanzando un pico de 35/100. A lo largo de la jornada se han drenado 10 puntos con un nivel actual de 35/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
-    "fecha": "2026-10-17",
-    "rhr": 50,
-    "hrv": 64,
-    "sueno_horas": 3.6,
-    "sueno_score": 37,
-    "pasos": 3197,
+    "fecha": "2026-10-16",
+    "rhr": 51,
+    "hrv": 53,
+    "sueno_horas": 7.3,
+    "sueno_score": 85,
+    "pasos": 8634,
     "meta_pasos": 8000,
-    "pasos_semana": 42424,
-    "estres": 34,
+    "pasos_semana": 39227,
+    "estres": 28,
     "vo2max": 37.0,
-    "min_intensidad": 42,
-    "intensidad_semana": 550,
+    "min_intensidad": 4,
+    "intensidad_semana": 508,
     "meta_intensidad": 150
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (3.6h) con un Body Battery al 34% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 64 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 35% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 53 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -578,6 +572,16 @@
       "hora": "08:30",
       "bpm": 64,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "08:38",
+      "bpm": 64,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "08:42",
+      "bpm": 62,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
     }
   ],
   "curva_fc_24h_stats": {
@@ -1018,6 +1022,16 @@
           "hora": "08:30",
           "bpm": 64,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "08:38",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "08:42",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
         }
       ],
       "stats": {
@@ -1404,7 +1418,7 @@
       "duracion": "49m 6s",
       "distancia": "-",
       "fc_media_max": "129.0 (Máx 176.0)",
-      "hr_recovery": "-80 ppm (🔥)",
+      "hr_recovery": "-23 ppm (🟡)",
       "calorias": 448,
       "has_gps": false,
       "gps": null
@@ -1415,7 +1429,7 @@
       "fecha": "2026-10-12",
       "pasos": 7273,
       "sueno": 7.5,
-      "sueno_score": 86,
+      "sueno_score": 85,
       "rhr": 47,
       "estres": 17,
       "hrv": 53,
@@ -1425,7 +1439,7 @@
       "fecha": "2026-10-13",
       "pasos": 6199,
       "sueno": 7.7,
-      "sueno_score": 87,
+      "sueno_score": 85,
       "rhr": 42,
       "estres": 20,
       "hrv": 67,
@@ -1435,7 +1449,7 @@
       "fecha": "2026-10-14",
       "pasos": 5905,
       "sueno": 7.0,
-      "sueno_score": 82,
+      "sueno_score": 85,
       "rhr": 45,
       "estres": 23,
       "hrv": 62,
@@ -1445,7 +1459,7 @@
       "fecha": "2026-10-15",
       "pasos": 11216,
       "sueno": 6.0,
-      "sueno_score": 73,
+      "sueno_score": 85,
       "rhr": 48,
       "estres": 24,
       "hrv": 53,
@@ -1455,21 +1469,11 @@
       "fecha": "2026-10-16",
       "pasos": 8634,
       "sueno": 7.3,
-      "sueno_score": 79,
+      "sueno_score": 85,
       "rhr": 51,
       "estres": 28,
       "hrv": 53,
       "min_intensidad": 4
-    },
-    {
-      "fecha": "2026-10-17",
-      "pasos": 3197,
-      "sueno": 3.6,
-      "sueno_score": 37,
-      "rhr": 50,
-      "estres": 34,
-      "hrv": 64,
-      "min_intensidad": 42
     }
   ],
   "historico_semanas": [
@@ -3352,18 +3356,18 @@
     },
     {
       "semana": "2026-W42",
-      "pasos": 42424,
-      "sueno": 6.5,
-      "rhr": 47,
+      "pasos": 39227,
+      "sueno": 7.1,
+      "rhr": 46,
       "vo2": 37.0,
-      "hrv": 58,
-      "estres": 24,
+      "hrv": 57,
+      "estres": 22,
       "dias": [
         {
           "fecha": "2026-10-12",
           "pasos": 7273,
           "sueno": 7.5,
-          "sueno_score": 86,
+          "sueno_score": 85,
           "rhr": 47,
           "estres": 17,
           "hrv": 53,
@@ -3373,7 +3377,7 @@
           "fecha": "2026-10-13",
           "pasos": 6199,
           "sueno": 7.7,
-          "sueno_score": 87,
+          "sueno_score": 85,
           "rhr": 42,
           "estres": 20,
           "hrv": 67,
@@ -3383,7 +3387,7 @@
           "fecha": "2026-10-14",
           "pasos": 5905,
           "sueno": 7.0,
-          "sueno_score": 82,
+          "sueno_score": 85,
           "rhr": 45,
           "estres": 23,
           "hrv": 62,
@@ -3393,7 +3397,7 @@
           "fecha": "2026-10-15",
           "pasos": 11216,
           "sueno": 6.0,
-          "sueno_score": 73,
+          "sueno_score": 85,
           "rhr": 48,
           "estres": 24,
           "hrv": 53,
@@ -3403,21 +3407,11 @@
           "fecha": "2026-10-16",
           "pasos": 8634,
           "sueno": 7.3,
-          "sueno_score": 79,
+          "sueno_score": 85,
           "rhr": 51,
           "estres": 28,
           "hrv": 53,
           "min_intensidad": 4
-        },
-        {
-          "fecha": "2026-10-17",
-          "pasos": 3197,
-          "sueno": 3.6,
-          "sueno_score": 37,
-          "rhr": 50,
-          "estres": 34,
-          "hrv": 64,
-          "min_intensidad": 42
         }
       ],
       "actividades": [
@@ -3427,7 +3421,7 @@
           "duracion": "49m 6s",
           "distancia": "-",
           "fc_media_max": "129.0 (Máx 176.0)",
-          "hr_recovery": "-80 ppm (🔥)",
+          "hr_recovery": "-23 ppm (🟡)",
           "calorias": 448,
           "has_gps": false,
           "gps": null
@@ -5315,18 +5309,18 @@
     },
     "2026-W42": {
       "semana": "2026-W42",
-      "pasos": 42424,
-      "sueno": 6.5,
-      "rhr": 47,
+      "pasos": 39227,
+      "sueno": 7.1,
+      "rhr": 46,
       "vo2": 37.0,
-      "hrv": 58,
-      "estres": 24,
+      "hrv": 57,
+      "estres": 22,
       "dias": [
         {
           "fecha": "2026-10-12",
           "pasos": 7273,
           "sueno": 7.5,
-          "sueno_score": 86,
+          "sueno_score": 85,
           "rhr": 47,
           "estres": 17,
           "hrv": 53,
@@ -5336,7 +5330,7 @@
           "fecha": "2026-10-13",
           "pasos": 6199,
           "sueno": 7.7,
-          "sueno_score": 87,
+          "sueno_score": 85,
           "rhr": 42,
           "estres": 20,
           "hrv": 67,
@@ -5346,7 +5340,7 @@
           "fecha": "2026-10-14",
           "pasos": 5905,
           "sueno": 7.0,
-          "sueno_score": 82,
+          "sueno_score": 85,
           "rhr": 45,
           "estres": 23,
           "hrv": 62,
@@ -5356,7 +5350,7 @@
           "fecha": "2026-10-15",
           "pasos": 11216,
           "sueno": 6.0,
-          "sueno_score": 73,
+          "sueno_score": 85,
           "rhr": 48,
           "estres": 24,
           "hrv": 53,
@@ -5366,21 +5360,11 @@
           "fecha": "2026-10-16",
           "pasos": 8634,
           "sueno": 7.3,
-          "sueno_score": 79,
+          "sueno_score": 85,
           "rhr": 51,
           "estres": 28,
           "hrv": 53,
           "min_intensidad": 4
-        },
-        {
-          "fecha": "2026-10-17",
-          "pasos": 3197,
-          "sueno": 3.6,
-          "sueno_score": 37,
-          "rhr": 50,
-          "estres": 34,
-          "hrv": 64,
-          "min_intensidad": 42
         }
       ],
       "actividades": [
@@ -5390,7 +5374,7 @@
           "duracion": "49m 6s",
           "distancia": "-",
           "fc_media_max": "129.0 (Máx 176.0)",
-          "hr_recovery": "-80 ppm (🔥)",
+          "hr_recovery": "-23 ppm (🟡)",
           "calorias": 448,
           "has_gps": false,
           "gps": null
@@ -7503,10 +7487,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 42424,
+      "progreso": 39227,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (85%)",
+      "estado": "¡SUPERADO! 🔥 (78%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -7517,10 +7501,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 550,
+      "progreso": 508,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (550 min)",
+      "estado": "¡Completado con Éxito! 🔥 (508 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
