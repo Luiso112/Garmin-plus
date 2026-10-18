@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-18 14:10:17",
+  "ultima_actualizacion": "2026-10-18 14:22:00",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -23,13 +23,13 @@
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (53 ms)",
+    "hrv_status": "Equilibrada (64 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (7.3h)",
+    "sueno_calidad": "Reparador (3.6h)",
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 39.227 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.1h) ha mantenido tu VFC en 58 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 48.006 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.5h) ha mantenido tu VFC en 59 ms.",
   "body_battery": {
     "actual": 42,
     "cargado": 59,
@@ -81,24 +81,24 @@
     "analisis_clinico": "Iniciaste el día con una recarga nocturna de +59 puntos alcanzando un pico de 70/100. A lo largo de la jornada se han drenado 30 puntos con un nivel actual de 42/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
-    "fecha": "2026-10-16",
-    "rhr": 51,
-    "hrv": 53,
-    "sueno_horas": 7.3,
+    "fecha": "2026-10-17",
+    "rhr": 50,
+    "hrv": 64,
+    "sueno_horas": 3.6,
     "sueno_score": 85,
-    "pasos": 8634,
+    "pasos": 8779,
     "meta_pasos": 8000,
-    "pasos_semana": 39227,
-    "estres": 28,
+    "pasos_semana": 48006,
+    "estres": 33,
     "vo2max": 37.0,
-    "min_intensidad": 4,
-    "intensidad_semana": 508,
+    "min_intensidad": 132,
+    "intensidad_semana": 640,
     "meta_intensidad": 150
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 42% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 53 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (3.6h) con un Body Battery al 42% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 64 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -1398,6 +1398,17 @@
       "calorias": 448,
       "has_gps": false,
       "gps": null
+    },
+    {
+      "fecha": "2026-10-18",
+      "nombre": "Fuerza",
+      "duracion": "42m 26s",
+      "distancia": "-",
+      "fc_media_max": "123.0 (Máx 176.0)",
+      "hr_recovery": "-8 ppm (⚠️)",
+      "calorias": 309,
+      "has_gps": false,
+      "gps": null
     }
   ],
   "desglose_diario": [
@@ -1450,6 +1461,16 @@
       "estres": 28,
       "hrv": 53,
       "min_intensidad": 4
+    },
+    {
+      "fecha": "2026-10-17",
+      "pasos": 8779,
+      "sueno": 3.6,
+      "sueno_score": 85,
+      "rhr": 50,
+      "estres": 33,
+      "hrv": 64,
+      "min_intensidad": 132
     }
   ],
   "historico_semanas": [
@@ -3332,12 +3353,12 @@
     },
     {
       "semana": "2026-W42",
-      "pasos": 39227,
-      "sueno": 7.1,
-      "rhr": 46,
+      "pasos": 48006,
+      "sueno": 6.5,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 57,
-      "estres": 22,
+      "hrv": 58,
+      "estres": 24,
       "dias": [
         {
           "fecha": "2026-10-12",
@@ -3388,6 +3409,16 @@
           "estres": 28,
           "hrv": 53,
           "min_intensidad": 4
+        },
+        {
+          "fecha": "2026-10-17",
+          "pasos": 8779,
+          "sueno": 3.6,
+          "sueno_score": 85,
+          "rhr": 50,
+          "estres": 33,
+          "hrv": 64,
+          "min_intensidad": 132
         }
       ],
       "actividades": [
@@ -3399,6 +3430,17 @@
           "fc_media_max": "129.0 (Máx 176.0)",
           "hr_recovery": "-23 ppm (🟡)",
           "calorias": 448,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-18",
+          "nombre": "Fuerza",
+          "duracion": "42m 26s",
+          "distancia": "-",
+          "fc_media_max": "123.0 (Máx 176.0)",
+          "hr_recovery": "-8 ppm (⚠️)",
+          "calorias": 309,
           "has_gps": false,
           "gps": null
         }
@@ -5285,12 +5327,12 @@
     },
     "2026-W42": {
       "semana": "2026-W42",
-      "pasos": 39227,
-      "sueno": 7.1,
-      "rhr": 46,
+      "pasos": 48006,
+      "sueno": 6.5,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 57,
-      "estres": 22,
+      "hrv": 58,
+      "estres": 24,
       "dias": [
         {
           "fecha": "2026-10-12",
@@ -5341,6 +5383,16 @@
           "estres": 28,
           "hrv": 53,
           "min_intensidad": 4
+        },
+        {
+          "fecha": "2026-10-17",
+          "pasos": 8779,
+          "sueno": 3.6,
+          "sueno_score": 85,
+          "rhr": 50,
+          "estres": 33,
+          "hrv": 64,
+          "min_intensidad": 132
         }
       ],
       "actividades": [
@@ -5352,6 +5404,17 @@
           "fc_media_max": "129.0 (Máx 176.0)",
           "hr_recovery": "-23 ppm (🟡)",
           "calorias": 448,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-18",
+          "nombre": "Fuerza",
+          "duracion": "42m 26s",
+          "distancia": "-",
+          "fc_media_max": "123.0 (Máx 176.0)",
+          "hr_recovery": "-8 ppm (⚠️)",
+          "calorias": 309,
           "has_gps": false,
           "gps": null
         }
@@ -7463,10 +7526,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 39227,
+      "progreso": 48006,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (78%)",
+      "estado": "¡SUPERADO! 🔥 (96%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -7477,10 +7540,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 508,
+      "progreso": 640,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (508 min)",
+      "estado": "¡Completado con Éxito! 🔥 (640 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
