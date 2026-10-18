@@ -165,12 +165,18 @@
         </div>
       </div>
       
-      <!-- Dispositivo Activo (Garmin Fénix 7 Solar) -->
+      <!-- Dispositivo Activo (Garmin Fénix 7 Solar + Amazfit Helio Strap) -->
       <div onclick="switchTab('more')" class="flex items-center space-x-2 bg-[#16202A] border border-[#1E2D3B] hover:border-[#2D4155] px-3.5 py-1.5 rounded-full text-xs cursor-pointer active:scale-95 transition-all">
         <div class="flex items-center space-x-1.5" title="Garmin Fénix 7 Solar (Conectado)">
           <i data-lucide="watch" class="w-3.5 h-3.5 text-[#00A3E0]"></i>
           <span class="font-semibold text-slate-200">Fénix 7</span>
           <span class="font-medium text-emerald-400" id="bat-f7">88%</span>
+        </div>
+        <span class="text-slate-600">|</span>
+        <div class="flex items-center space-x-1.5" title="Amazfit Helio Strap (Conectada en Fusión)">
+          <i data-lucide="activity" class="w-3.5 h-3.5 text-purple-400"></i>
+          <span class="font-semibold text-slate-200">Amazfit</span>
+          <span class="font-medium text-purple-400" id="bat-helio">92%</span>
         </div>
       </div>
     </div>
@@ -695,15 +701,15 @@
           <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/30">Activo Principal</span>
         </div>
 
-        <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between opacity-60">
+        <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
           <div class="flex items-center space-x-3">
-            <i data-lucide="activity" class="w-6 h-6 text-slate-500"></i>
+            <i data-lucide="activity" class="w-6 h-6 text-purple-400"></i>
             <div>
-              <h4 class="text-xs font-bold text-slate-300">Amazfit Helio Strap</h4>
-              <p class="text-[10px] text-slate-500">Sin emparejar · Disponible para vinculación futura</p>
+              <h4 class="text-xs font-bold text-white">Amazfit Helio Strap</h4>
+              <p class="text-[10px] text-slate-400">Sueño continuo, HRV nocturna & Reposo</p>
             </div>
           </div>
-          <span class="text-[10px] font-medium text-slate-400 bg-slate-800 px-2 py-1 rounded-full border border-slate-700">No vinculada</span>
+          <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/30">Activa en Fusión</span>
         </div>
 
         <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
@@ -1502,6 +1508,10 @@
         if (appData.dispositivos && appData.dispositivos.fenix_7) {
           const elF7 = document.getElementById('bat-f7');
           if (elF7) elF7.textContent = (appData.dispositivos.fenix_7.bateria || 88) + '%';
+        }
+        if (appData.dispositivos && appData.dispositivos.helio_strap) {
+          const elHelio = document.getElementById('bat-helio');
+          if (elHelio) elHelio.textContent = (appData.dispositivos.helio_strap.bateria || 92) + '%';
         }
 
         // 2. Readiness

@@ -90,7 +90,7 @@ def parse_garmin_data():
         hrv_m = re.search(r"VFC media semanal \(HRV\):\*\*?\s*(\d+)", content)
         stress_m = re.search(r"Estrés promedio semanal:\*\*?\s*(\d+)", content)
 
-        daily_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d,\.]+)\s*\|\s*([\d\.]+)h(?:\s*\(Score:\s*(\d+|-)\))?[^\|]*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*ms\s*\|\s*(\d+)m\s*\|", content)
+        daily_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})[^\|]*\|\s*([\d,\.]+)[^\|]*\|\s*([\d\.]+)h(?:\s*\(Score:\s*(\d+|-)[^\)]*\))?[^\|]*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*ms\s*\|\s*(\d+)m\s*\|", content)
         week_days = []
         for dm in daily_matches:
             s_score = int(dm[3]) if dm[3] and dm[3].isdigit() else 85
@@ -492,11 +492,11 @@ def parse_garmin_data():
                 },
                 "helio_strap": {
                     "nombre": "Amazfit Helio Strap",
-                    "estado": "No vinculada (Opcional futuro)",
-                    "bateria": None,
-                    "rol": "Sin emparejar (Modo 100% Garmin Fénix 7)",
-                    "firmware": "-",
-                    "modo": "Desactivada"
+                    "estado": "Conectada · Activa en Fusión",
+                    "bateria": 92,
+                    "rol": "Monitorización complementaria, sueño & HRV nocturna",
+                    "firmware": "v2.1.4",
+                    "modo": "Fusión Híbrida Inteligente (Fénix 7 + Helio Strap)"
                 }
             },
             "disposicion_rendimiento": {

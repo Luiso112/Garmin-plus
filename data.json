@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-18 14:24:14",
+  "ultima_actualizacion": "2026-10-18 14:28:10",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -13,11 +13,11 @@
     },
     "helio_strap": {
       "nombre": "Amazfit Helio Strap",
-      "estado": "No vinculada (Opcional futuro)",
-      "bateria": null,
-      "rol": "Sin emparejar (Modo 100% Garmin Fénix 7)",
-      "firmware": "-",
-      "modo": "Desactivada"
+      "estado": "Conectada · Activa en Fusión",
+      "bateria": 92,
+      "rol": "Monitorización complementaria, sueño & HRV nocturna",
+      "firmware": "v2.1.4",
+      "modo": "Fusión Híbrida Inteligente (Fénix 7 + Helio Strap)"
     }
   },
   "disposicion_rendimiento": {
