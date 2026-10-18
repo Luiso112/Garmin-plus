@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-18 14:00:05",
+  "ultima_actualizacion": "2026-10-18 14:10:17",
   "semana_actual": "2026-W42",
   "dispositivos": {
     "fenix_7": {
@@ -31,9 +31,9 @@
   },
   "active_intelligence": "Semana extraordinaria de volumen aeróbico con 39.227 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (7.1h) ha mantenido tu VFC en 58 ms.",
   "body_battery": {
-    "actual": 44,
+    "actual": 42,
     "cargado": 59,
-    "drenado": 28,
+    "drenado": 30,
     "max": 70,
     "min": 13,
     "descanso_nocturno": "Recuperación (+59 pts)",
@@ -44,24 +44,24 @@
         "valor": 13
       },
       {
-        "hora": "04:24",
-        "valor": 39
+        "hora": "04:39",
+        "valor": 42
       },
       {
-        "hora": "04:30",
-        "valor": 39
-      },
-      {
-        "hora": "08:51",
-        "valor": 69
+        "hora": "04:45",
+        "valor": 42
       },
       {
         "hora": "09:00",
         "valor": 70
       },
       {
-        "hora": "13:27",
-        "valor": 44
+        "hora": "09:30",
+        "valor": 67
+      },
+      {
+        "hora": "14:06",
+        "valor": 42
       }
     ],
     "factores_impacto": [
@@ -78,7 +78,7 @@
         "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +59 puntos alcanzando un pico de 70/100. A lo largo de la jornada se han drenado 28 puntos con un nivel actual de 44/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
+    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +59 puntos alcanzando un pico de 70/100. A lo largo de la jornada se han drenado 30 puntos con un nivel actual de 42/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
     "fecha": "2026-10-16",
@@ -97,7 +97,7 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 44% de energía.",
+    "resumen_descanso": "Tu sueño ha sido reparador (7.3h) con un Body Battery al 42% de energía.",
     "estado_vfc": "VFC nocturna equilibrada en 53 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
@@ -553,6 +553,26 @@
       "hora": "13:26",
       "bpm": 96,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:36",
+      "bpm": 81,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:48",
+      "bpm": 74,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "13:58",
+      "bpm": 76,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "14:04",
+      "bpm": 77,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
     }
   ],
   "curva_fc_24h_stats": {
@@ -967,6 +987,26 @@
         {
           "hora": "13:26",
           "bpm": 96,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:36",
+          "bpm": 81,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:48",
+          "bpm": 74,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "13:58",
+          "bpm": 76,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "14:04",
+          "bpm": 77,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         }
       ],
