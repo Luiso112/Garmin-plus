@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-19 07:40:56",
+  "ultima_actualizacion": "2026-10-19 09:00:22",
   "semana_actual": "2026-W43",
   "dispositivos": {
     "fenix_7": {
@@ -7485,9 +7485,9 @@
   ],
   "acwr": {
     "fecha": "2026-10-19",
-    "carga_aguda_min_dia": 98.4,
-    "carga_cronica_min_dia": 85.0,
-    "ratio_acwr": 1.16,
+    "carga_aguda_min_dia": 75.7,
+    "carga_cronica_min_dia": 79.5,
+    "ratio_acwr": 0.95,
     "semaforo": "Zona óptima",
     "emoji": "🟩",
     "fatiga": {
@@ -7495,7 +7495,7 @@
       "motivos": [],
       "mensaje": "Todo en verde. Sin señales de alarma."
     },
-    "dias_usados": 14
+    "dias_usados": 15
   },
   "ai_coach_insights": {
     "fecha": "2026-10-18",
