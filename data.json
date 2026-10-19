@@ -1,7 +1,7 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-19 07:26:38",
-  "semana_actual": "2026-W42",
+  "ultima_actualizacion": "2026-10-19 07:28:47",
+  "semana_actual": "2026-W43",
   "dispositivos": {
     "fenix_7": {
       "nombre": "Garmin Fénix 7 Solar",
@@ -23,13 +23,13 @@
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (54 ms)",
+    "hrv_status": "Equilibrada (55 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (7.1h)",
+    "sueno_calidad": "Reparador (6.7h)",
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 54.515 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.6h) ha mantenido tu VFC en 58 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 94 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 55 ms.",
   "body_battery": {
     "actual": 75,
     "cargado": 53,
@@ -75,24 +75,24 @@
     "analisis_clinico": "Iniciaste el día con una recarga nocturna de +53 puntos alcanzando un pico de 75/100. A lo largo de la jornada se han drenado 1 puntos con un nivel actual de 75/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
-    "fecha": "2026-10-18",
-    "rhr": 48,
-    "hrv": 54,
-    "sueno_horas": 7.1,
-    "sueno_score": 78,
-    "pasos": 6509,
+    "fecha": "2026-10-19",
+    "rhr": 49,
+    "hrv": 55,
+    "sueno_horas": 6.7,
+    "sueno_score": 67,
+    "pasos": 94,
     "meta_pasos": 8000,
-    "pasos_semana": 54515,
-    "estres": 28,
+    "pasos_semana": 94,
+    "estres": 18,
     "vo2max": 37.0,
-    "min_intensidad": 49,
-    "intensidad_semana": 689,
+    "min_intensidad": 3,
+    "intensidad_semana": 3,
     "meta_intensidad": 150
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (7.1h) con un Body Battery al 75% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 54 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.7h) con un Body Battery al 75% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 55 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -125,10 +125,10 @@
   },
   "training_scores": {
     "endurance_score": {
-      "valor": 6800,
-      "nivel": "Bien entrenado",
-      "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
-      "color": "#10B981"
+      "valor": 4219,
+      "nivel": "En desarrollo",
+      "interpretacion": "Construyendo volumen aeróbico inicial.",
+      "color": "#F59E0B"
     },
     "hill_score": {
       "valor": 76,
@@ -137,9 +137,9 @@
       "color": "#00A3E0"
     },
     "training_effect_semanal": {
-      "aerobico": "5.0 (Impacto Sobresaliente)",
-      "anaerobico": "1.8 (Impacto Menor)",
-      "beneficio_principal": "Capacidad Aeróbica Máxima y Eficiencia Mitocondrial"
+      "aerobico": "1.2 (Recuperación Activa)",
+      "anaerobico": "0.0 (Sin Impacto)",
+      "beneficio_principal": "Recuperación y Regeneración"
     }
   },
   "curva_fc_24h": [
@@ -1301,100 +1301,17 @@
       }
     }
   },
-  "actividades": [
-    {
-      "fecha": "2026-10-13",
-      "nombre": "Ciclismo en sala",
-      "duracion": "49m 6s",
-      "distancia": "-",
-      "fc_media_max": "129.0 (Máx 176.0)",
-      "hr_recovery": "-23 ppm (🟡)",
-      "calorias": 448,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-18",
-      "nombre": "Fuerza",
-      "duracion": "42m 26s",
-      "distancia": "-",
-      "fc_media_max": "123.0 (Máx 176.0)",
-      "hr_recovery": "-8 ppm (⚠️)",
-      "calorias": 309,
-      "has_gps": false,
-      "gps": null
-    }
-  ],
+  "actividades": [],
   "desglose_diario": [
     {
-      "fecha": "2026-10-12",
-      "pasos": 7273,
-      "sueno": 7.5,
-      "sueno_score": 86,
-      "rhr": 47,
-      "estres": 17,
-      "hrv": 53,
-      "min_intensidad": 162
-    },
-    {
-      "fecha": "2026-10-13",
-      "pasos": 6199,
-      "sueno": 7.7,
-      "sueno_score": 87,
-      "rhr": 42,
-      "estres": 20,
-      "hrv": 67,
-      "min_intensidad": 78
-    },
-    {
-      "fecha": "2026-10-14",
-      "pasos": 5905,
-      "sueno": 7.0,
-      "sueno_score": 82,
-      "rhr": 45,
-      "estres": 23,
-      "hrv": 62,
-      "min_intensidad": 120
-    },
-    {
-      "fecha": "2026-10-15",
-      "pasos": 11216,
-      "sueno": 6.0,
-      "sueno_score": 73,
-      "rhr": 48,
-      "estres": 24,
-      "hrv": 53,
-      "min_intensidad": 144
-    },
-    {
-      "fecha": "2026-10-16",
-      "pasos": 8634,
-      "sueno": 7.3,
-      "sueno_score": 79,
-      "rhr": 51,
-      "estres": 28,
-      "hrv": 53,
-      "min_intensidad": 4
-    },
-    {
-      "fecha": "2026-10-17",
-      "pasos": 8779,
-      "sueno": 3.6,
-      "sueno_score": 37,
-      "rhr": 50,
-      "estres": 33,
-      "hrv": 64,
-      "min_intensidad": 132
-    },
-    {
-      "fecha": "2026-10-18",
-      "pasos": 6509,
-      "sueno": 7.1,
-      "sueno_score": 78,
-      "rhr": 48,
-      "estres": 28,
-      "hrv": 54,
-      "min_intensidad": 49
+      "fecha": "2026-10-19",
+      "pasos": 94,
+      "sueno": 6.7,
+      "sueno_score": 67,
+      "rhr": 49,
+      "estres": 18,
+      "hrv": 55,
+      "min_intensidad": 3
     }
   ],
   "historico_semanas": [
@@ -3379,6 +3296,28 @@
           "gps": null
         }
       ]
+    },
+    {
+      "semana": "2026-W43",
+      "pasos": 94,
+      "sueno": 6.7,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 55,
+      "estres": 18,
+      "dias": [
+        {
+          "fecha": "2026-10-19",
+          "pasos": 94,
+          "sueno": 6.7,
+          "sueno_score": 67,
+          "rhr": 49,
+          "estres": 18,
+          "hrv": 55,
+          "min_intensidad": 3
+        }
+      ],
+      "actividades": []
     }
   ],
   "semanas_detalle": {
@@ -5363,6 +5302,28 @@
           "gps": null
         }
       ]
+    },
+    "2026-W43": {
+      "semana": "2026-W43",
+      "pasos": 94,
+      "sueno": 6.7,
+      "rhr": 49,
+      "vo2": 37.0,
+      "hrv": 55,
+      "estres": 18,
+      "dias": [
+        {
+          "fecha": "2026-10-19",
+          "pasos": 94,
+          "sueno": 6.7,
+          "sueno_score": 67,
+          "rhr": 49,
+          "estres": 18,
+          "hrv": 55,
+          "min_intensidad": 3
+        }
+      ],
+      "actividades": []
     }
   },
   "rutas_gps": {
@@ -7470,10 +7431,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 54515,
+      "progreso": 94,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (109%)",
+      "estado": "¡SUPERADO! 🔥 (0%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -7484,10 +7445,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 689,
+      "progreso": 3,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (689 min)",
+      "estado": "¡Completado con Éxito! 🔥 (3 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
@@ -7512,7 +7473,7 @@
       "titulo": "Consistencia de Sueño (>7h) & VFC",
       "subtitulo": "Regeneración Celular & Sistema Inmune",
       "descripcion": "Dormir más de 7 horas en al menos 5 noches para estabilizar el sistema nervioso autónomo y mantener la VFC >50 ms.",
-      "progreso": 5,
+      "progreso": 0,
       "meta": 5,
       "unidad": "noches >7h",
       "estado": "Cerca del objetivo (Excelente consistencia)",
