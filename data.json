@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-19 09:00:22",
+  "ultima_actualizacion": "2026-10-19 14:00:19",
   "semana_actual": "2026-W43",
   "dispositivos": {
     "fenix_7": {
@@ -31,9 +31,9 @@
   },
   "active_intelligence": "Semana extraordinaria de volumen aeróbico con 94 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 55 ms.",
   "body_battery": {
-    "actual": 75,
+    "actual": 74,
     "cargado": 53,
-    "drenado": 1,
+    "drenado": 2,
     "max": 75,
     "min": 23,
     "descanso_nocturno": "Recuperación (+53 pts)",
@@ -44,20 +44,20 @@
         "valor": 23
       },
       {
-        "hora": "02:15",
-        "valor": 36
+        "hora": "02:42",
+        "valor": 40
       },
       {
-        "hora": "02:27",
-        "valor": 36
+        "hora": "02:45",
+        "valor": 40
       },
       {
-        "hora": "04:45",
-        "valor": 59
+        "hora": "05:21",
+        "valor": 63
       },
       {
-        "hora": "04:54",
-        "valor": 59
+        "hora": "05:30",
+        "valor": 63
       },
       {
         "hora": "06:57",
@@ -72,7 +72,7 @@
         "es_recuperacion": true
       }
     ],
-    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +53 puntos alcanzando un pico de 75/100. A lo largo de la jornada se han drenado 1 puntos con un nivel actual de 75/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
+    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +53 puntos alcanzando un pico de 75/100. A lo largo de la jornada se han drenado 2 puntos con un nivel actual de 74/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
     "fecha": "2026-10-19",
@@ -91,7 +91,7 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.7h) con un Body Battery al 75% de energía.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.7h) con un Body Battery al 74% de energía.",
     "estado_vfc": "VFC nocturna equilibrada en 55 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
@@ -507,6 +507,31 @@
       "hora": "07:12",
       "bpm": 63,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "07:22",
+      "bpm": 51,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "07:24",
+      "bpm": 55,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "07:30",
+      "bpm": 53,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "07:40",
+      "bpm": 68,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "07:44",
+      "bpm": 60,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
     }
   ],
   "curva_fc_24h_stats": {
@@ -881,6 +906,31 @@
         {
           "hora": "07:12",
           "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "07:22",
+          "bpm": 51,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "07:24",
+          "bpm": 55,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "07:30",
+          "bpm": 53,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "07:40",
+          "bpm": 68,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "07:44",
+          "bpm": 60,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         }
       ],
