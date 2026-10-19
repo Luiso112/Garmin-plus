@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-19 14:00:19",
+  "ultima_actualizacion": "2026-10-19 21:00:16",
   "semana_actual": "2026-W43",
   "dispositivos": {
     "fenix_7": {
@@ -44,24 +44,24 @@
         "valor": 23
       },
       {
-        "hora": "02:42",
-        "valor": 40
+        "hora": "04:57",
+        "valor": 60
       },
       {
-        "hora": "02:45",
-        "valor": 40
-      },
-      {
-        "hora": "05:21",
-        "valor": 63
-      },
-      {
-        "hora": "05:30",
-        "valor": 63
+        "hora": "05:00",
+        "valor": 60
       },
       {
         "hora": "06:57",
         "valor": 75
+      },
+      {
+        "hora": "14:57",
+        "valor": null
+      },
+      {
+        "hora": "14:57",
+        "valor": null
       }
     ],
     "factores_impacto": [
