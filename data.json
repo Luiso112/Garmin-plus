@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-20 17:16:08",
+  "ultima_actualizacion": "2026-10-20 19:50:51",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -47,30 +47,30 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (2 entrenos · 1890.5 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (0 entrenos · 381 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-json-2026-10-13-1641_to_2026-10-20-1641.json",
-        "periodo": "2026-10-13 a 2026-10-20",
-        "entrenamientos_registrados": 2,
-        "calorias_activas": 1890.5,
-        "pasos_registrados": 46176,
-        "hrv_media_sdnn": 56
+        "archivo": "health-export-json-2026-10-20-0000_to_2026-10-20-1945.json",
+        "periodo": "2026-10-19 a 2026-10-20",
+        "entrenamientos_registrados": 0,
+        "calorias_activas": 381,
+        "pasos_registrados": 11912,
+        "hrv_media_sdnn": 47
       }
     }
   },
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (55 ms)",
+    "hrv_status": "Equilibrada (51 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (6.7h)",
+    "sueno_calidad": "Reparador (6.9h)",
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 128 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 55 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 12.040 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.8h) ha mantenido tu VFC en 53 ms.",
   "body_battery": {
     "actual": 55,
     "cargado": 0,
@@ -81,19 +81,19 @@
     "momento_pico": "Pico del día (55 pts)",
     "curva_puntos": [
       {
-        "hora": "05:30",
+        "hora": "06:24",
         "valor": null
       },
       {
-        "hora": "05:30",
+        "hora": "06:24",
         "valor": null
       },
       {
-        "hora": "11:03",
+        "hora": "12:51",
         "valor": null
       },
       {
-        "hora": "11:03",
+        "hora": "12:51",
         "valor": null
       },
       {
@@ -108,7 +108,7 @@
     "factores_impacto": [
       {
         "nombre": "Sueño Nocturno",
-        "subtitulo": "6.7h reparador",
+        "subtitulo": "6.9h reparador",
         "impacto": "+0 ↑",
         "es_recuperacion": true
       },
@@ -122,24 +122,24 @@
     "analisis_clinico": "Iniciaste el día con una recarga nocturna de +0 puntos alcanzando un pico de 55/100. A lo largo de la jornada se han drenado 0 puntos con un nivel actual de 55/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
-    "fecha": "2026-10-19",
-    "rhr": 49,
-    "hrv": 55,
-    "sueno_horas": 6.7,
-    "sueno_score": 67,
-    "pasos": 128,
+    "fecha": "2026-10-20",
+    "rhr": 45,
+    "hrv": 51,
+    "sueno_horas": 6.9,
+    "sueno_score": 88,
+    "pasos": 11912,
     "meta_pasos": 8000,
-    "pasos_semana": 128,
-    "estres": 18,
+    "pasos_semana": 12040,
+    "estres": 22,
     "vo2max": 37.0,
-    "min_intensidad": 5,
-    "intensidad_semana": 5,
+    "min_intensidad": 45,
+    "intensidad_semana": 50,
     "meta_intensidad": 150
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.7h) con un Body Battery al 55% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 55 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.9h) con un Body Battery al 55% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 51 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -172,10 +172,10 @@
   },
   "training_scores": {
     "endurance_score": {
-      "valor": 4230,
-      "nivel": "En desarrollo",
-      "interpretacion": "Construyendo volumen aeróbico inicial.",
-      "color": "#F59E0B"
+      "valor": 5423,
+      "nivel": "Bien entrenado",
+      "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
+      "color": "#10B981"
     },
     "hill_score": {
       "valor": 76,
@@ -630,119 +630,28 @@
   },
   "actividades": [],
   "apple_health": {
-    "archivo_fuente": "health-export-json-2026-10-13-1641_to_2026-10-20-1641.json",
+    "archivo_fuente": "health-export-json-2026-10-20-0000_to_2026-10-20-1945.json",
     "rango": {
-      "inicio": "2026-10-13T14:41:13Z",
-      "fin": "2026-10-20T14:41:13Z",
-      "exportado": "2026-10-20T14:41:15Z"
+      "inicio": "2026-10-19T22:00:00Z",
+      "fin": "2026-10-20T17:45:20Z",
+      "exportado": "2026-10-20T17:45:20Z"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 1890.5,
-      "pasos_registrados": 46176,
-      "sesiones_entrenamiento": 2,
-      "sesiones_sueno": 16,
-      "hrv_media_sdnn_ms": 56
+      "calorias_activas_kcal": 381,
+      "pasos_registrados": 11912,
+      "sesiones_entrenamiento": 0,
+      "sesiones_sueno": 1,
+      "hrv_media_sdnn_ms": 47
     },
-    "entrenamientos": [
-      {
-        "fecha": "2026-10-13",
-        "nombre": "Ciclismo (Apple Watch)",
-        "tipo": "Cycling",
-        "inicio": "10-13 19:41:33",
-        "fin": "10-13 20:30:39",
-        "duracion": "49 min",
-        "duracion_segundos": 2946,
-        "calorias": 374,
-        "fc_media": 129,
-        "fc_max": 176,
-        "origen": "Health Sync"
-      },
-      {
-        "fecha": "2026-10-18",
-        "nombre": "Fuerza / Musculación (Apple Watch)",
-        "tipo": "Strength Training",
-        "inicio": "10-18 10:24:51",
-        "fin": "10-18 11:07:17",
-        "duracion": "21 min",
-        "duracion_segundos": 1273,
-        "calorias": 245,
-        "fc_media": null,
-        "fc_max": null,
-        "origen": "Health Sync"
-      }
-    ],
+    "entrenamientos": [],
     "desglose_diario": [
       {
-        "activeEnergyKcal": 395.4,
-        "basalEnergyKcal": 638.6,
-        "date": "2026-10-13",
-        "distanceKm": 1.29,
-        "exerciseMinutes": 49,
-        "flightsClimbed": 1,
-        "steps": 1359,
-        "workoutCount": 2
-      },
-      {
-        "activeEnergyKcal": 88,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-14",
-        "distanceKm": 6.15,
-        "flightsClimbed": 8,
-        "steps": 4793,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 235,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-15",
-        "distanceKm": 15.37,
-        "steps": 11477,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 235,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-16",
-        "distanceKm": 11.1,
-        "flightsClimbed": 8,
-        "steps": 8187,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 209,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-17",
-        "distanceKm": 10.47,
-        "flightsClimbed": 3,
-        "steps": 8213,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 419.1,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-18",
-        "distanceKm": 6.64,
-        "exerciseMinutes": 43,
-        "flightsClimbed": 6,
-        "steps": 5345,
-        "workoutCount": 2
-      },
-      {
-        "activeEnergyKcal": 184,
-        "basalEnergyKcal": 2159.9,
-        "date": "2026-10-19",
-        "distanceKm": 1.68,
-        "flightsClimbed": 1,
-        "steps": 3287,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 125,
+        "activeEnergyKcal": 381,
         "basalEnergyKcal": 1357,
         "date": "2026-10-20",
-        "distanceKm": 2.3,
-        "flightsClimbed": 1,
-        "steps": 3515,
+        "distanceKm": 7.27,
+        "flightsClimbed": 5,
+        "steps": 11912,
         "workoutCount": 0
       }
     ]
@@ -757,6 +666,16 @@
       "estres": 18,
       "hrv": 55,
       "min_intensidad": 5
+    },
+    {
+      "fecha": "2026-10-20",
+      "pasos": 11912,
+      "sueno": 6.9,
+      "sueno_score": 88,
+      "rhr": 45,
+      "estres": 22,
+      "hrv": 51,
+      "min_intensidad": 45
     }
   ],
   "historico_semanas": [
@@ -2744,12 +2663,12 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 128,
-      "sueno": 6.7,
-      "rhr": 49,
+      "pasos": 12040,
+      "sueno": 6.8,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 55,
-      "estres": 18,
+      "hrv": 53,
+      "estres": 20,
       "dias": [
         {
           "fecha": "2026-10-19",
@@ -2760,6 +2679,16 @@
           "estres": 18,
           "hrv": 55,
           "min_intensidad": 5
+        },
+        {
+          "fecha": "2026-10-20",
+          "pasos": 11912,
+          "sueno": 6.9,
+          "sueno_score": 88,
+          "rhr": 45,
+          "estres": 22,
+          "hrv": 51,
+          "min_intensidad": 45
         }
       ],
       "actividades": []
@@ -4750,12 +4679,12 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 128,
-      "sueno": 6.7,
-      "rhr": 49,
+      "pasos": 12040,
+      "sueno": 6.8,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 55,
-      "estres": 18,
+      "hrv": 53,
+      "estres": 20,
       "dias": [
         {
           "fecha": "2026-10-19",
@@ -4766,6 +4695,16 @@
           "estres": 18,
           "hrv": 55,
           "min_intensidad": 5
+        },
+        {
+          "fecha": "2026-10-20",
+          "pasos": 11912,
+          "sueno": 6.9,
+          "sueno_score": 88,
+          "rhr": 45,
+          "estres": 22,
+          "hrv": 51,
+          "min_intensidad": 45
         }
       ],
       "actividades": []
@@ -6876,10 +6815,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 128,
+      "progreso": 12040,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (0%)",
+      "estado": "¡SUPERADO! 🔥 (24%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -6890,10 +6829,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 5,
+      "progreso": 50,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (5 min)",
+      "estado": "¡Completado con Éxito! 🔥 (50 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
