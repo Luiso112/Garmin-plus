@@ -1002,7 +1002,10 @@
         html = `
           <section class="garmin-card p-4 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase font-bold text-slate-400">Garmin Fénix 7 Solar (Advanced Sleep)</span>
+              <span class="text-xs uppercase font-bold text-slate-400 flex items-center space-x-1.5">
+                <span class="w-2 h-2 rounded-full ${getDeviceSourceInfo(m.fecha).colorDot}"></span>
+                <span>${getDeviceSourceInfo(m.fecha).suenoFuente}</span>
+              </span>
               <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">Score ${m.sueno_score} · Excelente</span>
             </div>
             <div class="flex items-baseline space-x-2">
@@ -1690,26 +1693,76 @@
     // ========================================================
     // DE UN VISTAZO (AT A GLANCE): MOTOR DINÁMICO & PERSONALIZABLE
     // ========================================================
+    // HELPER UNIVERSAL DE ATRIBUCIÓN DE DISPOSITIVO POR DÍA Y MÉTRICA
+    function getDeviceSourceInfo(dateStr) {
+      if (!dateStr && appData && appData.metricas_clave) {
+        dateStr = appData.metricas_clave.fecha;
+      }
+      // Días conocidos registrados con Amazfit Helio Strap (Zepp)
+      const isAmazfit = dateStr === "2026-10-19" || dateStr === "2026-10-20";
+      if (isAmazfit) {
+        return {
+          tipo: "amazfit",
+          nombre: "Amazfit Helio",
+          full: "Amazfit Helio Strap",
+          colorBg: "bg-purple-500/15",
+          colorText: "text-purple-300",
+          colorDot: "bg-purple-400",
+          colorBorder: "border-purple-500/30",
+          icono: "activity",
+          suenoFuente: "Amazfit Helio Strap (Zepp)",
+          pasosFuente: "Amazfit Helio Strap (HealthKit)",
+          hrvFuente: "Amazfit BioTracker (Zepp)",
+          rhrFuente: "Amazfit Helio Strap"
+        };
+      }
+      return {
+        tipo: "garmin",
+        nombre: "Garmin Fénix 7",
+        full: "Garmin Fénix 7 Solar",
+        colorBg: "bg-[#00A3E0]/15",
+        colorText: "text-[#00A3E0]",
+        colorDot: "bg-[#00A3E0]",
+        colorBorder: "border-[#00A3E0]/30",
+        icono: "watch",
+        suenoFuente: "Garmin Fénix 7 Solar",
+        pasosFuente: "Garmin Fénix 7 Solar",
+        hrvFuente: "Garmin Firstbeat",
+        rhrFuente: "Garmin Elevate™ v4"
+      };
+    }
+
+    function renderDeviceBadgeHtml(devInfo, customLabel) {
+      const label = customLabel || devInfo.nombre;
+      return `
+        <span class="inline-flex items-center space-x-1 px-1.5 py-0.5 rounded text-[9px] font-bold ${devInfo.colorBg} ${devInfo.colorText} border ${devInfo.colorBorder}">
+          <span class="w-1.5 h-1.5 rounded-full ${devInfo.colorDot}"></span>
+          <span>${label}</span>
+        </span>
+      `;
+    }
+
     const GLANCE_METRICS_CATALOG = {
       sleep: {
-        id: 'sleep',
-        titulo: 'Sueño',
-        icono: 'moon',
-        colorIcon: 'text-indigo-400',
-        borderColor: 'border-t-indigo-500',
+        id: "sleep",
+        titulo: "Sueño",
+        icono: "moon",
+        colorIcon: "text-indigo-400",
+        borderColor: "border-t-indigo-500",
         renderCard: (data) => {
           const m = data.metricas_clave || {};
-          let dateStr = 'Hoy';
+          let dateStr = "Hoy";
           if (m.fecha) {
-            const p = m.fecha.split('-');
-            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-            dateStr = parseInt(p[2], 10) + ' ' + (months[parseInt(p[1], 10) - 1] || '');
+            const p = m.fecha.split("-");
+            const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+            dateStr = parseInt(p[2], 10) + " " + (months[parseInt(p[1], 10) - 1] || "");
           }
-          let syncStr = 'Sincronizado';
+          let syncStr = "Sincronizado";
           if (data.ultima_actualizacion) {
-            const timePart = data.ultima_actualizacion.split(' ')[1] || '';
-            syncStr = 'Sync ' + timePart.slice(0, 5);
+            const timePart = data.ultima_actualizacion.split(" ")[1] || "";
+            syncStr = "Sync " + timePart.slice(0, 5);
           }
+          const dev = getDeviceSourceInfo(m.fecha);
           return `
             <div onclick="openDetail('sleep')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-indigo-500">
               <div class="flex items-center justify-between text-xs text-slate-400">
@@ -1729,11 +1782,8 @@
                 </div>
                 <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">${dateStr}</span>
               </div>
-              <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-                <span class="flex items-center space-x-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                  <span class="text-purple-300 font-medium">Amazfit (Fusión)</span>
-                </span>
+              <div class="text-[10px] text-slate-400 flex items-center justify-between border-t border-[#1E2D3B] pt-1.5">
+                ${renderDeviceBadgeHtml(dev, dev.tipo === "amazfit" ? "Amazfit (Fusión)" : "Garmin Fénix 7")}
                 <span class="text-emerald-400 font-medium">${syncStr}</span>
               </div>
             </div>
@@ -1741,11 +1791,11 @@
         }
       },
       body_battery: {
-        id: 'body_battery',
-        titulo: 'Body Battery',
-        icono: 'battery-charging',
-        colorIcon: 'text-cyan-400',
-        borderColor: 'border-t-cyan-500',
+        id: "body_battery",
+        titulo: "Body Battery",
+        icono: "battery-charging",
+        colorIcon: "text-cyan-400",
+        borderColor: "border-t-cyan-500",
         renderCard: (data) => {
           const bb = data.body_battery || { actual: 64, cargado: 47, drenado: 39 };
           return `
@@ -1755,7 +1805,13 @@
                   <i data-lucide="battery-charging" class="w-4 h-4 text-cyan-400"></i>
                   <span class="font-semibold">Body Battery</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  <span class="inline-flex items-center space-x-1 px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#00A3E0]/15 text-[#00A3E0] border border-[#00A3E0]/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#00A3E0]"></span>
+                    <span>Garmin Firstbeat</span>
+                  </span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
                 <span class="text-3xl font-black text-white">${bb.actual}</span>
@@ -1770,13 +1826,14 @@
         }
       },
       rhr: {
-        id: 'rhr',
-        titulo: 'FC de Reposo',
-        icono: 'heart',
-        colorIcon: 'text-rose-500',
-        borderColor: 'border-t-rose-500',
+        id: "rhr",
+        titulo: "FC de Reposo",
+        icono: "heart",
+        colorIcon: "text-rose-500",
+        borderColor: "border-t-rose-500",
         renderCard: (data) => {
           const m = data.metricas_clave || {};
+          const dev = getDeviceSourceInfo(m.fecha);
           return `
             <div onclick="openDetail('rhr')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-rose-500">
               <div class="flex items-center justify-between text-xs text-slate-400">
@@ -1784,28 +1841,32 @@
                   <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
                   <span class="font-semibold">FC de Reposo</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  ${renderDeviceBadgeHtml(dev)}
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
                 <span class="text-3xl font-black text-white">${m.rhr || 42}</span>
                 <span class="text-xs text-slate-400">ppm</span>
               </div>
               <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-                <span>Media 7 días</span>
-                <span class="text-emerald-400 font-medium">47 ppm 🟢</span>
+                <span>Mínima nocturna</span>
+                <span class="text-emerald-400 font-medium">Óptima 🟢</span>
               </div>
             </div>
           `;
         }
       },
       hrv: {
-        id: 'hrv',
-        titulo: 'VFC (HRV Nocturna)',
-        icono: 'waveform',
-        colorIcon: 'text-emerald-400',
-        borderColor: 'border-t-emerald-500',
+        id: "hrv",
+        titulo: "VFC (HRV Nocturna)",
+        icono: "waveform",
+        colorIcon: "text-emerald-400",
+        borderColor: "border-t-emerald-500",
         renderCard: (data) => {
           const m = data.metricas_clave || {};
+          const dev = getDeviceSourceInfo(m.fecha);
           return `
             <div onclick="openDetail('hrv')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-emerald-500">
               <div class="flex items-center justify-between text-xs text-slate-400">
@@ -1813,34 +1874,35 @@
                   <i data-lucide="waveform" class="w-4 h-4 text-emerald-400"></i>
                   <span class="font-semibold">VFC (HRV)</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  ${renderDeviceBadgeHtml(dev, dev.tipo === "amazfit" ? "Amazfit BioTracker" : "Consenso Dual")}
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
                 <span class="text-3xl font-black text-white">${m.hrv || 67}</span>
                 <span class="text-xs text-slate-400">ms</span>
               </div>
               <div class="text-[10px] text-slate-400 flex justify-between border-t border-[#1E2D3B] pt-1.5">
-                <span class="flex items-center space-x-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  <span class="text-emerald-300 font-medium">Consenso Dual (Fénix+Amazfit)</span>
-                </span>
-                <span class="text-emerald-400 font-medium">50-55 ms</span>
+                <span>Rango basal</span>
+                <span class="text-emerald-400 font-medium">Equilibrada (50-55 ms)</span>
               </div>
             </div>
           `;
         }
       },
       steps: {
-        id: 'steps',
-        titulo: 'Pasos Diarios',
-        icono: 'footprints',
-        colorIcon: 'text-[#00A3E0]',
-        borderColor: 'border-t-[#00A3E0]',
+        id: "steps",
+        titulo: "Pasos Diarios",
+        icono: "footprints",
+        colorIcon: "text-[#00A3E0]",
+        borderColor: "border-t-[#00A3E0]",
         renderCard: (data) => {
           const m = data.metricas_clave || {};
           const stepsVal = m.pasos || 0;
           const metaVal = m.meta_pasos || 8000;
           const pct = Math.min(100, Math.round((stepsVal / metaVal) * 100));
+          const dev = getDeviceSourceInfo(m.fecha);
           return `
             <div onclick="openDetail('steps')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-[#00A3E0]">
               <div class="flex items-center justify-between text-xs text-slate-400">
@@ -1848,10 +1910,13 @@
                   <i data-lucide="footprints" class="w-4 h-4 text-[#00A3E0]"></i>
                   <span class="font-semibold">Pasos Totales</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  ${renderDeviceBadgeHtml(dev, dev.tipo === "amazfit" ? "Amazfit (HealthKit)" : "Garmin Fénix 7")}
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
-                <span class="text-2xl font-black text-white">${stepsVal.toLocaleString('es-ES')}</span>
+                <span class="text-2xl font-black text-white">${stepsVal.toLocaleString("es-ES")}</span>
                 <span class="text-xs text-slate-400">/ ${(metaVal/1000).toFixed(0)}k</span>
               </div>
               <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-1">
@@ -1862,16 +1927,17 @@
         }
       },
       intensity: {
-        id: 'intensity',
-        titulo: 'Minutos de Intensidad',
-        icono: 'flame',
-        colorIcon: 'text-amber-500',
-        borderColor: 'border-t-amber-500',
+        id: "intensity",
+        titulo: "Minutos de Intensidad",
+        icono: "flame",
+        colorIcon: "text-amber-500",
+        borderColor: "border-t-amber-500",
         renderCard: (data) => {
           const m = data.metricas_clave || {};
           const intVal = m.min_intensidad || 0;
           const metaInt = m.meta_intensidad || 150;
           const pct = Math.min(100, Math.round((intVal / metaInt) * 100));
+          const dev = getDeviceSourceInfo(m.fecha);
           return `
             <div onclick="openDetail('intensity')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-amber-500">
               <div class="flex items-center justify-between text-xs text-slate-400">
@@ -1879,7 +1945,10 @@
                   <i data-lucide="flame" class="w-4 h-4 text-amber-500"></i>
                   <span class="font-semibold">Intensidad</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  ${renderDeviceBadgeHtml(dev)}
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
                 <span class="text-2xl font-black text-white">${intVal}</span>
@@ -1893,16 +1962,17 @@
         }
       },
       stress: {
-        id: 'stress',
-        titulo: 'Nivel de Estrés',
-        icono: 'zap',
-        colorIcon: 'text-sky-400',
-        borderColor: 'border-t-sky-400',
+        id: "stress",
+        titulo: "Nivel de Estrés",
+        icono: "zap",
+        colorIcon: "text-sky-400",
+        borderColor: "border-t-sky-400",
         renderCard: (data) => {
           const m = data.metricas_clave || {};
           const stVal = m.estres || 8;
-          const nivel = stVal <= 25 ? 'Reposo' : (stVal <= 50 ? 'Bajo' : 'Medio');
-          const colorNivel = stVal <= 25 ? 'text-emerald-400' : 'text-amber-400';
+          const nivel = stVal <= 25 ? "Reposo" : (stVal <= 50 ? "Bajo" : "Medio");
+          const colorNivel = stVal <= 25 ? "text-emerald-400" : "text-amber-400";
+          const dev = getDeviceSourceInfo(m.fecha);
           return `
             <div onclick="openDetail('stress')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-sky-400">
               <div class="flex items-center justify-between text-xs text-slate-400">
@@ -1910,7 +1980,10 @@
                   <i data-lucide="zap" class="w-4 h-4 text-sky-400"></i>
                   <span class="font-semibold">Estrés</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  ${renderDeviceBadgeHtml(dev)}
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
                 <span class="text-3xl font-black text-white">${stVal}</span>
@@ -1925,13 +1998,13 @@
         }
       },
       readiness: {
-        id: 'readiness',
-        titulo: 'Disposición (Readiness)',
-        icono: 'activity',
-        colorIcon: 'text-emerald-400',
-        borderColor: 'border-t-emerald-400',
+        id: "readiness",
+        titulo: "Disposición (Readiness)",
+        icono: "activity",
+        colorIcon: "text-emerald-400",
+        borderColor: "border-t-emerald-400",
         renderCard: (data) => {
-          const r = data.disposicion_rendimiento || { score: 86, nivel: 'ÓPTIMA' };
+          const r = data.disposicion_rendimiento || { score: 86, nivel: "ÓPTIMA" };
           return `
             <div onclick="openDetail('readiness')" class="garmin-card garmin-card-interactive garmin-card-hover p-3.5 flex flex-col justify-between cursor-pointer border-t-2 border-t-emerald-400">
               <div class="flex items-center justify-between text-xs text-slate-400">
@@ -1939,7 +2012,13 @@
                   <i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
                   <span class="font-semibold">Disposición</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  <span class="inline-flex items-center space-x-1 px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span>Consenso Híbrido</span>
+                  </span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
                 <span class="text-3xl font-black text-white">${r.score}</span>
@@ -1954,11 +2033,11 @@
         }
       },
       vo2max: {
-        id: 'vo2max',
-        titulo: 'VO₂ Máx',
-        icono: 'wind',
-        colorIcon: 'text-teal-400',
-        borderColor: 'border-t-teal-400',
+        id: "vo2max",
+        titulo: "VO₂ Máx",
+        icono: "wind",
+        colorIcon: "text-teal-400",
+        borderColor: "border-t-teal-400",
         renderCard: (data) => {
           const m = data.metricas_clave || {};
           return `
@@ -1968,7 +2047,13 @@
                   <i data-lucide="wind" class="w-4 h-4 text-teal-400"></i>
                   <span class="font-semibold">VO₂ Máx</span>
                 </div>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                <div class="flex items-center space-x-1">
+                  <span class="inline-flex items-center space-x-1 px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#00A3E0]/15 text-[#00A3E0] border border-[#00A3E0]/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#00A3E0]"></span>
+                    <span>Garmin Firstbeat</span>
+                  </span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                </div>
               </div>
               <div class="my-2 flex items-baseline space-x-1">
                 <span class="text-3xl font-black text-white">${m.vo2max || 35.0}</span>
@@ -2307,11 +2392,13 @@
       const selActs = (appData.actividades || []).filter(a => a.fecha === selDay.fecha);
 
       if (selectedDayCard && selDay) {
+        const selDev = getDeviceSourceInfo(selDay.fecha);
         selectedDayCard.innerHTML = `
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-2">
               <i data-lucide="calendar" class="w-4 h-4 text-[#00A3E0]"></i>
               <h3 class="text-xs font-bold uppercase tracking-wider text-white">Día ${selDay.fecha}</h3>
+              ${renderDeviceBadgeHtml(selDev)}
             </div>
             <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">
               ${selActs.length > 0 ? selActs.length + ' Actividad(es)' : 'Descanso / Recuperación'}
@@ -2365,7 +2452,7 @@
       if (container) {
         container.innerHTML = `
           <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold border-b border-[#1E2D3B] pb-1.5 px-2">
-            <span>FECHA</span>
+            <span class="w-24">FECHA / ORIGEN</span>
             <span>PASOS</span>
             <span>SUEÑO</span>
             <span>VFC</span>
@@ -2380,8 +2467,12 @@
           row.className = `flex items-center justify-between text-xs py-2 px-2 rounded-xl cursor-pointer transition-all ${
             isSel ? 'bg-[#00A3E0]/15 border border-[#00A3E0]/40 text-white' : 'hover:bg-[#111A22] border border-transparent'
           }`;
+          const dayDev = getDeviceSourceInfo(day.fecha);
           row.innerHTML = `
-            <span class="font-bold ${isSel ? 'text-[#00A3E0]' : 'text-slate-300'}">${day.fecha.slice(5)}</span>
+            <div class="flex items-center space-x-1.5 w-24">
+              <span class="font-bold ${isSel ? 'text-[#00A3E0]' : 'text-slate-300'}">${day.fecha.slice(5)}</span>
+              <span class="text-[8px] font-bold px-1 py-0.2 rounded ${dayDev.colorBg} ${dayDev.colorText} border ${dayDev.colorBorder}">${dayDev.tipo === "amazfit" ? "AMAZFIT" : "GARMIN"}</span>
+            </div>
             <span class="text-slate-200 font-semibold">${day.pasos.toLocaleString('es-ES')}</span>
             <span class="text-indigo-400 font-medium">${day.sueno}h</span>
             <span class="text-emerald-400 font-medium">${day.hrv} ms</span>

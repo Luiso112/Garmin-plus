@@ -177,6 +177,37 @@ def _race_block(vo2):
     }
 
 
+def resolve_device_source(dt):
+    """
+    Identifica de forma determinista qué dispositivo registró las métricas de un día concreto.
+    19 y 20 de Octubre 2026: monitorizados con la pulsera Amazfit Helio Strap (Zepp / HealthKit).
+    Resto de fechas: Garmin Fénix 7 Solar.
+    """
+    if dt in ["2026-10-19", "2026-10-20"]:
+        return {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+        }
+    return {
+        "dispositivo": "Garmin Fénix 7 Solar",
+        "fuente_tipo": "garmin",
+        "badge_nombre": "Garmin Fénix 7",
+        "badge_icono": "watch",
+        "badge_color": "cyan",
+        "sueno_fuente": "Garmin Fénix 7 Solar",
+        "pasos_fuente": "Garmin Fénix 7 Solar",
+        "hrv_fuente": "Garmin Firstbeat",
+        "rhr_fuente": "Garmin Elevate v4"
+    }
+
+
 def parse_garmin_data():
     files = sorted(glob.glob(os.path.join(GARMIN_DIR, "*-W* - Garmin.md")))
     if not files:
@@ -214,15 +245,18 @@ def parse_garmin_data():
         week_days = []
         for dm in daily_matches:
             s_score = int(dm[3]) if dm[3] and dm[3].isdigit() else 85
+            dt_str = dm[0]
+            dev_src = resolve_device_source(dt_str)
             week_days.append({
-                "fecha": dm[0],
+                "fecha": dt_str,
                 "pasos": int(dm[1].replace(",", "").replace(".", "")),
                 "sueno": float(dm[2]),
                 "sueno_score": s_score,
                 "rhr": int(dm[4]),
                 "estres": int(dm[5]),
                 "hrv": int(dm[6]),
-                "min_intensidad": int(dm[7])
+                "min_intensidad": int(dm[7]),
+                "fuente_dispositivo": dev_src
             })
 
         act_matches = re.findall(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*([^\|]+)\s*\|\s*(\d+)\s*\|", content)
@@ -695,7 +729,8 @@ def parse_garmin_data():
                 "vo2max": latest_week["vo2"],
                 "min_intensidad": last_day["min_intensidad"],
                 "intensidad_semana": total_intensity_week,
-                "meta_intensidad": 150
+                "meta_intensidad": 150,
+                "fuente_dispositivo": resolve_device_source(last_day.get("fecha", datetime.date.today().isoformat()))
             },
             "morning_report": {
                 "saludo": "¡Buenos días, Luis!",

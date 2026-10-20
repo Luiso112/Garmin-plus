@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-20 19:52:25",
+  "ultima_actualizacion": "2026-10-20 20:34:13",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -134,7 +134,18 @@
     "vo2max": 37.0,
     "min_intensidad": 45,
     "intensidad_semana": 50,
-    "meta_intensidad": 150
+    "meta_intensidad": 150,
+    "fuente_dispositivo": {
+      "dispositivo": "Amazfit Helio Strap",
+      "fuente_tipo": "amazfit",
+      "badge_nombre": "Amazfit Helio",
+      "badge_icono": "activity",
+      "badge_color": "purple",
+      "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+      "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+      "hrv_fuente": "Amazfit BioTracker (Zepp)",
+      "rhr_fuente": "Amazfit Helio Strap"
+    }
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
@@ -756,7 +767,18 @@
       "rhr": 49,
       "estres": 18,
       "hrv": 55,
-      "min_intensidad": 5
+      "min_intensidad": 5,
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
     },
     {
       "fecha": "2026-10-20",
@@ -766,7 +788,18 @@
       "rhr": 45,
       "estres": 22,
       "hrv": 51,
-      "min_intensidad": 45
+      "min_intensidad": 45,
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
     }
   ],
   "historico_semanas": [
@@ -787,7 +820,18 @@
           "rhr": 49,
           "estres": 25,
           "hrv": 49,
-          "min_intensidad": 5
+          "min_intensidad": 5,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-06",
@@ -797,7 +841,18 @@
           "rhr": 46,
           "estres": 24,
           "hrv": 51,
-          "min_intensidad": 57
+          "min_intensidad": 57,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-07",
@@ -807,7 +862,18 @@
           "rhr": 47,
           "estres": 21,
           "hrv": 51,
-          "min_intensidad": 77
+          "min_intensidad": 77,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-08",
@@ -817,7 +883,18 @@
           "rhr": 47,
           "estres": 19,
           "hrv": 47,
-          "min_intensidad": 2
+          "min_intensidad": 2,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-09",
@@ -827,7 +904,18 @@
           "rhr": 45,
           "estres": 24,
           "hrv": 58,
-          "min_intensidad": 130
+          "min_intensidad": 130,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-10",
@@ -837,7 +925,18 @@
           "rhr": 49,
           "estres": 23,
           "hrv": 43,
-          "min_intensidad": 131
+          "min_intensidad": 131,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-11",
@@ -847,7 +946,18 @@
           "rhr": 48,
           "estres": 20,
           "hrv": 51,
-          "min_intensidad": 99
+          "min_intensidad": 99,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         }
       ],
       "actividades": [
@@ -2664,7 +2774,18 @@
           "rhr": 47,
           "estres": 17,
           "hrv": 53,
-          "min_intensidad": 162
+          "min_intensidad": 162,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-13",
@@ -2674,7 +2795,18 @@
           "rhr": 42,
           "estres": 20,
           "hrv": 67,
-          "min_intensidad": 78
+          "min_intensidad": 78,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-14",
@@ -2684,7 +2816,18 @@
           "rhr": 45,
           "estres": 23,
           "hrv": 62,
-          "min_intensidad": 120
+          "min_intensidad": 120,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-15",
@@ -2694,7 +2837,18 @@
           "rhr": 48,
           "estres": 24,
           "hrv": 53,
-          "min_intensidad": 144
+          "min_intensidad": 144,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-16",
@@ -2704,7 +2858,18 @@
           "rhr": 51,
           "estres": 28,
           "hrv": 53,
-          "min_intensidad": 4
+          "min_intensidad": 4,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-17",
@@ -2714,7 +2879,18 @@
           "rhr": 50,
           "estres": 33,
           "hrv": 64,
-          "min_intensidad": 132
+          "min_intensidad": 132,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-18",
@@ -2724,7 +2900,18 @@
           "rhr": 48,
           "estres": 28,
           "hrv": 54,
-          "min_intensidad": 49
+          "min_intensidad": 49,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         }
       ],
       "actividades": [
@@ -2769,7 +2956,18 @@
           "rhr": 49,
           "estres": 18,
           "hrv": 55,
-          "min_intensidad": 5
+          "min_intensidad": 5,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         },
         {
           "fecha": "2026-10-20",
@@ -2779,7 +2977,18 @@
           "rhr": 45,
           "estres": 22,
           "hrv": 51,
-          "min_intensidad": 45
+          "min_intensidad": 45,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
       ],
       "actividades": []
@@ -2803,7 +3012,18 @@
           "rhr": 49,
           "estres": 25,
           "hrv": 49,
-          "min_intensidad": 5
+          "min_intensidad": 5,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-06",
@@ -2813,7 +3033,18 @@
           "rhr": 46,
           "estres": 24,
           "hrv": 51,
-          "min_intensidad": 57
+          "min_intensidad": 57,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-07",
@@ -2823,7 +3054,18 @@
           "rhr": 47,
           "estres": 21,
           "hrv": 51,
-          "min_intensidad": 77
+          "min_intensidad": 77,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-08",
@@ -2833,7 +3075,18 @@
           "rhr": 47,
           "estres": 19,
           "hrv": 47,
-          "min_intensidad": 2
+          "min_intensidad": 2,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-09",
@@ -2843,7 +3096,18 @@
           "rhr": 45,
           "estres": 24,
           "hrv": 58,
-          "min_intensidad": 130
+          "min_intensidad": 130,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-10",
@@ -2853,7 +3117,18 @@
           "rhr": 49,
           "estres": 23,
           "hrv": 43,
-          "min_intensidad": 131
+          "min_intensidad": 131,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-11",
@@ -2863,7 +3138,18 @@
           "rhr": 48,
           "estres": 20,
           "hrv": 51,
-          "min_intensidad": 99
+          "min_intensidad": 99,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         }
       ],
       "actividades": [
@@ -4680,7 +4966,18 @@
           "rhr": 47,
           "estres": 17,
           "hrv": 53,
-          "min_intensidad": 162
+          "min_intensidad": 162,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-13",
@@ -4690,7 +4987,18 @@
           "rhr": 42,
           "estres": 20,
           "hrv": 67,
-          "min_intensidad": 78
+          "min_intensidad": 78,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-14",
@@ -4700,7 +5008,18 @@
           "rhr": 45,
           "estres": 23,
           "hrv": 62,
-          "min_intensidad": 120
+          "min_intensidad": 120,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-15",
@@ -4710,7 +5029,18 @@
           "rhr": 48,
           "estres": 24,
           "hrv": 53,
-          "min_intensidad": 144
+          "min_intensidad": 144,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-16",
@@ -4720,7 +5050,18 @@
           "rhr": 51,
           "estres": 28,
           "hrv": 53,
-          "min_intensidad": 4
+          "min_intensidad": 4,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-17",
@@ -4730,7 +5071,18 @@
           "rhr": 50,
           "estres": 33,
           "hrv": 64,
-          "min_intensidad": 132
+          "min_intensidad": 132,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         },
         {
           "fecha": "2026-10-18",
@@ -4740,7 +5092,18 @@
           "rhr": 48,
           "estres": 28,
           "hrv": 54,
-          "min_intensidad": 49
+          "min_intensidad": 49,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
         }
       ],
       "actividades": [
@@ -4785,7 +5148,18 @@
           "rhr": 49,
           "estres": 18,
           "hrv": 55,
-          "min_intensidad": 5
+          "min_intensidad": 5,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         },
         {
           "fecha": "2026-10-20",
@@ -4795,7 +5169,18 @@
           "rhr": 45,
           "estres": 22,
           "hrv": 51,
-          "min_intensidad": 45
+          "min_intensidad": 45,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
       ],
       "actividades": []
