@@ -714,6 +714,17 @@
 
         <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
           <div class="flex items-center space-x-3">
+            <i data-lucide="apple" class="w-6 h-6 text-rose-400"></i>
+            <div>
+              <h4 class="text-xs font-bold text-white">Apple Watch / HealthKit</h4>
+              <p class="text-[10px] text-slate-400" id="apple-watch-sub">Temperatura de muñeca, SpO2 & Salud</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-bold text-rose-400 bg-rose-500/10 px-2 py-1 rounded-full border border-rose-500/30" id="apple-watch-status">Sincronizado</span>
+        </div>
+
+        <div class="bg-[#111A22] p-3 rounded-xl border border-[#1E2D3B] flex items-center justify-between">
+          <div class="flex items-center space-x-3">
             <i data-lucide="server" class="w-6 h-6 text-cyan-400"></i>
             <div>
               <h4 class="text-xs font-bold text-white">Servidor HP EliteBook (Local)</h4>
@@ -1512,6 +1523,17 @@
         if (appData.dispositivos && appData.dispositivos.helio_strap) {
           const elHelio = document.getElementById('bat-helio');
           if (elHelio) elHelio.textContent = (appData.dispositivos.helio_strap.bateria || 92) + '%';
+        }
+        if (appData.dispositivos && appData.dispositivos.apple_watch) {
+          const aw = appData.dispositivos.apple_watch;
+          const elAwStatus = document.getElementById('apple-watch-status');
+          const elAwSub = document.getElementById('apple-watch-sub');
+          if (elAwStatus && aw.estado) {
+            elAwStatus.textContent = aw.detalle ? 'Sincronizado' : aw.estado;
+          }
+          if (elAwSub && aw.detalle) {
+            elAwSub.textContent = `${aw.detalle.entrenamientos_registrados} entrenos (${aw.detalle.calorias_activas} kcal) · Periodo: ${aw.detalle.periodo}`;
+          }
         }
 
         // 2. Readiness

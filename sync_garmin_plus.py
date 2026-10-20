@@ -12,7 +12,11 @@ import sys
 import subprocess
 import datetime
 
-GARMIN_FETCH_SCRIPT = "/home/luis/OBSIDIAN/Mi Cerebro Digital/000 NEXUS/HABILIDADES/captura/garmin-sync/garmin_fetch.py"
+GARMIN_FETCH_CANDIDATES = [
+    "/home/luis/OBSIDIAN/Mi Cerebro Digital/000 NEXUS/SKILLS/captura/garmin-sync/garmin_fetch.py",
+    "/home/luis/OBSIDIAN/Mi Cerebro Digital/000 NEXUS/HABILIDADES/captura/garmin-sync/garmin_fetch.py"
+]
+GARMIN_FETCH_SCRIPT = next((p for p in GARMIN_FETCH_CANDIDATES if os.path.exists(p)), GARMIN_FETCH_CANDIDATES[0])
 GENERATE_DATA_SCRIPT = "/home/luis/garmin-plus/generate_data.py"
 GARMIN_PLUS_DIR = "/home/luis/garmin-plus"
 LOG_FILE = "/home/luis/garmin-plus/sync.log"

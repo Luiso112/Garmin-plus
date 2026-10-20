@@ -5,8 +5,99 @@ import json
 import datetime
 
 GARMIN_DIR = "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/Garmin"
+APPLE_HEALTH_DIRS = [
+    "/home/luis/MI CEREBRO DIGITAL/350- 🌱 ACTIVOS/🎾 DEPORTE/AppleHealth",
+    "/home/luis/MI CEREBRO DIGITAL/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/AppleHealth",
+    "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/AppleHealth"
+]
+APPLE_HEALTH_DIR = APPLE_HEALTH_DIRS[0]
 OUTPUT_JSON = "/home/luis/garmin-plus/data.json"
 GPS_FILE = "/home/luis/garmin-plus/activities_gps.json"
+
+def parse_apple_health_export():
+    """
+    Localiza y procesa el archivo de exportación JSON más reciente de Apple Health / HealthKit.
+    Extrae entrenamientos, biometría (HRV, SpO2), sesiones de sueño y actividad diaria.
+    """
+    candidates = []
+    for d in APPLE_HEALTH_DIRS:
+        if os.path.exists(d):
+            for pat in ("health-export*.json", "apple_health*.json", "*.json"):
+                for p in glob.glob(os.path.join(d, pat)):
+                    if os.path.basename(p) != "README.md" and p not in candidates:
+                        candidates.append(p)
+    if not candidates:
+        return None
+    candidates.sort(key=lambda p: os.path.getmtime(p), reverse=True)
+    latest_file = candidates[0]
+
+    try:
+        with open(latest_file, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+    except Exception as e:
+        print("Aviso al parsear Apple Health JSON:", e)
+        return None
+
+    meta = raw.get("meta", {})
+    daily_raw = raw.get("activity", {}).get("daily", [])
+    workouts_raw = raw.get("activity", {}).get("workouts", [])
+    sleep_sessions = raw.get("sleep", {}).get("sessions", [])
+    heart = raw.get("additional", {}).get("heart", {})
+
+    workouts = []
+    seen_starts = set()
+    for w in workouts_raw:
+        st = w.get("start", "")
+        if st in seen_starts:
+            continue
+        seen_starts.add(st)
+        dur = w.get("durationSec", 0)
+        dur_str = f"{dur//60} min" if dur < 3600 else f"{dur//3600}h {(dur%3600)//60:02d}m"
+        w_type = w.get("type") or "Entrenamiento"
+        if w_type == "Cycling":
+            nombre = "Ciclismo (Apple Watch)"
+        elif w_type == "Strength Training":
+            nombre = "Fuerza / Musculación (Apple Watch)"
+        else:
+            nombre = f"{w_type} (Apple Watch)"
+
+        workouts.append({
+            "fecha": ("2026-" + st.split(" ")[0]) if " " in st else st,
+            "nombre": nombre,
+            "tipo": w_type,
+            "inicio": st,
+            "fin": w.get("end"),
+            "duracion": dur_str,
+            "duracion_segundos": dur,
+            "calorias": round(w.get("activeEnergyKcal", 0)),
+            "fc_media": w.get("averageHeartRateBpm"),
+            "fc_max": w.get("maxHeartRateBpm"),
+            "origen": w.get("source", "Apple Health")
+        })
+
+    total_active_kcal = sum(d.get("activeEnergyKcal", 0) for d in daily_raw)
+    total_steps = sum(d.get("steps", 0) for d in daily_raw)
+
+    hrv_samples = [s[2] for s in heart.get("streams", {}).get("hrvSDNN", {}).get("samples", []) if len(s) > 2]
+    hrv_avg = round(sum(hrv_samples) / len(hrv_samples)) if hrv_samples else None
+
+    return {
+        "archivo_fuente": os.path.basename(latest_file),
+        "rango": {
+            "inicio": meta.get("rangeStart"),
+            "fin": meta.get("rangeEnd"),
+            "exportado": meta.get("exportedAt")
+        },
+        "totales_semana": {
+            "calorias_activas_kcal": round(total_active_kcal, 1),
+            "pasos_registrados": total_steps,
+            "sesiones_entrenamiento": len(workouts),
+            "sesiones_sueno": len(sleep_sessions),
+            "hrv_media_sdnn_ms": hrv_avg
+        },
+        "entrenamientos": workouts,
+        "desglose_diario": daily_raw
+    }
 
 def _fmt(tiempo_s):
     """Segundos → 'Hh MMm SSs' / 'Mm SSs'."""
@@ -477,6 +568,24 @@ def parse_garmin_data():
             te_anaero_txt = "0.0 (Sin Impacto)"
             te_beneficio = "Recuperación y Regeneración"
 
+        apple_health_data = parse_apple_health_export()
+
+        if apple_health_data:
+            ah_totales = apple_health_data.get("totales_semana", {})
+            ah_rango = apple_health_data.get("rango", {})
+            aw_estado = f"Sincronizado vía Health Export Kit ({ah_totales.get('sesiones_entrenamiento', 0)} entrenos · {ah_totales.get('calorias_activas_kcal', 0)} kcal)"
+            aw_detalle = {
+                "archivo": apple_health_data.get("archivo_fuente"),
+                "periodo": f"{ah_rango.get('inicio', '')[:10]} a {ah_rango.get('fin', '')[:10]}",
+                "entrenamientos_registrados": ah_totales.get("sesiones_entrenamiento", 0),
+                "calorias_activas": ah_totales.get("calorias_activas_kcal", 0),
+                "pasos_registrados": ah_totales.get("pasos_registrados", 0),
+                "hrv_media_sdnn": ah_totales.get("hrv_media_sdnn_ms")
+            }
+        else:
+            aw_estado = "En espera de exportación"
+            aw_detalle = None
+
         data_payload = {
             "usuario": "Luis B.",
             "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -497,6 +606,14 @@ def parse_garmin_data():
                     "rol": "Monitorización complementaria, sueño & HRV nocturna",
                     "firmware": "v2.1.4",
                     "modo": "Fusión Híbrida Inteligente (Fénix 7 + Helio Strap)"
+                },
+                "apple_watch": {
+                    "nombre": "Apple Watch / HealthKit",
+                    "estado": aw_estado,
+                    "bateria": 85,
+                    "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
+                    "modo": "Exportación Local Segura On-Device",
+                    "detalle": aw_detalle
                 }
             },
             "disposicion_rendimiento": {
@@ -557,6 +674,7 @@ def parse_garmin_data():
         "curva_fc_24h_stats": heart_rate_24h_stats,
         "curva_fc_dias": curva_fc_dias,
         "actividades": activities,
+        "apple_health": apple_health_data,
         "desglose_diario": daily_stats,
         "historico_semanas": history_weeks[-10:],
         "semanas_detalle": weeks_dict,
