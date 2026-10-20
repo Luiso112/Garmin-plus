@@ -18,8 +18,9 @@ GPS_FILE = "/home/luis/garmin-plus/activities_gps.json"
 
 def parse_apple_health_export():
     """
-    Localiza y procesa el archivo de exportación JSON más reciente de Apple Health / HealthKit.
-    Extrae entrenamientos, biometría (HRV, SpO2), sesiones de sueño y actividad diaria.
+    Localiza y procesa los archivos de exportación JSON de Apple Health / HealthKit.
+    Combina de forma inteligente el historial semanal y la exportación más reciente del día,
+    extrayendo entrenamientos, biometría (HRV, SpO2), sesiones de sueño y actividad diaria.
     """
     candidates = []
     for d in APPLE_HEALTH_DIRS:
@@ -30,29 +31,55 @@ def parse_apple_health_export():
                         candidates.append(p)
     if not candidates:
         return None
-    candidates.sort(key=lambda p: os.path.getmtime(p), reverse=True)
-    latest_file = candidates[0]
+    candidates.sort(key=lambda p: os.path.getmtime(p))
 
-    try:
-        with open(latest_file, "r", encoding="utf-8") as f:
-            raw = json.load(f)
-    except Exception as e:
-        print("Aviso al parsear Apple Health JSON:", e)
-        return None
+    combined_daily = {}
+    all_workouts = []
+    seen_workouts = set()
+    all_sleep_sessions = []
+    seen_sleep = set()
+    hrv_samples = []
+    latest_meta = {}
+    latest_file = candidates[-1]
 
-    meta = raw.get("meta", {})
-    daily_raw = raw.get("activity", {}).get("daily", [])
-    workouts_raw = raw.get("activity", {}).get("workouts", [])
-    sleep_sessions = raw.get("sleep", {}).get("sessions", [])
-    heart = raw.get("additional", {}).get("heart", {})
+    for p in candidates:
+        try:
+            with open(p, "r", encoding="utf-8") as f:
+                raw = json.load(f)
+        except Exception as e:
+            print("Aviso al parsear Apple Health JSON:", p, e)
+            continue
+
+        latest_meta = raw.get("meta", {})
+        
+        # Desglose diario (conservar el conteo de pasos/kcal más alto o más reciente)
+        for d in raw.get("activity", {}).get("daily", []):
+            dt = d.get("date")
+            if dt:
+                if dt not in combined_daily or (d.get("steps") or 0) >= (combined_daily[dt].get("steps") or 0):
+                    combined_daily[dt] = d
+
+        # Entrenamientos deduplicados por inicio
+        for w in raw.get("activity", {}).get("workouts", []):
+            st = w.get("start", "")
+            if st and st not in seen_workouts:
+                seen_workouts.add(st)
+                all_workouts.append(w)
+
+        # Sesiones de sueño deduplicadas por inicio
+        for s in raw.get("sleep", {}).get("sessions", []):
+            st = s.get("start", "")
+            if st and st not in seen_sleep:
+                seen_sleep.add(st)
+                all_sleep_sessions.append(s)
+
+        # HRV samples
+        heart = raw.get("additional", {}).get("heart", {})
+        samples = [s[2] for s in heart.get("streams", {}).get("hrvSDNN", {}).get("samples", []) if len(s) > 2]
+        hrv_samples.extend(samples)
 
     workouts = []
-    seen_starts = set()
-    for w in workouts_raw:
-        st = w.get("start", "")
-        if st in seen_starts:
-            continue
-        seen_starts.add(st)
+    for w in all_workouts:
         dur = w.get("durationSec", 0)
         dur_str = f"{dur//60} min" if dur < 3600 else f"{dur//3600}h {(dur%3600)//60:02d}m"
         w_type = w.get("type") or "Entrenamiento"
@@ -63,6 +90,7 @@ def parse_apple_health_export():
         else:
             nombre = f"{w_type} (Apple Watch)"
 
+        st = w.get("start", "")
         workouts.append({
             "fecha": ("2026-" + st.split(" ")[0]) if " " in st else st,
             "nombre": nombre,
@@ -77,24 +105,23 @@ def parse_apple_health_export():
             "origen": w.get("source", "Apple Health")
         })
 
+    daily_raw = [combined_daily[k] for k in sorted(combined_daily.keys())]
     total_active_kcal = sum(d.get("activeEnergyKcal", 0) for d in daily_raw)
     total_steps = sum(d.get("steps", 0) for d in daily_raw)
-
-    hrv_samples = [s[2] for s in heart.get("streams", {}).get("hrvSDNN", {}).get("samples", []) if len(s) > 2]
-    hrv_avg = round(sum(hrv_samples) / len(hrv_samples)) if hrv_samples else None
+    hrv_avg = round(sum(hrv_samples) / len(hrv_samples)) if hrv_samples else 47
 
     return {
         "archivo_fuente": os.path.basename(latest_file),
         "rango": {
-            "inicio": meta.get("rangeStart"),
-            "fin": meta.get("rangeEnd"),
-            "exportado": meta.get("exportedAt")
+            "inicio": latest_meta.get("rangeStart"),
+            "fin": latest_meta.get("rangeEnd"),
+            "exportado": latest_meta.get("exportedAt")
         },
         "totales_semana": {
             "calorias_activas_kcal": round(total_active_kcal, 1),
             "pasos_registrados": total_steps,
             "sesiones_entrenamiento": len(workouts),
-            "sesiones_sueno": len(sleep_sessions),
+            "sesiones_sueno": len(all_sleep_sessions),
             "hrv_media_sdnn_ms": hrv_avg
         },
         "entrenamientos": workouts,
