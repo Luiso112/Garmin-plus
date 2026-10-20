@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-19 21:00:16",
+  "ultima_actualizacion": "2026-10-20 07:37:44",
   "semana_actual": "2026-W43",
   "dispositivos": {
     "fenix_7": {
@@ -29,7 +29,7 @@
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 94 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 55 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 128 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 55 ms.",
   "body_battery": {
     "actual": 74,
     "cargado": 53,
@@ -80,13 +80,13 @@
     "hrv": 55,
     "sueno_horas": 6.7,
     "sueno_score": 67,
-    "pasos": 94,
+    "pasos": 128,
     "meta_pasos": 8000,
-    "pasos_semana": 94,
+    "pasos_semana": 128,
     "estres": 18,
     "vo2max": 37.0,
-    "min_intensidad": 3,
-    "intensidad_semana": 3,
+    "min_intensidad": 5,
+    "intensidad_semana": 5,
     "meta_intensidad": 150
   },
   "morning_report": {
@@ -125,7 +125,7 @@
   },
   "training_scores": {
     "endurance_score": {
-      "valor": 4219,
+      "valor": 4230,
       "nivel": "En desarrollo",
       "interpretacion": "Construyendo volumen aeróbico inicial.",
       "color": "#F59E0B"
@@ -1355,13 +1355,13 @@
   "desglose_diario": [
     {
       "fecha": "2026-10-19",
-      "pasos": 94,
+      "pasos": 128,
       "sueno": 6.7,
       "sueno_score": 67,
       "rhr": 49,
       "estres": 18,
       "hrv": 55,
-      "min_intensidad": 3
+      "min_intensidad": 5
     }
   ],
   "historico_semanas": [
@@ -3349,7 +3349,7 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 94,
+      "pasos": 128,
       "sueno": 6.7,
       "rhr": 49,
       "vo2": 37.0,
@@ -3358,13 +3358,13 @@
       "dias": [
         {
           "fecha": "2026-10-19",
-          "pasos": 94,
+          "pasos": 128,
           "sueno": 6.7,
           "sueno_score": 67,
           "rhr": 49,
           "estres": 18,
           "hrv": 55,
-          "min_intensidad": 3
+          "min_intensidad": 5
         }
       ],
       "actividades": []
@@ -5355,7 +5355,7 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 94,
+      "pasos": 128,
       "sueno": 6.7,
       "rhr": 49,
       "vo2": 37.0,
@@ -5364,13 +5364,13 @@
       "dias": [
         {
           "fecha": "2026-10-19",
-          "pasos": 94,
+          "pasos": 128,
           "sueno": 6.7,
           "sueno_score": 67,
           "rhr": 49,
           "estres": 18,
           "hrv": 55,
-          "min_intensidad": 3
+          "min_intensidad": 5
         }
       ],
       "actividades": []
@@ -7481,7 +7481,7 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 94,
+      "progreso": 128,
       "meta": 50000,
       "unidad": "pasos",
       "estado": "¡SUPERADO! 🔥 (0%)",
@@ -7495,10 +7495,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 3,
+      "progreso": 5,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (3 min)",
+      "estado": "¡Completado con Éxito! 🔥 (5 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
