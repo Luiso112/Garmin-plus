@@ -6,9 +6,11 @@ import datetime
 
 GARMIN_DIR = "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/Garmin"
 APPLE_HEALTH_DIRS = [
+    "/home/luis/OBSIDIAN/Mi Cerebro Digital/350- 🌱 ACTIVOS/🎾 DEPORTE/AppleHealth",
+    "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/AppleHealth",
+    "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/Amazfit",
     "/home/luis/MI CEREBRO DIGITAL/350- 🌱 ACTIVOS/🎾 DEPORTE/AppleHealth",
-    "/home/luis/MI CEREBRO DIGITAL/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/AppleHealth",
-    "/home/luis/OBSIDIAN/Mi Cerebro Digital/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/AppleHealth"
+    "/home/luis/MI CEREBRO DIGITAL/300 - 📚 MEMORIA DIGITAL/🎾 DEPORTE/AppleHealth"
 ]
 APPLE_HEALTH_DIR = APPLE_HEALTH_DIRS[0]
 OUTPUT_JSON = "/home/luis/garmin-plus/data.json"
@@ -590,6 +592,32 @@ def parse_garmin_data():
             "usuario": "Luis B.",
             "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "semana_actual": latest_week["semana"],
+            "fuentes_metricas": {
+                "sueno": {
+                    "dispositivo": "Amazfit Helio Strap (Fusión Dual)",
+                    "icono": "activity",
+                    "badge": "Amazfit / Calibrado (+1.18x)",
+                    "color": "#A855F7"
+                },
+                "hrv": {
+                    "dispositivo": "Consenso Híbrido (Garmin Firstbeat + Amazfit BioTracker)",
+                    "icono": "waveform",
+                    "badge": "Consenso Dual (50-55 ms)",
+                    "color": "#10B981"
+                },
+                "rhr": {
+                    "dispositivo": "Sensor Óptico Idéntico (Garmin 49 ppm = Amazfit 49 ppm)",
+                    "icono": "heart",
+                    "badge": "Garmin Fénix 7",
+                    "color": "#00A3E0"
+                },
+                "pasos": {
+                    "dispositivo": "Garmin Fénix 7 + Amazfit (Detección de Presencia)",
+                    "icono": "footprints",
+                    "badge": "Fusión Activa",
+                    "color": "#00A3E0"
+                }
+            },
             "dispositivos": {
                 "fenix_7": {
                     "nombre": "Garmin Fénix 7 Solar",
