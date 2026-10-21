@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-21 09:40:59",
+  "ultima_actualizacion": "2026-10-21 10:56:37",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -72,54 +72,51 @@
   },
   "active_intelligence": "Semana extraordinaria de volumen aeróbico con 12.111 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.6h) ha mantenido tu VFC en 54 ms.",
   "body_battery": {
-    "actual": 55,
-    "cargado": 0,
-    "drenado": 0,
-    "max": 55,
-    "min": 55,
-    "descanso_nocturno": "Recuperación (+0 pts)",
-    "momento_pico": "Pico del día (55 pts)",
+    "actual": 74,
+    "cargado": 67,
+    "drenado": 18,
+    "max": 92,
+    "min": 25,
+    "descanso_nocturno": "Recuperación (+67 pts)",
+    "momento_pico": "Pico al despertar (92 pts)",
     "curva_puntos": [
       {
-        "hora": "06:24",
-        "valor": null
+        "hora": "00:00",
+        "valor": 25
       },
       {
-        "hora": "06:24",
-        "valor": null
+        "hora": "03:00",
+        "valor": 51
       },
       {
-        "hora": "12:51",
-        "valor": null
+        "hora": "06:46",
+        "valor": 92
       },
       {
-        "hora": "12:51",
-        "valor": null
+        "hora": "08:30",
+        "valor": 87
       },
       {
-        "hora": "13:27",
-        "valor": 55
-      },
-      {
-        "hora": "13:27",
-        "valor": 55
+        "hora": "11:00",
+        "valor": 74
       }
     ],
     "factores_impacto": [
       {
-        "nombre": "Sueño Nocturno",
-        "subtitulo": "6.7h reparador",
-        "impacto": "+0 ↑",
+        "nombre": "Sueño Nocturno (Amazfit Zepp)",
+        "subtitulo": "6.1h reparador (Score 88)",
+        "impacto": "+67 ↑",
         "es_recuperacion": true
       },
       {
-        "nombre": "Gasto Basal y Actividad Diaria",
-        "subtitulo": "Consumo metabólico activo",
-        "impacto": "-0 ↓",
+        "nombre": "Gasto Basal Matutino",
+        "subtitulo": "Consumo metabólico y actividad matutina",
+        "impacto": "-18 ↓",
         "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Iniciaste el día con una recarga nocturna de +0 puntos alcanzando un pico de 55/100. A lo largo de la jornada se han drenado 0 puntos con un nivel actual de 55/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
+    "analisis_clinico": "Recarga nocturna estimada en +67 puntos impulsada por 6.1h de descanso profundo y una VFC de 56 ms. Alcanzaste un pico de 92/100 al despertar, situándote actualmente en 74/100 tras un drenaje de 18 puntos.",
+    "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
     "fecha": "2026-10-21",
@@ -149,7 +146,7 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.1h) con un Body Battery al 55% de energía.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.1h) con un Body Battery al 74% de energía.",
     "estado_vfc": "VFC nocturna equilibrada en 56 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",

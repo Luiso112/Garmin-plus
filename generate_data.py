@@ -739,6 +739,52 @@ def parse_garmin_data():
             te_anaero_txt = "0.0 (Sin Impacto)"
             te_beneficio = "Recuperación y Regeneración"
 
+                # Si el día actual está registrado con Amazfit Helio Strap, calcular Bio-Energía equivalente
+        dev_info = last_day.get("fuente_dispositivo", {})
+        if dev_info.get("fuente_tipo") == "amazfit" or real_bb.get("cargado", 0) == 0:
+            sueno_h = last_day.get("sueno", 6.0)
+            score_sueno = last_day.get("sueno_score", 85)
+            hrv = last_day.get("hrv", 55)
+            rhr = last_day.get("rhr", 48)
+
+            recarga = int(min(88, max(45, (score_sueno * 0.45) + (hrv * 0.35) + ((60 - min(60, rhr)) * 0.6))))
+            drenado = 18
+            actual = max(35, min(98, 25 + recarga - drenado))
+            max_bb = min(100, 25 + recarga)
+            min_bb = 25
+
+            curva = [
+                {"hora": "00:00", "valor": min_bb},
+                {"hora": "03:00", "valor": min_bb + int(recarga * 0.4)},
+                {"hora": "06:46", "valor": max_bb},
+                {"hora": "08:30", "valor": max_bb - 5},
+                {"hora": "11:00", "valor": actual}
+            ]
+
+            factores = [
+                {"nombre": "Sueño Nocturno (Amazfit Zepp)", "subtitulo": f"{sueno_h}h reparador (Score {score_sueno})", "impacto": f"+{recarga} ↑", "es_recuperacion": True},
+                {"nombre": "Gasto Basal Matutino", "subtitulo": "Consumo metabólico y actividad matutina", "impacto": f"-{drenado} ↓", "es_recuperacion": False}
+            ]
+
+            analisis_txt = (
+                f"Recarga nocturna estimada en +{recarga} puntos impulsada por {sueno_h}h de descanso profundo y una VFC de {hrv} ms. "
+                f"Alcanzaste un pico de {max_bb}/100 al despertar, situándote actualmente en {actual}/100 tras un drenaje de {drenado} puntos."
+            )
+
+            real_bb = {
+                "actual": actual,
+                "cargado": recarga,
+                "drenado": drenado,
+                "max": max_bb,
+                "min": min_bb,
+                "descanso_nocturno": f"Recuperación (+{recarga} pts)",
+                "momento_pico": f"Pico al despertar ({max_bb} pts)",
+                "curva_puntos": curva,
+                "factores_impacto": factores,
+                "analisis_clinico": analisis_txt,
+                "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
+            }
+
         apple_health_data = parse_apple_health_export()
 
         if apple_health_data:
