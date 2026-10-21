@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-21 09:00:24",
+  "ultima_actualizacion": "2026-10-21 09:40:59",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -64,13 +64,13 @@
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (55 ms)",
+    "hrv_status": "Equilibrada (56 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (6.7h)",
+    "sueno_calidad": "Reparador (6.1h)",
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 128 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 55 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 12.111 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.6h) ha mantenido tu VFC en 54 ms.",
   "body_battery": {
     "actual": 55,
     "cargado": 0,
@@ -122,18 +122,18 @@
     "analisis_clinico": "Iniciaste el día con una recarga nocturna de +0 puntos alcanzando un pico de 55/100. A lo largo de la jornada se han drenado 0 puntos con un nivel actual de 55/100, manteniendo una excelente reserva de energía y recuperación vagal estable."
   },
   "metricas_clave": {
-    "fecha": "2026-10-19",
-    "rhr": 49,
-    "hrv": 55,
-    "sueno_horas": 6.7,
-    "sueno_score": 67,
-    "pasos": 128,
+    "fecha": "2026-10-21",
+    "rhr": 46,
+    "hrv": 56,
+    "sueno_horas": 6.1,
+    "sueno_score": 88,
+    "pasos": 71,
     "meta_pasos": 8000,
-    "pasos_semana": 128,
-    "estres": 18,
+    "pasos_semana": 12111,
+    "estres": 20,
     "vo2max": 37.0,
-    "min_intensidad": 5,
-    "intensidad_semana": 5,
+    "min_intensidad": 0,
+    "intensidad_semana": 50,
     "meta_intensidad": 150,
     "fuente_dispositivo": {
       "dispositivo": "Amazfit Helio Strap",
@@ -149,8 +149,8 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.7h) con un Body Battery al 55% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 55 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.1h) con un Body Battery al 55% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 56 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -183,10 +183,10 @@
   },
   "training_scores": {
     "endurance_score": {
-      "valor": 4230,
-      "nivel": "En desarrollo",
-      "interpretacion": "Construyendo volumen aeróbico inicial.",
-      "color": "#F59E0B"
+      "valor": 5429,
+      "nivel": "Bien entrenado",
+      "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
+      "color": "#10B981"
     },
     "hill_score": {
       "valor": 76,
@@ -675,6 +675,48 @@
       "estres": 18,
       "hrv": 55,
       "min_intensidad": 5,
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-10-20",
+      "pasos": 11912,
+      "sueno": 6.9,
+      "sueno_score": 88,
+      "rhr": 45,
+      "estres": 22,
+      "hrv": 51,
+      "min_intensidad": 45,
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-10-21",
+      "pasos": 71,
+      "sueno": 6.1,
+      "sueno_score": 88,
+      "rhr": 46,
+      "estres": 20,
+      "hrv": 56,
+      "min_intensidad": 0,
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -2827,11 +2869,11 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 128,
-      "sueno": 6.7,
-      "rhr": 49,
+      "pasos": 12111,
+      "sueno": 6.6,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 55,
+      "hrv": 54,
       "estres": 18,
       "dias": [
         {
@@ -2843,6 +2885,48 @@
           "estres": 18,
           "hrv": 55,
           "min_intensidad": 5,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-20",
+          "pasos": 11912,
+          "sueno": 6.9,
+          "sueno_score": 88,
+          "rhr": 45,
+          "estres": 22,
+          "hrv": 51,
+          "min_intensidad": 45,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-21",
+          "pasos": 71,
+          "sueno": 6.1,
+          "sueno_score": 88,
+          "rhr": 46,
+          "estres": 20,
+          "hrv": 56,
+          "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -4998,11 +5082,11 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 128,
-      "sueno": 6.7,
-      "rhr": 49,
+      "pasos": 12111,
+      "sueno": 6.6,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 55,
+      "hrv": 54,
       "estres": 18,
       "dias": [
         {
@@ -5014,6 +5098,48 @@
           "estres": 18,
           "hrv": 55,
           "min_intensidad": 5,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-20",
+          "pasos": 11912,
+          "sueno": 6.9,
+          "sueno_score": 88,
+          "rhr": 45,
+          "estres": 22,
+          "hrv": 51,
+          "min_intensidad": 45,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-21",
+          "pasos": 71,
+          "sueno": 6.1,
+          "sueno_score": 88,
+          "rhr": 46,
+          "estres": 20,
+          "hrv": 56,
+          "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -7135,10 +7261,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 128,
+      "progreso": 12111,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (0%)",
+      "estado": "¡SUPERADO! 🔥 (24%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -7149,10 +7275,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 5,
+      "progreso": 50,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (5 min)",
+      "estado": "¡Completado con Éxito! 🔥 (50 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
