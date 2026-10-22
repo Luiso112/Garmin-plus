@@ -16,18 +16,129 @@ APPLE_HEALTH_DIR = APPLE_HEALTH_DIRS[0]
 OUTPUT_JSON = "/home/luis/garmin-plus/data.json"
 GPS_FILE = "/home/luis/garmin-plus/activities_gps.json"
 
+def parse_apple_health_markdown(filepath):
+    """
+    Parsea archivos de exportación en formato Markdown (.md) generados por Health Export Kit.
+    Extrae la sesión de sueño, métricas vitales (HR, HRV, SpO2, FR) y resumen de actividad diaria.
+    """
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            text = f.read()
+    except Exception as e:
+        print("Error leyendo Apple Health Markdown:", filepath, e)
+        return None
+
+    # Fecha del archivo
+    dm = re.search(r"(\d{4}-\d{2}-\d{2})", text)
+    file_date = dm.group(1) if dm else ""
+
+    # Resumen diario de actividad
+    daily_list = []
+    m_act = re.search(r"## Activity.*?### Daily Summary.*?\n```csv\n(.*?)\n```", text, re.DOTALL)
+    if m_act:
+        lines = [l.strip() for l in m_act.group(1).splitlines() if l.strip()]
+        if len(lines) > 1:
+            header = [h.strip() for h in lines[0].split(",")]
+            for row in lines[1:]:
+                vals = [v.strip() for v in row.split(",")]
+                d_dict = dict(zip(header, vals))
+                dt = d_dict.get("date")
+                if dt:
+                    steps = int(d_dict.get("steps") or 0) if d_dict.get("steps") else 0
+                    activeKcal = float(d_dict.get("activeKcal") or 0.0) if d_dict.get("activeKcal") else 0.0
+                    dist = float(d_dict.get("distanceKm") or 0.0) if d_dict.get("distanceKm") else 0.0
+                    exMin = int(d_dict.get("exerciseMin") or 0) if d_dict.get("exerciseMin") else 0
+                    daily_list.append({
+                        "date": dt,
+                        "steps": steps,
+                        "activeEnergyKcal": activeKcal,
+                        "distanceKm": dist,
+                        "exerciseTimeMin": exMin
+                    })
+
+    # Sesiones de sueño
+    sleep_sessions = []
+    for sm in re.finditer(r"## Session\s+\d+\s+—\s+([0-9:]+)\s*→\s*([0-9:]+)\s*\(([^)]+)\)\s*\n(.*?)(?=\n## |\Z)", text, re.DOTALL):
+        s_start, s_end, s_dur, s_body = sm.group(1), sm.group(2), sm.group(3), sm.group(4)
+        m_asleep = re.search(r"asleep\s+(\d+)h\s*(\d+)?m?", s_body)
+        asleep_sec = 0
+        if m_asleep:
+            hrs = int(m_asleep.group(1))
+            mins = int(m_asleep.group(2) or 0)
+            asleep_sec = hrs * 3600 + mins * 60
+
+        m_eff = re.search(r"efficiency\s+(\d+)%", s_body)
+        eff = int(m_eff.group(1)) if m_eff else 90
+
+        m_src = re.search(r"source:\s*([^\n\r]+)", s_body)
+        source = m_src.group(1).strip() if m_src else "Zepp"
+
+        vitals = {}
+        m_hr = re.search(r"\|\s*heartRate\s*\|\s*bpm\s*\|\s*\d+\s*\|\s*([0-9\.]+)\s*\|\s*([0-9\.]+)\s*\|\s*([0-9\.]+)", s_body)
+        if m_hr:
+            vitals["heartRate"] = {
+                "min": float(m_hr.group(1)),
+                "avg": float(m_hr.group(2)),
+                "max": float(m_hr.group(3))
+            }
+        m_hrv = re.search(r"\|\s*hrvSDNN\s*\|\s*ms\s*\|\s*\d+\s*\|\s*([0-9\.]+)\s*\|\s*([0-9\.]+)\s*\|\s*([0-9\.]+)", s_body)
+        if m_hrv:
+            vitals["hrvSDNN"] = {
+                "min": float(m_hrv.group(1)),
+                "avg": float(m_hrv.group(2)),
+                "max": float(m_hrv.group(3))
+            }
+        m_spo2 = re.search(r"\|\s*oxygenSaturation\s*\|\s*%\s*\|\s*\d+\s*\|\s*([0-9\.]+)\s*\|\s*([0-9\.]+)\s*\|\s*([0-9\.]+)", s_body)
+        if m_spo2:
+            vitals["oxygenSaturation"] = {
+                "min": float(m_spo2.group(1)),
+                "avg": float(m_spo2.group(2)),
+                "max": float(m_spo2.group(3))
+            }
+
+        sleep_sessions.append({
+            "date": file_date,
+            "start": f"{file_date} {s_start}",
+            "end": f"{file_date} {s_end}",
+            "duration": s_dur,
+            "asleepSec": asleep_sec,
+            "sleepEfficiencyPct": eff,
+            "source": source,
+            "vitals": vitals
+        })
+
+    # Muestras de HRV
+    hrv_samples = []
+    m_hrv_stream = re.search(r"### HRV SDNN[^\n]*\n```csv\n(.*?)\n```", text, re.DOTALL)
+    if m_hrv_stream:
+        for line in m_hrv_stream.group(1).splitlines():
+            parts = line.strip().split(",")
+            if len(parts) >= 2:
+                try:
+                    hrv_samples.append(float(parts[1]))
+                except ValueError:
+                    pass
+
+    return {
+        "date": file_date,
+        "daily": daily_list,
+        "sleep": sleep_sessions,
+        "hrv_samples": hrv_samples
+    }
+
+
 def parse_apple_health_export():
     """
-    Localiza y procesa los archivos de exportación JSON de Apple Health / HealthKit.
+    Localiza y procesa los archivos de exportación JSON y Markdown (.md) de Apple Health / HealthKit.
     Combina de forma inteligente el historial semanal y la exportación más reciente del día,
     extrayendo entrenamientos, biometría (HRV, SpO2), sesiones de sueño y actividad diaria.
     """
     candidates = []
     for d in APPLE_HEALTH_DIRS:
         if os.path.exists(d):
-            for pat in ("health-export*.json", "apple_health*.json", "*.json"):
+            for pat in ("health-export*.json", "apple_health*.json", "*.json", "health-export*.md", "*.md"):
                 for p in glob.glob(os.path.join(d, pat)):
-                    if os.path.basename(p) != "README.md" and p not in candidates:
+                    if os.path.basename(p) not in ("README.md", "index.md") and p not in candidates:
                         candidates.append(p)
     if not candidates:
         return None
@@ -43,6 +154,28 @@ def parse_apple_health_export():
     latest_file = candidates[-1]
 
     for p in candidates:
+        if p.endswith(".md"):
+            md_res = parse_apple_health_markdown(p)
+            if not md_res:
+                continue
+            for d in md_res.get("daily", []):
+                dt = d.get("date")
+                if dt:
+                    if dt not in combined_daily or (d.get("steps") or 0) >= (combined_daily[dt].get("steps") or 0):
+                        combined_daily[dt] = d
+            for s in md_res.get("sleep", []):
+                st = s.get("start", "")
+                if st and st not in seen_sleep:
+                    seen_sleep.add(st)
+                    all_sleep_sessions.append(s)
+            hrv_samples.extend(md_res.get("hrv_samples", []))
+            latest_meta = {
+                "rangeStart": md_res.get("date"),
+                "rangeEnd": md_res.get("date"),
+                "exportedAt": md_res.get("date")
+            }
+            continue
+
         try:
             with open(p, "r", encoding="utf-8") as f:
                 raw = json.load(f)
@@ -180,10 +313,10 @@ def _race_block(vo2):
 def resolve_device_source(dt):
     """
     Identifica de forma determinista qué dispositivo registró las métricas de un día concreto.
-    19 y 20 de Octubre 2026: monitorizados con la pulsera Amazfit Helio Strap (Zepp / HealthKit).
+    19 a 22 de Octubre 2026: monitorizados con la pulsera Amazfit Helio Strap (Zepp / HealthKit).
     Resto de fechas: Garmin Fénix 7 Solar.
     """
-    if dt in ["2026-10-19", "2026-10-20", "2026-10-21"]:
+    if dt in ["2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22"]:
         return {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -210,15 +343,16 @@ def resolve_device_source(dt):
 
 def extract_apple_health_days():
     """
-    Extrae un diccionario de días completos y métricas desde los JSON de Apple Health,
+    Extrae un diccionario de días completos y métricas desde los JSON y Markdown (.md) de Apple Health,
     preservando el historial de fusión consolidado de días previos de la misma semana.
     """
     candidates = []
     for d in APPLE_HEALTH_DIRS:
         if os.path.exists(d):
-            for p in glob.glob(os.path.join(d, "*.json")):
-                if os.path.basename(p) != "README.md" and p not in candidates:
-                    candidates.append(p)
+            for pat in ("health-export*.json", "apple_health*.json", "*.json", "health-export*.md", "*.md"):
+                for p in glob.glob(os.path.join(d, pat)):
+                    if os.path.basename(p) not in ("README.md", "index.md") and p not in candidates:
+                        candidates.append(p)
     candidates.sort(key=os.path.getmtime)
 
     ah_by_date = {
@@ -235,6 +369,44 @@ def extract_apple_health_days():
     }
 
     for p in candidates:
+        if p.endswith(".md"):
+            md_res = parse_apple_health_markdown(p)
+            if not md_res:
+                continue
+            for d in md_res.get("daily", []):
+                dt = d.get("date")
+                if dt:
+                    if dt not in ah_by_date:
+                        ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0}
+                    st = d.get("steps") or 0
+                    if st > ah_by_date[dt].get("pasos", 0):
+                        ah_by_date[dt]["pasos"] = st
+
+            for s in md_res.get("sleep", []):
+                dt = s.get("date") or "2026-10-22"
+                asleep_sec = s.get("asleepSec") or 0
+                hours = round(asleep_sec / 3600.0, 1)
+                vitals = s.get("vitals", {})
+                hr_min = vitals.get("heartRate", {}).get("min")
+                hr_avg = vitals.get("heartRate", {}).get("avg")
+                hrv_avg = vitals.get("hrvSDNN", {}).get("avg")
+                eff = s.get("sleepEfficiencyPct") or 90
+                score = min(100, max(50, int(eff * 0.9)))
+
+                if dt not in ah_by_date:
+                    ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0}
+
+                if hours > 0:
+                    ah_by_date[dt]["sueno"] = hours
+                    ah_by_date[dt]["sueno_score"] = score
+                if hr_min:
+                    ah_by_date[dt]["rhr"] = int(hr_min)
+                elif hr_avg:
+                    ah_by_date[dt]["rhr"] = int(hr_avg)
+                if hrv_avg:
+                    ah_by_date[dt]["hrv"] = round(hrv_avg)
+            continue
+
         try:
             with open(p, "r", encoding="utf-8") as f:
                 raw = json.load(f)

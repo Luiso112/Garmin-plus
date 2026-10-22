@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-22 07:22:43",
+  "ultima_actualizacion": "2026-10-22 07:27:40",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -47,38 +47,38 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (0 entrenos · 10 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (0 entrenos · 5.0 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-json-2026-10-21-0000_to_2026-10-21-0737.json",
-        "periodo": "2026-10-20 a 2026-10-21",
+        "archivo": "health-export-md-2026-10-22-0000_to_2026-10-22-0722.md",
+        "periodo": "2026-10-22 a 2026-10-22",
         "entrenamientos_registrados": 0,
-        "calorias_activas": 10,
-        "pasos_registrados": 71,
-        "hrv_media_sdnn": 56
+        "calorias_activas": 5.0,
+        "pasos_registrados": 44,
+        "hrv_media_sdnn": 47
       }
     }
   },
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (56 ms)",
+    "hrv_status": "Equilibrada (31 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (6.1h)",
+    "sueno_calidad": "Reparador (6.9h)",
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 12.111 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 47 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.6h) ha mantenido tu VFC en 54 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 12.155 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 46 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 48 ms.",
   "body_battery": {
-    "actual": 74,
-    "cargado": 67,
+    "actual": 66,
+    "cargado": 59,
     "drenado": 18,
-    "max": 92,
+    "max": 84,
     "min": 25,
-    "descanso_nocturno": "Recuperación (+67 pts)",
-    "momento_pico": "Pico al despertar (92 pts)",
+    "descanso_nocturno": "Recuperación (+59 pts)",
+    "momento_pico": "Pico al despertar (84 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
@@ -86,26 +86,26 @@
       },
       {
         "hora": "03:00",
-        "valor": 51
+        "valor": 48
       },
       {
         "hora": "06:46",
-        "valor": 92
+        "valor": 84
       },
       {
         "hora": "08:30",
-        "valor": 87
+        "valor": 79
       },
       {
         "hora": "11:00",
-        "valor": 74
+        "valor": 66
       }
     ],
     "factores_impacto": [
       {
         "nombre": "Sueño Nocturno (Amazfit Zepp)",
-        "subtitulo": "6.1h reparador (Score 88)",
-        "impacto": "+67 ↑",
+        "subtitulo": "6.9h reparador (Score 87)",
+        "impacto": "+59 ↑",
         "es_recuperacion": true
       },
       {
@@ -115,18 +115,18 @@
         "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Recarga nocturna estimada en +67 puntos impulsada por 6.1h de descanso profundo y una VFC de 56 ms. Alcanzaste un pico de 92/100 al despertar, situándote actualmente en 74/100 tras un drenaje de 18 puntos.",
+    "analisis_clinico": "Recarga nocturna estimada en +59 puntos impulsada por 6.9h de descanso profundo y una VFC de 31 ms. Alcanzaste un pico de 84/100 al despertar, situándote actualmente en 66/100 tras un drenaje de 18 puntos.",
     "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
-    "fecha": "2026-10-21",
-    "rhr": 46,
-    "hrv": 56,
-    "sueno_horas": 6.1,
-    "sueno_score": 88,
-    "pasos": 71,
+    "fecha": "2026-10-22",
+    "rhr": 45,
+    "hrv": 31,
+    "sueno_horas": 6.9,
+    "sueno_score": 87,
+    "pasos": 44,
     "meta_pasos": 8000,
-    "pasos_semana": 12111,
+    "pasos_semana": 12155,
     "estres": 20,
     "vo2max": 37.0,
     "min_intensidad": 0,
@@ -146,8 +146,8 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.1h) con un Body Battery al 74% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 56 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.9h) con un Body Battery al 66% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 31 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -180,7 +180,7 @@
   },
   "training_scores": {
     "endurance_score": {
-      "valor": 5429,
+      "valor": 5433,
       "nivel": "Bien entrenado",
       "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
       "color": "#10B981"
@@ -1238,27 +1238,27 @@
   },
   "actividades": [],
   "apple_health": {
-    "archivo_fuente": "health-export-json-2026-10-21-0000_to_2026-10-21-0737.json",
+    "archivo_fuente": "health-export-md-2026-10-22-0000_to_2026-10-22-0722.md",
     "rango": {
-      "inicio": "2026-10-20T22:00:00Z",
-      "fin": "2026-10-21T05:37:23Z",
-      "exportado": "2026-10-21T05:37:23Z"
+      "inicio": "2026-10-22",
+      "fin": "2026-10-22",
+      "exportado": "2026-10-22"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 10,
-      "pasos_registrados": 71,
+      "calorias_activas_kcal": 5.0,
+      "pasos_registrados": 44,
       "sesiones_entrenamiento": 0,
       "sesiones_sueno": 1,
-      "hrv_media_sdnn_ms": 56
+      "hrv_media_sdnn_ms": 47
     },
     "entrenamientos": [],
     "desglose_diario": [
       {
-        "activeEnergyKcal": 10,
-        "date": "2026-10-21",
-        "distanceKm": 0.04,
-        "steps": 71,
-        "workoutCount": 0
+        "date": "2026-10-22",
+        "steps": 44,
+        "activeEnergyKcal": 5.0,
+        "distanceKm": 0.01,
+        "exerciseTimeMin": 0
       }
     ]
   },
@@ -1313,6 +1313,27 @@
       "rhr": 46,
       "estres": 20,
       "hrv": 56,
+      "min_intensidad": 0,
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-10-22",
+      "pasos": 44,
+      "sueno": 6.9,
+      "sueno_score": 87,
+      "rhr": 45,
+      "estres": 20,
+      "hrv": 31,
       "min_intensidad": 0,
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -3466,11 +3487,11 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 12111,
-      "sueno": 6.6,
-      "rhr": 47,
+      "pasos": 12155,
+      "sueno": 6.7,
+      "rhr": 46,
       "vo2": 37.0,
-      "hrv": 54,
+      "hrv": 48,
       "estres": 18,
       "dias": [
         {
@@ -3523,6 +3544,27 @@
           "rhr": 46,
           "estres": 20,
           "hrv": 56,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-22",
+          "pasos": 44,
+          "sueno": 6.9,
+          "sueno_score": 87,
+          "rhr": 45,
+          "estres": 20,
+          "hrv": 31,
           "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -5679,11 +5721,11 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 12111,
-      "sueno": 6.6,
-      "rhr": 47,
+      "pasos": 12155,
+      "sueno": 6.7,
+      "rhr": 46,
       "vo2": 37.0,
-      "hrv": 54,
+      "hrv": 48,
       "estres": 18,
       "dias": [
         {
@@ -5736,6 +5778,27 @@
           "rhr": 46,
           "estres": 20,
           "hrv": 56,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-22",
+          "pasos": 44,
+          "sueno": 6.9,
+          "sueno_score": 87,
+          "rhr": 45,
+          "estres": 20,
+          "hrv": 31,
           "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -7858,7 +7921,7 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 12111,
+      "progreso": 12155,
       "meta": 50000,
       "unidad": "pasos",
       "estado": "¡SUPERADO! 🔥 (24%)",
