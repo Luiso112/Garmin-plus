@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-24 13:17:18",
+  "ultima_actualizacion": "2026-10-24 13:25:16",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -47,16 +47,16 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (4 entrenos · 2510.9 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (6 entrenos · 2621.9 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-json-2026-10-17-1256_to_2026-10-24-1256.json",
-        "periodo": "2026-10-17 a 2026-10-24",
-        "entrenamientos_registrados": 4,
-        "calorias_activas": 2510.9,
-        "pasos_registrados": 52052,
+        "archivo": "health-export-json-2026-10-24-0000_to_2026-10-24-1302.json",
+        "periodo": "2026-10-23 a 2026-10-24",
+        "entrenamientos_registrados": 6,
+        "calorias_activas": 2621.9,
+        "pasos_registrados": 52777,
         "hrv_media_sdnn": 54
       }
     }
@@ -70,7 +70,7 @@
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 52.052 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (5.1h) ha mantenido tu VFC en 48 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 52.777 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 50 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (5.1h) ha mantenido tu VFC en 46 ms.",
   "body_battery": {
     "actual": 66,
     "cargado": 59,
@@ -124,9 +124,9 @@
     "hrv": 38,
     "sueno_horas": 7.2,
     "sueno_score": 86,
-    "pasos": 6747,
+    "pasos": 7472,
     "meta_pasos": 8000,
-    "pasos_semana": 52052,
+    "pasos_semana": 52777,
     "estres": 20,
     "vo2max": 37.0,
     "min_intensidad": 0,
@@ -1240,35 +1240,57 @@
     {
       "fecha": "2026-10-24",
       "nombre": "Entrenamiento de Fuerza (Amazfit)",
-      "duracion": "1h 00m",
+      "duracion": "1h 03m",
       "distancia": "-",
-      "fc_media_max": "120 (148) ppm",
+      "fc_media_max": "120 (161) ppm",
       "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 350,
+      "calorias": 606,
+      "has_gps": false,
+      "gps": null
+    },
+    {
+      "fecha": "2026-10-18",
+      "nombre": "Entrenamiento de Fuerza (Connect)",
+      "duracion": "42 min",
+      "distancia": "-",
+      "fc_media_max": "-",
+      "hr_recovery": "-35 ppm en 1 min",
+      "calorias": 245,
+      "has_gps": false,
+      "gps": null
+    },
+    {
+      "fecha": "2026-10-24",
+      "nombre": "Other (Amazfit)",
+      "duracion": "10 min",
+      "distancia": "-",
+      "fc_media_max": "96 (111) ppm",
+      "hr_recovery": "-35 ppm en 1 min",
+      "calorias": 68,
       "has_gps": false,
       "gps": null
     }
   ],
   "apple_health": {
-    "archivo_fuente": "health-export-json-2026-10-17-1256_to_2026-10-24-1256.json",
+    "archivo_fuente": "health-export-json-2026-10-24-0000_to_2026-10-24-1302.json",
     "rango": {
-      "inicio": "2026-10-17T10:56:28Z",
-      "fin": "2026-10-24T10:56:28Z",
-      "exportado": "2026-10-24T10:56:31Z"
+      "inicio": "2026-10-23T22:00:00Z",
+      "fin": "2026-10-24T11:02:44Z",
+      "exportado": "2026-10-24T11:02:46Z"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 2510.9,
-      "pasos_registrados": 52052,
-      "sesiones_entrenamiento": 4,
-      "sesiones_sueno": 13,
+      "calorias_activas_kcal": 2621.9,
+      "pasos_registrados": 52777,
+      "sesiones_entrenamiento": 6,
+      "sesiones_sueno": 14,
       "hrv_media_sdnn_ms": 54
     },
     "entrenamientos": [
       {
         "fecha": "2026-10-18",
-        "nombre": "Fuerza / Musculación (Apple Watch)",
+        "nombre": "Entrenamiento de Fuerza (Health Sync)",
         "tipo": "Strength Training",
-        "inicio": "10-18 10:24:51",
+        "inicio": "2026-10-18 10:24:51",
         "fin": "10-18 11:07:17",
         "duracion": "21 min",
         "duracion_segundos": 1273,
@@ -1278,10 +1300,23 @@
         "origen": "Health Sync"
       },
       {
+        "fecha": "2026-10-18",
+        "nombre": "Entrenamiento de Fuerza (Connect)",
+        "tipo": "Strength Training",
+        "inicio": "2026-10-18 10:24:51",
+        "fin": "10-18 11:07:17",
+        "duracion": "42 min",
+        "duracion_segundos": 2547,
+        "calorias": 245,
+        "fc_media": null,
+        "fc_max": null,
+        "origen": "Connect"
+      },
+      {
         "fecha": "2026-10-23",
-        "nombre": "Other (Apple Watch)",
+        "nombre": "Other (Amazfit)",
         "tipo": "Other",
-        "inicio": "10-23 10:26:31",
+        "inicio": "2026-10-23 10:26:31",
         "fin": "10-23 10:28:32",
         "duracion": "2 min",
         "duracion_segundos": 121,
@@ -1292,9 +1327,9 @@
       },
       {
         "fecha": "2026-10-24",
-        "nombre": "Other (Apple Watch)",
+        "nombre": "Other (Amazfit)",
         "tipo": "Other",
-        "inicio": "10-24 00:06:58",
+        "inicio": "2026-10-24 00:06:58",
         "fin": "10-24 00:10:17",
         "duracion": "3 min",
         "duracion_segundos": 199,
@@ -1305,15 +1340,28 @@
       },
       {
         "fecha": "2026-10-24",
-        "nombre": "Fuerza / Musculación (Apple Watch)",
+        "nombre": "Entrenamiento de Fuerza (Amazfit)",
         "tipo": "Strength Training",
-        "inicio": "10-24 11:03:26",
+        "inicio": "2026-10-24 11:03:26",
         "fin": "10-24 12:06:57",
         "duracion": "1h 03m",
         "duracion_segundos": 3811,
         "calorias": 606,
         "fc_media": 120,
         "fc_max": 161,
+        "origen": "Zepp"
+      },
+      {
+        "fecha": "2026-10-24",
+        "nombre": "Other (Amazfit)",
+        "tipo": "Other",
+        "inicio": "2026-10-24 12:16:38",
+        "fin": "12:26:52",
+        "duracion": "10 min",
+        "duracion_segundos": 614,
+        "calorias": 68,
+        "fc_media": 96,
+        "fc_max": 111,
         "origen": "Zepp"
       }
     ],
@@ -1381,14 +1429,14 @@
         "workoutCount": 1
       },
       {
-        "activeEnergyKcal": 455.1,
+        "activeEnergyKcal": 566.1,
         "basalEnergyKcal": 126.6,
         "date": "2026-10-24",
-        "distanceKm": 3.47,
-        "exerciseMinutes": 66,
+        "distanceKm": 3.91,
+        "exerciseMinutes": 76,
         "flightsClimbed": 1,
-        "steps": 6747,
-        "workoutCount": 2
+        "steps": 7472,
+        "workoutCount": 3
       }
     ]
   },
@@ -1482,9 +1530,9 @@
       "pasos": 8601,
       "sueno": 6.1,
       "sueno_score": 88,
-      "rhr": 46,
+      "rhr": 52,
       "estres": 20,
-      "hrv": 56,
+      "hrv": 38,
       "min_intensidad": 0,
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1542,7 +1590,7 @@
     },
     {
       "fecha": "2026-10-24",
-      "pasos": 6747,
+      "pasos": 7472,
       "sueno": 7.2,
       "sueno_score": 86,
       "rhr": 52,
@@ -3701,11 +3749,11 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 52052,
+      "pasos": 52777,
       "sueno": 5.1,
-      "rhr": 49,
+      "rhr": 50,
       "vo2": 37.0,
-      "hrv": 48,
+      "hrv": 46,
       "estres": 18,
       "dias": [
         {
@@ -3797,9 +3845,9 @@
           "pasos": 8601,
           "sueno": 6.1,
           "sueno_score": 88,
-          "rhr": 46,
+          "rhr": 52,
           "estres": 20,
-          "hrv": 56,
+          "hrv": 38,
           "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -3857,7 +3905,7 @@
         },
         {
           "fecha": "2026-10-24",
-          "pasos": 6747,
+          "pasos": 7472,
           "sueno": 7.2,
           "sueno_score": 86,
           "rhr": 52,
@@ -3881,11 +3929,33 @@
         {
           "fecha": "2026-10-24",
           "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 00m",
+          "duracion": "1h 03m",
           "distancia": "-",
-          "fc_media_max": "120 (148) ppm",
+          "fc_media_max": "120 (161) ppm",
           "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 350,
+          "calorias": 606,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-18",
+          "nombre": "Entrenamiento de Fuerza (Connect)",
+          "duracion": "42 min",
+          "distancia": "-",
+          "fc_media_max": "-",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 245,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Other (Amazfit)",
+          "duracion": "10 min",
+          "distancia": "-",
+          "fc_media_max": "96 (111) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 68,
           "has_gps": false,
           "gps": null
         }
@@ -6031,11 +6101,11 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 52052,
+      "pasos": 52777,
       "sueno": 5.1,
-      "rhr": 49,
+      "rhr": 50,
       "vo2": 37.0,
-      "hrv": 48,
+      "hrv": 46,
       "estres": 18,
       "dias": [
         {
@@ -6127,9 +6197,9 @@
           "pasos": 8601,
           "sueno": 6.1,
           "sueno_score": 88,
-          "rhr": 46,
+          "rhr": 52,
           "estres": 20,
-          "hrv": 56,
+          "hrv": 38,
           "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -6187,7 +6257,7 @@
         },
         {
           "fecha": "2026-10-24",
-          "pasos": 6747,
+          "pasos": 7472,
           "sueno": 7.2,
           "sueno_score": 86,
           "rhr": 52,
@@ -6211,11 +6281,33 @@
         {
           "fecha": "2026-10-24",
           "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 00m",
+          "duracion": "1h 03m",
           "distancia": "-",
-          "fc_media_max": "120 (148) ppm",
+          "fc_media_max": "120 (161) ppm",
           "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 350,
+          "calorias": 606,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-18",
+          "nombre": "Entrenamiento de Fuerza (Connect)",
+          "duracion": "42 min",
+          "distancia": "-",
+          "fc_media_max": "-",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 245,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Other (Amazfit)",
+          "duracion": "10 min",
+          "distancia": "-",
+          "fc_media_max": "96 (111) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 68,
           "has_gps": false,
           "gps": null
         }
@@ -8327,10 +8419,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 52052,
+      "progreso": 52777,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (104%)",
+      "estado": "¡SUPERADO! 🔥 (106%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",

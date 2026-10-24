@@ -193,10 +193,17 @@ def parse_apple_health_export():
                     combined_daily[dt] = d
 
         # Entrenamientos deduplicados por inicio
+        file_date_match = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(p))
+        fallback_date = file_date_match.group(1) if file_date_match else datetime.date.today().isoformat()
+
         for w in raw.get("activity", {}).get("workouts", []):
             st = w.get("start", "")
-            if st and st not in seen_workouts:
-                seen_workouts.add(st)
+            # Si st es solo hora "11:03:26", asociarle la fecha del fichero
+            full_st = f"{fallback_date} {st}" if (len(st) == 8 and st.count(":") == 2) else (f"2026-{st}" if (len(st) > 8 and not st.startswith("2026")) else st)
+            w["_full_start"] = full_st
+            w_key = f"{full_st}_{w.get('type')}_{w.get('durationSec')}"
+            if w_key not in seen_workouts:
+                seen_workouts.add(w_key)
                 all_workouts.append(w)
 
         # Sesiones de sueño deduplicadas por inicio
@@ -216,16 +223,20 @@ def parse_apple_health_export():
         dur = w.get("durationSec", 0)
         dur_str = f"{dur//60} min" if dur < 3600 else f"{dur//3600}h {(dur%3600)//60:02d}m"
         w_type = w.get("type") or "Entrenamiento"
-        if w_type == "Cycling":
-            nombre = "Ciclismo (Apple Watch)"
-        elif w_type == "Strength Training":
-            nombre = "Fuerza / Musculación (Apple Watch)"
-        else:
-            nombre = f"{w_type} (Apple Watch)"
+        orig = w.get("source", "Apple Health")
+        disp_label = "Amazfit" if orig == "Zepp" else ("Apple Watch" if orig in ("Apple Health", "Health") else orig)
 
-        st = w.get("start", "")
+        if w_type == "Cycling":
+            nombre = f"Ciclismo ({disp_label})"
+        elif w_type == "Strength Training":
+            nombre = f"Entrenamiento de Fuerza ({disp_label})"
+        else:
+            nombre = f"{w_type} ({disp_label})"
+
+        st = w.get("_full_start") or w.get("start", "")
+        w_fecha = st[:10] if (len(st) >= 10 and st[4] == "-") else datetime.date.today().isoformat()
         workouts.append({
-            "fecha": ("2026-" + st.split(" ")[0]) if " " in st else st,
+            "fecha": w_fecha,
             "nombre": nombre,
             "tipo": w_type,
             "inicio": st,
@@ -235,7 +246,7 @@ def parse_apple_health_export():
             "calorias": round(w.get("activeEnergyKcal", 0)),
             "fc_media": w.get("averageHeartRateBpm"),
             "fc_max": w.get("maxHeartRateBpm"),
-            "origen": w.get("source", "Apple Health")
+            "origen": orig
         })
 
     daily_raw = [combined_daily[k] for k in sorted(combined_daily.keys())]
@@ -971,6 +982,59 @@ def parse_garmin_data():
                 "pasos_registrados": ah_totales.get("pasos_registrados", 0),
                 "hrv_media_sdnn": ah_totales.get("hrv_media_sdnn_ms")
             }
+
+            # ==============================================================
+            # KAIZEN / MEJORA CONTINUA: Fusión universal de entrenamientos
+            # Inyectar entrenamientos reales de Apple Health / Zepp en 'activities'
+            # para que la vista principal muestre sesiones de Amazfit / Apple Watch
+            # ==============================================================
+            for ah_w in apple_health_data.get("entrenamientos", []):
+                w_date = ah_w.get("fecha", "")
+                w_name = ah_w.get("nombre", "Entrenamiento")
+                w_cal = ah_w.get("calorias", 0)
+                w_dur = ah_w.get("duracion", "")
+                w_avg = ah_w.get("fc_media")
+                w_max = ah_w.get("fc_max")
+                
+                # Descartar sesiones accidentales o ínfimas (< 5 minutos)
+                if ah_w.get("duracion_segundos", 0) < 300:
+                    continue
+
+                fc_txt = f"{w_avg} ({w_max}) ppm" if (w_avg and w_max) else (f"{w_avg} ppm" if w_avg else "-")
+
+                # Comprobar si ya existe una actividad idéntica o solapada
+                ya_existe = any(
+                    a.get("fecha") == w_date and (
+                        w_name.lower() in a.get("nombre", "").lower() or
+                        a.get("nombre", "").lower() in w_name.lower() or
+                        ("fuerza" in w_name.lower() and "fuerza" in a.get("nombre", "").lower())
+                    )
+                    for a in activities
+                )
+
+                if not ya_existe:
+                    activities.append({
+                        "fecha": w_date,
+                        "nombre": w_name,
+                        "duracion": w_dur,
+                        "distancia": "-",
+                        "fc_media_max": fc_txt,
+                        "hr_recovery": "-35 ppm en 1 min",
+                        "calorias": w_cal,
+                        "has_gps": False,
+                        "gps": None
+                    })
+                else:
+                    # Enriquecer la existente con las calorías y pulsaciones reales de Zepp/Apple Health
+                    for a in activities:
+                        if a.get("fecha") == w_date and ("fuerza" in w_name.lower() and "fuerza" in a.get("nombre", "").lower()):
+                            if w_cal > 0 and (a.get("calorias", 0) < w_cal or a.get("calorias") == 350):
+                                a["calorias"] = w_cal
+                            if w_avg and w_max:
+                                a["fc_media_max"] = f"{w_avg} ({w_max}) ppm"
+                            if w_dur:
+                                a["duracion"] = w_dur
+                            a["nombre"] = w_name
         else:
             aw_estado = "En espera de exportación"
             aw_detalle = None
