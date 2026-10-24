@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-24 13:03:12",
+  "ultima_actualizacion": "2026-10-24 13:17:18",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -1236,7 +1236,19 @@
       }
     }
   },
-  "actividades": [],
+  "actividades": [
+    {
+      "fecha": "2026-10-24",
+      "nombre": "Entrenamiento de Fuerza (Amazfit)",
+      "duracion": "1h 00m",
+      "distancia": "-",
+      "fc_media_max": "120 (148) ppm",
+      "hr_recovery": "-35 ppm en 1 min",
+      "calorias": 350,
+      "has_gps": false,
+      "gps": null
+    }
+  ],
   "apple_health": {
     "archivo_fuente": "health-export-json-2026-10-17-1256_to_2026-10-24-1256.json",
     "rango": {
@@ -3865,7 +3877,19 @@
           }
         }
       ],
-      "actividades": []
+      "actividades": [
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Entrenamiento de Fuerza (Amazfit)",
+          "duracion": "1h 00m",
+          "distancia": "-",
+          "fc_media_max": "120 (148) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 350,
+          "has_gps": false,
+          "gps": null
+        }
+      ]
     }
   ],
   "semanas_detalle": {
@@ -6183,7 +6207,19 @@
           }
         }
       ],
-      "actividades": []
+      "actividades": [
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Entrenamiento de Fuerza (Amazfit)",
+          "duracion": "1h 00m",
+          "distancia": "-",
+          "fc_media_max": "120 (148) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 350,
+          "has_gps": false,
+          "gps": null
+        }
+      ]
     }
   },
   "rutas_gps": {
