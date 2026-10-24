@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-24 12:57:06",
+  "ultima_actualizacion": "2026-10-24 12:58:09",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -47,30 +47,30 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (0 entrenos · 5.0 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (4 entrenos · 2510.9 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-md-2026-10-22-0000_to_2026-10-22-0722.md",
-        "periodo": "2026-10-22 a 2026-10-22",
-        "entrenamientos_registrados": 0,
-        "calorias_activas": 5.0,
-        "pasos_registrados": 44,
-        "hrv_media_sdnn": 47
+        "archivo": "health-export-json-2026-10-17-1256_to_2026-10-24-1256.json",
+        "periodo": "2026-10-17 a 2026-10-24",
+        "entrenamientos_registrados": 4,
+        "calorias_activas": 2510.9,
+        "pasos_registrados": 52052,
+        "hrv_media_sdnn": 54
       }
     }
   },
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (31 ms)",
+    "hrv_status": "Equilibrada (38 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (6.9h)",
+    "sueno_calidad": "Reparador (7.2h)",
     "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
     "historial_reciente": "Excelente adaptación aeróbica en montaña"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 12.155 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 46 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (6.7h) ha mantenido tu VFC en 48 ms.",
+  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 52.052 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 49 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (5.1h) ha mantenido tu VFC en 48 ms.",
   "body_battery": {
     "actual": 66,
     "cargado": 59,
@@ -119,35 +119,35 @@
     "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
-    "fecha": "2026-10-22",
-    "rhr": 45,
-    "hrv": 31,
-    "sueno_horas": 6.9,
-    "sueno_score": 87,
-    "pasos": 44,
+    "fecha": "2026-10-24",
+    "rhr": 52,
+    "hrv": 38,
+    "sueno_horas": 7.2,
+    "sueno_score": 86,
+    "pasos": 6747,
     "meta_pasos": 8000,
-    "pasos_semana": 12155,
+    "pasos_semana": 52052,
     "estres": 20,
     "vo2max": 37.0,
     "min_intensidad": 0,
     "intensidad_semana": 50,
     "meta_intensidad": 150,
     "fuente_dispositivo": {
-      "dispositivo": "Amazfit Helio Strap",
-      "fuente_tipo": "amazfit",
-      "badge_nombre": "Amazfit Helio",
-      "badge_icono": "activity",
-      "badge_color": "purple",
-      "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-      "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-      "hrv_fuente": "Amazfit BioTracker (Zepp)",
-      "rhr_fuente": "Amazfit Helio Strap"
+      "dispositivo": "Garmin Fénix 7 Solar",
+      "fuente_tipo": "garmin",
+      "badge_nombre": "Garmin Fénix 7",
+      "badge_icono": "watch",
+      "badge_color": "cyan",
+      "sueno_fuente": "Garmin Fénix 7 Solar",
+      "pasos_fuente": "Garmin Fénix 7 Solar",
+      "hrv_fuente": "Garmin Firstbeat",
+      "rhr_fuente": "Garmin Elevate v4"
     }
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.9h) con un Body Battery al 66% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 31 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (7.2h) con un Body Battery al 66% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 38 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -180,7 +180,7 @@
   },
   "training_scores": {
     "endurance_score": {
-      "valor": 5433,
+      "valor": 6800,
       "nivel": "Bien entrenado",
       "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
       "color": "#10B981"
@@ -1238,39 +1238,199 @@
   },
   "actividades": [],
   "apple_health": {
-    "archivo_fuente": "health-export-md-2026-10-22-0000_to_2026-10-22-0722.md",
+    "archivo_fuente": "health-export-json-2026-10-17-1256_to_2026-10-24-1256.json",
     "rango": {
-      "inicio": "2026-10-22",
-      "fin": "2026-10-22",
-      "exportado": "2026-10-22"
+      "inicio": "2026-10-17T10:56:28Z",
+      "fin": "2026-10-24T10:56:28Z",
+      "exportado": "2026-10-24T10:56:31Z"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 5.0,
-      "pasos_registrados": 44,
-      "sesiones_entrenamiento": 0,
-      "sesiones_sueno": 1,
-      "hrv_media_sdnn_ms": 47
+      "calorias_activas_kcal": 2510.9,
+      "pasos_registrados": 52052,
+      "sesiones_entrenamiento": 4,
+      "sesiones_sueno": 13,
+      "hrv_media_sdnn_ms": 54
     },
-    "entrenamientos": [],
+    "entrenamientos": [
+      {
+        "fecha": "2026-10-18",
+        "nombre": "Fuerza / Musculación (Apple Watch)",
+        "tipo": "Strength Training",
+        "inicio": "10-18 10:24:51",
+        "fin": "10-18 11:07:17",
+        "duracion": "21 min",
+        "duracion_segundos": 1273,
+        "calorias": 245,
+        "fc_media": null,
+        "fc_max": null,
+        "origen": "Health Sync"
+      },
+      {
+        "fecha": "2026-10-23",
+        "nombre": "Other (Apple Watch)",
+        "tipo": "Other",
+        "inicio": "10-23 10:26:31",
+        "fin": "10-23 10:28:32",
+        "duracion": "2 min",
+        "duracion_segundos": 121,
+        "calorias": 8,
+        "fc_media": 84,
+        "fc_max": 102,
+        "origen": "Zepp"
+      },
+      {
+        "fecha": "2026-10-24",
+        "nombre": "Other (Apple Watch)",
+        "tipo": "Other",
+        "inicio": "10-24 00:06:58",
+        "fin": "10-24 00:10:17",
+        "duracion": "3 min",
+        "duracion_segundos": 199,
+        "calorias": 19,
+        "fc_media": 89,
+        "fc_max": 117,
+        "origen": "Zepp"
+      },
+      {
+        "fecha": "2026-10-24",
+        "nombre": "Fuerza / Musculación (Apple Watch)",
+        "tipo": "Strength Training",
+        "inicio": "10-24 11:03:26",
+        "fin": "10-24 12:06:57",
+        "duracion": "1h 03m",
+        "duracion_segundos": 3811,
+        "calorias": 606,
+        "fc_media": 120,
+        "fc_max": 161,
+        "origen": "Zepp"
+      }
+    ],
     "desglose_diario": [
       {
+        "activeEnergyKcal": 68,
+        "basalEnergyKcal": 995.5,
+        "date": "2026-10-17",
+        "distanceKm": 2.04,
+        "steps": 2814,
+        "workoutCount": 0
+      },
+      {
+        "activeEnergyKcal": 419.1,
+        "basalEnergyKcal": 2172,
+        "date": "2026-10-18",
+        "distanceKm": 6.64,
+        "exerciseMinutes": 43,
+        "flightsClimbed": 6,
+        "steps": 5345,
+        "workoutCount": 2
+      },
+      {
+        "activeEnergyKcal": 184.5,
+        "basalEnergyKcal": 2172,
+        "date": "2026-10-19",
+        "distanceKm": 1.69,
+        "flightsClimbed": 1,
+        "steps": 3320,
+        "workoutCount": 0
+      },
+      {
+        "activeEnergyKcal": 438,
+        "basalEnergyKcal": 2172,
+        "date": "2026-10-20",
+        "distanceKm": 7.31,
+        "flightsClimbed": 5,
+        "steps": 12663,
+        "workoutCount": 0
+      },
+      {
+        "activeEnergyKcal": 358.2,
+        "basalEnergyKcal": 2030,
+        "date": "2026-10-21",
+        "distanceKm": 6.39,
+        "flightsClimbed": 5,
+        "steps": 8601,
+        "workoutCount": 0
+      },
+      {
+        "activeEnergyKcal": 290,
         "date": "2026-10-22",
-        "steps": 44,
-        "activeEnergyKcal": 5.0,
-        "distanceKm": 0.01,
-        "exerciseTimeMin": 0
+        "distanceKm": 1.4,
+        "flightsClimbed": 1,
+        "steps": 5179,
+        "workoutCount": 0
+      },
+      {
+        "activeEnergyKcal": 298,
+        "date": "2026-10-23",
+        "distanceKm": 4.2,
+        "exerciseMinutes": 2,
+        "flightsClimbed": 2,
+        "steps": 7383,
+        "workoutCount": 1
+      },
+      {
+        "activeEnergyKcal": 455.1,
+        "basalEnergyKcal": 126.6,
+        "date": "2026-10-24",
+        "distanceKm": 3.47,
+        "exerciseMinutes": 66,
+        "flightsClimbed": 1,
+        "steps": 6747,
+        "workoutCount": 2
       }
     ]
   },
   "desglose_diario": [
     {
-      "fecha": "2026-10-19",
-      "pasos": 128,
-      "sueno": 6.7,
-      "sueno_score": 67,
-      "rhr": 49,
-      "estres": 18,
+      "fecha": "2026-10-17",
+      "pasos": 2814,
+      "sueno": 0.8,
+      "sueno_score": 90,
+      "rhr": 52,
+      "estres": 20,
       "hrv": 55,
+      "min_intensidad": 0,
+      "fuente_dispositivo": {
+        "dispositivo": "Garmin Fénix 7 Solar",
+        "fuente_tipo": "garmin",
+        "badge_nombre": "Garmin Fénix 7",
+        "badge_icono": "watch",
+        "badge_color": "cyan",
+        "sueno_fuente": "Garmin Fénix 7 Solar",
+        "pasos_fuente": "Garmin Fénix 7 Solar",
+        "hrv_fuente": "Garmin Firstbeat",
+        "rhr_fuente": "Garmin Elevate v4"
+      }
+    },
+    {
+      "fecha": "2026-10-18",
+      "pasos": 5345,
+      "sueno": 0.5,
+      "sueno_score": 90,
+      "rhr": 60,
+      "estres": 20,
+      "hrv": 55,
+      "min_intensidad": 0,
+      "fuente_dispositivo": {
+        "dispositivo": "Garmin Fénix 7 Solar",
+        "fuente_tipo": "garmin",
+        "badge_nombre": "Garmin Fénix 7",
+        "badge_icono": "watch",
+        "badge_color": "cyan",
+        "sueno_fuente": "Garmin Fénix 7 Solar",
+        "pasos_fuente": "Garmin Fénix 7 Solar",
+        "hrv_fuente": "Garmin Firstbeat",
+        "rhr_fuente": "Garmin Elevate v4"
+      }
+    },
+    {
+      "fecha": "2026-10-19",
+      "pasos": 3320,
+      "sueno": 5.5,
+      "sueno_score": 74,
+      "rhr": 46,
+      "estres": 18,
+      "hrv": 54,
       "min_intensidad": 5,
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1286,7 +1446,7 @@
     },
     {
       "fecha": "2026-10-20",
-      "pasos": 11912,
+      "pasos": 12663,
       "sueno": 6.9,
       "sueno_score": 88,
       "rhr": 45,
@@ -1307,7 +1467,7 @@
     },
     {
       "fecha": "2026-10-21",
-      "pasos": 71,
+      "pasos": 8601,
       "sueno": 6.1,
       "sueno_score": 88,
       "rhr": 46,
@@ -1328,7 +1488,7 @@
     },
     {
       "fecha": "2026-10-22",
-      "pasos": 44,
+      "pasos": 5179,
       "sueno": 6.9,
       "sueno_score": 87,
       "rhr": 45,
@@ -1345,6 +1505,48 @@
         "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
         "hrv_fuente": "Amazfit BioTracker (Zepp)",
         "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-10-23",
+      "pasos": 7383,
+      "sueno": 6.7,
+      "sueno_score": 87,
+      "rhr": 49,
+      "estres": 20,
+      "hrv": 45,
+      "min_intensidad": 0,
+      "fuente_dispositivo": {
+        "dispositivo": "Garmin Fénix 7 Solar",
+        "fuente_tipo": "garmin",
+        "badge_nombre": "Garmin Fénix 7",
+        "badge_icono": "watch",
+        "badge_color": "cyan",
+        "sueno_fuente": "Garmin Fénix 7 Solar",
+        "pasos_fuente": "Garmin Fénix 7 Solar",
+        "hrv_fuente": "Garmin Firstbeat",
+        "rhr_fuente": "Garmin Elevate v4"
+      }
+    },
+    {
+      "fecha": "2026-10-24",
+      "pasos": 6747,
+      "sueno": 7.2,
+      "sueno_score": 86,
+      "rhr": 52,
+      "estres": 20,
+      "hrv": 38,
+      "min_intensidad": 0,
+      "fuente_dispositivo": {
+        "dispositivo": "Garmin Fénix 7 Solar",
+        "fuente_tipo": "garmin",
+        "badge_nombre": "Garmin Fénix 7",
+        "badge_icono": "watch",
+        "badge_color": "cyan",
+        "sueno_fuente": "Garmin Fénix 7 Solar",
+        "pasos_fuente": "Garmin Fénix 7 Solar",
+        "hrv_fuente": "Garmin Firstbeat",
+        "rhr_fuente": "Garmin Elevate v4"
       }
     }
   ],
@@ -3487,21 +3689,63 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 12155,
-      "sueno": 6.7,
-      "rhr": 46,
+      "pasos": 52052,
+      "sueno": 5.1,
+      "rhr": 49,
       "vo2": 37.0,
       "hrv": 48,
       "estres": 18,
       "dias": [
         {
-          "fecha": "2026-10-19",
-          "pasos": 128,
-          "sueno": 6.7,
-          "sueno_score": 67,
-          "rhr": 49,
-          "estres": 18,
+          "fecha": "2026-10-17",
+          "pasos": 2814,
+          "sueno": 0.8,
+          "sueno_score": 90,
+          "rhr": 52,
+          "estres": 20,
           "hrv": 55,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
+        },
+        {
+          "fecha": "2026-10-18",
+          "pasos": 5345,
+          "sueno": 0.5,
+          "sueno_score": 90,
+          "rhr": 60,
+          "estres": 20,
+          "hrv": 55,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
+        },
+        {
+          "fecha": "2026-10-19",
+          "pasos": 3320,
+          "sueno": 5.5,
+          "sueno_score": 74,
+          "rhr": 46,
+          "estres": 18,
+          "hrv": 54,
           "min_intensidad": 5,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -3517,7 +3761,7 @@
         },
         {
           "fecha": "2026-10-20",
-          "pasos": 11912,
+          "pasos": 12663,
           "sueno": 6.9,
           "sueno_score": 88,
           "rhr": 45,
@@ -3538,7 +3782,7 @@
         },
         {
           "fecha": "2026-10-21",
-          "pasos": 71,
+          "pasos": 8601,
           "sueno": 6.1,
           "sueno_score": 88,
           "rhr": 46,
@@ -3559,7 +3803,7 @@
         },
         {
           "fecha": "2026-10-22",
-          "pasos": 44,
+          "pasos": 5179,
           "sueno": 6.9,
           "sueno_score": 87,
           "rhr": 45,
@@ -3576,6 +3820,48 @@
             "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-23",
+          "pasos": 7383,
+          "sueno": 6.7,
+          "sueno_score": 87,
+          "rhr": 49,
+          "estres": 20,
+          "hrv": 45,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
+        },
+        {
+          "fecha": "2026-10-24",
+          "pasos": 6747,
+          "sueno": 7.2,
+          "sueno_score": 86,
+          "rhr": 52,
+          "estres": 20,
+          "hrv": 38,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
           }
         }
       ],
@@ -5721,21 +6007,63 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 12155,
-      "sueno": 6.7,
-      "rhr": 46,
+      "pasos": 52052,
+      "sueno": 5.1,
+      "rhr": 49,
       "vo2": 37.0,
       "hrv": 48,
       "estres": 18,
       "dias": [
         {
-          "fecha": "2026-10-19",
-          "pasos": 128,
-          "sueno": 6.7,
-          "sueno_score": 67,
-          "rhr": 49,
-          "estres": 18,
+          "fecha": "2026-10-17",
+          "pasos": 2814,
+          "sueno": 0.8,
+          "sueno_score": 90,
+          "rhr": 52,
+          "estres": 20,
           "hrv": 55,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
+        },
+        {
+          "fecha": "2026-10-18",
+          "pasos": 5345,
+          "sueno": 0.5,
+          "sueno_score": 90,
+          "rhr": 60,
+          "estres": 20,
+          "hrv": 55,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
+        },
+        {
+          "fecha": "2026-10-19",
+          "pasos": 3320,
+          "sueno": 5.5,
+          "sueno_score": 74,
+          "rhr": 46,
+          "estres": 18,
+          "hrv": 54,
           "min_intensidad": 5,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -5751,7 +6079,7 @@
         },
         {
           "fecha": "2026-10-20",
-          "pasos": 11912,
+          "pasos": 12663,
           "sueno": 6.9,
           "sueno_score": 88,
           "rhr": 45,
@@ -5772,7 +6100,7 @@
         },
         {
           "fecha": "2026-10-21",
-          "pasos": 71,
+          "pasos": 8601,
           "sueno": 6.1,
           "sueno_score": 88,
           "rhr": 46,
@@ -5793,7 +6121,7 @@
         },
         {
           "fecha": "2026-10-22",
-          "pasos": 44,
+          "pasos": 5179,
           "sueno": 6.9,
           "sueno_score": 87,
           "rhr": 45,
@@ -5810,6 +6138,48 @@
             "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-23",
+          "pasos": 7383,
+          "sueno": 6.7,
+          "sueno_score": 87,
+          "rhr": 49,
+          "estres": 20,
+          "hrv": 45,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
+          }
+        },
+        {
+          "fecha": "2026-10-24",
+          "pasos": 6747,
+          "sueno": 7.2,
+          "sueno_score": 86,
+          "rhr": 52,
+          "estres": 20,
+          "hrv": 38,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Garmin Fénix 7 Solar",
+            "fuente_tipo": "garmin",
+            "badge_nombre": "Garmin Fénix 7",
+            "badge_icono": "watch",
+            "badge_color": "cyan",
+            "sueno_fuente": "Garmin Fénix 7 Solar",
+            "pasos_fuente": "Garmin Fénix 7 Solar",
+            "hrv_fuente": "Garmin Firstbeat",
+            "rhr_fuente": "Garmin Elevate v4"
           }
         }
       ],
@@ -7921,10 +8291,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 12155,
+      "progreso": 52052,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (24%)",
+      "estado": "¡SUPERADO! 🔥 (104%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -7963,7 +8333,7 @@
       "titulo": "Consistencia de Sueño (>7h) & VFC",
       "subtitulo": "Regeneración Celular & Sistema Inmune",
       "descripcion": "Dormir más de 7 horas en al menos 5 noches para estabilizar el sistema nervioso autónomo y mantener la VFC >50 ms.",
-      "progreso": 0,
+      "progreso": 1,
       "meta": 5,
       "unidad": "noches >7h",
       "estado": "Cerca del objetivo (Excelente consistencia)",
