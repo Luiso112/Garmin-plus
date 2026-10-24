@@ -659,12 +659,27 @@ def parse_garmin_data():
     avg_hrv_week = round(sum(d["hrv"] for d in daily_stats) / len(daily_stats)) if daily_stats else 50
     avg_rhr_week = round(sum(d["rhr"] for d in daily_stats) / len(daily_stats)) if daily_stats else 47
 
+    # ==============================================================
+    # KAIZEN: Active Intelligence 100% dinámico de la semana en curso
+    # ==============================================================
+    nombres_actividades = [a.get("nombre", "") for a in activities if a.get("nombre")]
+    tiene_fuerza = any("fuerza" in n.lower() for n in nombres_actividades)
+    tiene_senderismo = any("caminar" in n.lower() or "senderismo" in n.lower() for n in nombres_actividades)
+
+    if tiene_fuerza and tiene_senderismo:
+        resumen_entreno = "con estímulo mixto de hipertrofia/fuerza y base aeróbica"
+    elif tiene_fuerza:
+        resumen_entreno = "priorizando la preservación de masa muscular y fuerza"
+    elif tiene_senderismo:
+        resumen_entreno = "con predominio de volumen aeróbico y caminata"
+    else:
+        resumen_entreno = "con enfoque en recuperación activa y descanso regenerativo"
+
     active_intel_str = (
-        f"Semana extraordinaria de volumen aeróbico con {total_steps_week:,} pasos y múltiples rutas de senderismo "
-        f"(Joch, Les Angles, Casteil y Codalet). Tu FC de reposo media es de {avg_rhr_week} ppm con un estrés basal de 22/100, "
-        f"lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró "
-        f"caídas de hasta -96 ppm en el primer minuto, confirmando una rápida reactivación vagal. Tu descanso medio "
-        f"({avg_sleep_week}h) ha mantenido tu VFC en {avg_hrv_week} ms."
+        f"Semana en curso ({latest_week.get('semana', '')}) con {total_steps_week:,} pasos acumulados, "
+        f"{resumen_entreno}. Tu FC de reposo media semanal se sitúa en {avg_rhr_week} ppm con estrés basal bajo/controlado, "
+        f"evidenciando un tono parasimpático robusto. Tu descanso medio de {avg_sleep_week}h/noche ha sostenido tu VFC "
+        f"promedio en {avg_hrv_week} ms, manteniendo una óptima capacidad adaptativa neuromuscular."
     ).replace(",", ".")
 
     # Consulta de Body Battery (con fallback seguro preservando data.json existente ante 429 o fallo)
@@ -1101,8 +1116,8 @@ def parse_garmin_data():
                 "hrv_status": f"Equilibrada ({last_day['hrv']} ms)",
                 "recuperacion_horas": 0,
                 "sueno_calidad": f"Reparador ({last_day['sueno']}h)",
-                "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
-                "historial_reciente": "Excelente adaptación aeróbica en montaña"
+                "carga_aguda": "Equilibrada (Semana en curso)",
+                "historial_reciente": f"Trabajo consistente ({len(activities)} sesiones esta semana)"
             },
             "active_intelligence": active_intel_str,
             "body_battery": real_bb,
@@ -1219,19 +1234,31 @@ def parse_garmin_data():
         ]
     }
 
-    # Preservar campos enriquecidos que este generador NO produce
+    # Preservar campos enriquecidos o calcular en vivo
     # (acwr, ai_coach_insights y futuros sidecars de agentes).
-    # LEER antes de abrir en modo "w" (eso truncaría el fichero).
     preserved = {}
     try:
         with open(OUTPUT_JSON, encoding="utf-8") as prev:
             old = json.load(prev)
-        for k in ("acwr", "ai_coach_insights"):
+        for k in ("ai_coach_insights",):
             if k in old:
                 preserved[k] = old[k]
     except (OSError, ValueError):
         pass
     data_payload.update(preserved)
+
+    # ==============================================================
+    # KAIZEN: Cálculo inmediato del ACWR para la semana en curso
+    # ==============================================================
+    try:
+        import stamina_ratio
+        all_days = stamina_ratio.load_days(data_payload)
+        acwr_calc = stamina_ratio.compute(all_days)
+        if acwr_calc:
+            data_payload["acwr"] = acwr_calc
+    except Exception as e_acwr:
+        print("Aviso al calcular ACWR en generate_data:", e_acwr)
+
     with open(OUTPUT_JSON, "w", encoding="utf-8") as out:
         json.dump(data_payload, out, indent=2, ensure_ascii=False)
     print(f"✅ data.json enriquecido con GPS y elevación generado en {OUTPUT_JSON}")

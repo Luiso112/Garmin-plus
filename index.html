@@ -1562,19 +1562,28 @@
           if (elMrRecov && mr.tiempo_recuperacion_restante) elMrRecov.textContent = 'Recuperación: ' + mr.tiempo_recuperacion_restante;
         }
 
-        // 3. Active Intelligence & AI Coach
+        // 3. Active Intelligence & AI Coach (Solo mostrar insights vigentes de la semana actual)
         if (appData.active_intelligence) {
           const elIntel = document.getElementById('active-intel-text');
           if (elIntel) elIntel.textContent = appData.active_intelligence;
         }
-        if (appData.ai_coach_insights) {
+        if (appData.ai_coach_insights && appData.ai_coach_insights.texto) {
           const coachBox = document.getElementById('ai-coach-box');
           const coachText = document.getElementById('ai-coach-text');
           const coachModel = document.getElementById('ai-coach-model');
-          if (coachBox && coachText) {
+          const coachFecha = appData.ai_coach_insights.fecha || '';
+          
+          // Verificar si el informe es reciente (de los últimos 6 días) para evitar mostrar recomendaciones obsoletas de hace semanas
+          const hoy = new Date();
+          const fCoach = coachFecha ? new Date(coachFecha) : null;
+          const diasDiferencia = fCoach ? (hoy - fCoach) / (1000 * 60 * 60 * 24) : 99;
+
+          if (coachBox && coachText && diasDiferencia <= 6) {
             coachText.textContent = appData.ai_coach_insights.texto || '';
             if (coachModel) coachModel.textContent = appData.ai_coach_insights.modelo || 'AI Coach';
             coachBox.classList.remove('hidden');
+          } else if (coachBox) {
+            coachBox.classList.add('hidden');
           }
         }
 

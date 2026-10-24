@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-24 13:25:16",
+  "ultima_actualizacion": "2026-10-24 13:34:07",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -67,10 +67,10 @@
     "hrv_status": "Equilibrada (38 ms)",
     "recuperacion_horas": 0,
     "sueno_calidad": "Reparador (7.2h)",
-    "carga_aguda": "Alta / Adaptada (Volumen Senderismo)",
-    "historial_reciente": "Excelente adaptación aeróbica en montaña"
+    "carga_aguda": "Equilibrada (Semana en curso)",
+    "historial_reciente": "Trabajo consistente (3 sesiones esta semana)"
   },
-  "active_intelligence": "Semana extraordinaria de volumen aeróbico con 52.777 pasos y múltiples rutas de senderismo (Joch. Les Angles. Casteil y Codalet). Tu FC de reposo media es de 50 ppm con un estrés basal de 22/100. lo que refleja una excelente eficiencia cardiorrespiratoria. La recuperación tras las marchas de montaña registró caídas de hasta -96 ppm en el primer minuto. confirmando una rápida reactivación vagal. Tu descanso medio (5.1h) ha mantenido tu VFC en 46 ms.",
+  "active_intelligence": "Semana en curso (2026-W43) con 52.777 pasos acumulados. priorizando la preservación de masa muscular y fuerza. Tu FC de reposo media semanal se sitúa en 50 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 5.1h/noche ha sostenido tu VFC promedio en 46 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
     "actual": 66,
     "cargado": 59,
@@ -8471,23 +8471,23 @@
       "recompensa": "Insignia Regeneración Profunda"
     }
   ],
+  "ai_coach_insights": {
+    "fecha": "2026-10-18",
+    "modelo": "agy → Gemini Pro (plan)",
+    "texto": "🟢 **Veredicto:** Estado fisiológico óptimo, pero con volumen semanal en mínimos.\n\n* **Fisiología y Carga:** Tu recuperación es excelente: sueño sobresaliente (85), HRV alta (53 ms), RHR bajo (51 bpm) y estrés mínimo (28). Sin embargo, la carga cardiovascular de la semana fue prácticamente nula (solo 4 min de intensidad y ACWR sin datos). \n* **Sensaciones:** El diario personal está vacío esta semana, por lo que no es posible cruzar datos objetivos con tu percepción subjetiva.\n\n* **Recomendación para los próximos 7 días:**\nAprovecha esta base de frescura para reactivar la carga aeróbica de forma progresiva: programa **3 sesiones en Z2** (carrera suave o montaña con poco desnivel, 40-50 min c/u) y **1 rodaje suave en bici** (45 min regenerativo). Mantén el pulso estrictamente por debajo del umbral aeróbico para evitar picos bruscos tras la inactividad."
+  },
   "acwr": {
-    "fecha": "2026-10-21",
-    "carga_aguda_min_dia": 76.0,
-    "carga_cronica_min_dia": 79.7,
-    "ratio_acwr": 0.95,
-    "semaforo": "Zona óptima",
-    "emoji": "🟩",
+    "fecha": "2026-10-24",
+    "carga_aguda_min_dia": 7.1,
+    "carga_cronica_min_dia": 53.0,
+    "ratio_acwr": 0.13,
+    "semaforo": "Desentrenamiento (baja carga)",
+    "emoji": "🟦",
     "fatiga": {
       "nivel": "BAJA",
       "motivos": [],
       "mensaje": "Todo en verde. Sin señales de alarma."
     },
-    "dias_usados": 15
-  },
-  "ai_coach_insights": {
-    "fecha": "2026-10-18",
-    "modelo": "agy → Gemini Pro (plan)",
-    "texto": "🟢 **Veredicto:** Estado fisiológico óptimo, pero con volumen semanal en mínimos.\n\n* **Fisiología y Carga:** Tu recuperación es excelente: sueño sobresaliente (85), HRV alta (53 ms), RHR bajo (51 bpm) y estrés mínimo (28). Sin embargo, la carga cardiovascular de la semana fue prácticamente nula (solo 4 min de intensidad y ACWR sin datos). \n* **Sensaciones:** El diario personal está vacío esta semana, por lo que no es posible cruzar datos objetivos con tu percepción subjetiva.\n\n* **Recomendación para los próximos 7 días:**\nAprovecha esta base de frescura para reactivar la carga aeróbica de forma progresiva: programa **3 sesiones en Z2** (carrera suave o montaña con poco desnivel, 40-50 min c/u) y **1 rodaje suave en bici** (45 min regenerativo). Mantén el pulso estrictamente por debajo del umbral aeróbico para evitar picos bruscos tras la inactividad."
+    "dias_usados": 20
   }
 }
