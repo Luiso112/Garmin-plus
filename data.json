@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-24 13:34:07",
+  "ultima_actualizacion": "2026-10-25 09:33:41",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -8477,7 +8477,7 @@
     "texto": "🟢 **Veredicto:** Estado fisiológico óptimo, pero con volumen semanal en mínimos.\n\n* **Fisiología y Carga:** Tu recuperación es excelente: sueño sobresaliente (85), HRV alta (53 ms), RHR bajo (51 bpm) y estrés mínimo (28). Sin embargo, la carga cardiovascular de la semana fue prácticamente nula (solo 4 min de intensidad y ACWR sin datos). \n* **Sensaciones:** El diario personal está vacío esta semana, por lo que no es posible cruzar datos objetivos con tu percepción subjetiva.\n\n* **Recomendación para los próximos 7 días:**\nAprovecha esta base de frescura para reactivar la carga aeróbica de forma progresiva: programa **3 sesiones en Z2** (carrera suave o montaña con poco desnivel, 40-50 min c/u) y **1 rodaje suave en bici** (45 min regenerativo). Mantén el pulso estrictamente por debajo del umbral aeróbico para evitar picos bruscos tras la inactividad."
   },
   "acwr": {
-    "fecha": "2026-10-24",
+    "fecha": "2026-10-25",
     "carga_aguda_min_dia": 7.1,
     "carga_cronica_min_dia": 53.0,
     "ratio_acwr": 0.13,
