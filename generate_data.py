@@ -433,10 +433,19 @@ def extract_apple_health_days():
                 if st > ah_by_date[dt].get("pasos", 0):
                     ah_by_date[dt]["pasos"] = st
 
-        for s in raw.get("sleep", {}).get("sessions", []):
+        # Colección de sesiones de sueño únicas por fecha y hora de inicio
+        file_dt_match = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(p))
+        file_fallback_date = file_dt_match.group(1) if file_dt_match else datetime.date.today().isoformat()
+
+        # Filtrar sesiones duplicadas entre fuentes: Priorizar Zepp si existe en la misma noche
+        sessions_in_raw = raw.get("sleep", {}).get("sessions", [])
+        has_zepp = any(s.get("source") == "Zepp" for s in sessions_in_raw)
+        filtered_sessions = [s for s in sessions_in_raw if (not has_zepp or s.get("source") == "Zepp")]
+
+        for s in filtered_sessions:
+            st_time = s.get("start", "")
             end = s.get("end", "")
             asleep_sec = s.get("asleepSec") or 0
-            hours = round(asleep_sec / 3600.0, 1)
             vitals = s.get("vitals", {})
             hr_min = vitals.get("heartRate", {}).get("min")
             hr_avg = vitals.get("heartRate", {}).get("avg")
@@ -444,28 +453,43 @@ def extract_apple_health_days():
             eff = s.get("sleepEfficiencyPct") or 90
             score = min(100, max(50, int(eff * 0.9)))
 
-            dt = "2026-10-21"
+            dt = file_fallback_date
             if "-" in end:
                 parts = end.split(" ")[0].split("-")
                 if len(parts) == 2:
                     dt = f"2026-{parts[0]}-{parts[1]}"
                 elif len(parts) == 3:
                     dt = end.split(" ")[0]
-            
+
             if dt not in ah_by_date:
-                ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0}
-            
-            if hours > 0:
-                ah_by_date[dt]["sueno"] = hours
-                ah_by_date[dt]["sueno_score"] = score
+                ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0, "_seen_sessions": set(), "_sleep_sec": 0}
+            elif "_seen_sessions" not in ah_by_date[dt]:
+                ah_by_date[dt]["_seen_sessions"] = set()
+                ah_by_date[dt]["_sleep_sec"] = int(ah_by_date[dt].get("sueno", 0.0) * 3600)
+
+            # Evitar sumar la misma sesión dos veces si aparece en el archivo semanal y en el diario
+            # Normalizar clave sin prefijos de fecha redundantes
+            clean_st = st_time.split(" ")[-1]
+            clean_end = end.split(" ")[-1]
+            sess_key = f"{clean_st}_{clean_end}"
+            if sess_key not in ah_by_date[dt]["_seen_sessions"]:
+                ah_by_date[dt]["_seen_sessions"].add(sess_key)
+                if asleep_sec > 0:
+                    ah_by_date[dt]["_sleep_sec"] += asleep_sec
+                    ah_by_date[dt]["sueno"] = round(ah_by_date[dt]["_sleep_sec"] / 3600.0, 1)
+                    ah_by_date[dt]["sueno_score"] = score
             if hr_min:
-                ah_by_date[dt]["rhr"] = hr_min
+                ah_by_date[dt]["rhr"] = int(hr_min)
             elif hr_avg:
-                ah_by_date[dt]["rhr"] = hr_avg
+                ah_by_date[dt]["rhr"] = int(hr_avg)
             if hrv_avg:
                 ah_by_date[dt]["hrv"] = round(hrv_avg)
 
-    return ah_by_date
+    # Limpiar campos auxiliares no serializables antes de retornar
+    clean_dict = {}
+    for dt, item in ah_by_date.items():
+        clean_dict[dt] = {k: v for k, v in item.items() if not k.startswith('_')}
+    return clean_dict
 
 
 def parse_garmin_data():
