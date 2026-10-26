@@ -1,7 +1,7 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-26 07:21:14",
-  "semana_actual": "2026-W43",
+  "ultima_actualizacion": "2026-10-26 07:40:28",
+  "semana_actual": "2026-W44",
   "fuentes_metricas": {
     "sueno": {
       "dispositivo": "Amazfit Helio Strap (Fusión Dual)",
@@ -47,16 +47,16 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (6 entrenos · 2641.9 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (6 entrenos · 2645.9 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-json-2026-10-25-0000_to_2026-10-25-0931.json",
-        "periodo": "2026-10-24 a 2026-10-25",
+        "archivo": "health-export-json-2026-10-26-0000_to_2026-10-26-0719.json",
+        "periodo": "2026-10-25 a 2026-10-26",
         "entrenamientos_registrados": 6,
-        "calorias_activas": 2641.9,
-        "pasos_registrados": 52994,
+        "calorias_activas": 2645.9,
+        "pasos_registrados": 53042,
         "hrv_media_sdnn": 53
       }
     }
@@ -64,78 +64,95 @@
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (39 ms)",
+    "hrv_status": "Equilibrada (44 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (7.4h)",
+    "sueno_calidad": "Reparador (6.2h)",
     "carga_aguda": "Equilibrada (Semana en curso)",
     "historial_reciente": "Trabajo consistente (3 sesiones esta semana)"
   },
-  "active_intelligence": "Semana en curso (2026-W43) con 52.994 pasos acumulados. priorizando la preservación de masa muscular y fuerza. Tu FC de reposo media semanal se sitúa en 48 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 5.2h/noche ha sostenido tu VFC promedio en 47 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
+  "active_intelligence": "Semana en curso (2026-W44) con 60.171 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.4h/noche ha sostenido tu VFC promedio en 47 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
-    "actual": 41,
-    "cargado": 65,
-    "drenado": 57,
-    "max": 94,
-    "min": 33,
-    "descanso_nocturno": "Recuperación nocturna (+62 pts)",
-    "momento_pico": "08:15 (94 pts)",
+    "actual": 71,
+    "cargado": 64,
+    "drenado": 18,
+    "max": 89,
+    "min": 25,
+    "descanso_nocturno": "Recuperación (+64 pts)",
+    "momento_pico": "Pico al despertar (89 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
-        "valor": 33
+        "valor": 25
       },
       {
-        "hora": "07:24",
-        "valor": 90
+        "hora": "03:00",
+        "valor": 50
       },
       {
-        "hora": "08:15",
-        "valor": 94
+        "hora": "06:46",
+        "valor": 89
       },
       {
-        "hora": "15:00",
-        "valor": 57
+        "hora": "08:30",
+        "valor": 84
       },
       {
-        "hora": "15:06",
-        "valor": 57
-      },
-      {
-        "hora": "22:27",
-        "valor": 41
+        "hora": "11:00",
+        "valor": 71
       }
-    ]
+    ],
+    "factores_impacto": [
+      {
+        "nombre": "Sueño Nocturno (Amazfit Zepp)",
+        "subtitulo": "6.2h reparador (Score 87)",
+        "impacto": "+64 ↑",
+        "es_recuperacion": true
+      },
+      {
+        "nombre": "Gasto Basal Matutino",
+        "subtitulo": "Consumo metabólico y actividad matutina",
+        "impacto": "-18 ↓",
+        "es_recuperacion": false
+      }
+    ],
+    "analisis_clinico": "Recarga nocturna estimada en +64 puntos impulsada por 6.2h de descanso profundo y una VFC de 44 ms. Alcanzaste un pico de 89/100 al despertar, situándote actualmente en 71/100 tras un drenaje de 18 puntos.",
+    "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
-    "fecha": "2026-10-25",
-    "rhr": 49,
-    "hrv": 39,
-    "sueno_horas": 7.4,
-    "sueno_score": 86,
-    "pasos": 217,
+    "fecha": "2026-10-26",
+    "rhr": 44,
+    "hrv": 44,
+    "sueno_horas": 6.2,
+    "sueno_score": 87,
+    "sueno_fases": {
+      "profundo": "1h 05m",
+      "rem": "1h 14m",
+      "ligero": "3h 49m"
+    },
+    "pasos": 48,
     "meta_pasos": 8000,
-    "pasos_semana": 52994,
+    "pasos_semana": 60171,
     "estres": 20,
     "vo2max": 37.0,
     "min_intensidad": 0,
-    "intensidad_semana": 50,
+    "intensidad_semana": 186,
     "meta_intensidad": 150,
     "fuente_dispositivo": {
-      "dispositivo": "Garmin Fénix 7 Solar",
-      "fuente_tipo": "garmin",
-      "badge_nombre": "Garmin Fénix 7",
-      "badge_icono": "watch",
-      "badge_color": "cyan",
-      "sueno_fuente": "Garmin Fénix 7 Solar",
-      "pasos_fuente": "Garmin Fénix 7 Solar",
-      "hrv_fuente": "Garmin Firstbeat",
-      "rhr_fuente": "Garmin Elevate v4"
+      "dispositivo": "Amazfit Helio Strap",
+      "fuente_tipo": "amazfit",
+      "badge_nombre": "Amazfit Helio",
+      "badge_icono": "activity",
+      "badge_color": "purple",
+      "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+      "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+      "hrv_fuente": "Amazfit BioTracker (Zepp)",
+      "rhr_fuente": "Amazfit Helio Strap"
     }
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (7.4h) con un Body Battery al 41% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 39 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.2h) con un Body Battery al 71% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 44 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -180,9 +197,9 @@
       "color": "#00A3E0"
     },
     "training_effect_semanal": {
-      "aerobico": "1.2 (Recuperación Activa)",
-      "anaerobico": "0.0 (Sin Impacto)",
-      "beneficio_principal": "Recuperación y Regeneración"
+      "aerobico": "3.7 (Impacto Muy Fuerte)",
+      "anaerobico": "1.5 (Impacto Menor)",
+      "beneficio_principal": "Base Aeróbica y Capacidad Mitocondrial"
     }
   },
   "curva_fc_24h": [
@@ -308,19 +325,140 @@
     }
   ],
   "curva_fc_24h_stats": null,
-  "curva_fc_dias": null,
-  "actividades": [
-    {
-      "fecha": "2026-10-24",
-      "nombre": "Entrenamiento de Fuerza (Amazfit)",
-      "duracion": "1h 03m",
-      "distancia": "-",
-      "fc_media_max": "120 (161) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 606,
-      "has_gps": false,
-      "gps": null
+  "curva_fc_dias": {
+    "hoy": {
+      "fecha": "2026-10-26",
+      "puntos": [
+        {
+          "hora": "00:00",
+          "bpm": 46,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "01:00",
+          "bpm": 47,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "02:00",
+          "bpm": 48,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "03:00",
+          "bpm": 46,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "04:00",
+          "bpm": 47,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "05:00",
+          "bpm": 48,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "06:00",
+          "bpm": 46,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "07:00",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "08:00",
+          "bpm": 68,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "09:00",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "10:00",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "11:00",
+          "bpm": 67,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "12:00",
+          "bpm": 58,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "13:00",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "14:00",
+          "bpm": 58,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "15:00",
+          "bpm": 54,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "16:00",
+          "bpm": 56,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "17:00",
+          "bpm": 85,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "18:00",
+          "bpm": 126,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "19:00",
+          "bpm": 59,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "20:00",
+          "bpm": 56,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "21:00",
+          "bpm": 57,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "22:00",
+          "bpm": 58,
+          "source": "Garmin Fénix 7 Solar"
+        },
+        {
+          "hora": "23:00",
+          "bpm": 59,
+          "source": "Garmin Fénix 7 Solar"
+        }
+      ],
+      "stats": null
     },
+    "ayer": {
+      "fecha": "2026-10-25",
+      "puntos": [],
+      "stats": {}
+    }
+  },
+  "actividades": [
     {
       "fecha": "2026-10-18",
       "nombre": "Entrenamiento de Fuerza (Connect)",
@@ -329,6 +467,17 @@
       "fc_media_max": "-",
       "hr_recovery": "-35 ppm en 1 min",
       "calorias": 245,
+      "has_gps": false,
+      "gps": null
+    },
+    {
+      "fecha": "2026-10-24",
+      "nombre": "Entrenamiento de Fuerza (Amazfit)",
+      "duracion": "1h 03m",
+      "distancia": "-",
+      "fc_media_max": "120 (161) ppm",
+      "hr_recovery": "-35 ppm en 1 min",
+      "calorias": 606,
       "has_gps": false,
       "gps": null
     },
@@ -345,17 +494,17 @@
     }
   ],
   "apple_health": {
-    "archivo_fuente": "health-export-json-2026-10-25-0000_to_2026-10-25-0931.json",
+    "archivo_fuente": "health-export-json-2026-10-26-0000_to_2026-10-26-0719.json",
     "rango": {
-      "inicio": "2026-10-24T22:00:00Z",
-      "fin": "2026-10-25T08:31:27Z",
-      "exportado": "2026-10-25T08:31:27Z"
+      "inicio": "2026-10-25T23:00:00Z",
+      "fin": "2026-10-26T06:19:42Z",
+      "exportado": "2026-10-26T06:19:42Z"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 2641.9,
-      "pasos_registrados": 52994,
+      "calorias_activas_kcal": 2645.9,
+      "pasos_registrados": 53042,
       "sesiones_entrenamiento": 6,
-      "sesiones_sueno": 16,
+      "sesiones_sueno": 17,
       "hrv_media_sdnn_ms": 53
     },
     "entrenamientos": [
@@ -517,19 +666,25 @@
         "distanceKm": 0.02,
         "steps": 217,
         "workoutCount": 0
+      },
+      {
+        "activeEnergyKcal": 4,
+        "date": "2026-10-26",
+        "steps": 48,
+        "workoutCount": 0
       }
     ]
   },
   "desglose_diario": [
     {
       "fecha": "2026-10-17",
-      "pasos": 2814,
-      "sueno": 0.0,
-      "sueno_score": 85,
+      "pasos": 8779,
+      "sueno": 3.6,
+      "sueno_score": 37,
       "rhr": 48,
-      "estres": 20,
+      "estres": 33,
       "hrv": 55,
-      "min_intensidad": 0,
+      "min_intensidad": 132,
       "fuente_dispositivo": {
         "dispositivo": "Garmin Fénix 7 Solar",
         "fuente_tipo": "garmin",
@@ -540,17 +695,22 @@
         "pasos_fuente": "Garmin Fénix 7 Solar",
         "hrv_fuente": "Garmin Firstbeat",
         "rhr_fuente": "Garmin Elevate v4"
+      },
+      "sueno_fases": {
+        "profundo": "1h 20m",
+        "rem": "1h 45m",
+        "ligero": "3h 30m"
       }
     },
     {
       "fecha": "2026-10-18",
-      "pasos": 5345,
-      "sueno": 0.0,
-      "sueno_score": 85,
+      "pasos": 6509,
+      "sueno": 7.1,
+      "sueno_score": 78,
       "rhr": 48,
-      "estres": 20,
+      "estres": 28,
       "hrv": 55,
-      "min_intensidad": 0,
+      "min_intensidad": 49,
       "fuente_dispositivo": {
         "dispositivo": "Garmin Fénix 7 Solar",
         "fuente_tipo": "garmin",
@@ -561,6 +721,11 @@
         "pasos_fuente": "Garmin Fénix 7 Solar",
         "hrv_fuente": "Garmin Firstbeat",
         "rhr_fuente": "Garmin Elevate v4"
+      },
+      "sueno_fases": {
+        "profundo": "1h 20m",
+        "rem": "1h 45m",
+        "ligero": "3h 30m"
       }
     },
     {
@@ -582,17 +747,27 @@
         "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
         "hrv_fuente": "Amazfit BioTracker (Zepp)",
         "rhr_fuente": "Amazfit Helio Strap"
+      },
+      "sueno_fases": {
+        "profundo": "0h 45m",
+        "rem": "0h 53m",
+        "ligero": "3h 49m"
       }
     },
     {
       "fecha": "2026-10-20",
       "pasos": 12663,
       "sueno": 6.9,
-      "sueno_score": 88,
+      "sueno_score": 85,
       "rhr": 45,
-      "estres": 22,
+      "estres": 20,
       "hrv": 51,
-      "min_intensidad": 45,
+      "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "1h 12m",
+        "rem": "1h 14m",
+        "ligero": "4h 23m"
+      },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -614,6 +789,11 @@
       "estres": 20,
       "hrv": 56,
       "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "1h 37m",
+        "rem": "1h 25m",
+        "ligero": "2h 59m"
+      },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -635,6 +815,11 @@
       "estres": 20,
       "hrv": 31,
       "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "1h 22m",
+        "rem": "2h 03m",
+        "ligero": "3h 25m"
+      },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -656,16 +841,21 @@
       "estres": 20,
       "hrv": 45,
       "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "1h 09m",
+        "rem": "1h 45m",
+        "ligero": "3h 47m"
+      },
       "fuente_dispositivo": {
-        "dispositivo": "Garmin Fénix 7 Solar",
-        "fuente_tipo": "garmin",
-        "badge_nombre": "Garmin Fénix 7",
-        "badge_icono": "watch",
-        "badge_color": "cyan",
-        "sueno_fuente": "Garmin Fénix 7 Solar",
-        "pasos_fuente": "Garmin Fénix 7 Solar",
-        "hrv_fuente": "Garmin Firstbeat",
-        "rhr_fuente": "Garmin Elevate v4"
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
       }
     },
     {
@@ -677,16 +867,21 @@
       "estres": 20,
       "hrv": 38,
       "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "1h 16m",
+        "rem": "1h 57m",
+        "ligero": "3h 54m"
+      },
       "fuente_dispositivo": {
-        "dispositivo": "Garmin Fénix 7 Solar",
-        "fuente_tipo": "garmin",
-        "badge_nombre": "Garmin Fénix 7",
-        "badge_icono": "watch",
-        "badge_color": "cyan",
-        "sueno_fuente": "Garmin Fénix 7 Solar",
-        "pasos_fuente": "Garmin Fénix 7 Solar",
-        "hrv_fuente": "Garmin Firstbeat",
-        "rhr_fuente": "Garmin Elevate v4"
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
       }
     },
     {
@@ -698,16 +893,47 @@
       "estres": 20,
       "hrv": 39,
       "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "0h 44m",
+        "rem": "1h 45m",
+        "ligero": "2h 29m"
+      },
       "fuente_dispositivo": {
-        "dispositivo": "Garmin Fénix 7 Solar",
-        "fuente_tipo": "garmin",
-        "badge_nombre": "Garmin Fénix 7",
-        "badge_icono": "watch",
-        "badge_color": "cyan",
-        "sueno_fuente": "Garmin Fénix 7 Solar",
-        "pasos_fuente": "Garmin Fénix 7 Solar",
-        "hrv_fuente": "Garmin Firstbeat",
-        "rhr_fuente": "Garmin Elevate v4"
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-10-26",
+      "pasos": 48,
+      "sueno": 6.2,
+      "sueno_score": 87,
+      "rhr": 44,
+      "estres": 20,
+      "hrv": 44,
+      "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "1h 05m",
+        "rem": "1h 14m",
+        "ligero": "3h 49m"
+      },
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
       }
     }
   ],
@@ -2672,7 +2898,7 @@
       "sueno": 6.6,
       "rhr": 47,
       "vo2": 37.0,
-      "hrv": 58,
+      "hrv": 57,
       "estres": 24,
       "dias": [
         {
@@ -2785,9 +3011,9 @@
           "pasos": 8779,
           "sueno": 3.6,
           "sueno_score": 37,
-          "rhr": 50,
+          "rhr": 48,
           "estres": 33,
-          "hrv": 64,
+          "hrv": 55,
           "min_intensidad": 132,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -2799,6 +3025,11 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
+          },
+          "sueno_fases": {
+            "profundo": "1h 20m",
+            "rem": "1h 45m",
+            "ligero": "3h 30m"
           }
         },
         {
@@ -2808,7 +3039,7 @@
           "sueno_score": 78,
           "rhr": 48,
           "estres": 28,
-          "hrv": 54,
+          "hrv": 55,
           "min_intensidad": 49,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -2820,6 +3051,11 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
+          },
+          "sueno_fases": {
+            "profundo": "1h 20m",
+            "rem": "1h 45m",
+            "ligero": "3h 30m"
           }
         }
       ],
@@ -2850,55 +3086,13 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 52994,
+      "pasos": 44835,
       "sueno": 6.7,
-      "rhr": 48,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 47,
-      "estres": 18,
+      "hrv": 45,
+      "estres": 23,
       "dias": [
-        {
-          "fecha": "2026-10-17",
-          "pasos": 2814,
-          "sueno": 0.0,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 20,
-          "hrv": 55,
-          "min_intensidad": 0,
-          "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
-          }
-        },
-        {
-          "fecha": "2026-10-18",
-          "pasos": 5345,
-          "sueno": 0.0,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 20,
-          "hrv": 55,
-          "min_intensidad": 0,
-          "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
-          }
-        },
         {
           "fecha": "2026-10-19",
           "pasos": 3320,
@@ -2918,17 +3112,27 @@
             "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
+          },
+          "sueno_fases": {
+            "profundo": "0h 45m",
+            "rem": "0h 53m",
+            "ligero": "3h 49m"
           }
         },
         {
           "fecha": "2026-10-20",
           "pasos": 12663,
           "sueno": 6.9,
-          "sueno_score": 88,
+          "sueno_score": 85,
           "rhr": 45,
-          "estres": 22,
+          "estres": 20,
           "hrv": 51,
-          "min_intensidad": 45,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 12m",
+            "rem": "1h 14m",
+            "ligero": "4h 23m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -2950,6 +3154,11 @@
           "estres": 20,
           "hrv": 56,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 37m",
+            "rem": "1h 25m",
+            "ligero": "2h 59m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -2971,6 +3180,11 @@
           "estres": 20,
           "hrv": 31,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 22m",
+            "rem": "2h 03m",
+            "ligero": "3h 25m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -2992,16 +3206,21 @@
           "estres": 20,
           "hrv": 45,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 09m",
+            "rem": "1h 45m",
+            "ligero": "3h 47m"
+          },
           "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
           }
         },
         {
@@ -3013,16 +3232,21 @@
           "estres": 20,
           "hrv": 38,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 16m",
+            "rem": "1h 57m",
+            "ligero": "3h 54m"
+          },
           "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
           }
         },
         {
@@ -3034,54 +3258,63 @@
           "estres": 20,
           "hrv": 39,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 44m",
+            "rem": "1h 45m",
+            "ligero": "2h 29m"
+          },
           "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
           }
         }
       ],
-      "actividades": [
+      "actividades": []
+    },
+    {
+      "semana": "2026-W44",
+      "pasos": 48,
+      "sueno": 6.2,
+      "rhr": 44,
+      "vo2": 37.0,
+      "hrv": 44,
+      "estres": 20,
+      "dias": [
         {
-          "fecha": "2026-10-24",
-          "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 03m",
-          "distancia": "-",
-          "fc_media_max": "120 (161) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 606,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-18",
-          "nombre": "Entrenamiento de Fuerza (Connect)",
-          "duracion": "42 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 245,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Other (Amazfit)",
-          "duracion": "10 min",
-          "distancia": "-",
-          "fc_media_max": "96 (111) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 68,
-          "has_gps": false,
-          "gps": null
+          "fecha": "2026-10-26",
+          "pasos": 48,
+          "sueno": 6.2,
+          "sueno_score": 87,
+          "rhr": 44,
+          "estres": 20,
+          "hrv": 44,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 05m",
+            "rem": "1h 14m",
+            "ligero": "3h 49m"
+          },
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
-      ]
+      ],
+      "actividades": []
     }
   ],
   "semanas_detalle": {
@@ -5045,7 +5278,7 @@
       "sueno": 6.6,
       "rhr": 47,
       "vo2": 37.0,
-      "hrv": 58,
+      "hrv": 57,
       "estres": 24,
       "dias": [
         {
@@ -5158,9 +5391,9 @@
           "pasos": 8779,
           "sueno": 3.6,
           "sueno_score": 37,
-          "rhr": 50,
+          "rhr": 48,
           "estres": 33,
-          "hrv": 64,
+          "hrv": 55,
           "min_intensidad": 132,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -5172,6 +5405,11 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
+          },
+          "sueno_fases": {
+            "profundo": "1h 20m",
+            "rem": "1h 45m",
+            "ligero": "3h 30m"
           }
         },
         {
@@ -5181,7 +5419,7 @@
           "sueno_score": 78,
           "rhr": 48,
           "estres": 28,
-          "hrv": 54,
+          "hrv": 55,
           "min_intensidad": 49,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -5193,6 +5431,11 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
+          },
+          "sueno_fases": {
+            "profundo": "1h 20m",
+            "rem": "1h 45m",
+            "ligero": "3h 30m"
           }
         }
       ],
@@ -5223,55 +5466,13 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 52994,
+      "pasos": 44835,
       "sueno": 6.7,
-      "rhr": 48,
+      "rhr": 47,
       "vo2": 37.0,
-      "hrv": 47,
-      "estres": 18,
+      "hrv": 45,
+      "estres": 23,
       "dias": [
-        {
-          "fecha": "2026-10-17",
-          "pasos": 2814,
-          "sueno": 0.0,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 20,
-          "hrv": 55,
-          "min_intensidad": 0,
-          "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
-          }
-        },
-        {
-          "fecha": "2026-10-18",
-          "pasos": 5345,
-          "sueno": 0.0,
-          "sueno_score": 85,
-          "rhr": 48,
-          "estres": 20,
-          "hrv": 55,
-          "min_intensidad": 0,
-          "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
-          }
-        },
         {
           "fecha": "2026-10-19",
           "pasos": 3320,
@@ -5291,17 +5492,27 @@
             "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
+          },
+          "sueno_fases": {
+            "profundo": "0h 45m",
+            "rem": "0h 53m",
+            "ligero": "3h 49m"
           }
         },
         {
           "fecha": "2026-10-20",
           "pasos": 12663,
           "sueno": 6.9,
-          "sueno_score": 88,
+          "sueno_score": 85,
           "rhr": 45,
-          "estres": 22,
+          "estres": 20,
           "hrv": 51,
-          "min_intensidad": 45,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 12m",
+            "rem": "1h 14m",
+            "ligero": "4h 23m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -5323,6 +5534,11 @@
           "estres": 20,
           "hrv": 56,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 37m",
+            "rem": "1h 25m",
+            "ligero": "2h 59m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -5344,6 +5560,11 @@
           "estres": 20,
           "hrv": 31,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 22m",
+            "rem": "2h 03m",
+            "ligero": "3h 25m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -5365,16 +5586,21 @@
           "estres": 20,
           "hrv": 45,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 09m",
+            "rem": "1h 45m",
+            "ligero": "3h 47m"
+          },
           "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
           }
         },
         {
@@ -5386,16 +5612,21 @@
           "estres": 20,
           "hrv": 38,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 16m",
+            "rem": "1h 57m",
+            "ligero": "3h 54m"
+          },
           "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
           }
         },
         {
@@ -5407,54 +5638,63 @@
           "estres": 20,
           "hrv": 39,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 44m",
+            "rem": "1h 45m",
+            "ligero": "2h 29m"
+          },
           "fuente_dispositivo": {
-            "dispositivo": "Garmin Fénix 7 Solar",
-            "fuente_tipo": "garmin",
-            "badge_nombre": "Garmin Fénix 7",
-            "badge_icono": "watch",
-            "badge_color": "cyan",
-            "sueno_fuente": "Garmin Fénix 7 Solar",
-            "pasos_fuente": "Garmin Fénix 7 Solar",
-            "hrv_fuente": "Garmin Firstbeat",
-            "rhr_fuente": "Garmin Elevate v4"
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
           }
         }
       ],
-      "actividades": [
+      "actividades": []
+    },
+    "2026-W44": {
+      "semana": "2026-W44",
+      "pasos": 48,
+      "sueno": 6.2,
+      "rhr": 44,
+      "vo2": 37.0,
+      "hrv": 44,
+      "estres": 20,
+      "dias": [
         {
-          "fecha": "2026-10-24",
-          "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 03m",
-          "distancia": "-",
-          "fc_media_max": "120 (161) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 606,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-18",
-          "nombre": "Entrenamiento de Fuerza (Connect)",
-          "duracion": "42 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 245,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Other (Amazfit)",
-          "duracion": "10 min",
-          "distancia": "-",
-          "fc_media_max": "96 (111) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 68,
-          "has_gps": false,
-          "gps": null
+          "fecha": "2026-10-26",
+          "pasos": 48,
+          "sueno": 6.2,
+          "sueno_score": 87,
+          "rhr": 44,
+          "estres": 20,
+          "hrv": 44,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 05m",
+            "rem": "1h 14m",
+            "ligero": "3h 49m"
+          },
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
-      ]
+      ],
+      "actividades": []
     }
   },
   "rutas_gps": {
@@ -7562,10 +7802,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 52994,
+      "progreso": 60171,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (106%)",
+      "estado": "¡SUPERADO! 🔥 (120%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -7576,10 +7816,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 50,
+      "progreso": 186,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (50 min)",
+      "estado": "¡Completado con Éxito! 🔥 (186 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
@@ -7604,7 +7844,7 @@
       "titulo": "Consistencia de Sueño (>7h) & VFC",
       "subtitulo": "Regeneración Celular & Sistema Inmune",
       "descripcion": "Dormir más de 7 horas en al menos 5 noches para estabilizar el sistema nervioso autónomo y mantener la VFC >50 ms.",
-      "progreso": 2,
+      "progreso": 3,
       "meta": 5,
       "unidad": "noches >7h",
       "estado": "Cerca del objetivo (Excelente consistencia)",
@@ -7616,9 +7856,9 @@
   ],
   "acwr": {
     "fecha": "2026-10-26",
-    "carga_aguda_min_dia": 7.1,
-    "carga_cronica_min_dia": 50.4,
-    "ratio_acwr": 0.14,
+    "carga_aguda_min_dia": 0.0,
+    "carga_cronica_min_dia": 54.3,
+    "ratio_acwr": 0.0,
     "semaforo": "Desentrenamiento (baja carga)",
     "emoji": "🟦",
     "fatiga": {
@@ -7626,6 +7866,6 @@
       "motivos": [],
       "mensaje": "Todo en verde. Sin señales de alarma."
     },
-    "dias_usados": 21
+    "dias_usados": 22
   }
 }

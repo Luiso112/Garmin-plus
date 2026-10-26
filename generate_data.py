@@ -324,10 +324,10 @@ def _race_block(vo2):
 def resolve_device_source(dt):
     """
     Identifica de forma determinista qué dispositivo registró las métricas de un día concreto.
-    19 a 22 de Octubre 2026: monitorizados con la pulsera Amazfit Helio Strap (Zepp / HealthKit).
-    Resto de fechas: Garmin Fénix 7 Solar.
+    Desde el 19 de Octubre 2026 en adelante: monitorizados principalmente con la pulsera Amazfit Helio Strap (Zepp / HealthKit).
+    Fechas anteriores: Garmin Fénix 7 Solar.
     """
-    if dt in ["2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22"]:
+    if dt >= "2026-10-19":
         return {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -366,18 +366,7 @@ def extract_apple_health_days():
                         candidates.append(p)
     candidates.sort(key=os.path.getmtime)
 
-    ah_by_date = {
-        "2026-10-20": {
-            "fecha": "2026-10-20",
-            "pasos": 11912,
-            "sueno": 6.9,
-            "sueno_score": 88,
-            "rhr": 45,
-            "estres": 22,
-            "hrv": 51,
-            "min_intensidad": 45
-        }
-    }
+    ah_by_date = {}
 
     for p in candidates:
         if p.endswith(".md"):
@@ -388,7 +377,7 @@ def extract_apple_health_days():
                 dt = d.get("date")
                 if dt:
                     if dt not in ah_by_date:
-                        ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0}
+                        ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0, "sueno_fases": {"profundo": "1h 20m", "rem": "1h 45m", "ligero": "3h 30m"}, "_seen_sessions": set(), "_sleep_sec": 0}
                     st = d.get("steps") or 0
                     if st > ah_by_date[dt].get("pasos", 0):
                         ah_by_date[dt]["pasos"] = st
@@ -405,7 +394,7 @@ def extract_apple_health_days():
                 score = min(100, max(50, int(eff * 0.9)))
 
                 if dt not in ah_by_date:
-                    ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0}
+                    ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0, "sueno_fases": {"profundo": "1h 20m", "rem": "1h 45m", "ligero": "3h 30m"}, "_seen_sessions": set(), "_sleep_sec": 0}
 
                 if hours > 0:
                     ah_by_date[dt]["sueno"] = hours
@@ -424,20 +413,20 @@ def extract_apple_health_days():
         except Exception:
             continue
         
+        meta_notes = raw.get("meta", {}).get("notes", "")
+        file_dt_match = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(p))
+        file_fallback_date = file_dt_match.group(1) if file_dt_match else ""
+
         for d in raw.get("activity", {}).get("daily", []):
             dt = d.get("date")
             if dt:
                 if dt not in ah_by_date:
-                    ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0}
+                    ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0, "sueno_fases": {"profundo": "1h 20m", "rem": "1h 45m", "ligero": "3h 30m"}, "_seen_sessions": set(), "_sleep_sec": 0}
                 st = d.get("steps") or 0
                 if st > ah_by_date[dt].get("pasos", 0):
                     ah_by_date[dt]["pasos"] = st
 
         # Colección de sesiones de sueño únicas por fecha y hora de inicio
-        file_dt_match = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(p))
-        file_fallback_date = file_dt_match.group(1) if file_dt_match else datetime.date.today().isoformat()
-
-        # Filtrar sesiones duplicadas entre fuentes: Priorizar Zepp si existe en la misma noche
         sessions_in_raw = raw.get("sleep", {}).get("sessions", [])
         has_zepp = any(s.get("source") == "Zepp" for s in sessions_in_raw)
         filtered_sessions = [s for s in sessions_in_raw if (not has_zepp or s.get("source") == "Zepp")]
@@ -452,6 +441,7 @@ def extract_apple_health_days():
             hrv_avg = vitals.get("hrvSDNN", {}).get("avg")
             eff = s.get("sleepEfficiencyPct") or 90
             score = min(100, max(50, int(eff * 0.9)))
+            stage_totals = s.get("stageTotalsSec", {})
 
             dt = file_fallback_date
             if "-" in end:
@@ -460,15 +450,20 @@ def extract_apple_health_days():
                     dt = f"2026-{parts[0]}-{parts[1]}"
                 elif len(parts) == 3:
                     dt = end.split(" ")[0]
+            elif meta_notes:
+                m_anch = re.search(r"anchored at\s+([0-9\-]+)", meta_notes)
+                if m_anch:
+                    dt = m_anch.group(1)
+
+            if not dt:
+                dt = datetime.date.today().isoformat()
 
             if dt not in ah_by_date:
-                ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0, "_seen_sessions": set(), "_sleep_sec": 0}
+                ah_by_date[dt] = {"fecha": dt, "pasos": 0, "sueno": 0.0, "sueno_score": 85, "rhr": 48, "estres": 20, "hrv": 55, "min_intensidad": 0, "sueno_fases": {"profundo": "1h 20m", "rem": "1h 45m", "ligero": "3h 30m"}, "_seen_sessions": set(), "_sleep_sec": 0}
             elif "_seen_sessions" not in ah_by_date[dt]:
                 ah_by_date[dt]["_seen_sessions"] = set()
                 ah_by_date[dt]["_sleep_sec"] = int(ah_by_date[dt].get("sueno", 0.0) * 3600)
 
-            # Evitar sumar la misma sesión dos veces si aparece en el archivo semanal y en el diario
-            # Normalizar clave sin prefijos de fecha redundantes
             clean_st = st_time.split(" ")[-1]
             clean_end = end.split(" ")[-1]
             sess_key = f"{clean_st}_{clean_end}"
@@ -478,6 +473,15 @@ def extract_apple_health_days():
                     ah_by_date[dt]["_sleep_sec"] += asleep_sec
                     ah_by_date[dt]["sueno"] = round(ah_by_date[dt]["_sleep_sec"] / 3600.0, 1)
                     ah_by_date[dt]["sueno_score"] = score
+                    if stage_totals:
+                        deep_s = stage_totals.get("asleepDeep", 0)
+                        rem_s = stage_totals.get("asleepREM", 0)
+                        core_s = stage_totals.get("asleepCore", 0)
+                        ah_by_date[dt]["sueno_fases"] = {
+                            "profundo": f"{deep_s//3600}h {(deep_s%3600)//60:02d}m",
+                            "rem": f"{rem_s//3600}h {(rem_s%3600)//60:02d}m",
+                            "ligero": f"{core_s//3600}h {(core_s%3600)//60:02d}m"
+                        }
             if hr_min:
                 ah_by_date[dt]["rhr"] = int(hr_min)
             elif hr_avg:
@@ -485,7 +489,6 @@ def extract_apple_health_days():
             if hrv_avg:
                 ah_by_date[dt]["hrv"] = round(hrv_avg)
 
-    # Limpiar campos auxiliares no serializables antes de retornar
     clean_dict = {}
     for dt, item in ah_by_date.items():
         clean_dict[dt] = {k: v for k, v in item.items() if not k.startswith('_')}
@@ -578,37 +581,7 @@ def parse_garmin_data():
         hrv_val = int(hrv_m.group(1)) if hrv_m else (round(sum(d["hrv"] for d in week_days)/len(week_days)) if week_days else 50)
         stress_val = int(stress_m.group(1)) if stress_m else 25
 
-        # Fusionar dias enriquecidos de Apple Health / Amazfit si es la semana actual
-        if wtag == "2026-W43" or "W43" in wtag:
-            ah_dict = extract_apple_health_days()
-            days_by_date = {d["fecha"]: d for d in week_days}
-            for dt, ah_vals in sorted(ah_dict.items()):
-                dev_src = resolve_device_source(dt)
-                if dt in days_by_date:
-                    cur = days_by_date[dt]
-                    if ah_vals.get("pasos", 0) > cur.get("pasos", 0):
-                        cur["pasos"] = ah_vals["pasos"]
-                    if ah_vals.get("sueno", 0) > 0 and (cur.get("sueno", 0) == 0 or cur.get("sueno") == 6.7):
-                        cur["sueno"] = ah_vals["sueno"]
-                        cur["sueno_score"] = ah_vals.get("sueno_score", cur.get("sueno_score", 85))
-                    if ah_vals.get("rhr"):
-                        cur["rhr"] = ah_vals["rhr"]
-                    if ah_vals.get("hrv"):
-                        cur["hrv"] = ah_vals["hrv"]
-                    cur["fuente_dispositivo"] = dev_src
-                else:
-                    new_day = dict(ah_vals)
-                    new_day["fuente_dispositivo"] = dev_src
-                    week_days.append(new_day)
-            week_days.sort(key=lambda x: x["fecha"])
-            steps_val = sum(d["pasos"] for d in week_days)
-            valid_sleep = [d["sueno"] for d in week_days if d.get("sueno", 0) > 0]
-            sleep_val = round(sum(valid_sleep) / len(valid_sleep), 1) if valid_sleep else sleep_val
-            valid_rhr = [d["rhr"] for d in week_days if d.get("rhr", 0) > 0]
-            rhr_val = round(sum(valid_rhr) / len(valid_rhr)) if valid_rhr else rhr_val
-            valid_hrv = [d["hrv"] for d in week_days if d.get("hrv", 0) > 0]
-            hrv_val = round(sum(valid_hrv) / len(valid_hrv)) if valid_hrv else hrv_val
-
+        # Asignar resumen previo de semana
         week_summary = {
             "semana": wtag,
             "pasos": steps_val,
@@ -624,9 +597,129 @@ def parse_garmin_data():
         history_weeks.append(week_summary)
         weeks_dict[wtag] = week_summary
 
+    # ==============================================================
+    # KAIZEN: Fusión dinámica por fecha de semana ISO para no depender
+    # de semanas 'hardcodeadas' ni omitir el día de hoy (ej. 2026-W44)
+    # ==============================================================
+    ah_dict = extract_apple_health_days()
+    today_dt = datetime.date.today()
+    cur_y, cur_w, cur_d = today_dt.isocalendar()
+    current_iso_week = f"{cur_y}-W{cur_w:02d}"
+
+    # Enriquecer o poblar la semana actual
+    if current_iso_week not in weeks_dict:
+        # Semana en curso recién iniciada (ej. Lunes)
+        w_monday = today_dt - datetime.timedelta(days=cur_d - 1)
+        cur_week_dates = set((w_monday + datetime.timedelta(days=i)).isoformat() for i in range(7))
+        w_days = []
+        for dt, ah_vals in sorted(ah_dict.items()):
+            if dt in cur_week_dates:
+                dev_src = resolve_device_source(dt)
+                d_item = dict(ah_vals)
+                d_item["fuente_dispositivo"] = dev_src
+                w_days.append(d_item)
+        
+        # Si hoy aún no estaba en ah_dict, agregar placeholder de hoy
+        if not any(d["fecha"] == today_dt.isoformat() for d in w_days):
+            w_days.append({
+                "fecha": today_dt.isoformat(),
+                "pasos": 0,
+                "sueno": 0.0,
+                "sueno_score": 85,
+                "rhr": 48,
+                "estres": 20,
+                "hrv": 50,
+                "min_intensidad": 0,
+                "fuente_dispositivo": resolve_device_source(today_dt.isoformat())
+            })
+        w_days.sort(key=lambda x: x["fecha"])
+        
+        last_vo2 = history_weeks[-1]["vo2"] if history_weeks else 37.0
+        cur_steps = sum(d["pasos"] for d in w_days)
+        valid_s = [d["sueno"] for d in w_days if d.get("sueno", 0) > 0]
+        cur_sleep = round(sum(valid_s) / len(valid_s), 1) if valid_s else 0.0
+        valid_r = [d["rhr"] for d in w_days if d.get("rhr", 0) > 0]
+        cur_rhr = round(sum(valid_r) / len(valid_r)) if valid_r else 48
+        valid_h = [d["hrv"] for d in w_days if d.get("hrv", 0) > 0]
+        cur_hrv = round(sum(valid_h) / len(valid_h)) if valid_h else 50
+        
+        cur_week_summary = {
+            "semana": current_iso_week,
+            "pasos": cur_steps,
+            "sueno": cur_sleep,
+            "rhr": cur_rhr,
+            "vo2": last_vo2,
+            "hrv": cur_hrv,
+            "estres": 20,
+            "dias": w_days,
+            "actividades": []
+        }
+        history_weeks.append(cur_week_summary)
+        weeks_dict[current_iso_week] = cur_week_summary
+
+    # También enriquecer semanas existentes con ah_dict según fechas
+    for w_entry in history_weeks:
+        w_tag = w_entry["semana"]
+        m_w = re.match(r"(\d{4})-W(\d{2})", w_tag)
+        if not m_w:
+            continue
+        wy, ww = int(m_w.group(1)), int(m_w.group(2))
+        w_mon = datetime.date.fromisocalendar(wy, ww, 1)
+        w_dates = set((w_mon + datetime.timedelta(days=i)).isoformat() for i in range(7))
+        
+        w_days_map = {d["fecha"]: d for d in w_entry["dias"]}
+        modified = False
+        for dt, ah_vals in sorted(ah_dict.items()):
+            if dt in w_dates:
+                dev_src = resolve_device_source(dt)
+                if dt in w_days_map:
+                    cur = w_days_map[dt]
+                    if ah_vals.get("pasos", 0) > cur.get("pasos", 0):
+                        cur["pasos"] = ah_vals["pasos"]
+                    if ah_vals.get("sueno", 0) > 0:
+                        cur["sueno"] = ah_vals["sueno"]
+                        cur["sueno_score"] = ah_vals.get("sueno_score", cur.get("sueno_score", 85))
+                    if ah_vals.get("sueno_fases"):
+                        cur["sueno_fases"] = ah_vals["sueno_fases"]
+                    if ah_vals.get("rhr"):
+                        cur["rhr"] = ah_vals["rhr"]
+                    if ah_vals.get("hrv"):
+                        cur["hrv"] = ah_vals["hrv"]
+                    cur["fuente_dispositivo"] = dev_src
+                    modified = True
+                else:
+                    new_d = dict(ah_vals)
+                    new_d["fuente_dispositivo"] = dev_src
+                    w_entry["dias"].append(new_d)
+                    w_days_map[dt] = new_d
+                    modified = True
+        if modified:
+            w_entry["dias"].sort(key=lambda x: x["fecha"])
+            w_entry["pasos"] = sum(d["pasos"] for d in w_entry["dias"])
+            val_s = [d["sueno"] for d in w_entry["dias"] if d.get("sueno", 0) > 0]
+            w_entry["sueno"] = round(sum(val_s) / len(val_s), 1) if val_s else w_entry["sueno"]
+            val_r = [d["rhr"] for d in w_entry["dias"] if d.get("rhr", 0) > 0]
+            w_entry["rhr"] = round(sum(val_r) / len(val_r)) if val_r else w_entry["rhr"]
+            val_h = [d["hrv"] for d in w_entry["dias"] if d.get("hrv", 0) > 0]
+            w_entry["hrv"] = round(sum(val_h) / len(val_h)) if val_h else w_entry["hrv"]
+
     latest_week = history_weeks[-1]
-    daily_stats = latest_week["dias"]
+    # KAIZEN: Unir todos los días únicos de las semanas recientes para que desglose_diario
+    # ofrezca una ventana continua completa de los últimos 7-10 días (evitando tarjetas vacías en lunes)
+    all_known_days = {}
+    for w in history_weeks:
+        for d in w.get("dias", []):
+            all_known_days[d["fecha"]] = d
+    sorted_all_days = [all_known_days[k] for k in sorted(all_known_days.keys())]
+    # Ventana móvil de los últimos 10 días para desglose diario y gráficos de tendencia
+    daily_stats = sorted_all_days[-10:] if len(sorted_all_days) >= 10 else sorted_all_days
     activities = latest_week["actividades"]
+    if not activities and len(history_weeks) >= 2:
+        # Si la semana acaba de empezar y aún no hay entrenos hoy, incluir actividades de los últimos 7 días
+        recent_acts = []
+        for w in history_weeks[-2:]:
+            recent_acts.extend(w.get("actividades", []))
+        activities = recent_acts
 
     last_day = daily_stats[-1] if daily_stats else {
         "fecha": datetime.date.today().isoformat(),
@@ -764,23 +857,38 @@ def parse_garmin_data():
                 if bb_data and isinstance(bb_data, list) and len(bb_data) > 0:
                     item = bb_data[0]
                     pts = item.get("bodyBatteryValuesArray", [])
-                    vals_only = [p[1] for p in pts] if pts else []
+                    vals_only = [p[1] for p in pts if (isinstance(p, (list, tuple)) and len(p) > 1 and p[1] is not None)] if pts else []
 
                     # Priorizar valor más reciente consolidado por Garmin Connect
                     curr = user_summary.get("bodyBatteryMostRecentValue")
                     if curr is None:
                         curr = pts[-1][1] if pts else 41
+                    if curr is None:
+                        curr = 41
 
                     ch = user_summary.get("bodyBatteryChargedValue")
                     if ch is None:
                         ch = item.get("charged", 65)
+                    if ch is None:
+                        ch = 65
 
                     dr = user_summary.get("bodyBatteryDrainedValue")
                     if dr is None:
                         dr = item.get("drained", 0)
+                    if dr is None:
+                        dr = 0
 
-                    bb_high = user_summary.get("bodyBatteryHighestValue") or (max(vals_only) if vals_only else curr)
-                    bb_low = user_summary.get("bodyBatteryLowestValue") or (min(vals_only) if vals_only else curr)
+                    bb_high = user_summary.get("bodyBatteryHighestValue")
+                    if bb_high is None:
+                        bb_high = max(vals_only) if vals_only else curr
+                    if bb_high is None:
+                        bb_high = curr
+
+                    bb_low = user_summary.get("bodyBatteryLowestValue")
+                    if bb_low is None:
+                        bb_low = min(vals_only) if vals_only else curr
+                    if bb_low is None:
+                        bb_low = curr
 
                     curva = []
                     for p in pts:
@@ -870,7 +978,7 @@ def parse_garmin_data():
                     for i in range(0, len(valid), paso):
                         chunk = valid[i:i+paso]
                         # Tomar el punto de mayor FC del intervalo para no diluir el ejercicio intenso
-                        chunk_max = max(chunk, key=lambda x: x[1])
+                        chunk_max = max(chunk, key=lambda x: (x[1] if (len(x) > 1 and x[1] is not None) else -1))
                         t_str = datetime.datetime.fromtimestamp(chunk_max[0] / 1000).strftime("%H:%M")
                         pts.append({"hora": t_str, "bpm": chunk_max[1], "source": "Garmin Fénix 7 Solar (Continuo Real)"})
                     stats = {
@@ -1151,6 +1259,7 @@ def parse_garmin_data():
                 "hrv": last_day["hrv"],
                 "sueno_horas": last_day["sueno"],
                 "sueno_score": last_day.get("sueno_score", 86),
+                "sueno_fases": last_day.get("sueno_fases", {"profundo": "1h 05m", "rem": "1h 14m", "ligero": "3h 49m"}),
                 "pasos": last_day["pasos"],
                 "meta_pasos": 8000,
                 "pasos_semana": total_steps_week,

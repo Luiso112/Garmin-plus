@@ -1015,14 +1015,14 @@
             <div class="grid grid-cols-3 gap-2 pt-2 border-t border-[#1E2D3B] text-center text-xs">
               <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
                 <span class="text-slate-400 text-[10px] block">Profundo</span>
-                <span class="text-indigo-400 font-bold text-sm">1h 25m</span>
+                <span class="text-indigo-400 font-bold text-sm">${(m.sueno_fases && m.sueno_fases.profundo) || "1h 05m"}</span>
               </div>
               <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
-                <span class="text-purple-400 font-bold text-sm">2h 05m</span>
+                <span class="text-purple-400 font-bold text-sm">${(m.sueno_fases && m.sueno_fases.rem) || "1h 14m"}</span>
                 <span class="text-slate-400 text-[10px] block">REM</span>
               </div>
               <div class="bg-[#111A22] p-2 rounded-xl border border-[#1E2D3B]">
-                <span class="text-cyan-400 font-bold text-sm">4h 10m</span>
+                <span class="text-cyan-400 font-bold text-sm">${(m.sueno_fases && m.sueno_fases.ligero) || "3h 49m"}</span>
                 <span class="text-slate-400 text-[10px] block">Ligero</span>
               </div>
             </div>
