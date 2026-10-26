@@ -1,6 +1,6 @@
 // Service worker mínimo — Garmin-plus PWA
 // Estrategia: red-first con caché de respaldo (app 100% local, datos frescos importan).
-const CACHE = 'garmin-plus-v3';
+const CACHE = 'garmin-plus-v4';
 const CORE = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
