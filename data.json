@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-25 09:41:12",
+  "ultima_actualizacion": "2026-10-26 07:21:14",
   "semana_actual": "2026-W43",
   "fuentes_metricas": {
     "sueno": {
@@ -7615,7 +7615,7 @@
     }
   ],
   "acwr": {
-    "fecha": "2026-10-25",
+    "fecha": "2026-10-26",
     "carga_aguda_min_dia": 7.1,
     "carga_cronica_min_dia": 50.4,
     "ratio_acwr": 0.14,
