@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-27 07:26:19",
+  "ultima_actualizacion": "2026-10-27 07:33:48",
   "semana_actual": "2026-W44",
   "fuentes_metricas": {
     "sueno": {
@@ -47,16 +47,16 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (6 entrenos · 2645.9 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (6 entrenos · 2649.9 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-json-2026-10-26-0000_to_2026-10-26-0719.json",
-        "periodo": "2026-10-25 a 2026-10-26",
+        "archivo": "health-export-json-2026-10-27-0000_to_2026-10-27-0725.json",
+        "periodo": "2026-10-26 a 2026-10-27",
         "entrenamientos_registrados": 6,
-        "calorias_activas": 2645.9,
-        "pasos_registrados": 53042,
+        "calorias_activas": 2649.9,
+        "pasos_registrados": 53074,
         "hrv_media_sdnn": 53
       }
     }
@@ -64,21 +64,21 @@
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (50 ms)",
+    "hrv_status": "Equilibrada (62 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (0.0h)",
+    "sueno_calidad": "Reparador (6.8h)",
     "carga_aguda": "Equilibrada (Semana en curso)",
     "historial_reciente": "Trabajo consistente (3 sesiones esta semana)"
   },
-  "active_intelligence": "Semana en curso (2026-W44) con 51.392 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.0h/noche ha sostenido tu VFC promedio en 46 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
+  "active_intelligence": "Semana en curso (2026-W44) con 51.424 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.7h/noche ha sostenido tu VFC promedio en 48 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
-    "actual": 69,
-    "cargado": 62,
+    "actual": 77,
+    "cargado": 70,
     "drenado": 18,
-    "max": 87,
+    "max": 95,
     "min": 25,
-    "descanso_nocturno": "Recuperación (+62 pts)",
-    "momento_pico": "Pico al despertar (87 pts)",
+    "descanso_nocturno": "Recuperación (+70 pts)",
+    "momento_pico": "Pico al despertar (95 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
@@ -86,26 +86,26 @@
       },
       {
         "hora": "03:00",
-        "valor": 49
+        "valor": 53
       },
       {
         "hora": "06:46",
-        "valor": 87
+        "valor": 95
       },
       {
         "hora": "08:30",
-        "valor": 82
+        "valor": 90
       },
       {
         "hora": "11:00",
-        "valor": 69
+        "valor": 77
       }
     ],
     "factores_impacto": [
       {
         "nombre": "Sueño Nocturno (Amazfit Zepp)",
-        "subtitulo": "0.0h reparador (Score 85)",
-        "impacto": "+62 ↑",
+        "subtitulo": "6.8h reparador (Score 88)",
+        "impacto": "+70 ↑",
         "es_recuperacion": true
       },
       {
@@ -115,23 +115,23 @@
         "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Recarga nocturna estimada en +62 puntos impulsada por 0.0h de descanso profundo y una VFC de 50 ms. Alcanzaste un pico de 87/100 al despertar, situándote actualmente en 69/100 tras un drenaje de 18 puntos.",
+    "analisis_clinico": "Recarga nocturna estimada en +70 puntos impulsada por 6.8h de descanso profundo y una VFC de 62 ms. Alcanzaste un pico de 95/100 al despertar, situándote actualmente en 77/100 tras un drenaje de 18 puntos.",
     "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
     "fecha": "2026-10-27",
-    "rhr": 48,
-    "hrv": 50,
-    "sueno_horas": 0.0,
-    "sueno_score": 85,
+    "rhr": 45,
+    "hrv": 62,
+    "sueno_horas": 6.8,
+    "sueno_score": 88,
     "sueno_fases": {
-      "profundo": "1h 05m",
-      "rem": "1h 14m",
-      "ligero": "3h 49m"
+      "profundo": "1h 23m",
+      "rem": "1h 28m",
+      "ligero": "3h 52m"
     },
-    "pasos": 0,
+    "pasos": 32,
     "meta_pasos": 8000,
-    "pasos_semana": 51392,
+    "pasos_semana": 51424,
     "estres": 20,
     "vo2max": 37.0,
     "min_intensidad": 0,
@@ -151,8 +151,8 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (0.0h) con un Body Battery al 69% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 50 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.8h) con un Body Battery al 77% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 62 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -494,17 +494,17 @@
     }
   ],
   "apple_health": {
-    "archivo_fuente": "health-export-json-2026-10-26-0000_to_2026-10-26-0719.json",
+    "archivo_fuente": "health-export-json-2026-10-27-0000_to_2026-10-27-0725.json",
     "rango": {
-      "inicio": "2026-10-25T23:00:00Z",
-      "fin": "2026-10-26T06:19:42Z",
-      "exportado": "2026-10-26T06:19:42Z"
+      "inicio": "2026-10-26T23:00:00Z",
+      "fin": "2026-10-27T06:25:19Z",
+      "exportado": "2026-10-27T06:25:19Z"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 2645.9,
-      "pasos_registrados": 53042,
+      "calorias_activas_kcal": 2649.9,
+      "pasos_registrados": 53074,
       "sesiones_entrenamiento": 6,
-      "sesiones_sueno": 17,
+      "sesiones_sueno": 18,
       "hrv_media_sdnn_ms": 53
     },
     "entrenamientos": [
@@ -671,6 +671,13 @@
         "activeEnergyKcal": 4,
         "date": "2026-10-26",
         "steps": 48,
+        "workoutCount": 0
+      },
+      {
+        "activeEnergyKcal": 4,
+        "date": "2026-10-27",
+        "distanceKm": 0.01,
+        "steps": 32,
         "workoutCount": 0
       }
     ]
@@ -912,13 +919,18 @@
     },
     {
       "fecha": "2026-10-27",
-      "pasos": 0,
-      "sueno": 0.0,
-      "sueno_score": 85,
-      "rhr": 48,
+      "pasos": 32,
+      "sueno": 6.8,
+      "sueno_score": 88,
+      "rhr": 45,
       "estres": 20,
-      "hrv": 50,
+      "hrv": 62,
       "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "1h 23m",
+        "rem": "1h 28m",
+        "ligero": "3h 52m"
+      },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -3275,11 +3287,11 @@
     },
     {
       "semana": "2026-W44",
-      "pasos": 48,
-      "sueno": 6.2,
-      "rhr": 46,
+      "pasos": 80,
+      "sueno": 6.5,
+      "rhr": 44,
       "vo2": 37.0,
-      "hrv": 47,
+      "hrv": 53,
       "estres": 20,
       "dias": [
         {
@@ -3310,13 +3322,18 @@
         },
         {
           "fecha": "2026-10-27",
-          "pasos": 0,
-          "sueno": 0.0,
-          "sueno_score": 85,
-          "rhr": 48,
+          "pasos": 32,
+          "sueno": 6.8,
+          "sueno_score": 88,
+          "rhr": 45,
           "estres": 20,
-          "hrv": 50,
+          "hrv": 62,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 23m",
+            "rem": "1h 28m",
+            "ligero": "3h 52m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -5676,11 +5693,11 @@
     },
     "2026-W44": {
       "semana": "2026-W44",
-      "pasos": 48,
-      "sueno": 6.2,
-      "rhr": 46,
+      "pasos": 80,
+      "sueno": 6.5,
+      "rhr": 44,
       "vo2": 37.0,
-      "hrv": 47,
+      "hrv": 53,
       "estres": 20,
       "dias": [
         {
@@ -5711,13 +5728,18 @@
         },
         {
           "fecha": "2026-10-27",
-          "pasos": 0,
-          "sueno": 0.0,
-          "sueno_score": 85,
-          "rhr": 48,
+          "pasos": 32,
+          "sueno": 6.8,
+          "sueno_score": 88,
+          "rhr": 45,
           "estres": 20,
-          "hrv": 50,
+          "hrv": 62,
           "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "1h 23m",
+            "rem": "1h 28m",
+            "ligero": "3h 52m"
+          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -7839,7 +7861,7 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 51392,
+      "progreso": 51424,
       "meta": 50000,
       "unidad": "pasos",
       "estado": "¡SUPERADO! 🔥 (103%)",
