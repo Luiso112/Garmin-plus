@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-27 21:37:29",
+  "ultima_actualizacion": "2026-10-28 15:16:49",
   "semana_actual": "2026-W44",
   "fuentes_metricas": {
     "sueno": {
@@ -64,21 +64,21 @@
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (62 ms)",
+    "hrv_status": "Equilibrada (50 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (6.8h)",
+    "sueno_calidad": "Reparador (0.0h)",
     "carga_aguda": "Equilibrada (Semana en curso)",
     "historial_reciente": "Trabajo consistente (5 sesiones esta semana)"
   },
-  "active_intelligence": "Semana en curso (2026-W44) con 57.445 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.7h/noche ha sostenido tu VFC promedio en 48 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
+  "active_intelligence": "Semana en curso (2026-W44) con 50.936 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.0h/noche ha sostenido tu VFC promedio en 47 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
-    "actual": 77,
-    "cargado": 70,
+    "actual": 69,
+    "cargado": 62,
     "drenado": 18,
-    "max": 95,
+    "max": 87,
     "min": 25,
-    "descanso_nocturno": "Recuperación (+70 pts)",
-    "momento_pico": "Pico al despertar (95 pts)",
+    "descanso_nocturno": "Recuperación (+62 pts)",
+    "momento_pico": "Pico al despertar (87 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
@@ -86,26 +86,26 @@
       },
       {
         "hora": "03:00",
-        "valor": 53
+        "valor": 49
       },
       {
         "hora": "06:46",
-        "valor": 95
+        "valor": 87
       },
       {
         "hora": "08:30",
-        "valor": 90
+        "valor": 82
       },
       {
         "hora": "11:00",
-        "valor": 77
+        "valor": 69
       }
     ],
     "factores_impacto": [
       {
         "nombre": "Sueño Nocturno (Amazfit Zepp)",
-        "subtitulo": "6.8h reparador (Score 88)",
-        "impacto": "+70 ↑",
+        "subtitulo": "0.0h reparador (Score 85)",
+        "impacto": "+62 ↑",
         "es_recuperacion": true
       },
       {
@@ -115,27 +115,27 @@
         "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Recarga nocturna estimada en +70 puntos impulsada por 6.8h de descanso profundo y una VFC de 62 ms. Alcanzaste un pico de 95/100 al despertar, situándote actualmente en 77/100 tras un drenaje de 18 puntos.",
+    "analisis_clinico": "Recarga nocturna estimada en +62 puntos impulsada por 0.0h de descanso profundo y una VFC de 50 ms. Alcanzaste un pico de 87/100 al despertar, situándote actualmente en 69/100 tras un drenaje de 18 puntos.",
     "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
-    "fecha": "2026-10-27",
-    "rhr": 45,
-    "hrv": 62,
-    "sueno_horas": 6.8,
-    "sueno_score": 88,
+    "fecha": "2026-10-28",
+    "rhr": 48,
+    "hrv": 50,
+    "sueno_horas": 0.0,
+    "sueno_score": 85,
     "sueno_fases": {
-      "profundo": "1h 23m",
-      "rem": "1h 28m",
-      "ligero": "3h 52m"
+      "profundo": "1h 05m",
+      "rem": "1h 14m",
+      "ligero": "3h 49m"
     },
-    "pasos": 6053,
+    "pasos": 0,
     "meta_pasos": 8000,
-    "pasos_semana": 57445,
+    "pasos_semana": 50936,
     "estres": 20,
     "vo2max": 37.0,
     "min_intensidad": 0,
-    "intensidad_semana": 54,
+    "intensidad_semana": 5,
     "meta_intensidad": 150,
     "fuente_dispositivo": {
       "dispositivo": "Amazfit Helio Strap",
@@ -151,8 +151,8 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.8h) con un Body Battery al 77% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 62 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (0.0h) con un Body Battery al 69% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 50 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -641,7 +641,7 @@
   },
   "curva_fc_dias": {
     "hoy": {
-      "fecha": "2026-10-27",
+      "fecha": "2026-10-28",
       "puntos": [
         {
           "hora": "17:54",
@@ -1081,9 +1081,464 @@
       }
     },
     "ayer": {
-      "fecha": "2026-10-26",
-      "puntos": [],
-      "stats": {}
+      "fecha": "2026-10-27",
+      "puntos": [
+        {
+          "hora": "17:54",
+          "bpm": 88,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "17:58",
+          "bpm": 84,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:02",
+          "bpm": 88,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:06",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:12",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:14",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:20",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:22",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:26",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:30",
+          "bpm": 60,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:36",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:38",
+          "bpm": 59,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:42",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:46",
+          "bpm": 58,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:52",
+          "bpm": 58,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "18:54",
+          "bpm": 59,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:00",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:04",
+          "bpm": 89,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:08",
+          "bpm": 79,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:10",
+          "bpm": 76,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:14",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:18",
+          "bpm": 73,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:22",
+          "bpm": 74,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:26",
+          "bpm": 59,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:32",
+          "bpm": 67,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:36",
+          "bpm": 97,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:40",
+          "bpm": 111,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:42",
+          "bpm": 105,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:48",
+          "bpm": 112,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:50",
+          "bpm": 123,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:54",
+          "bpm": 132,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "19:58",
+          "bpm": 134,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:04",
+          "bpm": 160,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:08",
+          "bpm": 148,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:10",
+          "bpm": 153,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:16",
+          "bpm": 161,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:18",
+          "bpm": 155,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:24",
+          "bpm": 152,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:26",
+          "bpm": 168,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:32",
+          "bpm": 119,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:34",
+          "bpm": 116,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:40",
+          "bpm": 126,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:42",
+          "bpm": 132,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:46",
+          "bpm": 113,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:52",
+          "bpm": 91,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:54",
+          "bpm": 83,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "20:58",
+          "bpm": 85,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:02",
+          "bpm": 87,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:06",
+          "bpm": 92,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:12",
+          "bpm": 87,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:14",
+          "bpm": 88,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:20",
+          "bpm": 88,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:22",
+          "bpm": 82,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:28",
+          "bpm": 75,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:32",
+          "bpm": 79,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:34",
+          "bpm": 98,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:38",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:44",
+          "bpm": 79,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:46",
+          "bpm": 83,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:50",
+          "bpm": 70,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:56",
+          "bpm": 72,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "21:58",
+          "bpm": 71,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:04",
+          "bpm": 69,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:08",
+          "bpm": 70,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:10",
+          "bpm": 70,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:14",
+          "bpm": 68,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:18",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:22",
+          "bpm": 69,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:26",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:30",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:36",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:40",
+          "bpm": 78,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:44",
+          "bpm": 82,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:46",
+          "bpm": 84,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:52",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "22:56",
+          "bpm": 66,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:00",
+          "bpm": 64,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:02",
+          "bpm": 65,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:06",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:10",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:16",
+          "bpm": 63,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:18",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:22",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:26",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:32",
+          "bpm": 61,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:36",
+          "bpm": 62,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:38",
+          "bpm": 60,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:44",
+          "bpm": 76,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:48",
+          "bpm": 70,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "23:50",
+          "bpm": 79,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        }
+      ],
+      "stats": {
+        "min": 56,
+        "max": 168,
+        "rhr": 59
+      }
     }
   },
   "actividades": [
@@ -1363,32 +1818,6 @@
   },
   "desglose_diario": [
     {
-      "fecha": "2026-10-18",
-      "pasos": 6509,
-      "sueno": 7.1,
-      "sueno_score": 78,
-      "rhr": 48,
-      "estres": 28,
-      "hrv": 55,
-      "min_intensidad": 49,
-      "fuente_dispositivo": {
-        "dispositivo": "Garmin Fénix 7 Solar",
-        "fuente_tipo": "garmin",
-        "badge_nombre": "Garmin Fénix 7",
-        "badge_icono": "watch",
-        "badge_color": "cyan",
-        "sueno_fuente": "Garmin Fénix 7 Solar",
-        "pasos_fuente": "Garmin Fénix 7 Solar",
-        "hrv_fuente": "Garmin Firstbeat",
-        "rhr_fuente": "Garmin Elevate v4"
-      },
-      "sueno_fases": {
-        "profundo": "1h 20m",
-        "rem": "1h 45m",
-        "ligero": "3h 30m"
-      }
-    },
-    {
       "fecha": "2026-10-19",
       "pasos": 3320,
       "sueno": 5.5,
@@ -1610,6 +2039,27 @@
         "rem": "1h 28m",
         "ligero": "3h 52m"
       },
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-10-28",
+      "pasos": 0,
+      "sueno": 0.0,
+      "sueno_score": 85,
+      "rhr": 48,
+      "estres": 20,
+      "hrv": 50,
+      "min_intensidad": 0,
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -3968,9 +4418,9 @@
       "semana": "2026-W44",
       "pasos": 6101,
       "sueno": 6.5,
-      "rhr": 44,
+      "rhr": 46,
       "vo2": 37.0,
-      "hrv": 53,
+      "hrv": 52,
       "estres": 20,
       "dias": [
         {
@@ -4013,6 +4463,27 @@
             "rem": "1h 28m",
             "ligero": "3h 52m"
           },
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-28",
+          "pasos": 0,
+          "sueno": 0.0,
+          "sueno_score": 85,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 50,
+          "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -6374,9 +6845,9 @@
       "semana": "2026-W44",
       "pasos": 6101,
       "sueno": 6.5,
-      "rhr": 44,
+      "rhr": 46,
       "vo2": 37.0,
-      "hrv": 53,
+      "hrv": 52,
       "estres": 20,
       "dias": [
         {
@@ -6419,6 +6890,27 @@
             "rem": "1h 28m",
             "ligero": "3h 52m"
           },
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-10-28",
+          "pasos": 0,
+          "sueno": 0.0,
+          "sueno_score": 85,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 50,
+          "min_intensidad": 0,
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -8540,10 +9032,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 57445,
+      "progreso": 50936,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (115%)",
+      "estado": "¡SUPERADO! 🔥 (102%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -8554,10 +9046,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 54,
+      "progreso": 5,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (54 min)",
+      "estado": "¡Completado con Éxito! 🔥 (5 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
@@ -8582,7 +9074,7 @@
       "titulo": "Consistencia de Sueño (>7h) & VFC",
       "subtitulo": "Regeneración Celular & Sistema Inmune",
       "descripcion": "Dormir más de 7 horas en al menos 5 noches para estabilizar el sistema nervioso autónomo y mantener la VFC >50 ms.",
-      "progreso": 3,
+      "progreso": 2,
       "meta": 5,
       "unidad": "noches >7h",
       "estado": "Cerca del objetivo (Excelente consistencia)",
@@ -8593,9 +9085,9 @@
     }
   ],
   "acwr": {
-    "fecha": "2026-10-27",
+    "fecha": "2026-10-28",
     "carga_aguda_min_dia": 0.0,
-    "carga_cronica_min_dia": 52.0,
+    "carga_cronica_min_dia": 49.8,
     "ratio_acwr": 0.0,
     "semaforo": "Desentrenamiento (baja carga)",
     "emoji": "🟦",
@@ -8604,6 +9096,6 @@
       "motivos": [],
       "mensaje": "Todo en verde. Sin señales de alarma."
     },
-    "dias_usados": 23
+    "dias_usados": 24
   }
 }
