@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-31 16:37:45",
+  "ultima_actualizacion": "2026-10-31 18:46:05",
   "semana_actual": "2026-W44",
   "fuentes_metricas": {
     "sueno": {
@@ -47,16 +47,16 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (10 entrenos · 4843.1 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (11 entrenos · 5153.0 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-json-2026-10-31-0000_to_2026-10-31-1637.json",
+        "archivo": "health-export-json-2026-10-31-0000_to_2026-10-31-1845.json",
         "periodo": "2026-10-30 a 2026-10-31",
-        "entrenamientos_registrados": 10,
-        "calorias_activas": 4843.1,
-        "pasos_registrados": 92902,
+        "entrenamientos_registrados": 11,
+        "calorias_activas": 5153.0,
+        "pasos_registrados": 95515,
         "hrv_media_sdnn": 53
       }
     }
@@ -68,9 +68,9 @@
     "recuperacion_horas": 0,
     "sueno_calidad": "Reparador (5.8h)",
     "carga_aguda": "Equilibrada (Semana en curso)",
-    "historial_reciente": "Trabajo consistente (7 sesiones esta semana)"
+    "historial_reciente": "Trabajo consistente (8 sesiones esta semana)"
   },
-  "active_intelligence": "Semana en curso (2026-W44) con 60.159 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.7h/noche ha sostenido tu VFC promedio en 42 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
+  "active_intelligence": "Semana en curso (2026-W44) con 62.772 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.7h/noche ha sostenido tu VFC promedio en 42 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
     "actual": 66,
     "cargado": 59,
@@ -129,9 +129,9 @@
       "rem": "1h 48m",
       "ligero": "3h 34m"
     },
-    "pasos": 1865,
+    "pasos": 4478,
     "meta_pasos": 8000,
-    "pasos_semana": 60159,
+    "pasos_semana": 62772,
     "estres": 20,
     "vo2max": 37.0,
     "min_intensidad": 0,
@@ -1163,19 +1163,30 @@
       "calorias": 183,
       "has_gps": false,
       "gps": null
+    },
+    {
+      "fecha": "2026-10-31",
+      "nombre": "Tennis (Amazfit)",
+      "duracion": "59 min",
+      "distancia": "-",
+      "fc_media_max": "96 (126) ppm",
+      "hr_recovery": "-35 ppm en 1 min",
+      "calorias": 396,
+      "has_gps": false,
+      "gps": null
     }
   ],
   "apple_health": {
-    "archivo_fuente": "health-export-json-2026-10-31-0000_to_2026-10-31-1637.json",
+    "archivo_fuente": "health-export-json-2026-10-31-0000_to_2026-10-31-1845.json",
     "rango": {
       "inicio": "2026-10-30T23:00:00Z",
-      "fin": "2026-10-31T15:37:14Z",
-      "exportado": "2026-10-31T15:37:15Z"
+      "fin": "2026-10-31T17:45:36Z",
+      "exportado": "2026-10-31T17:45:38Z"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 4843.1,
-      "pasos_registrados": 92902,
-      "sesiones_entrenamiento": 10,
+      "calorias_activas_kcal": 5153.0,
+      "pasos_registrados": 95515,
+      "sesiones_entrenamiento": 11,
       "sesiones_sueno": 27,
       "hrv_media_sdnn_ms": 53
     },
@@ -1309,6 +1320,19 @@
         "fc_media": 116,
         "fc_max": 140,
         "origen": "Zepp"
+      },
+      {
+        "fecha": "2026-10-31",
+        "nombre": "Tennis (Amazfit)",
+        "tipo": "Tennis",
+        "inicio": "2026-10-31 17:02:35",
+        "fin": "18:01:59",
+        "duracion": "59 min",
+        "duracion_segundos": 3564,
+        "calorias": 396,
+        "fc_media": 96,
+        "fc_max": 126,
+        "origen": "Zepp"
       }
     ],
     "desglose_diario": [
@@ -1435,11 +1459,13 @@
         "workoutCount": 0
       },
       {
-        "activeEnergyKcal": 125,
+        "activeEnergyKcal": 434.9,
+        "basalEnergyKcal": 115.2,
         "date": "2026-10-31",
-        "distanceKm": 0.83,
-        "steps": 1865,
-        "workoutCount": 0
+        "distanceKm": 1.55,
+        "exerciseMinutes": 59,
+        "steps": 4478,
+        "workoutCount": 1
       }
     ]
   },
@@ -1680,7 +1706,7 @@
     },
     {
       "fecha": "2026-10-31",
-      "pasos": 1865,
+      "pasos": 4478,
       "sueno": 5.8,
       "sueno_score": 86,
       "rhr": 46,
@@ -4048,7 +4074,7 @@
     },
     {
       "semana": "2026-W44",
-      "pasos": 27323,
+      "pasos": 29936,
       "sueno": 6.4,
       "rhr": 45,
       "vo2": 37.0,
@@ -4187,7 +4213,7 @@
         },
         {
           "fecha": "2026-10-31",
-          "pasos": 1865,
+          "pasos": 4478,
           "sueno": 5.8,
           "sueno_score": 86,
           "rhr": 46,
@@ -6558,7 +6584,7 @@
     },
     "2026-W44": {
       "semana": "2026-W44",
-      "pasos": 27323,
+      "pasos": 29936,
       "sueno": 6.4,
       "rhr": 45,
       "vo2": 37.0,
@@ -6697,7 +6723,7 @@
         },
         {
           "fecha": "2026-10-31",
-          "pasos": 1865,
+          "pasos": 4478,
           "sueno": 5.8,
           "sueno_score": 86,
           "rhr": 46,
@@ -8830,10 +8856,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 60159,
+      "progreso": 62772,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (120%)",
+      "estado": "¡SUPERADO! 🔥 (126%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
