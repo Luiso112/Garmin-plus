@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ANGY — Portal Fijo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="ANGY">
+  <link rel="apple-touch-icon" href="/Garmin-plus/icon-192.png">
+  <style>
+    body {
+      background: #F8F6F2;
+      color: #1C1A18;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+    }
+    .spinner {
+      width: 44px;
+      height: 44px;
+      border: 4px solid rgba(184, 83, 47, 0.2);
+      border-top-color: #B8532F;
+      border-radius: 50%;
+      animation: spin 1s infinite linear;
+      margin-bottom: 20px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    .badge {
+      background: #B8532F;
+      color: #FFF;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    h2 { font-size: 20px; margin-bottom: 8px; }
+    p { color: #827B75; font-size: 14px; max-width: 320px; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <div class="badge">ANGY COMPANION</div>
+  <div class="spinner"></div>
+  <h2>Conectando con tu Servidor...</h2>
+  <p>Enrutando de forma segura con tu Cerebro Digital 24/7.</p>
+
+  <script>
+    async function redirectLive() {
+      try {
+        const res = await fetch('endpoint.json?t=' + Date.now());
+        const data = await res.json();
+        if (data.active_tunnel) {
+          window.location.replace(data.active_tunnel);
+          return;
+        }
+      } catch (e) {}
+      // Fallback a URL conocida
+      window.location.replace("https://nobody-jones-concrete-kick.trycloudflare.com");
+    }
+    setTimeout(redirectLive, 400);
+  </script>
+</body>
+</html>
