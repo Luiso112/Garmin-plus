@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-10-31 18:46:05",
+  "ultima_actualizacion": "2026-11-01 15:34:35",
   "semana_actual": "2026-W44",
   "fuentes_metricas": {
     "sueno": {
@@ -68,7 +68,7 @@
     "recuperacion_horas": 0,
     "sueno_calidad": "Reparador (5.8h)",
     "carga_aguda": "Equilibrada (Semana en curso)",
-    "historial_reciente": "Trabajo consistente (8 sesiones esta semana)"
+    "historial_reciente": "Trabajo consistente (9 sesiones esta semana)"
   },
   "active_intelligence": "Semana en curso (2026-W44) con 62.772 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.7h/noche ha sostenido tu VFC promedio en 42 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
@@ -133,7 +133,7 @@
     "meta_pasos": 8000,
     "pasos_semana": 62772,
     "estres": 20,
-    "vo2max": 37.0,
+    "vo2max": 35.0,
     "min_intensidad": 0,
     "intensidad_semana": 0,
     "meta_intensidad": 150,
@@ -158,27 +158,27 @@
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
   },
   "race_predictor": {
-    "vo2max": 37.0,
+    "vo2max": 35.0,
     "distancias": [
       {
         "prueba": "5K",
-        "tiempo": "31m 06s",
-        "ritmo": "6:13 min/km"
+        "tiempo": "33m 04s",
+        "ritmo": "6:37 min/km"
       },
       {
         "prueba": "10K",
-        "tiempo": "1h 05m 36s",
-        "ritmo": "6:34 min/km"
+        "tiempo": "1h 09m 46s",
+        "ritmo": "6:59 min/km"
       },
       {
         "prueba": "Media Maratón (21K)",
-        "tiempo": "2h 26m 27s",
-        "ritmo": "6:57 min/km"
+        "tiempo": "2h 35m 45s",
+        "ritmo": "7:23 min/km"
       },
       {
         "prueba": "Maratón (42K)",
-        "tiempo": "5h 11m 00s",
-        "ritmo": "7:22 min/km"
+        "tiempo": "5h 30m 45s",
+        "ritmo": "7:50 min/km"
       }
     ],
     "metodo": "Jack Daniels VDOT (estimación fisiológica real)"
@@ -641,7 +641,7 @@
   },
   "curva_fc_dias": {
     "hoy": {
-      "fecha": "2026-10-31",
+      "fecha": "2026-11-01",
       "puntos": [
         {
           "hora": "17:54",
@@ -1081,12 +1081,23 @@
       }
     },
     "ayer": {
-      "fecha": "2026-10-30",
+      "fecha": "2026-10-31",
       "puntos": [],
       "stats": {}
     }
   },
   "actividades": [
+    {
+      "fecha": "2026-10-27",
+      "nombre": "Ciclismo en sala",
+      "duracion": "49m 33s",
+      "distancia": "-",
+      "fc_media_max": "135.0 (Máx 171.0)",
+      "hr_recovery": "-4 ppm (⚠️)",
+      "calorias": 281,
+      "has_gps": false,
+      "gps": null
+    },
     {
       "fecha": "2026-10-18",
       "nombre": "Entrenamiento de Fuerza (Connect)",
@@ -4077,9 +4088,9 @@
       "pasos": 29936,
       "sueno": 6.4,
       "rhr": 45,
-      "vo2": 37.0,
+      "vo2": 35.0,
       "hrv": 45,
-      "estres": 20,
+      "estres": 41,
       "dias": [
         {
           "fecha": "2026-10-26",
@@ -4238,7 +4249,107 @@
           }
         }
       ],
-      "actividades": []
+      "actividades": [
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Ciclismo en sala",
+          "duracion": "49m 33s",
+          "distancia": "-",
+          "fc_media_max": "135.0 (Máx 171.0)",
+          "hr_recovery": "-4 ppm (⚠️)",
+          "calorias": 281,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-18",
+          "nombre": "Entrenamiento de Fuerza (Connect)",
+          "duracion": "42 min",
+          "distancia": "-",
+          "fc_media_max": "-",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 245,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Entrenamiento de Fuerza (Amazfit)",
+          "duracion": "1h 03m",
+          "distancia": "-",
+          "fc_media_max": "120 (161) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 606,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Other (Amazfit)",
+          "duracion": "10 min",
+          "distancia": "-",
+          "fc_media_max": "96 (111) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 68,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Ciclismo (Connect)",
+          "duracion": "49 min",
+          "distancia": "-",
+          "fc_media_max": "-",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 206,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Ciclismo (Amazfit)",
+          "duracion": "50 min",
+          "distancia": "-",
+          "fc_media_max": "137 (172) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 585,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-25",
+          "nombre": "Other (Amazfit)",
+          "duracion": "13 min",
+          "distancia": "-",
+          "fc_media_max": "101 (127) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 101,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Other (Amazfit)",
+          "duracion": "20 min",
+          "distancia": "-",
+          "fc_media_max": "116 (140) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 183,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-31",
+          "nombre": "Tennis (Amazfit)",
+          "duracion": "59 min",
+          "distancia": "-",
+          "fc_media_max": "96 (126) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 396,
+          "has_gps": false,
+          "gps": null
+        }
+      ]
     }
   ],
   "semanas_detalle": {
@@ -6587,9 +6698,9 @@
       "pasos": 29936,
       "sueno": 6.4,
       "rhr": 45,
-      "vo2": 37.0,
+      "vo2": 35.0,
       "hrv": 45,
-      "estres": 20,
+      "estres": 41,
       "dias": [
         {
           "fecha": "2026-10-26",
@@ -6748,7 +6859,107 @@
           }
         }
       ],
-      "actividades": []
+      "actividades": [
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Ciclismo en sala",
+          "duracion": "49m 33s",
+          "distancia": "-",
+          "fc_media_max": "135.0 (Máx 171.0)",
+          "hr_recovery": "-4 ppm (⚠️)",
+          "calorias": 281,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-18",
+          "nombre": "Entrenamiento de Fuerza (Connect)",
+          "duracion": "42 min",
+          "distancia": "-",
+          "fc_media_max": "-",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 245,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Entrenamiento de Fuerza (Amazfit)",
+          "duracion": "1h 03m",
+          "distancia": "-",
+          "fc_media_max": "120 (161) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 606,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-24",
+          "nombre": "Other (Amazfit)",
+          "duracion": "10 min",
+          "distancia": "-",
+          "fc_media_max": "96 (111) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 68,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Ciclismo (Connect)",
+          "duracion": "49 min",
+          "distancia": "-",
+          "fc_media_max": "-",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 206,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Ciclismo (Amazfit)",
+          "duracion": "50 min",
+          "distancia": "-",
+          "fc_media_max": "137 (172) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 585,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-25",
+          "nombre": "Other (Amazfit)",
+          "duracion": "13 min",
+          "distancia": "-",
+          "fc_media_max": "101 (127) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 101,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-27",
+          "nombre": "Other (Amazfit)",
+          "duracion": "20 min",
+          "distancia": "-",
+          "fc_media_max": "116 (140) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 183,
+          "has_gps": false,
+          "gps": null
+        },
+        {
+          "fecha": "2026-10-31",
+          "nombre": "Tennis (Amazfit)",
+          "duracion": "59 min",
+          "distancia": "-",
+          "fc_media_max": "96 (126) ppm",
+          "hr_recovery": "-35 ppm en 1 min",
+          "calorias": 396,
+          "has_gps": false,
+          "gps": null
+        }
+      ]
     }
   },
   "rutas_gps": {
@@ -8908,8 +9119,13 @@
       "recompensa": "Insignia Regeneración Profunda"
     }
   ],
+  "ai_coach_insights": {
+    "fecha": "2026-11-01",
+    "modelo": "agy → Gemini Pro (plan)",
+    "texto": "🟢 **Veredicto:** Totalmente recuperado, en fase de desentrenamiento agudo.\n\n* **Fisiología y carga:** El sueño (86/100) y el bajo estrés (20) han optimizado tu descanso (RHR 46), pero la carga aguda cayó a cero (ACWR 0.0), perdiendo el estímulo de tu carga crónica (44.3 min/día).\n* **Diario:** No has registrado notas personales esta semana para contrastar sensaciones.\n\n* **Plan próximos 7 días:** Reactiva el motor aeróbico sin picos bruscos. Realiza **3 salidas de carrera/montaña suave (Z2)** de 40 a 50 min en terreno llano o moderado, más **1 sesión de fuerza** y mantén tus paseos habituales para cerrar la semana con ~140-150 minutos de carga total."
+  },
   "acwr": {
-    "fecha": "2026-10-31",
+    "fecha": "2026-11-01",
     "carga_aguda_min_dia": 0.0,
     "carga_cronica_min_dia": 44.3,
     "ratio_acwr": 0.0,
