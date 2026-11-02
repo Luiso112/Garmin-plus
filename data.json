@@ -1,7 +1,7 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-11-01 15:34:35",
-  "semana_actual": "2026-W44",
+  "ultima_actualizacion": "2026-11-02 10:43:23",
+  "semana_actual": "2026-W45",
   "fuentes_metricas": {
     "sueno": {
       "dispositivo": "Amazfit Helio Strap (Fusión Dual)",
@@ -47,38 +47,38 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (11 entrenos · 5153.0 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (14 entrenos · 5314.0 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "health-export-json-2026-10-31-0000_to_2026-10-31-1845.json",
-        "periodo": "2026-10-30 a 2026-10-31",
-        "entrenamientos_registrados": 11,
-        "calorias_activas": 5153.0,
-        "pasos_registrados": 95515,
-        "hrv_media_sdnn": 53
+        "archivo": "health-export-json-2026-11-01-0000_to_2026-11-01-1953.json",
+        "periodo": "2026-10-31 a 2026-11-01",
+        "entrenamientos_registrados": 14,
+        "calorias_activas": 5314.0,
+        "pasos_registrados": 100284,
+        "hrv_media_sdnn": 52
       }
     }
   },
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (34 ms)",
+    "hrv_status": "Equilibrada (50 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (5.8h)",
+    "sueno_calidad": "Reparador (0.0h)",
     "carga_aguda": "Equilibrada (Semana en curso)",
-    "historial_reciente": "Trabajo consistente (9 sesiones esta semana)"
+    "historial_reciente": "Trabajo consistente (10 sesiones esta semana)"
   },
-  "active_intelligence": "Semana en curso (2026-W44) con 62.772 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.7h/noche ha sostenido tu VFC promedio en 42 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
+  "active_intelligence": "Semana en curso (2026-W45) con 54.979 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 47 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.0h/noche ha sostenido tu VFC promedio en 42 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
-    "actual": 66,
-    "cargado": 59,
+    "actual": 69,
+    "cargado": 62,
     "drenado": 18,
-    "max": 84,
+    "max": 87,
     "min": 25,
-    "descanso_nocturno": "Recuperación (+59 pts)",
-    "momento_pico": "Pico al despertar (84 pts)",
+    "descanso_nocturno": "Recuperación (+62 pts)",
+    "momento_pico": "Pico al despertar (87 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
@@ -86,26 +86,26 @@
       },
       {
         "hora": "03:00",
-        "valor": 48
+        "valor": 49
       },
       {
         "hora": "06:46",
-        "valor": 84
+        "valor": 87
       },
       {
         "hora": "08:30",
-        "valor": 79
+        "valor": 82
       },
       {
         "hora": "11:00",
-        "valor": 66
+        "valor": 69
       }
     ],
     "factores_impacto": [
       {
         "nombre": "Sueño Nocturno (Amazfit Zepp)",
-        "subtitulo": "5.8h reparador (Score 86)",
-        "impacto": "+59 ↑",
+        "subtitulo": "0.0h reparador (Score 85)",
+        "impacto": "+62 ↑",
         "es_recuperacion": true
       },
       {
@@ -115,23 +115,23 @@
         "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Recarga nocturna estimada en +59 puntos impulsada por 5.8h de descanso profundo y una VFC de 34 ms. Alcanzaste un pico de 84/100 al despertar, situándote actualmente en 66/100 tras un drenaje de 18 puntos.",
+    "analisis_clinico": "Recarga nocturna estimada en +62 puntos impulsada por 0.0h de descanso profundo y una VFC de 50 ms. Alcanzaste un pico de 87/100 al despertar, situándote actualmente en 69/100 tras un drenaje de 18 puntos.",
     "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
-    "fecha": "2026-10-31",
-    "rhr": 46,
-    "hrv": 34,
-    "sueno_horas": 5.8,
-    "sueno_score": 86,
+    "fecha": "2026-11-02",
+    "rhr": 48,
+    "hrv": 50,
+    "sueno_horas": 0.0,
+    "sueno_score": 85,
     "sueno_fases": {
-      "profundo": "0h 25m",
-      "rem": "1h 48m",
-      "ligero": "3h 34m"
+      "profundo": "1h 05m",
+      "rem": "1h 14m",
+      "ligero": "3h 49m"
     },
-    "pasos": 4478,
+    "pasos": 0,
     "meta_pasos": 8000,
-    "pasos_semana": 62772,
+    "pasos_semana": 54979,
     "estres": 20,
     "vo2max": 35.0,
     "min_intensidad": 0,
@@ -151,8 +151,8 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (5.8h) con un Body Battery al 66% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 34 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (0.0h) con un Body Battery al 69% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 50 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -641,7 +641,7 @@
   },
   "curva_fc_dias": {
     "hoy": {
-      "fecha": "2026-11-01",
+      "fecha": "2026-11-02",
       "puntos": [
         {
           "hora": "17:54",
@@ -1081,7 +1081,7 @@
       }
     },
     "ayer": {
-      "fecha": "2026-10-31",
+      "fecha": "2026-11-01",
       "puntos": [],
       "stats": {}
     }
@@ -1185,21 +1185,32 @@
       "calorias": 396,
       "has_gps": false,
       "gps": null
+    },
+    {
+      "fecha": "2026-11-01",
+      "nombre": "Other (Amazfit)",
+      "duracion": "5 min",
+      "distancia": "-",
+      "fc_media_max": "98 (138) ppm",
+      "hr_recovery": "-35 ppm en 1 min",
+      "calorias": 32,
+      "has_gps": false,
+      "gps": null
     }
   ],
   "apple_health": {
-    "archivo_fuente": "health-export-json-2026-10-31-0000_to_2026-10-31-1845.json",
+    "archivo_fuente": "health-export-json-2026-11-01-0000_to_2026-11-01-1953.json",
     "rango": {
-      "inicio": "2026-10-30T23:00:00Z",
-      "fin": "2026-10-31T17:45:36Z",
-      "exportado": "2026-10-31T17:45:38Z"
+      "inicio": "2026-10-31T23:00:00Z",
+      "fin": "2026-11-01T18:53:15Z",
+      "exportado": "2026-11-01T18:53:17Z"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 5153.0,
-      "pasos_registrados": 95515,
-      "sesiones_entrenamiento": 11,
-      "sesiones_sueno": 27,
-      "hrv_media_sdnn_ms": 53
+      "calorias_activas_kcal": 5314.0,
+      "pasos_registrados": 100284,
+      "sesiones_entrenamiento": 14,
+      "sesiones_sueno": 28,
+      "hrv_media_sdnn_ms": 52
     },
     "entrenamientos": [
       {
@@ -1344,6 +1355,45 @@
         "fc_media": 96,
         "fc_max": 126,
         "origen": "Zepp"
+      },
+      {
+        "fecha": "2026-11-01",
+        "nombre": "Other (Amazfit)",
+        "tipo": "Other",
+        "inicio": "2026-11-01 10:53:25",
+        "fin": "10:58:53",
+        "duracion": "5 min",
+        "duracion_segundos": 328,
+        "calorias": 32,
+        "fc_media": 98,
+        "fc_max": 138,
+        "origen": "Zepp"
+      },
+      {
+        "fecha": "2026-11-01",
+        "nombre": "Other (Amazfit)",
+        "tipo": "Other",
+        "inicio": "2026-11-01 11:48:48",
+        "fin": "11:53:37",
+        "duracion": "4 min",
+        "duracion_segundos": 289,
+        "calorias": 26,
+        "fc_media": 92,
+        "fc_max": 120,
+        "origen": "Zepp"
+      },
+      {
+        "fecha": "2026-11-01",
+        "nombre": "Other (Amazfit)",
+        "tipo": "Other",
+        "inicio": "2026-11-01 16:45:04",
+        "fin": "16:48:56",
+        "duracion": "3 min",
+        "duracion_segundos": 232,
+        "calorias": 20,
+        "fc_media": 93,
+        "fc_max": 129,
+        "origen": "Zepp"
       }
     ],
     "desglose_diario": [
@@ -1477,62 +1527,19 @@
         "exerciseMinutes": 59,
         "steps": 4478,
         "workoutCount": 1
+      },
+      {
+        "activeEnergyKcal": 161,
+        "date": "2026-11-01",
+        "distanceKm": 3.03,
+        "exerciseMinutes": 12,
+        "flightsClimbed": 2,
+        "steps": 4769,
+        "workoutCount": 3
       }
     ]
   },
   "desglose_diario": [
-    {
-      "fecha": "2026-10-22",
-      "pasos": 5179,
-      "sueno": 6.9,
-      "sueno_score": 87,
-      "rhr": 45,
-      "estres": 20,
-      "hrv": 31,
-      "min_intensidad": 0,
-      "sueno_fases": {
-        "profundo": "1h 22m",
-        "rem": "2h 03m",
-        "ligero": "3h 25m"
-      },
-      "fuente_dispositivo": {
-        "dispositivo": "Amazfit Helio Strap",
-        "fuente_tipo": "amazfit",
-        "badge_nombre": "Amazfit Helio",
-        "badge_icono": "activity",
-        "badge_color": "purple",
-        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-        "hrv_fuente": "Amazfit BioTracker (Zepp)",
-        "rhr_fuente": "Amazfit Helio Strap"
-      }
-    },
-    {
-      "fecha": "2026-10-23",
-      "pasos": 7383,
-      "sueno": 6.7,
-      "sueno_score": 87,
-      "rhr": 49,
-      "estres": 20,
-      "hrv": 45,
-      "min_intensidad": 0,
-      "sueno_fases": {
-        "profundo": "1h 09m",
-        "rem": "1h 45m",
-        "ligero": "3h 47m"
-      },
-      "fuente_dispositivo": {
-        "dispositivo": "Amazfit Helio Strap",
-        "fuente_tipo": "amazfit",
-        "badge_nombre": "Amazfit Helio",
-        "badge_icono": "activity",
-        "badge_color": "purple",
-        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-        "hrv_fuente": "Amazfit BioTracker (Zepp)",
-        "rhr_fuente": "Amazfit Helio Strap"
-      }
-    },
     {
       "fecha": "2026-10-24",
       "pasos": 10699,
@@ -1729,6 +1736,53 @@
         "rem": "1h 48m",
         "ligero": "3h 34m"
       },
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-11-01",
+      "pasos": 4769,
+      "sueno": 6.8,
+      "sueno_score": 80,
+      "rhr": 48,
+      "estres": 20,
+      "hrv": 22,
+      "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "0h 55m",
+        "rem": "1h 40m",
+        "ligero": "4h 12m"
+      },
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-11-02",
+      "pasos": 0,
+      "sueno": 0.0,
+      "sueno_score": 85,
+      "rhr": 48,
+      "estres": 20,
+      "hrv": 50,
+      "min_intensidad": 0,
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -4085,11 +4139,11 @@
     },
     {
       "semana": "2026-W44",
-      "pasos": 29936,
-      "sueno": 6.4,
-      "rhr": 45,
+      "pasos": 34705,
+      "sueno": 6.5,
+      "rhr": 46,
       "vo2": 35.0,
-      "hrv": 45,
+      "hrv": 42,
       "estres": 41,
       "dias": [
         {
@@ -4247,6 +4301,32 @@
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
           }
+        },
+        {
+          "fecha": "2026-11-01",
+          "pasos": 4769,
+          "sueno": 6.8,
+          "sueno_score": 80,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 22,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 55m",
+            "rem": "1h 40m",
+            "ligero": "4h 12m"
+          },
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
       ],
       "actividades": [
@@ -4260,96 +4340,41 @@
           "calorias": 281,
           "has_gps": false,
           "gps": null
-        },
-        {
-          "fecha": "2026-10-18",
-          "nombre": "Entrenamiento de Fuerza (Connect)",
-          "duracion": "42 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 245,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 03m",
-          "distancia": "-",
-          "fc_media_max": "120 (161) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 606,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Other (Amazfit)",
-          "duracion": "10 min",
-          "distancia": "-",
-          "fc_media_max": "96 (111) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 68,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Connect)",
-          "duracion": "49 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 206,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Amazfit)",
-          "duracion": "50 min",
-          "distancia": "-",
-          "fc_media_max": "137 (172) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 585,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-25",
-          "nombre": "Other (Amazfit)",
-          "duracion": "13 min",
-          "distancia": "-",
-          "fc_media_max": "101 (127) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 101,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Other (Amazfit)",
-          "duracion": "20 min",
-          "distancia": "-",
-          "fc_media_max": "116 (140) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 183,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-31",
-          "nombre": "Tennis (Amazfit)",
-          "duracion": "59 min",
-          "distancia": "-",
-          "fc_media_max": "96 (126) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 396,
-          "has_gps": false,
-          "gps": null
         }
       ]
+    },
+    {
+      "semana": "2026-W45",
+      "pasos": 0,
+      "sueno": 0.0,
+      "rhr": 48,
+      "vo2": 35.0,
+      "hrv": 50,
+      "estres": 20,
+      "dias": [
+        {
+          "fecha": "2026-11-02",
+          "pasos": 0,
+          "sueno": 0.0,
+          "sueno_score": 85,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 50,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        }
+      ],
+      "actividades": []
     }
   ],
   "semanas_detalle": {
@@ -6695,11 +6720,11 @@
     },
     "2026-W44": {
       "semana": "2026-W44",
-      "pasos": 29936,
-      "sueno": 6.4,
-      "rhr": 45,
+      "pasos": 34705,
+      "sueno": 6.5,
+      "rhr": 46,
       "vo2": 35.0,
-      "hrv": 45,
+      "hrv": 42,
       "estres": 41,
       "dias": [
         {
@@ -6857,6 +6882,32 @@
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
           }
+        },
+        {
+          "fecha": "2026-11-01",
+          "pasos": 4769,
+          "sueno": 6.8,
+          "sueno_score": 80,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 22,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 55m",
+            "rem": "1h 40m",
+            "ligero": "4h 12m"
+          },
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
       ],
       "actividades": [
@@ -6870,96 +6921,41 @@
           "calorias": 281,
           "has_gps": false,
           "gps": null
-        },
-        {
-          "fecha": "2026-10-18",
-          "nombre": "Entrenamiento de Fuerza (Connect)",
-          "duracion": "42 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 245,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 03m",
-          "distancia": "-",
-          "fc_media_max": "120 (161) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 606,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Other (Amazfit)",
-          "duracion": "10 min",
-          "distancia": "-",
-          "fc_media_max": "96 (111) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 68,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Connect)",
-          "duracion": "49 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 206,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Amazfit)",
-          "duracion": "50 min",
-          "distancia": "-",
-          "fc_media_max": "137 (172) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 585,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-25",
-          "nombre": "Other (Amazfit)",
-          "duracion": "13 min",
-          "distancia": "-",
-          "fc_media_max": "101 (127) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 101,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Other (Amazfit)",
-          "duracion": "20 min",
-          "distancia": "-",
-          "fc_media_max": "116 (140) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 183,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-31",
-          "nombre": "Tennis (Amazfit)",
-          "duracion": "59 min",
-          "distancia": "-",
-          "fc_media_max": "96 (126) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 396,
-          "has_gps": false,
-          "gps": null
         }
       ]
+    },
+    "2026-W45": {
+      "semana": "2026-W45",
+      "pasos": 0,
+      "sueno": 0.0,
+      "rhr": 48,
+      "vo2": 35.0,
+      "hrv": 50,
+      "estres": 20,
+      "dias": [
+        {
+          "fecha": "2026-11-02",
+          "pasos": 0,
+          "sueno": 0.0,
+          "sueno_score": 85,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 50,
+          "min_intensidad": 0,
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        }
+      ],
+      "actividades": []
     }
   },
   "rutas_gps": {
@@ -9067,10 +9063,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 62772,
+      "progreso": 54979,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (126%)",
+      "estado": "¡SUPERADO! 🔥 (110%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -9125,9 +9121,9 @@
     "texto": "🟢 **Veredicto:** Totalmente recuperado, en fase de desentrenamiento agudo.\n\n* **Fisiología y carga:** El sueño (86/100) y el bajo estrés (20) han optimizado tu descanso (RHR 46), pero la carga aguda cayó a cero (ACWR 0.0), perdiendo el estímulo de tu carga crónica (44.3 min/día).\n* **Diario:** No has registrado notas personales esta semana para contrastar sensaciones.\n\n* **Plan próximos 7 días:** Reactiva el motor aeróbico sin picos bruscos. Realiza **3 salidas de carrera/montaña suave (Z2)** de 40 a 50 min en terreno llano o moderado, más **1 sesión de fuerza** y mantén tus paseos habituales para cerrar la semana con ~140-150 minutos de carga total."
   },
   "acwr": {
-    "fecha": "2026-11-01",
+    "fecha": "2026-11-02",
     "carga_aguda_min_dia": 0.0,
-    "carga_cronica_min_dia": 44.3,
+    "carga_cronica_min_dia": 42.5,
     "ratio_acwr": 0.0,
     "semaforo": "Desentrenamiento (baja carga)",
     "emoji": "🟦",
@@ -9136,6 +9132,6 @@
       "motivos": [],
       "mensaje": "Todo en verde. Sin señales de alarma."
     },
-    "dias_usados": 27
+    "dias_usados": 29
   }
 }
