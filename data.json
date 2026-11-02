@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-11-02 10:46:34",
+  "ultima_actualizacion": "2026-11-02 10:52:03",
   "semana_actual": "2026-W45",
   "fuentes_metricas": {
     "sueno": {
@@ -1736,6 +1736,7 @@
         "rem": "1h 48m",
         "ligero": "3h 34m"
       },
+      "disposicion": "ÓPTIMA",
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -1758,9 +1759,9 @@
       "hrv": 22,
       "min_intensidad": 0,
       "sueno_fases": {
-        "profundo": "0h 55m",
-        "rem": "1h 40m",
-        "ligero": "4h 12m"
+        "profundo": "56m",
+        "rem": "101m",
+        "ligero": "253m"
       },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -4290,6 +4291,7 @@
             "rem": "1h 48m",
             "ligero": "3h 34m"
           },
+          "disposicion": "ÓPTIMA",
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -4312,9 +4314,9 @@
           "hrv": 22,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 55m",
-            "rem": "1h 40m",
-            "ligero": "4h 12m"
+            "profundo": "56m",
+            "rem": "101m",
+            "ligero": "253m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -6871,6 +6873,7 @@
             "rem": "1h 48m",
             "ligero": "3h 34m"
           },
+          "disposicion": "ÓPTIMA",
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -6893,9 +6896,9 @@
           "hrv": 22,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 55m",
-            "rem": "1h 40m",
-            "ligero": "4h 12m"
+            "profundo": "56m",
+            "rem": "101m",
+            "ligero": "253m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
