@@ -489,6 +489,69 @@ def extract_apple_health_days():
             if hrv_avg:
                 ah_by_date[dt]["hrv"] = round(hrv_avg)
 
+    # ==============================================================
+    # KAIZEN: Absorber metricas de Amazfit / Salud desde 900 DIARIO/*.md
+    # ==============================================================
+    DIARIO_DIR = '/home/luis/OBSIDIAN/Mi Cerebro Digital/900 DIARIO'
+    if os.path.exists(DIARIO_DIR):
+        for md_file in glob.glob(os.path.join(DIARIO_DIR, '2026-*.md')):
+            dt_match = re.search(r'(\d{4}-\d{2}-\d{2})', os.path.basename(md_file))
+            if not dt_match:
+                continue
+            dt = dt_match.group(1)
+            try:
+                with open(md_file, 'r', encoding='utf-8') as f:
+                    text = f.read()
+                fm_match = re.search(r'\A---\s*\n(.*?)\n---', text, re.DOTALL)
+                if not fm_match:
+                    continue
+                fm = {}
+                for line in fm_match.group(1).splitlines():
+                    if ':' in line:
+                        k, v = line.split(':', 1)
+                        fm[k.strip()] = v.strip().strip('"\'')
+
+                if dt not in ah_by_date:
+                    ah_by_date[dt] = {
+                        'fecha': dt, 'pasos': 0, 'sueno': 0.0, 'sueno_score': 85,
+                        'rhr': 48, 'estres': 20, 'hrv': 55, 'min_intensidad': 0,
+                        'sueno_fases': {'profundo': '1h 20m', 'rem': '1h 45m', 'ligero': '3h 30m'},
+                        '_seen_sessions': set(), '_sleep_sec': 0
+                    }
+
+                # Pasos
+                if fm.get('pasos') and str(fm['pasos']).isdigit():
+                    val_steps = int(fm['pasos'])
+                    if val_steps > ah_by_date[dt].get('pasos', 0):
+                        ah_by_date[dt]['pasos'] = val_steps
+
+                # Sueno
+                if fm.get('sueno_horas'):
+                    try:
+                        val_sleep = float(fm['sueno_horas'])
+                        if val_sleep > 0:
+                            ah_by_date[dt]['sueno'] = val_sleep
+                    except ValueError:
+                        pass
+
+                # FC Reposo / FC Min
+                rhr_val = fm.get('fc_reposo') or fm.get('fc_min_sueno')
+                if rhr_val and str(rhr_val).isdigit():
+                    ah_by_date[dt]['rhr'] = int(rhr_val)
+
+                # VFC (HRV)
+                hrv_val = fm.get('vfc_hrv')
+                if hrv_val and str(hrv_val).isdigit():
+                    ah_by_date[dt]['hrv'] = int(hrv_val)
+
+                # Estres
+                stress_val = fm.get('estres_medio')
+                if stress_val and str(stress_val).isdigit():
+                    ah_by_date[dt]['estres'] = int(stress_val)
+
+            except Exception as e:
+                print('Aviso al leer diario:', md_file, e)
+
     clean_dict = {}
     for dt, item in ah_by_date.items():
         clean_dict[dt] = {k: v for k, v in item.items() if not k.startswith('_')}
