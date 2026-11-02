@@ -525,7 +525,7 @@ def extract_apple_health_days():
                     if val_steps > ah_by_date[dt].get('pasos', 0):
                         ah_by_date[dt]['pasos'] = val_steps
 
-                # Sueno
+                # Sueno y Score
                 if fm.get('sueno_horas'):
                     try:
                         val_sleep = float(fm['sueno_horas'])
@@ -533,6 +533,37 @@ def extract_apple_health_days():
                             ah_by_date[dt]['sueno'] = val_sleep
                     except ValueError:
                         pass
+                if fm.get('sueno_score') and str(fm['sueno_score']).isdigit():
+                    ah_by_date[dt]['sueno_score'] = int(fm['sueno_score'])
+
+                # Fases de sueno (profundo, rem, ligero)
+                fases = dict(ah_by_date[dt].get('sueno_fases', {}))
+                if fm.get('sueno_profundo'):
+                    fases['profundo'] = fm['sueno_profundo'].strip('"\'')
+                if fm.get('sueno_rem'):
+                    fases['rem'] = fm['sueno_rem'].strip('"\'')
+                if fm.get('sueno_ligero'):
+                    fases['ligero'] = fm['sueno_ligero'].strip('"\'')
+                # Si no vinieron en YAML pero estan en el texto del callout (*Profundo: 56m · REM: 101m · Ligero: 253m*)
+                if not fm.get('sueno_profundo'):
+                    prof_m = re.search(r'Profundo:\s*([0-9hm\s]+?)(?=\s*[·\*\)]|$)', text, re.I)
+                    if prof_m:
+                        fases['profundo'] = prof_m.group(1).strip()
+                if not fm.get('sueno_rem'):
+                    rem_m = re.search(r'REM:\s*([0-9hm\s]+?)(?=\s*[·\*\)]|$)', text, re.I)
+                    if rem_m:
+                        fases['rem'] = rem_m.group(1).strip()
+                if not fm.get('sueno_ligero'):
+                    lig_m = re.search(r'Ligero:\s*([0-9hm\s]+?)(?=\s*[·\*\)]|$)', text, re.I)
+                    if lig_m:
+                        fases['ligero'] = lig_m.group(1).strip()
+                ah_by_date[dt]['sueno_fases'] = fases
+
+                # Disposicion / Readiness
+                if fm.get('disposicion'):
+                    ah_by_date[dt]['disposicion'] = fm['disposicion']
+                elif fm.get('disposicion_score') and str(fm['disposicion_score']).isdigit():
+                    ah_by_date[dt]['disposicion_score'] = int(fm['disposicion_score'])
 
                 # FC Reposo / FC Min
                 rhr_val = fm.get('fc_reposo') or fm.get('fc_min_sueno')
