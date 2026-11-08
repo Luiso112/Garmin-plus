@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-11-06 07:24:38",
+  "ultima_actualizacion": "2026-11-08 12:07:39",
   "semana_actual": "2026-W45",
   "fuentes_metricas": {
     "sueno": {
@@ -47,38 +47,38 @@
     },
     "apple_watch": {
       "nombre": "Apple Watch / HealthKit",
-      "estado": "Sincronizado vía Health Export Kit (16 entrenos · 6511.0 kcal)",
+      "estado": "Sincronizado vía Health Export Kit (0 entrenos · 5.0 kcal)",
       "bateria": 85,
       "rol": "Temperatura de muñeca, SpO2 & Métricas de Salud",
       "modo": "Exportación Local Segura On-Device",
       "detalle": {
-        "archivo": "20261106_072230_health-export-json-2026-11-05-0000_to_2026-11-06-0000.json",
-        "periodo": "2026-11-04 a 2026-11-05",
-        "entrenamientos_registrados": 16,
-        "calorias_activas": 6511.0,
-        "pasos_registrados": 117352,
-        "hrv_media_sdnn": 52
+        "archivo": "health-export-md-2026-10-22-0000_to_2026-10-22-0722.md",
+        "periodo": "2026-10-22 a 2026-10-22",
+        "entrenamientos_registrados": 0,
+        "calorias_activas": 5.0,
+        "pasos_registrados": 44,
+        "hrv_media_sdnn": 47
       }
     }
   },
   "disposicion_rendimiento": {
     "score": 86,
     "nivel": "ÓPTIMA",
-    "hrv_status": "Equilibrada (51 ms)",
+    "hrv_status": "Equilibrada (53 ms)",
     "recuperacion_horas": 0,
-    "sueno_calidad": "Reparador (6.4h)",
+    "sueno_calidad": "Reparador (6.5h)",
     "carga_aguda": "Equilibrada (Semana en curso)",
-    "historial_reciente": "Trabajo consistente (12 sesiones esta semana)"
+    "historial_reciente": "Trabajo consistente (2 sesiones esta semana)"
   },
-  "active_intelligence": "Semana en curso (2026-W45) con 45.974 pasos acumulados. con enfoque en recuperación activa y descanso regenerativo. Tu FC de reposo media semanal se sitúa en 49 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.4h/noche ha sostenido tu VFC promedio en 44 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
+  "active_intelligence": "Semana en curso (2026-W45) con 24.335 pasos acumulados. priorizando la preservación de masa muscular y fuerza. Tu FC de reposo media semanal se sitúa en 50 ppm con estrés basal bajo/controlado. evidenciando un tono parasimpático robusto. Tu descanso medio de 6.3h/noche ha sostenido tu VFC promedio en 47 ms. manteniendo una óptima capacidad adaptativa neuromuscular.",
   "body_battery": {
-    "actual": 67,
-    "cargado": 60,
+    "actual": 72,
+    "cargado": 65,
     "drenado": 18,
-    "max": 85,
+    "max": 90,
     "min": 25,
-    "descanso_nocturno": "Recuperación (+60 pts)",
-    "momento_pico": "Pico al despertar (85 pts)",
+    "descanso_nocturno": "Recuperación (+65 pts)",
+    "momento_pico": "Pico al despertar (90 pts)",
     "curva_puntos": [
       {
         "hora": "00:00",
@@ -86,26 +86,26 @@
       },
       {
         "hora": "03:00",
-        "valor": 49
+        "valor": 51
       },
       {
         "hora": "06:46",
-        "valor": 85
+        "valor": 90
       },
       {
         "hora": "08:30",
-        "valor": 80
+        "valor": 85
       },
       {
         "hora": "11:00",
-        "valor": 67
+        "valor": 72
       }
     ],
     "factores_impacto": [
       {
         "nombre": "Sueño Nocturno (Amazfit Zepp)",
-        "subtitulo": "6.4h reparador (Score 85)",
-        "impacto": "+60 ↑",
+        "subtitulo": "6.5h reparador (Score 88)",
+        "impacto": "+65 ↑",
         "es_recuperacion": true
       },
       {
@@ -115,27 +115,27 @@
         "es_recuperacion": false
       }
     ],
-    "analisis_clinico": "Recarga nocturna estimada en +60 puntos impulsada por 6.4h de descanso profundo y una VFC de 51 ms. Alcanzaste un pico de 85/100 al despertar, situándote actualmente en 67/100 tras un drenaje de 18 puntos.",
+    "analisis_clinico": "Recarga nocturna estimada en +65 puntos impulsada por 6.5h de descanso profundo y una VFC de 53 ms. Alcanzaste un pico de 90/100 al despertar, situándote actualmente en 72/100 tras un drenaje de 18 puntos.",
     "fuente": "Amazfit Helio Strap (Fusión Bio-Energía)"
   },
   "metricas_clave": {
-    "fecha": "2026-11-06",
-    "rhr": 53,
-    "hrv": 51,
-    "sueno_horas": 6.4,
-    "sueno_score": 85,
+    "fecha": "2026-11-08",
+    "rhr": 48,
+    "hrv": 53,
+    "sueno_horas": 6.5,
+    "sueno_score": 88,
     "sueno_fases": {
-      "profundo": "1h 19m",
-      "rem": "1h 28m",
+      "profundo": "0h 54m",
+      "rem": "1h 30m",
       "ligero": "3h 30m"
     },
-    "pasos": 98,
+    "pasos": 2228,
     "meta_pasos": 8000,
-    "pasos_semana": 45974,
+    "pasos_semana": 24335,
     "estres": 20,
     "vo2max": 35.0,
     "min_intensidad": 0,
-    "intensidad_semana": 0,
+    "intensidad_semana": 5,
     "meta_intensidad": 150,
     "fuente_dispositivo": {
       "dispositivo": "Amazfit Helio Strap",
@@ -151,8 +151,8 @@
   },
   "morning_report": {
     "saludo": "¡Buenos días, Luis!",
-    "resumen_descanso": "Tu sueño ha sido reparador (6.4h) con un Body Battery al 67% de energía.",
-    "estado_vfc": "VFC nocturna equilibrada en 51 ms dentro de tu rango basal habitual.",
+    "resumen_descanso": "Tu sueño ha sido reparador (6.5h) con un Body Battery al 72% de energía.",
+    "estado_vfc": "VFC nocturna equilibrada en 53 ms dentro de tu rango basal habitual.",
     "prediccion_dia": "Disposición para el rendimiento: ÓPTIMA. Recomendado mantener caminata o entrenamiento aeróbico.",
     "tiempo_recuperacion_restante": "0 horas (Recuperación completa)",
     "clima_sugerido": "Condiciones favorables para actividad al aire libre"
@@ -185,7 +185,7 @@
   },
   "training_scores": {
     "endurance_score": {
-      "valor": 6800,
+      "valor": 6288,
       "nivel": "Bien entrenado",
       "interpretacion": "Capacidad desarrollada para sostener esfuerzos de senderismo prolongados en desnivel.",
       "color": "#10B981"
@@ -204,884 +204,504 @@
   },
   "curva_fc_24h": [
     {
-      "hora": "17:54",
-      "bpm": 88,
+      "hora": "10:28",
+      "bpm": 92,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "17:56",
-      "bpm": 88,
+      "hora": "10:30",
+      "bpm": 92,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "17:58",
-      "bpm": 84,
+      "hora": "10:32",
+      "bpm": 92,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "18:00",
-      "bpm": 81,
+      "hora": "10:34",
+      "bpm": 91,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "18:02",
-      "bpm": 88,
+      "hora": "10:36",
+      "bpm": 69,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "18:04",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:06",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:08",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:10",
-      "bpm": 63,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:12",
-      "bpm": 64,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:14",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:16",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:18",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:20",
-      "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:22",
-      "bpm": 62,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:24",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:26",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:28",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:30",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:32",
-      "bpm": 60,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:34",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:36",
-      "bpm": 63,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:38",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:40",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:42",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:44",
-      "bpm": 56,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:46",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:48",
-      "bpm": 56,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:50",
-      "bpm": 57,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:52",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:54",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:56",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "18:58",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:00",
-      "bpm": 65,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:02",
-      "bpm": 85,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:04",
-      "bpm": 89,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:06",
-      "bpm": 72,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:08",
-      "bpm": 79,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:10",
-      "bpm": 76,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:12",
-      "bpm": 72,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:14",
-      "bpm": 72,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:16",
-      "bpm": 72,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:18",
-      "bpm": 73,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:20",
-      "bpm": 72,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:22",
-      "bpm": 74,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:24",
-      "bpm": 61,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:26",
-      "bpm": 59,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:28",
-      "bpm": 58,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:30",
+      "hora": "10:38",
       "bpm": 66,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "19:32",
-      "bpm": 67,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:34",
-      "bpm": 71,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:36",
-      "bpm": 97,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:38",
-      "bpm": 104,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:40",
-      "bpm": 111,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:42",
-      "bpm": 105,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:44",
-      "bpm": 97,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "19:46",
+      "hora": "10:40",
       "bpm": 74,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "19:48",
-      "bpm": 112,
+      "hora": "10:42",
+      "bpm": 80,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "19:50",
-      "bpm": 123,
+      "hora": "10:44",
+      "bpm": 79,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "19:52",
-      "bpm": 123,
+      "hora": "10:46",
+      "bpm": 79,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "19:54",
-      "bpm": 132,
+      "hora": "10:48",
+      "bpm": 71,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "19:56",
-      "bpm": 126,
+      "hora": "10:50",
+      "bpm": 75,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "19:58",
-      "bpm": 134,
+      "hora": "10:52",
+      "bpm": 65,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:00",
-      "bpm": 124,
+      "hora": "10:54",
+      "bpm": 59,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:02",
-      "bpm": 154,
+      "hora": "10:56",
+      "bpm": 60,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:04",
-      "bpm": 160,
+      "hora": "10:58",
+      "bpm": 62,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:06",
-      "bpm": 143,
+      "hora": "11:00",
+      "bpm": 67,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:08",
-      "bpm": 148,
+      "hora": "11:02",
+      "bpm": 69,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:10",
-      "bpm": 153,
+      "hora": "11:04",
+      "bpm": 67,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:12",
+      "hora": "11:06",
+      "bpm": 69,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:08",
+      "bpm": 71,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:10",
+      "bpm": 71,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:12",
+      "bpm": 102,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:14",
+      "bpm": 130,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:16",
+      "bpm": 136,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:18",
+      "bpm": 121,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:20",
+      "bpm": 135,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:22",
+      "bpm": 121,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:24",
+      "bpm": 128,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:26",
+      "bpm": 133,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:28",
+      "bpm": 133,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:30",
       "bpm": 141,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:14",
-      "bpm": 147,
+      "hora": "11:32",
+      "bpm": 142,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:16",
-      "bpm": 161,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:18",
-      "bpm": 155,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:20",
-      "bpm": 144,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:22",
-      "bpm": 138,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:24",
-      "bpm": 152,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:26",
-      "bpm": 168,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:28",
-      "bpm": 154,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:30",
-      "bpm": 118,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:32",
-      "bpm": 119,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:34",
-      "bpm": 116,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:36",
-      "bpm": 110,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:38",
-      "bpm": 119,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:40",
-      "bpm": 126,
-      "source": "Garmin Fénix 7 Solar (Continuo Real)"
-    },
-    {
-      "hora": "20:42",
+      "hora": "11:34",
       "bpm": 132,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     },
     {
-      "hora": "20:44",
-      "bpm": 124,
+      "hora": "11:36",
+      "bpm": 144,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:38",
+      "bpm": 123,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:40",
+      "bpm": 150,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:42",
+      "bpm": 147,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:44",
+      "bpm": 144,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:46",
+      "bpm": 143,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:48",
+      "bpm": 142,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:50",
+      "bpm": 109,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:52",
+      "bpm": 115,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:54",
+      "bpm": 133,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:56",
+      "bpm": 122,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "11:58",
+      "bpm": 113,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:00",
+      "bpm": 102,
+      "source": "Garmin Fénix 7 Solar (Continuo Real)"
+    },
+    {
+      "hora": "12:02",
+      "bpm": 105,
       "source": "Garmin Fénix 7 Solar (Continuo Real)"
     }
   ],
   "curva_fc_24h_stats": {
-    "min": 56,
-    "max": 168,
-    "rhr": 59
+    "min": 59,
+    "max": 150,
+    "rhr": 65
   },
   "curva_fc_dias": {
     "hoy": {
-      "fecha": "2026-11-06",
+      "fecha": "2026-11-08",
       "puntos": [
         {
-          "hora": "17:54",
-          "bpm": 88,
+          "hora": "10:28",
+          "bpm": 92,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "17:56",
-          "bpm": 88,
+          "hora": "10:30",
+          "bpm": 92,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "17:58",
-          "bpm": 84,
+          "hora": "10:32",
+          "bpm": 92,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "18:00",
-          "bpm": 81,
+          "hora": "10:34",
+          "bpm": 91,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "18:02",
-          "bpm": 88,
+          "hora": "10:36",
+          "bpm": 69,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "18:04",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:06",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:08",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:10",
-          "bpm": 63,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:12",
-          "bpm": 64,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:14",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:16",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:18",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:20",
-          "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:22",
-          "bpm": 62,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:24",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:26",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:28",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:30",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:32",
-          "bpm": 60,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:34",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:36",
-          "bpm": 63,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:38",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:40",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:42",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:44",
-          "bpm": 56,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:46",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:48",
-          "bpm": 56,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:50",
-          "bpm": 57,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:52",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:54",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:56",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "18:58",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:00",
-          "bpm": 65,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:02",
-          "bpm": 85,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:04",
-          "bpm": 89,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:06",
-          "bpm": 72,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:08",
-          "bpm": 79,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:10",
-          "bpm": 76,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:12",
-          "bpm": 72,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:14",
-          "bpm": 72,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:16",
-          "bpm": 72,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:18",
-          "bpm": 73,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:20",
-          "bpm": 72,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:22",
-          "bpm": 74,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:24",
-          "bpm": 61,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:26",
-          "bpm": 59,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:28",
-          "bpm": 58,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:30",
+          "hora": "10:38",
           "bpm": 66,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "19:32",
-          "bpm": 67,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:34",
-          "bpm": 71,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:36",
-          "bpm": 97,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:38",
-          "bpm": 104,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:40",
-          "bpm": 111,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:42",
-          "bpm": 105,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:44",
-          "bpm": 97,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "19:46",
+          "hora": "10:40",
           "bpm": 74,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "19:48",
-          "bpm": 112,
+          "hora": "10:42",
+          "bpm": 80,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "19:50",
-          "bpm": 123,
+          "hora": "10:44",
+          "bpm": 79,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "19:52",
-          "bpm": 123,
+          "hora": "10:46",
+          "bpm": 79,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "19:54",
-          "bpm": 132,
+          "hora": "10:48",
+          "bpm": 71,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "19:56",
-          "bpm": 126,
+          "hora": "10:50",
+          "bpm": 75,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "19:58",
-          "bpm": 134,
+          "hora": "10:52",
+          "bpm": 65,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:00",
-          "bpm": 124,
+          "hora": "10:54",
+          "bpm": 59,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:02",
-          "bpm": 154,
+          "hora": "10:56",
+          "bpm": 60,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:04",
-          "bpm": 160,
+          "hora": "10:58",
+          "bpm": 62,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:06",
-          "bpm": 143,
+          "hora": "11:00",
+          "bpm": 67,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:08",
-          "bpm": 148,
+          "hora": "11:02",
+          "bpm": 69,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:10",
-          "bpm": 153,
+          "hora": "11:04",
+          "bpm": 67,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:12",
+          "hora": "11:06",
+          "bpm": 69,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:08",
+          "bpm": 71,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:10",
+          "bpm": 71,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:12",
+          "bpm": 102,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:14",
+          "bpm": 130,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:16",
+          "bpm": 136,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:18",
+          "bpm": 121,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:20",
+          "bpm": 135,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:22",
+          "bpm": 121,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:24",
+          "bpm": 128,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:26",
+          "bpm": 133,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:28",
+          "bpm": 133,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:30",
           "bpm": 141,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:14",
-          "bpm": 147,
+          "hora": "11:32",
+          "bpm": 142,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:16",
-          "bpm": 161,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:18",
-          "bpm": 155,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:20",
-          "bpm": 144,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:22",
-          "bpm": 138,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:24",
-          "bpm": 152,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:26",
-          "bpm": 168,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:28",
-          "bpm": 154,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:30",
-          "bpm": 118,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:32",
-          "bpm": 119,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:34",
-          "bpm": 116,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:36",
-          "bpm": 110,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:38",
-          "bpm": 119,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:40",
-          "bpm": 126,
-          "source": "Garmin Fénix 7 Solar (Continuo Real)"
-        },
-        {
-          "hora": "20:42",
+          "hora": "11:34",
           "bpm": 132,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         },
         {
-          "hora": "20:44",
-          "bpm": 124,
+          "hora": "11:36",
+          "bpm": 144,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:38",
+          "bpm": 123,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:40",
+          "bpm": 150,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:42",
+          "bpm": 147,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:44",
+          "bpm": 144,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:46",
+          "bpm": 143,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:48",
+          "bpm": 142,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:50",
+          "bpm": 109,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:52",
+          "bpm": 115,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:54",
+          "bpm": 133,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:56",
+          "bpm": 122,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "11:58",
+          "bpm": 113,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:00",
+          "bpm": 102,
+          "source": "Garmin Fénix 7 Solar (Continuo Real)"
+        },
+        {
+          "hora": "12:02",
+          "bpm": 105,
           "source": "Garmin Fénix 7 Solar (Continuo Real)"
         }
       ],
       "stats": {
-        "min": 56,
-        "max": 168,
-        "rhr": 59
+        "min": 59,
+        "max": 150,
+        "rhr": 65
       }
     },
     "ayer": {
-      "fecha": "2026-11-05",
+      "fecha": "2026-11-07",
       "puntos": [],
       "stats": {}
     }
@@ -1099,540 +719,52 @@
       "gps": null
     },
     {
-      "fecha": "2026-10-18",
-      "nombre": "Entrenamiento de Fuerza (Connect)",
-      "duracion": "42 min",
+      "fecha": "2026-11-08",
+      "nombre": "Fuerza",
+      "duracion": "44m 49s",
       "distancia": "-",
-      "fc_media_max": "-",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 245,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-24",
-      "nombre": "Entrenamiento de Fuerza (Amazfit)",
-      "duracion": "1h 03m",
-      "distancia": "-",
-      "fc_media_max": "120 (161) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 606,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-24",
-      "nombre": "Other (Amazfit)",
-      "duracion": "10 min",
-      "distancia": "-",
-      "fc_media_max": "96 (111) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 68,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-27",
-      "nombre": "Ciclismo (Connect)",
-      "duracion": "49 min",
-      "distancia": "-",
-      "fc_media_max": "-",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 206,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-27",
-      "nombre": "Ciclismo (Amazfit)",
-      "duracion": "50 min",
-      "distancia": "-",
-      "fc_media_max": "137 (172) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 585,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-25",
-      "nombre": "Other (Amazfit)",
-      "duracion": "13 min",
-      "distancia": "-",
-      "fc_media_max": "101 (127) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 101,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-27",
-      "nombre": "Other (Amazfit)",
-      "duracion": "20 min",
-      "distancia": "-",
-      "fc_media_max": "116 (140) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 183,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-10-31",
-      "nombre": "Tennis (Amazfit)",
-      "duracion": "59 min",
-      "distancia": "-",
-      "fc_media_max": "96 (126) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 396,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-11-01",
-      "nombre": "Other (Amazfit)",
-      "duracion": "5 min",
-      "distancia": "-",
-      "fc_media_max": "98 (138) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 32,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-11-03",
-      "nombre": "Ciclismo (Connect)",
-      "duracion": "47 min",
-      "distancia": "-",
-      "fc_media_max": "-",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 296,
-      "has_gps": false,
-      "gps": null
-    },
-    {
-      "fecha": "2026-11-05",
-      "nombre": "Other (Amazfit)",
-      "duracion": "15 min",
-      "distancia": "-",
-      "fc_media_max": "110 (154) ppm",
-      "hr_recovery": "-35 ppm en 1 min",
-      "calorias": 130,
+      "fc_media_max": "132.0 (Máx 166.0)",
+      "hr_recovery": "-9 ppm (⚠️)",
+      "calorias": 364,
       "has_gps": false,
       "gps": null
     }
   ],
   "apple_health": {
-    "archivo_fuente": "20261106_072230_health-export-json-2026-11-05-0000_to_2026-11-06-0000.json",
+    "archivo_fuente": "health-export-md-2026-10-22-0000_to_2026-10-22-0722.md",
     "rango": {
-      "inicio": "2026-11-04T23:00:00Z",
-      "fin": "2026-11-05T23:00:00Z",
-      "exportado": "2026-11-06T06:21:56Z"
+      "inicio": "2026-10-22",
+      "fin": "2026-10-22",
+      "exportado": "2026-10-22"
     },
     "totales_semana": {
-      "calorias_activas_kcal": 6511.0,
-      "pasos_registrados": 117352,
-      "sesiones_entrenamiento": 16,
-      "sesiones_sueno": 32,
-      "hrv_media_sdnn_ms": 52
+      "calorias_activas_kcal": 5.0,
+      "pasos_registrados": 44,
+      "sesiones_entrenamiento": 0,
+      "sesiones_sueno": 1,
+      "hrv_media_sdnn_ms": 47
     },
-    "entrenamientos": [
-      {
-        "fecha": "2026-10-18",
-        "nombre": "Entrenamiento de Fuerza (Health Sync)",
-        "tipo": "Strength Training",
-        "inicio": "2026-10-18 10:24:51",
-        "fin": "10-18 11:07:17",
-        "duracion": "21 min",
-        "duracion_segundos": 1273,
-        "calorias": 245,
-        "fc_media": null,
-        "fc_max": null,
-        "origen": "Health Sync"
-      },
-      {
-        "fecha": "2026-10-18",
-        "nombre": "Entrenamiento de Fuerza (Connect)",
-        "tipo": "Strength Training",
-        "inicio": "2026-10-18 10:24:51",
-        "fin": "10-18 11:07:17",
-        "duracion": "42 min",
-        "duracion_segundos": 2547,
-        "calorias": 245,
-        "fc_media": null,
-        "fc_max": null,
-        "origen": "Connect"
-      },
-      {
-        "fecha": "2026-10-23",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-10-23 10:26:31",
-        "fin": "10-23 10:28:32",
-        "duracion": "2 min",
-        "duracion_segundos": 121,
-        "calorias": 8,
-        "fc_media": 84,
-        "fc_max": 102,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-10-24",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-10-24 00:06:58",
-        "fin": "10-24 00:10:17",
-        "duracion": "3 min",
-        "duracion_segundos": 199,
-        "calorias": 19,
-        "fc_media": 89,
-        "fc_max": 117,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-10-24",
-        "nombre": "Entrenamiento de Fuerza (Amazfit)",
-        "tipo": "Strength Training",
-        "inicio": "2026-10-24 11:03:26",
-        "fin": "10-24 12:06:57",
-        "duracion": "1h 03m",
-        "duracion_segundos": 3811,
-        "calorias": 606,
-        "fc_media": 120,
-        "fc_max": 161,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-10-24",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-10-24 12:16:38",
-        "fin": "12:26:52",
-        "duracion": "10 min",
-        "duracion_segundos": 614,
-        "calorias": 68,
-        "fc_media": 96,
-        "fc_max": 111,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-10-27",
-        "nombre": "Ciclismo (Connect)",
-        "tipo": "Cycling",
-        "inicio": "2026-10-27 19:37:29",
-        "fin": "20:27:02",
-        "duracion": "49 min",
-        "duracion_segundos": 2973,
-        "calorias": 206,
-        "fc_media": null,
-        "fc_max": null,
-        "origen": "Connect"
-      },
-      {
-        "fecha": "2026-10-27",
-        "nombre": "Ciclismo (Amazfit)",
-        "tipo": "Cycling",
-        "inicio": "2026-10-27 19:37:35",
-        "fin": "20:28:00",
-        "duracion": "50 min",
-        "duracion_segundos": 3025,
-        "calorias": 585,
-        "fc_media": 137,
-        "fc_max": 172,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-10-25",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-10-25 17:45:24",
-        "fin": "10-25 17:59:18",
-        "duracion": "13 min",
-        "duracion_segundos": 834,
-        "calorias": 101,
-        "fc_media": 101,
-        "fc_max": 127,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-10-27",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-10-27 20:28:10",
-        "fin": "10-27 20:48:34",
-        "duracion": "20 min",
-        "duracion_segundos": 1224,
-        "calorias": 183,
-        "fc_media": 116,
-        "fc_max": 140,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-10-31",
-        "nombre": "Tennis (Amazfit)",
-        "tipo": "Tennis",
-        "inicio": "2026-10-31 17:02:35",
-        "fin": "18:01:59",
-        "duracion": "59 min",
-        "duracion_segundos": 3564,
-        "calorias": 396,
-        "fc_media": 96,
-        "fc_max": 126,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-11-01",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-11-01 10:53:25",
-        "fin": "10:58:53",
-        "duracion": "5 min",
-        "duracion_segundos": 328,
-        "calorias": 32,
-        "fc_media": 98,
-        "fc_max": 138,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-11-01",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-11-01 11:48:48",
-        "fin": "11:53:37",
-        "duracion": "4 min",
-        "duracion_segundos": 289,
-        "calorias": 26,
-        "fc_media": 92,
-        "fc_max": 120,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-11-01",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-11-01 16:45:04",
-        "fin": "16:48:56",
-        "duracion": "3 min",
-        "duracion_segundos": 232,
-        "calorias": 20,
-        "fc_media": 93,
-        "fc_max": 129,
-        "origen": "Zepp"
-      },
-      {
-        "fecha": "2026-11-03",
-        "nombre": "Ciclismo (Connect)",
-        "tipo": "Cycling",
-        "inicio": "2026-11-03 19:43:10",
-        "fin": "20:31:08",
-        "duracion": "47 min",
-        "duracion_segundos": 2878,
-        "calorias": 296,
-        "fc_media": null,
-        "fc_max": null,
-        "origen": "Connect"
-      },
-      {
-        "fecha": "2026-11-05",
-        "nombre": "Other (Amazfit)",
-        "tipo": "Other",
-        "inicio": "2026-11-05 09:06:32",
-        "fin": "11-05 09:21:45",
-        "duracion": "15 min",
-        "duracion_segundos": 913,
-        "calorias": 130,
-        "fc_media": 110,
-        "fc_max": 154,
-        "origen": "Zepp"
-      }
-    ],
+    "entrenamientos": [],
     "desglose_diario": [
       {
-        "activeEnergyKcal": 68,
-        "basalEnergyKcal": 995.5,
-        "date": "2026-10-17",
-        "distanceKm": 2.04,
-        "steps": 2814,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 419.1,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-18",
-        "distanceKm": 6.64,
-        "exerciseMinutes": 43,
-        "flightsClimbed": 6,
-        "steps": 5345,
-        "workoutCount": 2
-      },
-      {
-        "activeEnergyKcal": 184.5,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-19",
-        "distanceKm": 1.69,
-        "flightsClimbed": 1,
-        "steps": 3320,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 438,
-        "basalEnergyKcal": 2172,
-        "date": "2026-10-20",
-        "distanceKm": 7.31,
-        "flightsClimbed": 5,
-        "steps": 12663,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 358.2,
-        "basalEnergyKcal": 2030,
-        "date": "2026-10-21",
-        "distanceKm": 6.39,
-        "flightsClimbed": 5,
-        "steps": 8601,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 290,
         "date": "2026-10-22",
-        "distanceKm": 1.4,
-        "flightsClimbed": 1,
-        "steps": 5179,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 298,
-        "date": "2026-10-23",
-        "distanceKm": 4.2,
-        "exerciseMinutes": 2,
-        "flightsClimbed": 2,
-        "steps": 7383,
-        "workoutCount": 1
-      },
-      {
-        "activeEnergyKcal": 730.1,
-        "basalEnergyKcal": 2185.5,
-        "date": "2026-10-24",
-        "distanceKm": 5.33,
-        "exerciseMinutes": 76,
-        "flightsClimbed": 2,
-        "steps": 10699,
-        "workoutCount": 4
-      },
-      {
-        "activeEnergyKcal": 490,
-        "basalEnergyKcal": 1997,
-        "date": "2026-10-25",
-        "distanceKm": 4.98,
-        "exerciseMinutes": 13,
-        "flightsClimbed": 1,
-        "steps": 9575,
-        "workoutCount": 1
-      },
-      {
-        "activeEnergyKcal": 249,
-        "date": "2026-10-26",
-        "distanceKm": 3.49,
-        "flightsClimbed": 2,
-        "steps": 5897,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 658.2,
-        "basalEnergyKcal": 1893.2,
-        "date": "2026-10-27",
-        "distanceKm": 4.33,
-        "exerciseMinutes": 70,
-        "flightsClimbed": 3,
-        "steps": 6665,
-        "workoutCount": 3
-      },
-      {
-        "activeEnergyKcal": 168,
-        "date": "2026-10-28",
-        "distanceKm": 2.11,
-        "flightsClimbed": 2,
-        "steps": 3997,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 361,
-        "date": "2026-10-29",
-        "distanceKm": 5.06,
-        "flightsClimbed": 6,
-        "steps": 8829,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 6,
-        "date": "2026-10-30",
-        "steps": 70,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 434.9,
-        "basalEnergyKcal": 115.2,
-        "date": "2026-10-31",
-        "distanceKm": 1.55,
-        "exerciseMinutes": 59,
-        "steps": 4478,
-        "workoutCount": 1
-      },
-      {
-        "activeEnergyKcal": 161,
-        "date": "2026-11-01",
-        "distanceKm": 3.03,
-        "exerciseMinutes": 12,
-        "flightsClimbed": 2,
-        "steps": 4769,
-        "workoutCount": 3
-      },
-      {
-        "activeEnergyKcal": 538,
-        "basalEnergyKcal": 72,
-        "date": "2026-11-03",
-        "distanceKm": 3.41,
-        "exerciseMinutes": 47,
-        "flightsClimbed": 2,
-        "steps": 5747,
-        "workoutCount": 1
-      },
-      {
-        "activeEnergyKcal": 201,
-        "date": "2026-11-04",
-        "distanceKm": 1.78,
-        "flightsClimbed": 3,
-        "steps": 3526,
-        "workoutCount": 0
-      },
-      {
-        "activeEnergyKcal": 458,
-        "date": "2026-11-05",
-        "distanceKm": 4.61,
-        "exerciseMinutes": 15,
-        "flightsClimbed": 5,
-        "steps": 7795,
-        "workoutCount": 1
-      },
-      {
-        "date": "2026-11-06",
-        "workoutCount": 0
+        "steps": 44,
+        "activeEnergyKcal": 5.0,
+        "distanceKm": 0.01,
+        "exerciseTimeMin": 0
       }
     ]
   },
   "desglose_diario": [
     {
-      "fecha": "2026-10-27",
-      "pasos": 6665,
-      "sueno": 6.8,
-      "sueno_score": 88,
-      "rhr": 45,
-      "estres": 20,
-      "hrv": 62,
-      "min_intensidad": 0,
-      "sueno_fases": {
-        "profundo": "1h 23m",
-        "rem": "1h 28m",
-        "ligero": "3h 52m"
-      },
+      "fecha": "2026-10-19",
+      "pasos": 128,
+      "sueno": 6.7,
+      "sueno_score": 67,
+      "rhr": 49,
+      "estres": 18,
+      "hrv": 55,
+      "min_intensidad": 5,
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -1646,70 +778,18 @@
       }
     },
     {
-      "fecha": "2026-10-28",
-      "pasos": 3997,
-      "sueno": 6.7,
+      "fecha": "2026-10-22",
+      "pasos": 44,
+      "sueno": 6.9,
       "sueno_score": 87,
       "rhr": 45,
       "estres": 20,
-      "hrv": 35,
-      "min_intensidad": 0,
-      "sueno_fases": {
-        "profundo": "1h 43m",
-        "rem": "1h 33m",
-        "ligero": "3h 24m"
-      },
-      "fuente_dispositivo": {
-        "dispositivo": "Amazfit Helio Strap",
-        "fuente_tipo": "amazfit",
-        "badge_nombre": "Amazfit Helio",
-        "badge_icono": "activity",
-        "badge_color": "purple",
-        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-        "hrv_fuente": "Amazfit BioTracker (Zepp)",
-        "rhr_fuente": "Amazfit Helio Strap"
-      }
-    },
-    {
-      "fecha": "2026-10-29",
-      "pasos": 8829,
-      "sueno": 6.4,
-      "sueno_score": 89,
-      "rhr": 45,
-      "estres": 20,
-      "hrv": 54,
-      "min_intensidad": 0,
-      "sueno_fases": {
-        "profundo": "0h 51m",
-        "rem": "1h 48m",
-        "ligero": "3h 43m"
-      },
-      "fuente_dispositivo": {
-        "dispositivo": "Amazfit Helio Strap",
-        "fuente_tipo": "amazfit",
-        "badge_nombre": "Amazfit Helio",
-        "badge_icono": "activity",
-        "badge_color": "purple",
-        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-        "hrv_fuente": "Amazfit BioTracker (Zepp)",
-        "rhr_fuente": "Amazfit Helio Strap"
-      }
-    },
-    {
-      "fecha": "2026-10-30",
-      "pasos": 70,
-      "sueno": 6.6,
-      "sueno_score": 88,
-      "rhr": 47,
-      "estres": 20,
-      "hrv": 40,
+      "hrv": 31,
       "min_intensidad": 0,
       "sueno_fases": {
         "profundo": "1h 20m",
-        "rem": "1h 37m",
-        "ligero": "3h 38m"
+        "rem": "1h 45m",
+        "ligero": "3h 30m"
       },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1725,7 +805,7 @@
     },
     {
       "fecha": "2026-10-31",
-      "pasos": 4478,
+      "pasos": 0,
       "sueno": 5.8,
       "sueno_score": 86,
       "rhr": 46,
@@ -1754,10 +834,10 @@
       "fecha": "2026-11-01",
       "pasos": 4769,
       "sueno": 6.8,
-      "sueno_score": 80,
+      "sueno_score": 85,
       "rhr": 48,
       "estres": 20,
-      "hrv": 22,
+      "hrv": 55,
       "min_intensidad": 0,
       "sueno_fases": {
         "profundo": "56m",
@@ -1807,7 +887,7 @@
       "fecha": "2026-11-04",
       "pasos": 3526,
       "sueno": 5.5,
-      "sueno_score": 86,
+      "sueno_score": 85,
       "rhr": 54,
       "estres": 20,
       "hrv": 41,
@@ -1833,7 +913,7 @@
       "fecha": "2026-11-05",
       "pasos": 7795,
       "sueno": 6.4,
-      "sueno_score": 88,
+      "sueno_score": 85,
       "rhr": 58,
       "estres": 20,
       "hrv": 64,
@@ -1867,6 +947,60 @@
       "sueno_fases": {
         "profundo": "1h 19m",
         "rem": "1h 28m",
+        "ligero": "3h 30m"
+      },
+      "disposicion": "ÓPTIMA",
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-11-07",
+      "pasos": 0,
+      "sueno": 6.2,
+      "sueno_score": 82,
+      "rhr": 50,
+      "estres": 20,
+      "hrv": 58,
+      "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "0h 51m",
+        "rem": "1h 23m",
+        "ligero": "3h 30m"
+      },
+      "disposicion": "BUENA",
+      "fuente_dispositivo": {
+        "dispositivo": "Amazfit Helio Strap",
+        "fuente_tipo": "amazfit",
+        "badge_nombre": "Amazfit Helio",
+        "badge_icono": "activity",
+        "badge_color": "purple",
+        "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+        "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+        "hrv_fuente": "Amazfit BioTracker (Zepp)",
+        "rhr_fuente": "Amazfit Helio Strap"
+      }
+    },
+    {
+      "fecha": "2026-11-08",
+      "pasos": 2228,
+      "sueno": 6.5,
+      "sueno_score": 88,
+      "rhr": 48,
+      "estres": 20,
+      "hrv": 53,
+      "min_intensidad": 0,
+      "sueno_fases": {
+        "profundo": "0h 54m",
+        "rem": "1h 30m",
         "ligero": "3h 30m"
       },
       "disposicion": "ÓPTIMA",
@@ -3844,7 +2978,7 @@
       "sueno": 6.6,
       "rhr": 47,
       "vo2": 37.0,
-      "hrv": 57,
+      "hrv": 58,
       "estres": 24,
       "dias": [
         {
@@ -3957,9 +3091,9 @@
           "pasos": 8779,
           "sueno": 3.6,
           "sueno_score": 37,
-          "rhr": 48,
+          "rhr": 50,
           "estres": 33,
-          "hrv": 55,
+          "hrv": 64,
           "min_intensidad": 132,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -3971,11 +3105,6 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
-          },
-          "sueno_fases": {
-            "profundo": "1h 20m",
-            "rem": "1h 45m",
-            "ligero": "3h 30m"
           }
         },
         {
@@ -3985,7 +3114,7 @@
           "sueno_score": 78,
           "rhr": 48,
           "estres": 28,
-          "hrv": 55,
+          "hrv": 54,
           "min_intensidad": 49,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -3997,11 +3126,6 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
-          },
-          "sueno_fases": {
-            "profundo": "1h 20m",
-            "rem": "1h 45m",
-            "ligero": "3h 30m"
           }
         }
       ],
@@ -4032,79 +3156,22 @@
     },
     {
       "semana": "2026-W43",
-      "pasos": 57420,
-      "sueno": 6.7,
+      "pasos": 172,
+      "sueno": 6.8,
       "rhr": 47,
       "vo2": 37.0,
-      "hrv": 45,
+      "hrv": 43,
       "estres": 23,
       "dias": [
         {
           "fecha": "2026-10-19",
-          "pasos": 3320,
-          "sueno": 5.5,
-          "sueno_score": 74,
-          "rhr": 46,
+          "pasos": 128,
+          "sueno": 6.7,
+          "sueno_score": 67,
+          "rhr": 49,
           "estres": 18,
-          "hrv": 54,
+          "hrv": 55,
           "min_intensidad": 5,
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          },
-          "sueno_fases": {
-            "profundo": "0h 45m",
-            "rem": "0h 53m",
-            "ligero": "3h 49m"
-          }
-        },
-        {
-          "fecha": "2026-10-20",
-          "pasos": 12663,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 51,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 12m",
-            "rem": "1h 14m",
-            "ligero": "4h 23m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-21",
-          "pasos": 8601,
-          "sueno": 6.1,
-          "sueno_score": 88,
-          "rhr": 46,
-          "estres": 20,
-          "hrv": 56,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 37m",
-            "rem": "1h 25m",
-            "ligero": "2h 59m"
-          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -4119,7 +3186,7 @@
         },
         {
           "fecha": "2026-10-22",
-          "pasos": 5179,
+          "pasos": 44,
           "sueno": 6.9,
           "sueno_score": 87,
           "rhr": 45,
@@ -4127,87 +3194,9 @@
           "hrv": 31,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "1h 22m",
-            "rem": "2h 03m",
-            "ligero": "3h 25m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-23",
-          "pasos": 7383,
-          "sueno": 6.7,
-          "sueno_score": 87,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 45,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 09m",
+            "profundo": "1h 20m",
             "rem": "1h 45m",
-            "ligero": "3h 47m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-24",
-          "pasos": 10699,
-          "sueno": 7.2,
-          "sueno_score": 86,
-          "rhr": 52,
-          "estres": 20,
-          "hrv": 38,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 16m",
-            "rem": "1h 57m",
-            "ligero": "3h 54m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-25",
-          "pasos": 9575,
-          "sueno": 7.4,
-          "sueno_score": 86,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 39,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "0h 44m",
-            "rem": "1h 45m",
-            "ligero": "2h 29m"
+            "ligero": "3h 30m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -4226,146 +3215,16 @@
     },
     {
       "semana": "2026-W44",
-      "pasos": 34705,
-      "sueno": 6.5,
-      "rhr": 46,
+      "pasos": 4769,
+      "sueno": 6.3,
+      "rhr": 47,
       "vo2": 35.0,
-      "hrv": 42,
+      "hrv": 44,
       "estres": 41,
       "dias": [
         {
-          "fecha": "2026-10-26",
-          "pasos": 5897,
-          "sueno": 6.2,
-          "sueno_score": 87,
-          "rhr": 44,
-          "estres": 20,
-          "hrv": 44,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 05m",
-            "rem": "1h 14m",
-            "ligero": "3h 49m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-27",
-          "pasos": 6665,
-          "sueno": 6.8,
-          "sueno_score": 88,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 62,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 23m",
-            "rem": "1h 28m",
-            "ligero": "3h 52m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-28",
-          "pasos": 3997,
-          "sueno": 6.7,
-          "sueno_score": 87,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 35,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 43m",
-            "rem": "1h 33m",
-            "ligero": "3h 24m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-29",
-          "pasos": 8829,
-          "sueno": 6.4,
-          "sueno_score": 89,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 54,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "0h 51m",
-            "rem": "1h 48m",
-            "ligero": "3h 43m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-30",
-          "pasos": 70,
-          "sueno": 6.6,
-          "sueno_score": 88,
-          "rhr": 47,
-          "estres": 20,
-          "hrv": 40,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 20m",
-            "rem": "1h 37m",
-            "ligero": "3h 38m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
           "fecha": "2026-10-31",
-          "pasos": 4478,
+          "pasos": 0,
           "sueno": 5.8,
           "sueno_score": 86,
           "rhr": 46,
@@ -4394,10 +3253,10 @@
           "fecha": "2026-11-01",
           "pasos": 4769,
           "sueno": 6.8,
-          "sueno_score": 80,
+          "sueno_score": 85,
           "rhr": 48,
           "estres": 20,
-          "hrv": 22,
+          "hrv": 55,
           "min_intensidad": 0,
           "sueno_fases": {
             "profundo": "56m",
@@ -4433,12 +3292,12 @@
     },
     {
       "semana": "2026-W45",
-      "pasos": 17166,
-      "sueno": 6.1,
-      "rhr": 52,
+      "pasos": 19394,
+      "sueno": 6.2,
+      "rhr": 51,
       "vo2": 35.0,
-      "hrv": 47,
-      "estres": 25,
+      "hrv": 50,
+      "estres": 44,
       "dias": [
         {
           "fecha": "2026-11-03",
@@ -4471,7 +3330,7 @@
           "fecha": "2026-11-04",
           "pasos": 3526,
           "sueno": 5.5,
-          "sueno_score": 86,
+          "sueno_score": 85,
           "rhr": 54,
           "estres": 20,
           "hrv": 41,
@@ -4497,7 +3356,7 @@
           "fecha": "2026-11-05",
           "pasos": 7795,
           "sueno": 6.4,
-          "sueno_score": 88,
+          "sueno_score": 85,
           "rhr": 58,
           "estres": 20,
           "hrv": 64,
@@ -4545,6 +3404,60 @@
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
           }
+        },
+        {
+          "fecha": "2026-11-07",
+          "pasos": 0,
+          "sueno": 6.2,
+          "sueno_score": 82,
+          "rhr": 50,
+          "estres": 20,
+          "hrv": 58,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 51m",
+            "rem": "1h 23m",
+            "ligero": "3h 30m"
+          },
+          "disposicion": "BUENA",
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-11-08",
+          "pasos": 2228,
+          "sueno": 6.5,
+          "sueno_score": 88,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 53,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 54m",
+            "rem": "1h 30m",
+            "ligero": "3h 30m"
+          },
+          "disposicion": "ÓPTIMA",
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
       ],
       "actividades": [
@@ -4560,123 +3473,13 @@
           "gps": null
         },
         {
-          "fecha": "2026-10-18",
-          "nombre": "Entrenamiento de Fuerza (Connect)",
-          "duracion": "42 min",
+          "fecha": "2026-11-08",
+          "nombre": "Fuerza",
+          "duracion": "44m 49s",
           "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 245,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 03m",
-          "distancia": "-",
-          "fc_media_max": "120 (161) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 606,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Other (Amazfit)",
-          "duracion": "10 min",
-          "distancia": "-",
-          "fc_media_max": "96 (111) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 68,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Connect)",
-          "duracion": "49 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 206,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Amazfit)",
-          "duracion": "50 min",
-          "distancia": "-",
-          "fc_media_max": "137 (172) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 585,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-25",
-          "nombre": "Other (Amazfit)",
-          "duracion": "13 min",
-          "distancia": "-",
-          "fc_media_max": "101 (127) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 101,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Other (Amazfit)",
-          "duracion": "20 min",
-          "distancia": "-",
-          "fc_media_max": "116 (140) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 183,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-31",
-          "nombre": "Tennis (Amazfit)",
-          "duracion": "59 min",
-          "distancia": "-",
-          "fc_media_max": "96 (126) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 396,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-11-01",
-          "nombre": "Other (Amazfit)",
-          "duracion": "5 min",
-          "distancia": "-",
-          "fc_media_max": "98 (138) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 32,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-11-03",
-          "nombre": "Ciclismo (Connect)",
-          "duracion": "47 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 296,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-11-05",
-          "nombre": "Other (Amazfit)",
-          "duracion": "15 min",
-          "distancia": "-",
-          "fc_media_max": "110 (154) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 130,
+          "fc_media_max": "132.0 (Máx 166.0)",
+          "hr_recovery": "-9 ppm (⚠️)",
+          "calorias": 364,
           "has_gps": false,
           "gps": null
         }
@@ -6644,7 +5447,7 @@
       "sueno": 6.6,
       "rhr": 47,
       "vo2": 37.0,
-      "hrv": 57,
+      "hrv": 58,
       "estres": 24,
       "dias": [
         {
@@ -6757,9 +5560,9 @@
           "pasos": 8779,
           "sueno": 3.6,
           "sueno_score": 37,
-          "rhr": 48,
+          "rhr": 50,
           "estres": 33,
-          "hrv": 55,
+          "hrv": 64,
           "min_intensidad": 132,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -6771,11 +5574,6 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
-          },
-          "sueno_fases": {
-            "profundo": "1h 20m",
-            "rem": "1h 45m",
-            "ligero": "3h 30m"
           }
         },
         {
@@ -6785,7 +5583,7 @@
           "sueno_score": 78,
           "rhr": 48,
           "estres": 28,
-          "hrv": 55,
+          "hrv": 54,
           "min_intensidad": 49,
           "fuente_dispositivo": {
             "dispositivo": "Garmin Fénix 7 Solar",
@@ -6797,11 +5595,6 @@
             "pasos_fuente": "Garmin Fénix 7 Solar",
             "hrv_fuente": "Garmin Firstbeat",
             "rhr_fuente": "Garmin Elevate v4"
-          },
-          "sueno_fases": {
-            "profundo": "1h 20m",
-            "rem": "1h 45m",
-            "ligero": "3h 30m"
           }
         }
       ],
@@ -6832,79 +5625,22 @@
     },
     "2026-W43": {
       "semana": "2026-W43",
-      "pasos": 57420,
-      "sueno": 6.7,
+      "pasos": 172,
+      "sueno": 6.8,
       "rhr": 47,
       "vo2": 37.0,
-      "hrv": 45,
+      "hrv": 43,
       "estres": 23,
       "dias": [
         {
           "fecha": "2026-10-19",
-          "pasos": 3320,
-          "sueno": 5.5,
-          "sueno_score": 74,
-          "rhr": 46,
+          "pasos": 128,
+          "sueno": 6.7,
+          "sueno_score": 67,
+          "rhr": 49,
           "estres": 18,
-          "hrv": 54,
+          "hrv": 55,
           "min_intensidad": 5,
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          },
-          "sueno_fases": {
-            "profundo": "0h 45m",
-            "rem": "0h 53m",
-            "ligero": "3h 49m"
-          }
-        },
-        {
-          "fecha": "2026-10-20",
-          "pasos": 12663,
-          "sueno": 6.9,
-          "sueno_score": 85,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 51,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 12m",
-            "rem": "1h 14m",
-            "ligero": "4h 23m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-21",
-          "pasos": 8601,
-          "sueno": 6.1,
-          "sueno_score": 88,
-          "rhr": 46,
-          "estres": 20,
-          "hrv": 56,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 37m",
-            "rem": "1h 25m",
-            "ligero": "2h 59m"
-          },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -6919,7 +5655,7 @@
         },
         {
           "fecha": "2026-10-22",
-          "pasos": 5179,
+          "pasos": 44,
           "sueno": 6.9,
           "sueno_score": 87,
           "rhr": 45,
@@ -6927,87 +5663,9 @@
           "hrv": 31,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "1h 22m",
-            "rem": "2h 03m",
-            "ligero": "3h 25m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-23",
-          "pasos": 7383,
-          "sueno": 6.7,
-          "sueno_score": 87,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 45,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 09m",
+            "profundo": "1h 20m",
             "rem": "1h 45m",
-            "ligero": "3h 47m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-24",
-          "pasos": 10699,
-          "sueno": 7.2,
-          "sueno_score": 86,
-          "rhr": 52,
-          "estres": 20,
-          "hrv": 38,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 16m",
-            "rem": "1h 57m",
-            "ligero": "3h 54m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-25",
-          "pasos": 9575,
-          "sueno": 7.4,
-          "sueno_score": 86,
-          "rhr": 49,
-          "estres": 20,
-          "hrv": 39,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "0h 44m",
-            "rem": "1h 45m",
-            "ligero": "2h 29m"
+            "ligero": "3h 30m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -7026,146 +5684,16 @@
     },
     "2026-W44": {
       "semana": "2026-W44",
-      "pasos": 34705,
-      "sueno": 6.5,
-      "rhr": 46,
+      "pasos": 4769,
+      "sueno": 6.3,
+      "rhr": 47,
       "vo2": 35.0,
-      "hrv": 42,
+      "hrv": 44,
       "estres": 41,
       "dias": [
         {
-          "fecha": "2026-10-26",
-          "pasos": 5897,
-          "sueno": 6.2,
-          "sueno_score": 87,
-          "rhr": 44,
-          "estres": 20,
-          "hrv": 44,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 05m",
-            "rem": "1h 14m",
-            "ligero": "3h 49m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-27",
-          "pasos": 6665,
-          "sueno": 6.8,
-          "sueno_score": 88,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 62,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 23m",
-            "rem": "1h 28m",
-            "ligero": "3h 52m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-28",
-          "pasos": 3997,
-          "sueno": 6.7,
-          "sueno_score": 87,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 35,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 43m",
-            "rem": "1h 33m",
-            "ligero": "3h 24m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-29",
-          "pasos": 8829,
-          "sueno": 6.4,
-          "sueno_score": 89,
-          "rhr": 45,
-          "estres": 20,
-          "hrv": 54,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "0h 51m",
-            "rem": "1h 48m",
-            "ligero": "3h 43m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
-          "fecha": "2026-10-30",
-          "pasos": 70,
-          "sueno": 6.6,
-          "sueno_score": 88,
-          "rhr": 47,
-          "estres": 20,
-          "hrv": 40,
-          "min_intensidad": 0,
-          "sueno_fases": {
-            "profundo": "1h 20m",
-            "rem": "1h 37m",
-            "ligero": "3h 38m"
-          },
-          "fuente_dispositivo": {
-            "dispositivo": "Amazfit Helio Strap",
-            "fuente_tipo": "amazfit",
-            "badge_nombre": "Amazfit Helio",
-            "badge_icono": "activity",
-            "badge_color": "purple",
-            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
-            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
-            "hrv_fuente": "Amazfit BioTracker (Zepp)",
-            "rhr_fuente": "Amazfit Helio Strap"
-          }
-        },
-        {
           "fecha": "2026-10-31",
-          "pasos": 4478,
+          "pasos": 0,
           "sueno": 5.8,
           "sueno_score": 86,
           "rhr": 46,
@@ -7194,10 +5722,10 @@
           "fecha": "2026-11-01",
           "pasos": 4769,
           "sueno": 6.8,
-          "sueno_score": 80,
+          "sueno_score": 85,
           "rhr": 48,
           "estres": 20,
-          "hrv": 22,
+          "hrv": 55,
           "min_intensidad": 0,
           "sueno_fases": {
             "profundo": "56m",
@@ -7233,12 +5761,12 @@
     },
     "2026-W45": {
       "semana": "2026-W45",
-      "pasos": 17166,
-      "sueno": 6.1,
-      "rhr": 52,
+      "pasos": 19394,
+      "sueno": 6.2,
+      "rhr": 51,
       "vo2": 35.0,
-      "hrv": 47,
-      "estres": 25,
+      "hrv": 50,
+      "estres": 44,
       "dias": [
         {
           "fecha": "2026-11-03",
@@ -7271,7 +5799,7 @@
           "fecha": "2026-11-04",
           "pasos": 3526,
           "sueno": 5.5,
-          "sueno_score": 86,
+          "sueno_score": 85,
           "rhr": 54,
           "estres": 20,
           "hrv": 41,
@@ -7297,7 +5825,7 @@
           "fecha": "2026-11-05",
           "pasos": 7795,
           "sueno": 6.4,
-          "sueno_score": 88,
+          "sueno_score": 85,
           "rhr": 58,
           "estres": 20,
           "hrv": 64,
@@ -7345,6 +5873,60 @@
             "hrv_fuente": "Amazfit BioTracker (Zepp)",
             "rhr_fuente": "Amazfit Helio Strap"
           }
+        },
+        {
+          "fecha": "2026-11-07",
+          "pasos": 0,
+          "sueno": 6.2,
+          "sueno_score": 82,
+          "rhr": 50,
+          "estres": 20,
+          "hrv": 58,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 51m",
+            "rem": "1h 23m",
+            "ligero": "3h 30m"
+          },
+          "disposicion": "BUENA",
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
+        },
+        {
+          "fecha": "2026-11-08",
+          "pasos": 2228,
+          "sueno": 6.5,
+          "sueno_score": 88,
+          "rhr": 48,
+          "estres": 20,
+          "hrv": 53,
+          "min_intensidad": 0,
+          "sueno_fases": {
+            "profundo": "0h 54m",
+            "rem": "1h 30m",
+            "ligero": "3h 30m"
+          },
+          "disposicion": "ÓPTIMA",
+          "fuente_dispositivo": {
+            "dispositivo": "Amazfit Helio Strap",
+            "fuente_tipo": "amazfit",
+            "badge_nombre": "Amazfit Helio",
+            "badge_icono": "activity",
+            "badge_color": "purple",
+            "sueno_fuente": "Amazfit Helio Strap (Zepp)",
+            "pasos_fuente": "Amazfit Helio Strap (HealthKit)",
+            "hrv_fuente": "Amazfit BioTracker (Zepp)",
+            "rhr_fuente": "Amazfit Helio Strap"
+          }
         }
       ],
       "actividades": [
@@ -7360,123 +5942,13 @@
           "gps": null
         },
         {
-          "fecha": "2026-10-18",
-          "nombre": "Entrenamiento de Fuerza (Connect)",
-          "duracion": "42 min",
+          "fecha": "2026-11-08",
+          "nombre": "Fuerza",
+          "duracion": "44m 49s",
           "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 245,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Entrenamiento de Fuerza (Amazfit)",
-          "duracion": "1h 03m",
-          "distancia": "-",
-          "fc_media_max": "120 (161) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 606,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-24",
-          "nombre": "Other (Amazfit)",
-          "duracion": "10 min",
-          "distancia": "-",
-          "fc_media_max": "96 (111) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 68,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Connect)",
-          "duracion": "49 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 206,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Ciclismo (Amazfit)",
-          "duracion": "50 min",
-          "distancia": "-",
-          "fc_media_max": "137 (172) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 585,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-25",
-          "nombre": "Other (Amazfit)",
-          "duracion": "13 min",
-          "distancia": "-",
-          "fc_media_max": "101 (127) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 101,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-27",
-          "nombre": "Other (Amazfit)",
-          "duracion": "20 min",
-          "distancia": "-",
-          "fc_media_max": "116 (140) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 183,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-10-31",
-          "nombre": "Tennis (Amazfit)",
-          "duracion": "59 min",
-          "distancia": "-",
-          "fc_media_max": "96 (126) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 396,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-11-01",
-          "nombre": "Other (Amazfit)",
-          "duracion": "5 min",
-          "distancia": "-",
-          "fc_media_max": "98 (138) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 32,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-11-03",
-          "nombre": "Ciclismo (Connect)",
-          "duracion": "47 min",
-          "distancia": "-",
-          "fc_media_max": "-",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 296,
-          "has_gps": false,
-          "gps": null
-        },
-        {
-          "fecha": "2026-11-05",
-          "nombre": "Other (Amazfit)",
-          "duracion": "15 min",
-          "distancia": "-",
-          "fc_media_max": "110 (154) ppm",
-          "hr_recovery": "-35 ppm en 1 min",
-          "calorias": 130,
+          "fc_media_max": "132.0 (Máx 166.0)",
+          "hr_recovery": "-9 ppm (⚠️)",
+          "calorias": 364,
           "has_gps": false,
           "gps": null
         }
@@ -9588,10 +8060,10 @@
       "titulo": "Objetivo Semanal de Pasos",
       "subtitulo": "Volumen Aeróbico Base",
       "descripcion": "Mantener al menos 50.000 pasos semanales para optimizar la sensibilidad a la insulina y el gasto energético basal.",
-      "progreso": 45974,
+      "progreso": 24335,
       "meta": 50000,
       "unidad": "pasos",
-      "estado": "¡SUPERADO! 🔥 (92%)",
+      "estado": "¡SUPERADO! 🔥 (49%)",
       "color": "#10B981",
       "icono": "footprints",
       "plazo": "Cierra hoy 23:59",
@@ -9602,10 +8074,10 @@
       "titulo": "Minutos de Intensidad Cardíaca",
       "subtitulo": "Salud Cardiovascular (OMS)",
       "descripcion": "Acumular al menos 150 minutos en zona 3 o superior para reducir la presión arterial media y elevar el VO2 Máx.",
-      "progreso": 0,
+      "progreso": 5,
       "meta": 150,
       "unidad": "min",
-      "estado": "¡Completado con Éxito! 🔥 (0 min)",
+      "estado": "¡Completado con Éxito! 🔥 (5 min)",
       "color": "#F59E0B",
       "icono": "flame",
       "plazo": "Cierra hoy 23:59",
@@ -9641,14 +8113,14 @@
     }
   ],
   "ai_coach_insights": {
-    "fecha": "2026-11-01",
+    "fecha": "2026-11-08",
     "modelo": "agy → Gemini Pro (plan)",
-    "texto": "🟢 **Veredicto:** Totalmente recuperado, en fase de desentrenamiento agudo.\n\n* **Fisiología y carga:** El sueño (86/100) y el bajo estrés (20) han optimizado tu descanso (RHR 46), pero la carga aguda cayó a cero (ACWR 0.0), perdiendo el estímulo de tu carga crónica (44.3 min/día).\n* **Diario:** No has registrado notas personales esta semana para contrastar sensaciones.\n\n* **Plan próximos 7 días:** Reactiva el motor aeróbico sin picos bruscos. Realiza **3 salidas de carrera/montaña suave (Z2)** de 40 a 50 min en terreno llano o moderado, más **1 sesión de fuerza** y mantén tus paseos habituales para cerrar la semana con ~140-150 minutos de carga total."
+    "texto": "🟢 **Veredicto:** Asimilación óptima, pero en desentrenamiento por falta de estímulo aeróbico.\n\nFisiológicamente estás impecable: HRV alto (51 ms), RHR en 53 lpm y sueño excelente (85 pts). Sin embargo, tu carga aguda está a cero (ACWR 0.0) y sin minutos de intensidad registrados por Garmin, perdiendo la base crónica. El diario personal está vacío esta semana, por lo que no hay sensaciones subjetivas para contrastar.\n\n**Próximos 7 días:** Reactiva la carrera con 3 sesiones en Z2 (trote suave conversacional) de 35 a 45 minutos en días alternos, más 2 días de fuerza para mantener tono muscular sin disparar la fatiga. Cero series o ritmos altos hasta consolidar el volumen."
   },
   "acwr": {
-    "fecha": "2026-11-06",
+    "fecha": "2026-11-08",
     "carga_aguda_min_dia": 0.0,
-    "carga_cronica_min_dia": 37.6,
+    "carga_cronica_min_dia": 49.8,
     "ratio_acwr": 0.0,
     "semaforo": "Desentrenamiento (baja carga)",
     "emoji": "🟦",
@@ -9657,6 +8129,6 @@
       "motivos": [],
       "mensaje": "Todo en verde. Sin señales de alarma."
     },
-    "dias_usados": 32
+    "dias_usados": 24
   }
 }
