@@ -142,6 +142,25 @@
     html:not(.dark-theme) body.theme-system-light .text-slate-400 {
       color: var(--text-muted) !important;
     }
+  
+    /* REGULACIÓN DE TAMAÑO DE FUENTE DINÁMICA (ACCESIBILIDAD) */
+    html.font-scale-standard { font-size: 16px; }
+    html.font-scale-medium { font-size: 18px; }
+    html.font-scale-large { font-size: 20px; }
+    html.font-scale-xlarge { font-size: 22px; }
+
+    html.font-scale-medium .text-\[10px\], html.font-scale-medium .text-\[9px\] { font-size: 11.5px !important; }
+    html.font-scale-large .text-\[10px\], html.font-scale-large .text-\[9px\] { font-size: 13.5px !important; }
+    html.font-scale-xlarge .text-\[10px\], html.font-scale-xlarge .text-\[9px\] { font-size: 15.5px !important; }
+
+    html.font-scale-medium .text-xs { font-size: 14px !important; }
+    html.font-scale-large .text-xs { font-size: 16px !important; }
+    html.font-scale-xlarge .text-xs { font-size: 18px !important; }
+
+    html.font-scale-medium .text-sm { font-size: 16px !important; }
+    html.font-scale-large .text-sm { font-size: 18px !important; }
+    html.font-scale-xlarge .text-sm { font-size: 20px !important; }
+
   </style>
 </head>
 <body class="min-h-screen pb-28 select-none">
@@ -763,6 +782,39 @@
             <i data-lucide="sun" class="w-4 h-4 mb-1"></i>
             <span class="text-[11px] font-bold">Claro</span>
             <span class="text-[9px] opacity-75">Día / Sol</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- TAMAÑO DE FUENTE & ACCESIBILIDAD -->
+      <section class="garmin-card p-4 space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="type" class="w-4 h-4 text-[#00A3E0]"></i>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Tamaño del Texto</h2>
+          </div>
+          <span id="font-size-badge" class="text-[9px] font-bold text-[#00A3E0] bg-[#00A3E0]/15 px-2 py-0.5 rounded-full border border-[#00A3E0]/30">Estándar</span>
+        </div>
+        <p class="text-[11px] text-slate-400">
+          Ajusta la legibilidad para leer cómodamente todas las métricas, tarjetas y textos en tu móvil sin esfuerzo visual.
+        </p>
+
+        <div class="grid grid-cols-4 gap-2 pt-1">
+          <button type="button" id="font-btn-standard" onclick="setAppFontSize('standard')" class="flex flex-col items-center justify-center p-2 rounded-xl border border-[#00A3E0] bg-[#00A3E0]/15 text-[#00A3E0] transition-all active:scale-95">
+            <span class="text-xs font-bold">A</span>
+            <span class="text-[9px] font-semibold mt-1">Normal</span>
+          </button>
+          <button type="button" id="font-btn-medium" onclick="setAppFontSize('medium')" class="flex flex-col items-center justify-center p-2 rounded-xl border border-[#1E2D3B] bg-[#111A22] text-slate-400 hover:text-white transition-all active:scale-95">
+            <span class="text-sm font-bold">A+</span>
+            <span class="text-[9px] font-semibold mt-1">Medio</span>
+          </button>
+          <button type="button" id="font-btn-large" onclick="setAppFontSize('large')" class="flex flex-col items-center justify-center p-2 rounded-xl border border-[#1E2D3B] bg-[#111A22] text-slate-400 hover:text-white transition-all active:scale-95">
+            <span class="text-base font-bold">A++</span>
+            <span class="text-[9px] font-semibold mt-1">Grande</span>
+          </button>
+          <button type="button" id="font-btn-xlarge" onclick="setAppFontSize('xlarge')" class="flex flex-col items-center justify-center p-2 rounded-xl border border-[#1E2D3B] bg-[#111A22] text-slate-400 hover:text-white transition-all active:scale-95">
+            <span class="text-lg font-bold">A+++</span>
+            <span class="text-[9px] font-semibold mt-1">Gigante</span>
           </button>
         </div>
       </section>
@@ -2859,6 +2911,51 @@
 
     // Aplicar tema inicial inmediatamente
     applyTheme();
+
+    
+    // CONTROL DEL TAMAÑO DE FUENTE (ACCESIBILIDAD MÓVIL)
+    let currentFontSize = localStorage.getItem('garmin_plus_font_size') || 'standard';
+
+    function setAppFontSize(size) {
+      currentFontSize = size;
+      localStorage.setItem('garmin_plus_font_size', size);
+      applyFontSize();
+    }
+
+    function applyFontSize() {
+      const root = document.documentElement;
+      const validSizes = ['standard', 'medium', 'large', 'xlarge'];
+      validSizes.forEach(s => root.classList.remove(`font-scale-${s}`));
+      root.classList.add(`font-scale-${currentFontSize}`);
+
+      const badge = document.getElementById('font-size-badge');
+      const labels = {
+        'standard': 'Estándar',
+        'medium': 'Medio (+15%)',
+        'large': 'Grande (+25%)',
+        'xlarge': 'Gigante (+40%)'
+      };
+      if (badge) {
+        badge.textContent = labels[currentFontSize] || 'Estándar';
+      }
+
+      const activeClass = ['border-[#00A3E0]', 'bg-[#00A3E0]/15', 'text-[#00A3E0]'];
+      const inactiveClass = ['border-[#1E2D3B]', 'bg-[#111A22]', 'text-slate-400'];
+
+      validSizes.forEach(s => {
+        const btn = document.getElementById(`font-btn-${s}`);
+        if (!btn) return;
+        if (currentFontSize === s) {
+          btn.classList.add(...activeClass);
+          btn.classList.remove(...inactiveClass);
+        } else {
+          btn.classList.remove(...activeClass);
+          btn.classList.add(...inactiveClass);
+        }
+      });
+    }
+
+    applyFontSize();
 
     loadData();
   </script>
