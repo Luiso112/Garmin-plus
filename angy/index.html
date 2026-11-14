@@ -8,6 +8,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="ANGY">
   <link rel="apple-touch-icon" href="/Garmin-plus/icon-192.png">
+  <link rel="icon" type="image/png" href="/Garmin-plus/icon-192.png">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <style>
     body {
       background: #F8F6F2;
@@ -21,6 +25,7 @@
       margin: 0;
       text-align: center;
       padding: 20px;
+      box-sizing: border-box;
     }
     .spinner {
       width: 44px;
@@ -28,7 +33,7 @@
       border: 4px solid rgba(184, 83, 47, 0.2);
       border-top-color: #B8532F;
       border-radius: 50%;
-      animation: spin 1s infinite linear;
+      animation: spin 0.9s infinite linear;
       margin-bottom: 20px;
     }
     @keyframes spin { 100% { transform: rotate(360deg); } }
@@ -36,14 +41,25 @@
       background: #B8532F;
       color: #FFF;
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 700;
       padding: 6px 14px;
       border-radius: 20px;
       margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
-    h2 { font-size: 20px; margin-bottom: 8px; }
-    p { color: #827B75; font-size: 14px; max-width: 320px; line-height: 1.4; }
+    h2 { font-size: 20px; margin: 0 0 8px 0; }
+    p { color: #827B75; font-size: 14px; max-width: 320px; line-height: 1.4; margin: 0; }
+    a.btn {
+      margin-top: 20px;
+      display: inline-block;
+      background: #B8532F;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -51,21 +67,39 @@
   <div class="spinner"></div>
   <h2>Conectando con tu Servidor...</h2>
   <p>Enrutando de forma segura con tu Cerebro Digital 24/7.</p>
+  <div id="fallback" style="display:none;">
+    <a id="directLink" class="btn" href="#">Entrar directamente</a>
+  </div>
 
   <script>
+    const fallbackUrl = "https://irrigation-reasonably-knit-acquired.trycloudflare.com";
+
     async function redirectLive() {
       try {
-        const res = await fetch('endpoint.json?t=' + Date.now());
-        const data = await res.json();
-        if (data.active_tunnel) {
-          window.location.replace(data.active_tunnel);
-          return;
+        const res = await fetch('endpoint.json?t=' + Date.now(), { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.active_tunnel) {
+            window.location.replace(data.active_tunnel);
+            return;
+          }
         }
-      } catch (e) {}
-      // Fallback a URL conocida
-      window.location.replace("https://nobody-jones-concrete-kick.trycloudflare.com");
+      } catch (e) {
+        console.warn("Error leyendo endpoint.json:", e);
+      }
+      window.location.replace(fallbackUrl);
     }
-    setTimeout(redirectLive, 400);
+
+    setTimeout(() => {
+      const fb = document.getElementById('fallback');
+      const dl = document.getElementById('directLink');
+      if (fb && dl) {
+        dl.href = fallbackUrl;
+        fb.style.display = 'block';
+      }
+    }, 2500);
+
+    redirectLive();
   </script>
 </body>
 </html>
