@@ -5,27 +5,34 @@
   <title>ANGY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="ANGY">
+  <meta name="theme-color" content="#0F172A">
   <link rel="apple-touch-icon" href="./icon-192.png">
   <link rel="icon" type="image/png" href="./icon-192.png">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <style>
-    body {
-      background: #F8F6F2;
-      color: #1C1A18;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0F172A;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #loader {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
+      background: #0F172A;
+      color: #F8FAFC;
+      z-index: 10;
+      transition: opacity 0.3s ease;
     }
     .spinner {
       width: 44px;
@@ -47,8 +54,14 @@
       margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
-    h2 { font-size: 20px; margin: 0 0 8px 0; }
-    p { color: #827B75; font-size: 14px; max-width: 320px; line-height: 1.4; margin: 0; }
+    h2 { font-size: 20px; margin-bottom: 8px; font-weight: 600; }
+    p { color: #94A3B8; font-size: 14px; max-width: 300px; text-align: center; line-height: 1.4; }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
     a.btn {
       margin-top: 20px;
       display: inline-block;
@@ -63,43 +76,54 @@
   </style>
 </head>
 <body>
-  <div class="badge">ANGY COMPANION</div>
-  <div class="spinner"></div>
-  <h2>Conectando con ANGY...</h2>
-  <p>Enrutando con tu Cerebro Digital 24/7.</p>
-  <div id="fallback" style="display:none;">
-    <a id="directLink" class="btn" href="#">Entrar directamente</a>
+  <div id="loader">
+    <div class="badge">ANGY COMPANION</div>
+    <div class="spinner"></div>
+    <h2>Conectando con ANGY...</h2>
+    <p>Enrutando con tu Cerebro Digital.</p>
+    <div id="fallback" style="display:none;">
+      <a id="directLink" class="btn" href="#">Entrar directamente</a>
+    </div>
   </div>
+
+  <iframe id="appFrame" src="about:blank" allow="clipboard-read; clipboard-write; microphone; camera; fullscreen"></iframe>
 
   <script>
     const fallbackUrl = "https://warned-eco-glossary-buffer.trycloudflare.com";
+    const iframe = document.getElementById("appFrame");
+    const loader = document.getElementById("loader");
 
-    async function redirectLive() {
+    async function loadApp() {
+      let targetUrl = fallbackUrl;
       try {
-        const res = await fetch('./angy/endpoint.json?t=' + Date.now(), { cache: "no-store" });
+        const res = await fetch("./angy/endpoint.json?t=" + Date.now(), { cache: "no-store" });
         if (res.ok) {
           const data = await res.json();
           if (data && data.active_tunnel) {
-            window.location.replace(data.active_tunnel);
-            return;
+            targetUrl = data.active_tunnel;
           }
         }
       } catch (e) {
-        console.warn("Error leyendo endpoint.json:", e);
+        console.warn("Fallback tunnel url:", e);
       }
-      window.location.replace(fallbackUrl);
+
+      iframe.src = targetUrl;
+      iframe.onload = () => {
+        loader.style.opacity = "0";
+        setTimeout(() => { loader.style.display = "none"; }, 300);
+      };
+
+      setTimeout(() => {
+        const fb = document.getElementById("fallback");
+        const dl = document.getElementById("directLink");
+        if (fb && dl) {
+          dl.href = targetUrl;
+          fb.style.display = "block";
+        }
+      }, 5000);
     }
 
-    setTimeout(() => {
-      const fb = document.getElementById('fallback');
-      const dl = document.getElementById('directLink');
-      if (fb && dl) {
-        dl.href = fallbackUrl;
-        fb.style.display = 'block';
-      }
-    }, 2500);
-
-    redirectLive();
+    loadApp();
   </script>
 </body>
 </html>
