@@ -1,6 +1,6 @@
 {
   "usuario": "Luis B.",
-  "ultima_actualizacion": "2026-11-21 21:35:03",
+  "ultima_actualizacion": "2026-11-21 21:35:36",
   "semana_actual": "2026-W47",
   "fuentes_metricas": {
     "sueno": {
@@ -1342,9 +1342,9 @@
       "hrv": 43,
       "min_intensidad": 0,
       "sueno_fases": {
-        "profundo": "0h 42m",
-        "rem": "0h 46m",
-        "ligero": "4h 01m"
+        "profundo": "0h 43m",
+        "rem": "0h 47m",
+        "ligero": "4h 2m"
       },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1368,9 +1368,9 @@
       "hrv": 92,
       "min_intensidad": 0,
       "sueno_fases": {
-        "profundo": "0h 46m",
-        "rem": "0h 54m",
-        "ligero": "4h 48m"
+        "profundo": "0h 47m",
+        "rem": "0h 55m",
+        "ligero": "4h 49m"
       },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1394,9 +1394,9 @@
       "hrv": 53,
       "min_intensidad": 0,
       "sueno_fases": {
-        "profundo": "0h 45m",
-        "rem": "1h 48m",
-        "ligero": "3h 48m"
+        "profundo": "0h 46m",
+        "rem": "1h 49m",
+        "ligero": "3h 49m"
       },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1420,9 +1420,9 @@
       "hrv": 32,
       "min_intensidad": 0,
       "sueno_fases": {
-        "profundo": "0h 53m",
-        "rem": "1h 42m",
-        "ligero": "3h 08m"
+        "profundo": "0h 54m",
+        "rem": "1h 43m",
+        "ligero": "3h 9m"
       },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1446,9 +1446,9 @@
       "hrv": 55,
       "min_intensidad": 0,
       "sueno_fases": {
-        "profundo": "0h 47m",
-        "rem": "0h 43m",
-        "ligero": "2h 46m"
+        "profundo": "0h 48m",
+        "rem": "0h 44m",
+        "ligero": "2h 47m"
       },
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
@@ -1476,6 +1476,7 @@
         "rem": "1h 23m",
         "ligero": "4h 03m"
       },
+      "disposicion": "ÓPTIMA",
       "fuente_dispositivo": {
         "dispositivo": "Amazfit Helio Strap",
         "fuente_tipo": "amazfit",
@@ -4189,9 +4190,9 @@
           "hrv": 43,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 42m",
-            "rem": "0h 46m",
-            "ligero": "4h 01m"
+            "profundo": "0h 43m",
+            "rem": "0h 47m",
+            "ligero": "4h 2m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -4215,9 +4216,9 @@
           "hrv": 92,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 46m",
-            "rem": "0h 54m",
-            "ligero": "4h 48m"
+            "profundo": "0h 47m",
+            "rem": "0h 55m",
+            "ligero": "4h 49m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -4241,9 +4242,9 @@
           "hrv": 53,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 45m",
-            "rem": "1h 48m",
-            "ligero": "3h 48m"
+            "profundo": "0h 46m",
+            "rem": "1h 49m",
+            "ligero": "3h 49m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -4267,9 +4268,9 @@
           "hrv": 32,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 53m",
-            "rem": "1h 42m",
-            "ligero": "3h 08m"
+            "profundo": "0h 54m",
+            "rem": "1h 43m",
+            "ligero": "3h 9m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -4293,9 +4294,9 @@
           "hrv": 55,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 47m",
-            "rem": "0h 43m",
-            "ligero": "2h 46m"
+            "profundo": "0h 48m",
+            "rem": "0h 44m",
+            "ligero": "2h 47m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -4323,6 +4324,7 @@
             "rem": "1h 23m",
             "ligero": "4h 03m"
           },
+          "disposicion": "ÓPTIMA",
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
@@ -7150,9 +7152,9 @@
           "hrv": 43,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 42m",
-            "rem": "0h 46m",
-            "ligero": "4h 01m"
+            "profundo": "0h 43m",
+            "rem": "0h 47m",
+            "ligero": "4h 2m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -7176,9 +7178,9 @@
           "hrv": 92,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 46m",
-            "rem": "0h 54m",
-            "ligero": "4h 48m"
+            "profundo": "0h 47m",
+            "rem": "0h 55m",
+            "ligero": "4h 49m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -7202,9 +7204,9 @@
           "hrv": 53,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 45m",
-            "rem": "1h 48m",
-            "ligero": "3h 48m"
+            "profundo": "0h 46m",
+            "rem": "1h 49m",
+            "ligero": "3h 49m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -7228,9 +7230,9 @@
           "hrv": 32,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 53m",
-            "rem": "1h 42m",
-            "ligero": "3h 08m"
+            "profundo": "0h 54m",
+            "rem": "1h 43m",
+            "ligero": "3h 9m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -7254,9 +7256,9 @@
           "hrv": 55,
           "min_intensidad": 0,
           "sueno_fases": {
-            "profundo": "0h 47m",
-            "rem": "0h 43m",
-            "ligero": "2h 46m"
+            "profundo": "0h 48m",
+            "rem": "0h 44m",
+            "ligero": "2h 47m"
           },
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
@@ -7284,6 +7286,7 @@
             "rem": "1h 23m",
             "ligero": "4h 03m"
           },
+          "disposicion": "ÓPTIMA",
           "fuente_dispositivo": {
             "dispositivo": "Amazfit Helio Strap",
             "fuente_tipo": "amazfit",
