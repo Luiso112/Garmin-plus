@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Dieta Intuitiva - Portal Paciente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --primary-light: #e8f5e9;
+            --accent: #52b788;
+            --bg: #f8faf9;
+            --card-bg: #ffffff;
+            --text-main: #1b4332;
+            --text-muted: #6c757d;
+            --border: #e2e8f0;
+            --radius: 16px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); padding-bottom: 80px; }
+        .mobile-container { max-width: 480px; margin: 0 auto; min-height: 100vh; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        
+        /* Header */
+        header { padding: 20px; background: linear-gradient(135deg, #1b4332, #2d6a4f); color: #fff; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; }
+        .patient-badge { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #b7e4c7; font-weight: 600; }
+        .patient-name { font-size: 22px; font-weight: 700; margin-top: 4px; }
+        .diet-period { font-size: 13px; opacity: 0.9; margin-top: 2px; }
+
+        /* Day Selector */
+        .day-bar { display: flex; gap: 8px; overflow-x: auto; padding: 16px 20px; scrollbar-width: none; }
+        .day-btn { flex: 0 0 auto; padding: 10px 18px; border-radius: 12px; border: 1px solid var(--border); background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .day-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        /* Content Area */
+        .main-content { padding: 0 20px; }
+        .meal-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .meal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .meal-title { font-size: 16px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px; }
+        .meal-items { list-style: none; }
+        .meal-item { padding: 6px 0; border-bottom: 1px dashed #f1f5f9; display: flex; justify-content: space-between; font-size: 14px; }
+        .meal-item:last-child { border-bottom: none; }
+        .weight-badge { font-weight: 700; color: #1b4332; background: #e8f5e9; padding: 2px 8px; border-radius: 6px; font-size: 12px; }
+
+        /* Recipe Trigger */
+        .btn-recipe { margin-top: 10px; width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #b7e4c7; background: #f4fbf7; color: var(--primary); font-size: 13px; font-weight: 600; cursor: pointer; text-align: center; }
+
+        /* Bottom Nav */
+        nav.tab-bar { position: fixed; bottom: 0; left: 0; right: 0; max-width: 480px; margin: 0 auto; background: #fff; border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 12px 0; }
+        .nav-item { text-align: center; color: var(--text-muted); font-size: 11px; text-decoration: none; font-weight: 600; }
+        .nav-item.active { color: var(--primary); }
+        .nav-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <header>
+            <div class="patient-badge">Plan Nutricional Activo</div>
+            <div class="patient-name">Aroa P. I.</div>
+            <div class="diet-period">Semana 48 · Nutrición Clínica Personalizada</div>
+        </header>
+
+        <div class="day-bar">
+            <button class="day-btn active">Lunes</button>
+            <button class="day-btn">Martes</button>
+            <button class="day-btn">Miércoles</button>
+            <button class="day-btn">Jueves</button>
+            <button class="day-btn">Viernes</button>
+            <button class="day-btn">Sábado</button>
+            <button class="day-btn">Domingo</button>
+        </div>
+
+        <div class="main-content">
+            <!-- Desayuno -->
+            <div class="meal-card">
+                <div class="meal-header">
+                    <span class="meal-title">☕ Desayuno</span>
+                </div>
+                <ul class="meal-items">
+                    <li class="meal-item"><span>Tostada de pan masa madre</span> <span class="weight-badge">60 g</span></li>
+                    <li class="meal-item"><span>Tomate triturado natural con AOVE</span> <span class="weight-badge">40 g / 10 ml</span></li>
+                    <li class="meal-item"><span>Jamón ibérico de bellota o cecina</span> <span class="weight-badge">40 g</span></li>
+                    <li class="meal-item"><span>Café o infusión sin azúcar</span> <span class="weight-badge">Libre</span></li>
+                </ul>
+            </div>
+
+            <!-- Comida -->
+            <div class="meal-card">
+                <div class="meal-header">
+                    <span class="meal-title">🍲 Comida Principal</span>
+                </div>
+                <ul class="meal-items">
+                    <li class="meal-item"><span>Arroz basmati salteado (en crudo)</span> <span class="weight-badge">65 g</span></li>
+                    <li class="meal-item"><span>Pechuga de pollo a la plancha</span> <span class="weight-badge">140 g</span></li>
+                    <li class="meal-item"><span>Calabacín y champiñones laminados</span> <span class="weight-badge">180 g</span></li>
+                    <li class="meal-item"><span>Aceite de oliva virgen extra (AOVE)</span> <span class="weight-badge">10 ml</span></li>
+                </ul>
+                <button class="btn-recipe">📖 Ver Receta y Preparación Paso a Paso</button>
+            </div>
+
+            <!-- Merienda -->
+            <div class="meal-card">
+                <div class="meal-header">
+                    <span class="meal-title">🍏 Merienda</span>
+                </div>
+                <ul class="meal-items">
+                    <li class="meal-item"><span>Yogur griego natural (o kéfir)</span> <span class="weight-badge">125 g</span></li>
+                    <li class="meal-item"><span>Nueces de California o almendras</span> <span class="weight-badge">20 g</span></li>
+                    <li class="meal-item"><span>Arándanos frescos</span> <span class="weight-badge">60 g</span></li>
+                </ul>
+            </div>
+
+            <!-- Cena -->
+            <div class="meal-card">
+                <div class="meal-header">
+                    <span class="meal-title">🐟 Cena Ligera</span>
+                </div>
+                <ul class="meal-items">
+                    <li class="meal-item"><span>Lomo de salmón al vapor o papillote</span> <span class="weight-badge">150 g</span></li>
+                    <li class="meal-item"><span>Espárragos trigueros a la plancha</span> <span class="weight-badge">150 g</span></li>
+                    <li class="meal-item"><span>Patata cocida pequeña</span> <span class="weight-badge">100 g</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="tab-bar">
+            <a href="#" class="nav-item active"><span class="nav-icon">📅</span>Menú</a>
+            <a href="#" class="nav-item"><span class="nav-icon">🛒</span>Compra</a>
+            <a href="#" class="nav-item"><span class="nav-icon">🌿</span>Suplementos</a>
+            <a href="#" class="nav-item"><span class="nav-icon">🔄</span>Intercambios</a>
+        </nav>
+    </div>
+</body>
+</html>
