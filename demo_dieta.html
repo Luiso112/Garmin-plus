@@ -8,48 +8,77 @@
     <style>
         :root {
             --primary: #2d6a4f;
+            --primary-dark: #1b4332;
             --primary-light: #e8f5e9;
             --accent: #52b788;
             --bg: #f8faf9;
             --card-bg: #ffffff;
             --text-main: #1b4332;
-            --text-muted: #6c757d;
+            --text-muted: #64748b;
             --border: #e2e8f0;
             --radius: 16px;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); padding-bottom: 80px; }
-        .mobile-container { max-width: 480px; margin: 0 auto; min-height: 100vh; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--bg); color: var(--text-main); padding-bottom: 90px; }
+        .mobile-container { max-width: 480px; margin: 0 auto; min-height: 100vh; background: #fff; box-shadow: 0 0 25px rgba(0,0,0,0.06); position: relative; }
         
         /* Header */
-        header { padding: 20px; background: linear-gradient(135deg, #1b4332, #2d6a4f); color: #fff; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; }
-        .patient-badge { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #b7e4c7; font-weight: 600; }
+        header { padding: 22px 20px 18px; background: linear-gradient(135deg, #1b4332, #2d6a4f); color: #fff; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; }
+        .patient-badge { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: #b7e4c7; font-weight: 700; }
         .patient-name { font-size: 22px; font-weight: 700; margin-top: 4px; }
         .diet-period { font-size: 13px; opacity: 0.9; margin-top: 2px; }
 
         /* Day Selector */
-        .day-bar { display: flex; gap: 8px; overflow-x: auto; padding: 16px 20px; scrollbar-width: none; }
-        .day-btn { flex: 0 0 auto; padding: 10px 18px; border-radius: 12px; border: 1px solid var(--border); background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-        .day-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .day-bar { display: flex; gap: 8px; overflow-x: auto; padding: 14px 16px; scrollbar-width: none; background: #fff; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #f1f5f9; }
+        .day-bar::-webkit-scrollbar { display: none; }
+        .day-btn { flex: 0 0 auto; padding: 9px 16px; border-radius: 12px; border: 1px solid var(--border); background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; color: var(--text-muted); }
+        .day-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); box-shadow: 0 4px 10px rgba(45, 106, 79, 0.25); }
 
         /* Content Area */
-        .main-content { padding: 0 20px; }
-        .meal-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
-        .meal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .meal-title { font-size: 16px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px; }
+        .tab-content { padding: 14px 16px; display: none; }
+        .tab-content.active { display: block; }
+        
+        .meal-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .meal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .meal-title { font-size: 16px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 8px; }
         .meal-items { list-style: none; }
-        .meal-item { padding: 6px 0; border-bottom: 1px dashed #f1f5f9; display: flex; justify-content: space-between; font-size: 14px; }
+        .meal-item { padding: 8px 0; border-bottom: 1px dashed #f1f5f9; display: flex; justify-content: space-between; align-items: center; font-size: 14px; line-height: 1.4; }
         .meal-item:last-child { border-bottom: none; }
-        .weight-badge { font-weight: 700; color: #1b4332; background: #e8f5e9; padding: 2px 8px; border-radius: 6px; font-size: 12px; }
+        .weight-badge { font-weight: 700; color: #1b4332; background: #e8f5e9; padding: 3px 8px; border-radius: 6px; font-size: 12px; white-space: nowrap; margin-left: 10px; }
 
         /* Recipe Trigger */
-        .btn-recipe { margin-top: 10px; width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #b7e4c7; background: #f4fbf7; color: var(--primary); font-size: 13px; font-weight: 600; cursor: pointer; text-align: center; }
+        .btn-recipe { margin-top: 10px; width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #b7e4c7; background: #f4fbf7; color: var(--primary); font-size: 13px; font-weight: 700; cursor: pointer; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-recipe:active { background: #e2f5ec; }
+
+        /* Shopping List */
+        .shopping-category { margin-bottom: 18px; }
+        .shopping-cat-title { font-size: 15px; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid var(--primary-light); }
+        .shopping-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: #fff; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; }
+        .shopping-item.checked { background: #f8fafc; opacity: 0.6; }
+        .shopping-item.checked .shopping-text { text-decoration: line-through; color: #94a3b8; }
+        .shopping-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
+
+        /* Supplements Table */
+        .supp-card { background: #fff; border: 1px solid #b7e4c7; border-left: 4px solid var(--primary); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+        .supp-name { font-size: 15px; font-weight: 700; color: var(--primary-dark); }
+        .supp-dose { font-size: 13px; font-weight: 600; color: #2d6a4f; margin-top: 4px; }
+        .supp-desc { font-size: 12px; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
 
         /* Bottom Nav */
-        nav.tab-bar { position: fixed; bottom: 0; left: 0; right: 0; max-width: 480px; margin: 0 auto; background: #fff; border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 12px 0; }
-        .nav-item { text-align: center; color: var(--text-muted); font-size: 11px; text-decoration: none; font-weight: 600; }
+        nav.tab-bar { position: fixed; bottom: 0; left: 0; right: 0; max-width: 480px; margin: 0 auto; background: #fff; border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 10px 0 14px; z-index: 50; }
+        .nav-item { text-align: center; color: var(--text-muted); font-size: 11px; text-decoration: none; font-weight: 600; cursor: pointer; flex: 1; }
         .nav-item.active { color: var(--primary); }
         .nav-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+
+        /* Recipe Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 100; align-items: flex-end; justify-content: center; }
+        .modal.active { display: flex; }
+        .modal-content { background: #fff; width: 100%; max-width: 480px; border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 24px; max-height: 80vh; overflow-y: auto; animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .modal-title { font-size: 18px; font-weight: 700; color: var(--primary-dark); }
+        .modal-close { font-size: 24px; border: none; background: none; cursor: pointer; color: var(--text-muted); }
+        .recipe-step { margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -57,78 +86,431 @@
         <header>
             <div class="patient-badge">Plan Nutricional Activo</div>
             <div class="patient-name">Aroa P. I.</div>
-            <div class="diet-period">Semana 48 · Nutrición Clínica Personalizada</div>
+            <div class="diet-period">Semana 48 · Nutrición Clínica Mi Dieta Intuitiva</div>
         </header>
 
-        <div class="day-bar">
-            <button class="day-btn active">Lunes</button>
-            <button class="day-btn">Martes</button>
-            <button class="day-btn">Miércoles</button>
-            <button class="day-btn">Jueves</button>
-            <button class="day-btn">Viernes</button>
-            <button class="day-btn">Sábado</button>
-            <button class="day-btn">Domingo</button>
-        </div>
-
-        <div class="main-content">
-            <!-- Desayuno -->
-            <div class="meal-card">
-                <div class="meal-header">
-                    <span class="meal-title">☕ Desayuno</span>
-                </div>
-                <ul class="meal-items">
-                    <li class="meal-item"><span>Tostada de pan masa madre</span> <span class="weight-badge">60 g</span></li>
-                    <li class="meal-item"><span>Tomate triturado natural con AOVE</span> <span class="weight-badge">40 g / 10 ml</span></li>
-                    <li class="meal-item"><span>Jamón ibérico de bellota o cecina</span> <span class="weight-badge">40 g</span></li>
-                    <li class="meal-item"><span>Café o infusión sin azúcar</span> <span class="weight-badge">Libre</span></li>
-                </ul>
+        <!-- Pestaña 1: Menú Diario -->
+        <div id="tab-menu" class="tab-content active">
+            <div class="day-bar">
+                <button class="day-btn active" onclick="selectDay('lunes', this)">Lunes</button>
+                <button class="day-btn" onclick="selectDay('martes', this)">Martes</button>
+                <button class="day-btn" onclick="selectDay('miercoles', this)">Miércoles</button>
+                <button class="day-btn" onclick="selectDay('jueves', this)">Jueves</button>
+                <button class="day-btn" onclick="selectDay('viernes', this)">Viernes</button>
+                <button class="day-btn" onclick="selectDay('sabado', this)">Sábado</button>
+                <button class="day-btn" onclick="selectDay('domingo', this)">Domingo</button>
             </div>
 
-            <!-- Comida -->
-            <div class="meal-card">
-                <div class="meal-header">
-                    <span class="meal-title">🍲 Comida Principal</span>
-                </div>
-                <ul class="meal-items">
-                    <li class="meal-item"><span>Arroz basmati salteado (en crudo)</span> <span class="weight-badge">65 g</span></li>
-                    <li class="meal-item"><span>Pechuga de pollo a la plancha</span> <span class="weight-badge">140 g</span></li>
-                    <li class="meal-item"><span>Calabacín y champiñones laminados</span> <span class="weight-badge">180 g</span></li>
-                    <li class="meal-item"><span>Aceite de oliva virgen extra (AOVE)</span> <span class="weight-badge">10 ml</span></li>
-                </ul>
-                <button class="btn-recipe">📖 Ver Receta y Preparación Paso a Paso</button>
-            </div>
-
-            <!-- Merienda -->
-            <div class="meal-card">
-                <div class="meal-header">
-                    <span class="meal-title">🍏 Merienda</span>
-                </div>
-                <ul class="meal-items">
-                    <li class="meal-item"><span>Yogur griego natural (o kéfir)</span> <span class="weight-badge">125 g</span></li>
-                    <li class="meal-item"><span>Nueces de California o almendras</span> <span class="weight-badge">20 g</span></li>
-                    <li class="meal-item"><span>Arándanos frescos</span> <span class="weight-badge">60 g</span></li>
-                </ul>
-            </div>
-
-            <!-- Cena -->
-            <div class="meal-card">
-                <div class="meal-header">
-                    <span class="meal-title">🐟 Cena Ligera</span>
-                </div>
-                <ul class="meal-items">
-                    <li class="meal-item"><span>Lomo de salmón al vapor o papillote</span> <span class="weight-badge">150 g</span></li>
-                    <li class="meal-item"><span>Espárragos trigueros a la plancha</span> <span class="weight-badge">150 g</span></li>
-                    <li class="meal-item"><span>Patata cocida pequeña</span> <span class="weight-badge">100 g</span></li>
-                </ul>
+            <div id="meals-container">
+                <!-- Se inyecta dinámicamente con JavaScript -->
             </div>
         </div>
 
+        <!-- Pestaña 2: Lista de la Compra -->
+        <div id="tab-compra" class="tab-content">
+            <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--primary-dark);">🛒 Lista de la Compra Semanal</h2>
+            
+            <div class="shopping-category">
+                <div class="shopping-cat-title">🥩 Proteínas</div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Pechuga de pollo de corral</span></div><span class="weight-badge">450 g</span></div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Lomo de salmón fresco</span></div><span class="weight-badge">300 g</span></div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Huevos camperos (docena)</span></div><span class="weight-badge">6 uds</span></div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Jamón ibérico de bellota</span></div><span class="weight-badge">120 g</span></div>
+            </div>
+
+            <div class="shopping-category">
+                <div class="shopping-cat-title">🥦 Verduras y Hortalizas</div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Calabacín fresco</span></div><span class="weight-badge">500 g</span></div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Champiñones laminados</span></div><span class="weight-badge">250 g</span></div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Espárragos trigueros</span></div><span class="weight-badge">1 manojo</span></div>
+            </div>
+
+            <div class="shopping-category">
+                <div class="shopping-cat-title">🍚 Farináceos y Tubérculos</div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Arroz basmati integral</span></div><span class="weight-badge">250 g</span></div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Pan de masa madre 100% espelta</span></div><span class="weight-badge">1 hogaza</span></div>
+                <div class="shopping-item" onclick="toggleCheck(this)"><div style="display:flex; align-items:center; gap:8px;"><input type="checkbox"><span class="shopping-text">Patatas nuevas pequeñas</span></div><span class="weight-badge">500 g</span></div>
+            </div>
+        </div>
+
+        <!-- Pestaña 3: Suplementos -->
+        <div id="tab-suplementos" class="tab-content">
+            <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--primary-dark);">🌿 Protocolo de Suplementación Clínica</h2>
+            
+            <div class="supp-card">
+                <div class="supp-name">Omega 3 IFOS Alta Pureza (EPA/DHA)</div>
+                <div class="supp-dose">⏰ 1 cápsula en el desayuno</div>
+                <div class="supp-desc">Modulación inflamatoria sistémica y salud cardiovascular. Tomar junto con la grasa del desayuno.</div>
+            </div>
+
+            <div class="supp-card">
+                <div class="supp-name">Magnesio Bisglicinato 200mg</div>
+                <div class="supp-dose">⏰ 2 cápsulas 45 min antes de dormir</div>
+                <div class="supp-desc">Optimización del descanso nocturno, relajación muscular y soporte del sistema nervioso.</div>
+            </div>
+
+            <div class="supp-card">
+                <div class="supp-name">Vitamina D3 + K2 (4000 UI)</div>
+                <div class="supp-dose">⏰ 3 gotas por la mañana con el desayuno</div>
+                <div class="supp-desc">Inmunomodulación y salud ósea. Tomar siempre con una comida que contenga aceite o grasas saludables.</div>
+            </div>
+        </div>
+
+        <!-- Pestaña 4: Intercambios -->
+        <div id="tab-intercambios" class="tab-content">
+            <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--primary-dark);">🔄 Tabla de Intercambios UCM (10g)</h2>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Si no tienes un alimento o quieres variar, sustitúyelo por otro de su mismo grupo en las proporciones indicadas:</p>
+            
+            <div class="supp-card">
+                <div class="supp-name">1 Ración de Farináceo (10g HC) equivale a:</div>
+                <div class="supp-desc" style="margin-top:8px;">
+                    • 15g de Arroz o Pasta (crudo)<br>
+                    • 20g de Pan de masa madre<br>
+                    • 50g de Patata cocida<br>
+                    • 40g de Legumbre cocida (garbanzos/lentejas)
+                </div>
+            </div>
+
+            <div class="supp-card">
+                <div class="supp-name">1 Ración de Proteína (10g Proteína) equivale a:</div>
+                <div class="supp-desc" style="margin-top:8px;">
+                    • 50g de Pechuga de pollo o pavo<br>
+                    • 55g de Ternera magra o lomo<br>
+                    • 60g de Salmón, merluza o lubina<br>
+                    • 1 Huevo grande (L) + 1 clara
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Receta -->
+        <div id="recipe-modal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <div id="modal-title" class="modal-title">Receta</div>
+                    <button class="modal-close" onclick="closeModal()">✕</button>
+                </div>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Navegación Inferior -->
         <nav class="tab-bar">
-            <a href="#" class="nav-item active"><span class="nav-icon">📅</span>Menú</a>
-            <a href="#" class="nav-item"><span class="nav-icon">🛒</span>Compra</a>
-            <a href="#" class="nav-item"><span class="nav-icon">🌿</span>Suplementos</a>
-            <a href="#" class="nav-item"><span class="nav-icon">🔄</span>Intercambios</a>
+            <div class="nav-item active" onclick="switchTab('tab-menu', this)"><span class="nav-icon">📅</span>Menú</div>
+            <div class="nav-item" onclick="switchTab('tab-compra', this)"><span class="nav-icon">🛒</span>Compra</div>
+            <div class="nav-item" onclick="switchTab('tab-suplementos', this)"><span class="nav-icon">🌿</span>Suplementos</div>
+            <div class="nav-item" onclick="switchTab('tab-intercambios', this)"><span class="nav-icon">🔄</span>Intercambios</div>
         </nav>
     </div>
+
+    <script>
+        // Datos completos de la semana
+        const weekData = {
+            lunes: {
+                desayuno: [
+                    { name: "Tostada de pan masa madre 100% espelta", weight: "60 g" },
+                    { name: "Tomate triturado natural + AOVE", weight: "40 g / 10 ml" },
+                    { name: "Jamón ibérico de bellota o cecina", weight: "40 g" },
+                    { name: "Café de especialidad o infusión", weight: "Libre" }
+                ],
+                comida: {
+                    items: [
+                        { name: "Arroz basmati con verduras salteadas (en crudo)", weight: "65 g" },
+                        { name: "Pechuga de pollo de corral a la plancha", weight: "140 g" },
+                        { name: "Calabacín y champiñones laminados", weight: "180 g" },
+                        { name: "Aceite de oliva virgen extra (AOVE)", weight: "10 ml" }
+                    ],
+                    recipe: {
+                        title: "Arroz Basmati con Pollo y Verduras Salteadas",
+                        steps: [
+                            "1. Pesar 65g de arroz basmati en crudo y cocer en abundante agua hirviendo con una pizca de sal marina durante 10-12 minutos. Escurrir y reservar.",
+                            "2. Cortar el calabacín y los champiñones en rodajas finas. En una sartén o wok con 5ml de AOVE, saltear las verduras a fuego vivo hasta que estén al dente.",
+                            "3. Cortar la pechuga de pollo en tiras o dados. Añadir a la sartén junto con las verduras, dorar por todos los lados y sazonar con pimienta negra y orégano.",
+                            "4. Incorporar el arroz cocido a la sartén, remover todo durante 2 minutos para integrar los sabores y servir caliente."
+                        ]
+                    }
+                },
+                merienda: [
+                    { name: "Yogur griego natural (o kéfir artesanal)", weight: "125 g" },
+                    { name: "Nueces de California picadas", weight: "20 g" },
+                    { name: "Arándanos frescos silvestres", weight: "60 g" }
+                ],
+                cena: [
+                    { name: "Lomo de salmón salvaje al horno o papillote", weight: "150 g" },
+                    { name: "Espárragos trigueros a la plancha con escamas de sal", weight: "150 g" },
+                    { name: "Patata nueva cocida al vapor", weight: "100 g" }
+                ]
+            },
+            martes: {
+                desayuno: [
+                    { name: "Copos de avena integral cocidos (porridge)", weight: "45 g" },
+                    { name: "Bebida de almendras sin azúcares añadidos", weight: "150 ml" },
+                    { name: "Frutos rojos (frambuesas y moras)", weight: "80 g" },
+                    { name: "Crema de cacahuete 100%", weight: "15 g" }
+                ],
+                comida: {
+                    items: [
+                        { name: "Lentejas pardinas guisadas con verduras (peso cocidas)", weight: "180 g" },
+                        { name: "Lomo de bacalao fresco desmigado", weight: "120 g" },
+                        { name: "Zanahoria, puerro y pimiento verde", weight: "150 g" },
+                        { name: "Aceite de oliva virgen extra", weight: "10 ml" }
+                    ],
+                    recipe: {
+                        title: "Guiso Suave de Lentejas con Bacalao y Hortalizas",
+                        steps: [
+                            "1. Pochar en una cazuela con el AOVE el puerro picado, la zanahoria en cubos y el pimiento verde.",
+                            "2. Añadir las lentejas cocidas junto con 100ml de caldo de verduras bajo en sal y una hoja de laurel.",
+                            "3. Cortar el bacalao en trozos medianos y añadirlo a la cazuela en los últimos 4 minutos de cocción suave.",
+                            "4. Servir tibio. Plato saciante y de excelente perfil digestivo."
+                        ]
+                    }
+                },
+                merienda: [
+                    { name: "Fruta de temporada (Manzana o Pera)", weight: "1 pieza (150g)" },
+                    { name: "Queso fresco de cabra o requesón", weight: "60 g" }
+                ],
+                cena: [
+                    { name: "Tortilla francesa jugosa de 2 huevos camperos", weight: "2 huevos (L)" },
+                    { name: "Ensalada de espinacas baby con tomates cherry", weight: "120 g" },
+                    { name: "AOVE y vinagre de manzana bio", weight: "10 ml" }
+                ]
+            },
+            miercoles: {
+                desayuno: [
+                    { name: "Tostada de pan de centeno 100%", weight: "60 g" },
+                    { name: "Aguacate hass machacado", weight: "40 g" },
+                    { name: "Huevo poché o a la plancha", weight: "1 ud (L)" }
+                ],
+                comida: {
+                    items: [
+                        { name: "Pasta integral o de trigo sarraceno (en crudo)", weight: "60 g" },
+                        { name: "Carne picada de ternera magra 100%", weight: "130 g" },
+                        { name: "Salsa de tomate casera triturada", weight: "80 g" },
+                        { name: "Brócoli al vapor como guarnición", weight: "150 g" }
+                    ],
+                    recipe: {
+                        title: "Pasta Integral Boloñesa Casera con Brócoli",
+                        steps: [
+                            "1. Cocer la pasta al dente siguiendo las instrucciones del fabricante. Cocer los ramilletes de brócoli al vapor durante 5 minutos.",
+                            "2. En una sartén con AOVE saltear la carne de ternera con sal, orégano y ajo en polvo.",
+                            "3. Añadir el tomate triturado y reducir 5 minutos a fuego lento.",
+                            "4. Mezclar con la pasta y acompañar con el brócoli al vapor."
+                        ]
+                    }
+                },
+                merienda: [
+                    { name: "Yogur de soja natural sin azúcar", weight: "125 g" },
+                    { name: "Semillas de chía hidratadas", weight: "10 g" }
+                ],
+                cena: [
+                    { name: "Dorada a la espalda en sartén", weight: "160 g" },
+                    { name: "Calabaza asada con romero", weight: "150 g" },
+                    { name: "Ensalada verde variada", weight: "80 g" }
+                ]
+            },
+            jueves: {
+                desayuno: [
+                    { name: "Tostada de pan masa madre", weight: "60 g" },
+                    { name: "Pechuga de pavo asada 95% carne", weight: "50 g" },
+                    { name: "Aceite de oliva virgen extra", weight: "10 ml" }
+                ],
+                comida: {
+                    items: [
+                        { name: "Quinoa tricolor cocida", weight: "140 g" },
+                        { name: "Tacos de atún fresco o bonito a la plancha", weight: "130 g" },
+                        { name: "Pimientos asados rojos y amarillos", weight: "150 g" }
+                    ],
+                    recipe: {
+                        title: "Bowl de Quinoa con Atún Sellado y Pimientos Asados",
+                        steps: [
+                            "1. Disponer la quinoa cocida como base en un bowl amplio.",
+                            "2. Cortar el atún en dados y sellar a fuego muy fuerte en sartén durante 1 minuto para que quede tierno por dentro.",
+                            "3. Añadir los pimientos asados en tiras y coronar con semillas de sésamo y 5ml de AOVE."
+                        ]
+                    }
+                },
+                merienda: [
+                    { name: "Plátano mediano", weight: "1 ud (100g)" },
+                    { name: "Almendras tostadas sin sal", weight: "15 g" }
+                ],
+                cena: [
+                    { name: "Crema casera de calabacín y puerro", weight: "250 ml" },
+                    { name: "Revuelto de gulas con 1 huevo y 2 claras", weight: "120 g" }
+                ]
+            },
+            viernes: {
+                desayuno: [
+                    { name: "Tortitas de avena y plátano caseras", weight: "2 uds" },
+                    { name: "Canela de Ceylán espolvoreada", weight: "Al gusto" },
+                    { name: "Café solo o con bebida vegetal", weight: "Libre" }
+                ],
+                comida: {
+                    items: [
+                        { name: "Garbanzos pedrosillanos cocidos salteados", weight: "160 g" },
+                        { name: "Espinacas frescas salteadas con ajo", weight: "150 g" },
+                        { name: "Huevo duro picado", weight: "1 ud (L)" }
+                    ],
+                    recipe: {
+                        title: "Salteado Mediterráneo de Garbanzos con Espinacas",
+                        steps: [
+                            "1. Dorar un diente de ajo laminado en sartén con 10ml de AOVE.",
+                            "2. Añadir las espinacas frescas hasta que reduzcan de volumen.",
+                            "3. Incorporar los garbanzos escurridos y saltear 3 minutos con pimentón dulce de la Vera.",
+                            "4. Servir con el huevo duro cortado en cuartos por encima."
+                        ]
+                    }
+                },
+                merienda: [
+                    { name: "Kéfir con trozos de kiwi", weight: "1 vaso (150ml)" }
+                ],
+                cena: [
+                    { name: "Hamburguesa casera de ternera magra", weight: "140 g" },
+                    { name: "Boniato asado en tiras (al horno)", weight: "100 g" },
+                    { name: "Canónigos con tomatitos cherry", weight: "100 g" }
+                ]
+            },
+            sabado: {
+                desayuno: [
+                    { name: "Tostada de pan masa madre con tomate", weight: "60 g" },
+                    { name: "Revuelto de 2 huevos con champiñones", weight: "2 huevos" }
+                ],
+                comida: {
+                    items: [
+                        { name: "Arroz meloso con alcachofas y sepia", weight: "65 g arroz" },
+                        { name: "Sepia limpia a tacos", weight: "140 g" },
+                        { name: "Alcachofas naturales laminadas", weight: "150 g" }
+                    ],
+                    recipe: {
+                        title: "Arroz Meloso con Sepia y Alcachofas",
+                        steps: [
+                            "1. Sofreír las alcachofas troceadas y la sepia en cazuela con 10ml de AOVE.",
+                            "2. Añadir tomate triturado y una pizca de pimentón.",
+                            "3. Echar el arroz, rehogar 1 minuto y añadir caldo de pescado suave caliente (3 veces el volumen de arroz).",
+                            "4. Cocinar 16 minutos a fuego medio hasta que quede en su punto meloso."
+                        ]
+                    }
+                },
+                merienda: [
+                    { name: "Onza de chocolate negro 85% + nueces", weight: "15 g / 15 g" }
+                ],
+                cena: [
+                    { name: "Cena social libre consciente o Lubina al horno", weight: "150 g" },
+                    { name: "Verduras asadas variadas (escalivada)", weight: "180 g" }
+                ]
+            },
+            domingo: {
+                desayuno: [
+                    { name: "Tostadas de hogaza con aceite y salmón ahumado", weight: "60 g / 40 g" },
+                    { name: "Café o té verde", weight: "Libre" }
+                ],
+                comida: {
+                    items: [
+                        { name: "Parrillada de pollo y verduras de temporada", weight: "150 g / 200 g" },
+                        { name: "Patata asada al microondas o airfryer", weight: "120 g" }
+                    ],
+                    recipe: {
+                        title: "Pollo a las Finas Hierbas con Patata Asada Rápida",
+                        steps: [
+                            "1. Marinar el pollo con zumo de limón, romero, tomillo y 10ml de AOVE.",
+                            "2. Lavar la patata, pinchar con un tenedor y asar 6 minutos al microondas a máxima potencia.",
+                            "3. Dorar el pollo a la plancha junto con rodajas de berenjena y pimientos.",
+                            "4. Servir la patata abierta con una pizca de sal marina y pimienta."
+                        ]
+                    }
+                },
+                merienda: [
+                    { name: "Infusión relajante de manzanilla/rooibos", weight: "Libre" }
+                ],
+                cena: [
+                    { name: "Crema de calabaza asada y zanahoria", weight: "250 ml" },
+                    { name: "Tortilla de espárragos trigueros", weight: "1 huevo + 2 claras" }
+                ]
+            }
+        };
+
+        // Renderizar comidas según día seleccionado
+        function renderDay(dayKey) {
+            const data = weekData[dayKey] || weekData.lunes;
+            const container = document.getElementById('meals-container');
+            
+            let recipeButton = '';
+            if (data.comida.recipe) {
+                recipeButton = `<button class="btn-recipe" onclick="openRecipe('${dayKey}')">📖 Ver Receta: ${data.comida.recipe.title}</button>`;
+            }
+
+            container.innerHTML = `
+                <div class="meal-card">
+                    <div class="meal-header"><span class="meal-title">☕ Desayuno</span></div>
+                    <ul class="meal-items">
+                        ${data.desayuno.map(i => `<li class="meal-item"><span>${i.name}</span><span class="weight-badge">${i.weight}</span></li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-header"><span class="meal-title">🍲 Comida Principal</span></div>
+                    <ul class="meal-items">
+                        ${data.comida.items.map(i => `<li class="meal-item"><span>${i.name}</span><span class="weight-badge">${i.weight}</span></li>`).join('')}
+                    </ul>
+                    ${recipeButton}
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-header"><span class="meal-title">🍏 Merienda</span></div>
+                    <ul class="meal-items">
+                        ${data.merienda.map(i => `<li class="meal-item"><span>${i.name}</span><span class="weight-badge">${i.weight}</span></li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-header"><span class="meal-title">🐟 Cena</span></div>
+                    <ul class="meal-items">
+                        ${data.cena.map(i => `<li class="meal-item"><span>${i.name}</span><span class="weight-badge">${i.weight}</span></li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Cambio de día
+        function selectDay(dayKey, btn) {
+            document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderDay(dayKey);
+        }
+
+        // Cambio de pestaña inferior
+        function switchTab(tabId, navEl) {
+            document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(ni => ni.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            navEl.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Tachar elementos en lista de la compra
+        function toggleCheck(itemEl) {
+            const cb = itemEl.querySelector('input[type="checkbox"]');
+            cb.checked = !cb.checked;
+            itemEl.classList.toggle('checked', cb.checked);
+        }
+
+        // Modal de Receta
+        function openRecipe(dayKey) {
+            const recipe = weekData[dayKey].comida.recipe;
+            if (!recipe) return;
+            document.getElementById('modal-title').innerText = recipe.title;
+            document.getElementById('modal-body').innerHTML = `
+                <div style="margin-bottom:14px; font-weight:600; color:var(--primary); font-size:14px;">Preparación Paso a Paso:</div>
+                ${recipe.steps.map(s => `<p class="recipe-step">${s}</p>`).join('')}
+            `;
+            document.getElementById('recipe-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('recipe-modal').classList.remove('active');
+        }
+
+        // Inicializar en Lunes
+        renderDay('lunes');
+    </script>
 </body>
 </html>
